@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="D:\Code Library\AutomatedTests\bin\Debug\AutomatedTests.nunit" total="1" errors="1" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2015-07-07" time="13:51:23">
+  <environment nunit-version="2.6.4.14350" clr-version="2.0.50727.5485" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="D:\Code Library\AutomatedTests\bin" machine-name="SANNAIAH6440" user="Sharath.Annaiah" user-domain="CORP" />
+  <culture-info current-culture="en-US" current-uiculture="en-US" />
+  <test-suite type="Project" name="D:\Code Library\AutomatedTests\bin\Debug\AutomatedTests.nunit" executed="True" result="Failure" success="False" time="21.315" asserts="0">
+    <results>
+      <test-suite type="SetUpFixture" name="D:\Code Library\AutomatedTests\bin\Debug\AutomatedTests.dll" executed="True" result="Failure" success="False" time="21.298" asserts="0">
+        <results>
+          <test-suite type="Namespace" name="AutomatedTests" executed="True" result="Failure" success="False" time="21.295" asserts="0">
+            <results>
+              <test-suite type="Namespace" name="Tangoe" executed="True" result="Failure" success="False" time="21.295" asserts="0">
+                <results>
+                  <test-suite type="Namespace" name="Cmp" executed="True" result="Failure" success="False" time="21.294" asserts="0">
+                    <results>
+                      <test-suite type="Namespace" name="Automation" executed="True" result="Failure" success="False" time="21.294" asserts="0">
+                        <results>
+                          <test-suite type="Namespace" name="Unit" executed="True" result="Failure" success="False" time="21.294" asserts="0">
+                            <results>
+                              <test-suite type="Namespace" name="Concrete" executed="True" result="Failure" success="False" time="21.294" asserts="0">
+                                <results>
+                                  <test-suite type="Namespace" name="SmokeTest" executed="True" result="Failure" success="False" time="21.294" asserts="0">
+                                    <results>
+                                      <test-suite type="Namespace" name="Navigation" executed="True" result="Failure" success="False" time="21.293" asserts="0">
+                                        <results>
+                                          <test-suite type="TestFixture" name="CompleteNavigationUT" executed="True" result="Failure" success="False" time="21.291" asserts="0">
+                                            <results>
+                                              <test-case name="AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Navigation.CompleteNavigationUT.navigation" executed="True" result="Error" success="False" time="21.278" asserts="0">
+                                                <failure>
+                                                  <message><![CDATA[SetUp : OpenQA.Selenium.WebDriverTimeoutException : Timed out after 10 seconds
+  ----> OpenQA.Selenium.NoSuchElementException : Unable to find element with id == menuMainHome]]></message>
+                                                  <stack-trace><![CDATA[at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)
+at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)
+at AutomatedTests.Tangoe.Cmp.Automation.UI.Abstract.BaseActions.WaitForElementToVisible(By by) in d:\Code Library\AutomatedTests\Tangoe\Cmp\Automation\UI\Abstract\BaseActions.cs:line 176
+at AutomatedTests.Tangoe.Cmp.Automation.UI.Abstract.BaseActions.Login() in d:\Code Library\AutomatedTests\Tangoe\Cmp\Automation\UI\Abstract\BaseActions.cs:line 528
+at AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Navigation.CompleteNavigationUT.SetupBase() in d:\Code Library\AutomatedTests\Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Navigation\CompleteNavigationUT.cs:line 25
+--NoSuchElementException
+at OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(String mechanism, String value)
+at OpenQA.Selenium.By.FindElement(ISearchContext context)
+at OpenQA.Selenium.Support.UI.ExpectedConditions.<>c__DisplayClassa.<ElementIsVisible>b__9(IWebDriver driver)
+at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)
+]]></stack-trace>
+                                                </failure>
+                                              </test-case>
+                                            </results>
+                                          </test-suite>
+                                        </results>
+                                      </test-suite>
+                                    </results>
+                                  </test-suite>
+                                </results>
+                              </test-suite>
+                            </results>
+                          </test-suite>
+                        </results>
+                      </test-suite>
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>

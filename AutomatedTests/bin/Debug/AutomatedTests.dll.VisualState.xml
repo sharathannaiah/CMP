@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VisualState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ShowCheckBoxes="true">
+  <TopNode>[0-1000]GlobalSetup</TopNode>
+  <SelectedNode>[0-1000]GlobalSetup</SelectedNode>
+  <ExcludeCategories>false</ExcludeCategories>
+  <Nodes>
+    <Node UniqueName="[0-1000]GlobalSetup" Expanded="true" />
+    <Node UniqueName="[0-1004]AutomatedTests" Expanded="true" />
+    <Node UniqueName="[0-1005]AutomatedTests.Tangoe" Expanded="true" />
+    <Node UniqueName="[0-1006]AutomatedTests.Tangoe.Cmp" Expanded="true" />
+    <Node UniqueName="[0-1007]AutomatedTests.Tangoe.Cmp.Automation" Expanded="true" />
+    <Node UniqueName="[0-1008]AutomatedTests.Tangoe.Cmp.Automation.Unit" Expanded="true" />
+    <Node UniqueName="[0-1009]AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete" Expanded="true" />
+    <Node UniqueName="[0-1001]AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.TrainingUnitTest" Expanded="true" />
+    <Node UniqueName="[0-1002]AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.TrainingUnitTest.Explorer" Checked="true" />
+  </Nodes>
+</VisualState>

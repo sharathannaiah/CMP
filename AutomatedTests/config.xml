@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<config>
+  <!--all of these can be in any order-->
+  <string>
+    <key>browserString</key>
+    <value>*chrome</value>
+  </string>
+  <string>
+    <key>browserUrl</key>
+    <value>http://qamdm-mdm2.qamdm.com/</value>
+  </string>
+  <string>
+    <key>adminUserName</key>
+    <value>Michael2010</value>
+  </string>
+  <string>
+    <key>password</key>
+    <value>gopats@12</value>
+  </string>
+  <string>
+    <key>roleName</key>
+    <value>delete me</value>
+  </string>
+  <string>
+    <key>roleAssignment</key>
+    <value>sn=m*</value>
+  </string>
+  <string>
+    <key>regularUserName</key>
+    <value>cmcatee</value>
+  </string>
+  <string>
+    <key>regularUserLastName</key>
+    <value>Mcatee</value>
+  </string>
+  <string>
+    <key>regularUserFirstName</key>
+    <value>Cristobal</value>
+  </string>
+  <string>
+    <key>waitForPageToLoad</key>
+    <value>300000</value>
+  </string>
+  <string>
+    <key>remoteUrl</key>
+    <value>https://qamdm-ex10mail.qamdm.com/PowerShell</value>
+  </string>
+  <string>
+    <key>remoteUsername</key>
+    <value>qamdm\\Michael2010</value>
+  </string>
+  <string>
+    <key>serverName</key>
+    <value>QAMDM-EX10MAIL.QAMDM.COM</value>
+  </string>
+  <string>
+    <key>maxUserCount</key>
+    <value>1000</value>
+  </string>
+  <string>
+    <key>connectorUsername</key>
+    <value>mdmadmin</value>
+  </string>
+  <string>
+    <key>connectorHostName</key>
+    <value>qamdm-mdm2</value>
+  </string>
+
+  <int>
+    <key>sleepTime</key>
+    <value>5000</value>
+  </int>
+  <dateTime>
+    <key>expirationDate</key>
+    <value>
+      <day>10</day>
+      <month>01</month>
+      <year>2008</year>
+      <!--Theoretically you could add minute, second, millisecond, whatever was required. Code would change slightly-->
+    </value>
+  </dateTime>
+  <bool>
+    <key>required</key>
+    <value>true</value>
+    <!-- Important for bools to spell true and false correctly. I think casing matters also-->
+  </bool>
+</config>

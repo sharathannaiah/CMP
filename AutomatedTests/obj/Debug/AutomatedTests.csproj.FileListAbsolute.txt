@@ -1,0 +1,55 @@
+D:\MDMAutomation\AutomatedSeleniumTests\AutomatedTests\bin\Debug\AutomatedTests.config
+D:\MDMAutomation\AutomatedSeleniumTests\AutomatedTests\bin\Debug\Lib\IEDriverServer.exe
+D:\MDMAutomation\AutomatedSeleniumTests\AutomatedTests\bin\Debug\Lib\nunit.framework.dll
+D:\MDMAutomation\AutomatedSeleniumTests\AutomatedTests\bin\Debug\Lib\WebDriver.dll
+D:\MDMAutomation\AutomatedSeleniumTests\AutomatedTests\bin\Debug\Lib\WebDriver.Support.dll
+D:\MDMAutomation\AutomatedSeleniumTests\AutomatedTests\bin\Debug\AutomatedTests.dll
+D:\MDMAutomation\AutomatedSeleniumTests\AutomatedTests\bin\Debug\AutomatedTests.pdb
+D:\MDMAutomation\AutomatedSeleniumTests\AutomatedTests\bin\Debug\log4net.dll
+D:\MDMAutomation\AutomatedSeleniumTests\AutomatedTests\bin\Debug\nunit.core.interfaces.dll
+D:\MDMAutomation\AutomatedSeleniumTests\AutomatedTests\bin\Debug\nunit.framework.dll
+D:\MDMAutomation\AutomatedSeleniumTests\AutomatedTests\bin\Debug\Rally.RestApi.dll
+D:\MDMAutomation\AutomatedSeleniumTests\AutomatedTests\bin\Debug\Selenium.WebDriverBackedSelenium.dll
+D:\MDMAutomation\AutomatedSeleniumTests\AutomatedTests\bin\Debug\ThoughtWorks.Selenium.Core.dll
+D:\MDMAutomation\AutomatedSeleniumTests\AutomatedTests\bin\Debug\WebDriver.dll
+D:\MDMAutomation\AutomatedSeleniumTests\AutomatedTests\bin\Debug\WebDriver.Support.dll
+D:\MDMAutomation\AutomatedSeleniumTests\AutomatedTests\bin\Debug\log4net.xml
+D:\MDMAutomation\AutomatedSeleniumTests\AutomatedTests\obj\Debug\AutomatedTests.csprojResolveAssemblyReference.cache
+D:\MDMAutomation\AutomatedSeleniumTests\AutomatedTests\obj\Debug\AutomatedTests.dll
+D:\MDMAutomation\AutomatedSeleniumTests\AutomatedTests\obj\Debug\AutomatedTests.pdb
+D:\sagar\AutomatedTests\bin\Debug\AutomatedTests.config
+D:\sagar\AutomatedTests\bin\Debug\Lib\IEDriverServer.exe
+D:\sagar\AutomatedTests\bin\Debug\Lib\nunit.framework.dll
+D:\sagar\AutomatedTests\bin\Debug\Lib\WebDriver.dll
+D:\sagar\AutomatedTests\bin\Debug\Lib\WebDriver.Support.dll
+D:\sagar\AutomatedTests\bin\Debug\AutomatedTests.dll
+D:\sagar\AutomatedTests\bin\Debug\AutomatedTests.pdb
+D:\sagar\AutomatedTests\bin\Debug\log4net.dll
+D:\sagar\AutomatedTests\bin\Debug\nunit.core.interfaces.dll
+D:\sagar\AutomatedTests\bin\Debug\nunit.framework.dll
+D:\sagar\AutomatedTests\bin\Debug\Rally.RestApi.dll
+D:\sagar\AutomatedTests\bin\Debug\Selenium.WebDriverBackedSelenium.dll
+D:\sagar\AutomatedTests\bin\Debug\ThoughtWorks.Selenium.Core.dll
+D:\sagar\AutomatedTests\bin\Debug\WebDriver.dll
+D:\sagar\AutomatedTests\bin\Debug\WebDriver.Support.dll
+D:\sagar\AutomatedTests\bin\Debug\log4net.xml
+D:\sagar\AutomatedTests\obj\Debug\AutomatedTests.dll
+D:\sagar\AutomatedTests\obj\Debug\AutomatedTests.pdb
+D:\sagar\AutomatedTests\obj\Debug\AutomatedTests.csprojResolveAssemblyReference.cache
+D:\Code Library\AutomatedTests\bin\Debug\AutomatedTests.config
+D:\Code Library\AutomatedTests\bin\Debug\Lib\IEDriverServer.exe
+D:\Code Library\AutomatedTests\bin\Debug\Lib\nunit.framework.dll
+D:\Code Library\AutomatedTests\bin\Debug\Lib\WebDriver.dll
+D:\Code Library\AutomatedTests\bin\Debug\Lib\WebDriver.Support.dll
+D:\Code Library\AutomatedTests\bin\Debug\AutomatedTests.dll
+D:\Code Library\AutomatedTests\bin\Debug\AutomatedTests.pdb
+D:\Code Library\AutomatedTests\bin\Debug\nunit.core.interfaces.dll
+D:\Code Library\AutomatedTests\bin\Debug\nunit.framework.dll
+D:\Code Library\AutomatedTests\bin\Debug\Rally.RestApi.dll
+D:\Code Library\AutomatedTests\bin\Debug\Selenium.WebDriverBackedSelenium.dll
+D:\Code Library\AutomatedTests\bin\Debug\ThoughtWorks.Selenium.Core.dll
+D:\Code Library\AutomatedTests\bin\Debug\WebDriver.dll
+D:\Code Library\AutomatedTests\bin\Debug\WebDriver.Support.dll
+D:\Code Library\AutomatedTests\obj\Debug\AutomatedTests.dll
+D:\Code Library\AutomatedTests\obj\Debug\AutomatedTests.pdb
+D:\Code Library\AutomatedTests\obj\Debug\AutomatedTests.csprojResolveAssemblyReference.cache
