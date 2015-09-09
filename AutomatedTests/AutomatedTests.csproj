@@ -69,9 +69,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Lib\ThoughtWorks.Selenium.Core.dll</HintPath>
     </Reference>
-    <Reference Include="WebDriver, Version=2.31.2.0, Culture=neutral, PublicKeyToken=1c2bd1631853048f, processorArchitecture=MSIL">
+    <Reference Include="WebDriver, Version=2.47.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Selenium.WebDriver.2.31.2\lib\net40\WebDriver.dll</HintPath>
+      <HintPath>packages\Selenium.WebDriver.2.47.0\lib\net40\WebDriver.dll</HintPath>
     </Reference>
     <Reference Include="WebDriver.Support, Version=2.31.2.0, Culture=neutral, PublicKeyToken=1c2bd1631853048f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -79,10 +79,42 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CMP\Admin\General.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>General.settings</DependentUpon>
+    </Compile>
+    <Compile Include="CMP\Company\com.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>com.settings</DependentUpon>
+    </Compile>
+    <Compile Include="CMP\Contracts\Contra.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Contra.settings</DependentUpon>
+    </Compile>
+    <Compile Include="CMP\Enterprise\Enterp.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Enterp.settings</DependentUpon>
+    </Compile>
+    <Compile Include="CMP\Inventory\Inven.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Inven.settings</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Common\TestProperties.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Abstract\BaseActions.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Abstract\IBaseAction.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Contracts\RateQualifiers.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Contracts\RateRegions.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Inventory\Catalog.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Inventory\Features.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Inventory\ProductSpeed.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Miscellaneous\Company.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Miscellaneous\Contacts.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\BillManagement\Accounts\AccountDiscovery.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\BillManagement\Accounts\AccountMaintainance.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\BillManagement\Accounts\AccountMerge.cs" />
@@ -90,9 +122,11 @@
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\BillManagement\Allocations\AllocationQuery.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\BillManagement\Allocations\AllocationQueryCostCenter.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\BillManagement\CostCenterManagement.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\BillManagement\CreditManagement.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\BillManagement\InvoiceProcessing.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Contracts\ContractsExplorer.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Enterprise\Employee\EmployeeExplorer.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Enterprise\Employee\SupportTicket.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Enterprise\EnterpriseExplorer.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Enterprise\EntityRegions.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Enterprise\EntityTypes.cs" />
@@ -103,6 +137,15 @@
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\Training.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Driver\Selenium\BrowserDriver.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Abstract\BaseUnitTest.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Contracts\RateQualifiersUT.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Contracts\RateRegionsUT.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Inventory\CatalogUT.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Inventory\FeaturesUT.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Inventory\NetworkApplications.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Inventory\NetworkApplicationUT.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Inventory\ProductSpeedUT.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Miscellaneous\CompanyUT.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Miscellaneous\ContactsUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\BillManagement\Accounts\AccountDiscoveryUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\BillManagement\Accounts\AccountMaintainanceUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\BillManagement\AllocationCodeManagement.cs" />
@@ -112,8 +155,10 @@
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\BillManagement\Allocations\AllocationQueryCostCenterUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\BillManagement\Allocations\AllocationQueryUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\BillManagement\CostCenterManagementUT.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\BillManagement\InvoiceProcessingUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Contracts\ContractExplorerUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Enterprise\Employee\EmployeeExplorerUT.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Enterprise\Employee\SupportTicketUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Enterprise\EnterpriseExplorerUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Enterprise\EntityRegionsUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Enterprise\EntityTypesUT.cs" />
@@ -128,6 +173,27 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
+    <None Include="app.config" />
+    <None Include="CMP\Admin\General.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>General.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CMP\Company\com.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>com.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CMP\Contracts\Contra.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Contra.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CMP\Enterprise\Enterp.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Enterp.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CMP\Inventory\Inven.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Inven.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Lib\Certificates\Magnolia.ttf" />
     <None Include="Lib\Certificates\MDMDevAppleMDMAPNs8222015.pfx" />
     <None Include="Lib\JMeterScripts\Android-device-details14.2.csv" />
@@ -159,10 +225,8 @@
     <Content Include="nunit.framework.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\" />
     <Folder Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Assurance\" />
     <Folder Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Reporting\" />
-    <Folder Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\" />
     <Folder Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Assurance\" />
     <Folder Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Reporting\" />
   </ItemGroup>

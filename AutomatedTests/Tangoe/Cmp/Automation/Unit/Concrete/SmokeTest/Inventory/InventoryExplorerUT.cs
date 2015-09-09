@@ -32,7 +32,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Inventory
         {
             ExecuteTest(() =>
             {
-                inventoryExplorer.Inventory();
+                inventoryExplorer.InventorySmokeFunctionality();
 
             }
             );

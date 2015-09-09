@@ -33,7 +33,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Contracts
         {
             ExecuteTest(() =>
             {
-                contractsExplorer.Contract();
+                contractsExplorer.ContractSmokeFunctionality();
 
             }
             );

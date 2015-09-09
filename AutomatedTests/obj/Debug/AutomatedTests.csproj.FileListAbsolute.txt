@@ -41,6 +41,7 @@ D:\Code Library\AutomatedTests\bin\Debug\Lib\IEDriverServer.exe
 D:\Code Library\AutomatedTests\bin\Debug\Lib\nunit.framework.dll
 D:\Code Library\AutomatedTests\bin\Debug\Lib\WebDriver.dll
 D:\Code Library\AutomatedTests\bin\Debug\Lib\WebDriver.Support.dll
+D:\Code Library\AutomatedTests\bin\Debug\AutomatedTests.dll.config
 D:\Code Library\AutomatedTests\bin\Debug\AutomatedTests.dll
 D:\Code Library\AutomatedTests\bin\Debug\AutomatedTests.pdb
 D:\Code Library\AutomatedTests\bin\Debug\nunit.core.interfaces.dll

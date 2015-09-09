@@ -31,11 +31,11 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Enterpris
 
 
         [Test]
-        public void EnterpriseFunctionality()
+        public void EnterpriseTypesFunctionality()
         {
             ExecuteTest(() =>
             {
-                entityTypes.EntityType();
+                entityTypes.EntityTypesFunctionality();
 
             }
             );

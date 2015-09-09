@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="AutomatedTests.CMP.Contracts" GeneratedClassName="Contra">
+  <Profiles />
+  <Settings>
+    <Setting Name="QuerySubmitB" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//input[@value='Submit']</Value>
+    </Setting>
+    <Setting Name="CreateNewB" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//input[@value='New']</Value>
+    </Setting>
+    <Setting Name="SaveB" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//input[@value='Save']</Value>
+    </Setting>
+    <Setting Name="OKB" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//input[@value="OK"]</Value>
+    </Setting>
+    <Setting Name="CopyB" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//input[@value="Copy"]</Value>
+    </Setting>
+    <Setting Name="DeleteB" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//input[@value="Delete"]</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

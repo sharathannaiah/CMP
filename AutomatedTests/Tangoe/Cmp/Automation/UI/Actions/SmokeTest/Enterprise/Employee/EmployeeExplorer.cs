@@ -8,98 +8,246 @@ using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Threading;
+using AutomatedTests.CMP.Enterprise;
 
 
 namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise.Employee
 {
     class EmployeeExplorer :BaseActions
     {
-        public void EmployeeCreation()
+        public void EmployeeExplorerFunctions()
         {
             GoToMain("Enterprise");
-            // Navigate to Employee
             retryingFindClickk(".//*[@id='mnuEnterprise_Employees']");
-            //Navigate to Employee Explorer
             retryingFindClickk(".//*[@id='mnuEmployees_Explorer']");
-            Thread.Sleep(1000);
-            BrowserDriver.Instance.Driver.SwitchTo().Frame("CONTENT");
-            BrowserDriver.Instance.Driver.FindElement(By.Id("New")).Click();
-            BrowserDriver.Instance.Driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(2));
-            BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
-            BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-            BrowserDriver.Instance.Driver.SwitchTo().Frame("CONTENT");
+            Thread.Sleep(2000);
+          EmployeeSearch();
+         EmployeeCreation();
+
+           EditEmployee();
+
+        //    DeleteEmployee();
+
+          //  EmployeeCreation();
+
+            CreateInventory();
+
+            ModifyInventory();
+
+            DeleteInventory();
+
+            CreateBudget();
+
+            DeleteEmployee();
+
+            Console.WriteLine("Employee Explorer passed smoke Test Successfully");
+
+        }
+
+        public void EmployeeSearch()
+        {
+            SwitchToContent();
+         //   ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.findElementsByName('firstName').value='Charles'");
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('firstName')[0].value='Charles'");
+
+            BrowserDriver.Instance.Driver.FindElement(By.XPath(Enterp.Default.QuerySubmitB)).Click();
+            Thread.Sleep(3000);
+            SwitchToContent();
+            Assert.IsTrue(IsElementVisible(By.XPath("//div[.='CHARLES']")), "Employee Search failed");
+            Console.WriteLine("Employee Search Successful");
+        }
+
+        public void EmployeeCreation()
+        {
+            SwitchToContent();
+            BrowserDriver.Instance.Driver.FindElement(By.XPath(Enterp.Default.CreateNewB)).Click();
+            Thread.Sleep(3000);
+            SwitchToContent();
             Assert.IsTrue(IsElementVisible(By.Id("tabEmployee")), "Unable to display create new entity details table");
             BrowserDriver.Instance.Driver.SwitchTo().Frame("EMPLOYEE");
-            BrowserDriver.Instance.Driver.FindElement(By.Name("employeeIdentifier")).Clear();
-            System.Random rand = new System.Random((int)System.DateTime.Now.Ticks);
+             System.Random rand = new System.Random((int)System.DateTime.Now.Ticks);
             int random = rand.Next(1, 100000000);
-            BrowserDriver.Instance.Driver.FindElement(By.Name("employeeIdentifier")).SendKeys("SA" + random);
-            BrowserDriver.Instance.Driver.FindElement(By.Name("firstName")).Clear();
-            BrowserDriver.Instance.Driver.FindElement(By.Name("firstName")).SendKeys(TestProperties.Instance.GetPropertyByName(TestProperty.firstName));
-            BrowserDriver.Instance.Driver.FindElement(By.Name("lastName")).Clear();
-            BrowserDriver.Instance.Driver.FindElement(By.Name("lastName")).SendKeys(TestProperties.Instance.GetPropertyByName(TestProperty.lastName));
-            new SelectElement(BrowserDriver.Instance.Driver.FindElement(By.Name("contactTypeId"))).SelectByText("Billing Contact");
-            BrowserDriver.Instance.Driver.FindElement(By.Name("save")).Click();
-            Thread.Sleep(4000);
-            BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
+        //    BrowserDriver.Instance.Driver.FindElement(By.Name("employeeIdentifier")).SendKeys("SA" + random);
 
-            GoToMain("Enterprise");
-            // Navigate to Employee
-            retryingFindClickk(".//*[@id='mnuEnterprise_Employees']");
-            //Navigate to Employee Explorer
-            retryingFindClickk(".//*[@id='mnuEmployees_Explorer']");
-            Thread.Sleep(2000);
-            BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-            BrowserDriver.Instance.Driver.SwitchTo().Frame("CONTENT");
-            BrowserDriver.Instance.Driver.FindElement(By.Name("firstName")).SendKeys(TestProperties.Instance.GetPropertyByName(TestProperty.firstName));
-            BrowserDriver.Instance.Driver.FindElement(By.Name("queryEmployeesButton")).Click();
-            Thread.Sleep(4000);
-            BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
-            BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-            BrowserDriver.Instance.Driver.SwitchTo().Frame("CONTENT");
-            BrowserDriver.Instance.Driver.FindElement(By.XPath("//div[.='Sharath']")).Click();
-            Thread.Sleep(1000);
-            Assert.AreEqual("Annaiah", BrowserDriver.Instance.Driver.FindElement(By.XPath("//div[.='Annaiah']")).Text);
-            Assert.IsTrue(IsElementVisible(By.XPath("//div[.='Annaiah']")), "Employee creation failed");
-            Console.WriteLine("Employee Created Successfully");
-            Thread.Sleep(2000);
+       // ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.findElementsByName('employeeIdentifier').value ='123'");
 
+        ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('employeeIdentifier')[0].value='12345'");
+        
+
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('firstName')[0].value='Bill'");
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('lastName')[0].value='Minnow'");
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('contactTypeId')[0].selectedIndex = 3;");
+            BrowserDriver.Instance.Driver.FindElement(By.XPath(Enterp.Default.SaveB)).Click();
+            Thread.Sleep(7000);
+            SwitchToContent();
+            javascriptClick(By.XPath(Enterp.Default.ResetB));
+
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('employeeIdentifier')[0].value='12345'");
+            BrowserDriver.Instance.Driver.FindElement(By.XPath(Enterp.Default.QuerySubmitB)).Click();
+            Thread.Sleep(2000);
+            SwitchToContent();
+            Assert.IsTrue(IsElementVisible(By.XPath("//div[.='Minnow']")), "Employee Creation failed");
+            Console.WriteLine("Employee Creation Successful");
+
+
+
+
+        }
+
+
+           
+           public void EditEmployee()
+           {
+
+               SwitchToContent();
+               BrowserDriver.Instance.Driver.SwitchTo().Frame("EMPLOYEE");
+               ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('employeeIdentifier')[0].value='567890'");
+               ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('firstName')[0].value='Michael'");
+
+               javascriptClick(By.XPath(Enterp.Default.SaveB));
+               Thread.Sleep(3000);
+            SwitchToContent();
+            javascriptClick(By.XPath(Enterp.Default.ResetB));
+         
+              
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('employeeIdentifier')[0].value='567890'");
+            BrowserDriver.Instance.Driver.FindElement(By.XPath(Enterp.Default.QuerySubmitB)).Click();
+            Thread.Sleep(2000);
+            SwitchToContent();
+         
+            Assert.IsTrue(IsElementVisible(By.XPath("//div[.='567890']")), "Employee Creation failed");
+            Console.WriteLine("Employee Deatils Edited Successfully");
+
+           }
+
+        public void DeleteEmployee()
+        {
+                   
+
+    //    ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) { return true; }");
+            SwitchToContent();
+           
+           ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('employeeIdentifier')[0].value='567890'");
+            BrowserDriver.Instance.Driver.FindElement(By.XPath(Enterp.Default.QuerySubmitB)).Click();
+            Thread.Sleep(2000);
+            SwitchToContent();
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) { return true; }");
+            javascriptClick(By.XPath(Enterp.Default.DeleteB));
+            Thread.Sleep(2000);
+            SwitchToContent();
+            Assert.IsFalse(IsElementVisible(By.XPath("//div[.='Michael']")), "Employee Delation failed");
+            Console.WriteLine("Employee Deletion Successful");
+
+        }
+
+
+        public void CreateInventory()
+        
+        {
             //  //Assigning Inventory
-            //  BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
-            //  BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-            //  BrowserDriver.Instance.Driver.SwitchTo().Frame("CONTENT");
-            //  BrowserDriver.Instance.Driver.FindElement(By.Id("tabInventory")).Click();
-            //  Thread.Sleep(2000);
-            //  BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY");
-            //  BrowserDriver.Instance.Driver.FindElement(By.Id("inventoryAddButton")).Click();
-            //  Thread.Sleep(2000);
-            //  BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
-            //  BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-            //  BrowserDriver.Instance.Driver.SwitchTo().Frame("CMP_DIALOG_FRAME");
 
-            //  BrowserDriver.Instance.Driver.FindElement(By.Id("imgLookupinventoryId")).Click();
-            //  Thread.Sleep(3000);
-            //  BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
-            //  BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-            // // BrowserDriver.Instance.Driver.SwitchTo().Frame("CONTENT");
-            //  BrowserDriver.Instance.Driver.SwitchTo().Frame("CMP_DIALOG_FRAME");
-            //  new SelectElement(BrowserDriver.Instance.Driver.FindElement(By.Id("queryTypeId"))).SelectByText("Other");
-            //  BrowserDriver.Instance.Driver.FindElement(By.Id("queryConferencingInventoryButton")).Click();
-            //  Thread.Sleep(2000);
-            //  BrowserDriver.Instance.Driver.FindElement(By.XPath("//div[.='Verizon']")).Click();
-            //  BrowserDriver.Instance.Driver.FindElement(By.Id("returnButtonIds")).Click();
-            //  Thread.Sleep(2000);
-            ////  BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
-            //  BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-            //  BrowserDriver.Instance.Driver.SwitchTo().Frame("CMP_DIALOG_FRAME");
-            //  BrowserDriver.Instance.Driver.FindElement(By.XPath(".//*[@id='inventoryMaintenanceFormDV']/div/input[1]")).SendKeys(Keys.Enter);
-            //  Thread.Sleep(2000);
-            //  BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
-            //  BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-            //  BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY");
-            //  Assert.IsTrue(IsElementVisible(By.XPath(".//*[@id='inventoryMaintenanceFormDV']/div/input[1]")), "Assigning Invnetory to Employee failed");
-            //  Console.WriteLine("Assigning Inventory to Employee Successful");
-            //  Thread.Sleep(2000);
+            SwitchToContent();
+            Thread.Sleep(2000);
+            retryingFindClick(By.Id("tabInventory"));
+            Thread.Sleep(2000);
+            SwitchToContent();
+            BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY");      
+            javascriptClick(By.XPath(Enterp.Default.AddB));
+            Thread.Sleep(2000);
+            SwitchToPopUps();
+
+            javascriptClick(By.Id("imgLookupinventoryId"));
+            Thread.Sleep(4000);
+           // BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
+            BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
+       //     BrowserDriver.Instance.Driver.SwitchTo().Frame("CMP_DIALOG_FRAME");
+            InventoryLookup();
+         
+           
+            SwitchToPopUps();
+
+
+            javascriptClick(By.XPath("//div[.='Verizon']"));
+            javascriptClick(By.Id("returnButtonIds"));
+            Thread.Sleep(2000);
+            SwitchToPopUps();
+            BrowserDriver.Instance.Driver.FindElement(By.XPath(Enterp.Default.CheckB));
+
+            BrowserDriver.Instance.Driver.FindElement(By.XPath(Enterp.Default.SaveB));
+            Thread.Sleep(3000);
+            SwitchToContent();
+            BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY");
+            javascriptClick(By.XPath("//div[.='Conferencing']"));
+            Assert.IsTrue(IsElementVisible(By.XPath("//div[.='Conferencing']")), "Adding Inventory to employee failed");
+            Console.WriteLine("Inventory Added to employee successfully");
+        }
+            
+           public void ModifyInventory()
+           {
+            SwitchToContent();
+            BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY");
+            javascriptClick(By.XPath("Enterp.Default.ModifyB"));
+               Thread.Sleep(2000);
+            SwitchToPopUps();
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementById('dtControlexpirationDate').value='10/10/2020'");
+            BrowserDriver.Instance.Driver.FindElement(By.XPath(Enterp.Default.SaveB));
+               Thread.Sleep(2000);
+            SwitchToPopUps();
+            BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY");
+            javascriptClick(By.XPath("//div[.='Conferencing']"));
+            Assert.IsTrue(IsElementVisible(By.XPath("//div[.='Conferencing']")), "Modifying Inventory to employee failed");
+            Console.WriteLine("Inventory Modified successfully");
+           
+           }
+
+        public void DeleteInventory()
+    {
+            SwitchToContent();
+            BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY");
+         ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) { return true; }");
+            javascriptClick(By.XPath(Enterp.Default.DeleteB));
+            Thread.Sleep(2000);
+            Assert.IsFalse(IsElementVisible(By.XPath("//div[.='Conferencing']")), "Unable to Delete Inventory ");
+            Console.WriteLine("Inventory Deleted successfully");
+
+        
+    }
+
+            //Assigning Budget
+
+        public void CreateBudget()
+        {
+            SwitchToContent();
+            javascriptClick(By.Id("tabBudget"));
+            Thread.Sleep(2000);
+            SwitchToContent();
+
+            BrowserDriver.Instance.Driver.SwitchTo().Frame("BUDGET");
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('janBudget').value='5'");
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('febBudget').value='10'");
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('marBudget').value='15'");
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('aprBudget').value='20'");
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('mayBudget').value='25'");
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('junBudget').value='30'");
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('julBudget').value='35'");
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('augBudget').value='40'");
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('sepBudget').value='45'");
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('octBudget').value='50'");
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('novBudget').value='55'");
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('decBudget').value='60'");
+
+            javascriptClick(By.XPath(Enterp.Default.SaveB));
+            Thread.Sleep(2000);
+              SwitchToContent();
+
+            BrowserDriver.Instance.Driver.SwitchTo().Frame("BUDGET");
+            Assert.AreEqual("$ 390.00", BrowserDriver.Instance.Driver.FindElement(By.XPath(".//*[@id='amountTotal']")).Text);
+
+    //        Assert.IsTrue(IsElementVisible(By.XPath(".//*[@id='amountTotal']")), "Assigning Budget to Employee failed");
+            Console.WriteLine("Budget Added Successfully");
+
+        }
+
 
             //  //Assigning CostCenter
             //  BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
@@ -109,127 +257,33 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise.E
             //  Assert.IsTrue(IsElementVisible(By.XPath("//div[.='ASC']")), "Assigning CostCenter to Employee failed");
             //  Console.WriteLine("CostCenter Added Successfully");
 
-            //Assigning Budget
-            BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
-            BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-            BrowserDriver.Instance.Driver.SwitchTo().Frame("CONTENT");
-            BrowserDriver.Instance.Driver.FindElement(By.XPath(".//*[@id='tabBudget']")).Click();
+
+        public void DeleteEmployee1()
+        {
+            SwitchToContent();
+
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('employeeIdentifier')[0].value='12345'");
+            BrowserDriver.Instance.Driver.FindElement(By.XPath(Enterp.Default.QuerySubmitB)).Click();
             Thread.Sleep(2000);
-            BrowserDriver.Instance.Driver.SwitchTo().Frame("BUDGET");
-            BrowserDriver.Instance.Driver.FindElement(By.Name("janBudget")).Clear();
-            BrowserDriver.Instance.Driver.FindElement(By.Name("janBudget")).SendKeys("5");
-            BrowserDriver.Instance.Driver.FindElement(By.Name("febBudget")).Clear();
-            BrowserDriver.Instance.Driver.FindElement(By.Name("febBudget")).SendKeys("10");
-            BrowserDriver.Instance.Driver.FindElement(By.Name("marBudget")).Clear();
-            BrowserDriver.Instance.Driver.FindElement(By.Name("marBudget")).SendKeys("15");
-            BrowserDriver.Instance.Driver.FindElement(By.Name("aprBudget")).Clear();
-            BrowserDriver.Instance.Driver.FindElement(By.Name("aprBudget")).SendKeys("20");
-            BrowserDriver.Instance.Driver.FindElement(By.Name("mayBudget")).Clear();
-            BrowserDriver.Instance.Driver.FindElement(By.Name("mayBudget")).SendKeys("25");
-            BrowserDriver.Instance.Driver.FindElement(By.Name("junBudget")).Clear();
-            BrowserDriver.Instance.Driver.FindElement(By.Name("junBudget")).SendKeys("30");
-            BrowserDriver.Instance.Driver.FindElement(By.Name("julBudget")).Clear();
-            BrowserDriver.Instance.Driver.FindElement(By.Name("julBudget")).SendKeys("35");
-            BrowserDriver.Instance.Driver.FindElement(By.Name("augBudget")).Clear();
-            BrowserDriver.Instance.Driver.FindElement(By.Name("augBudget")).SendKeys("40");
-            BrowserDriver.Instance.Driver.FindElement(By.Name("sepBudget")).Clear();
-            BrowserDriver.Instance.Driver.FindElement(By.Name("sepBudget")).SendKeys("45");
-            BrowserDriver.Instance.Driver.FindElement(By.Name("octBudget")).Clear();
-            BrowserDriver.Instance.Driver.FindElement(By.Name("octBudget")).SendKeys("50");
-            BrowserDriver.Instance.Driver.FindElement(By.Name("novBudget")).Clear();
-            BrowserDriver.Instance.Driver.FindElement(By.Name("novBudget")).SendKeys("55");
-            BrowserDriver.Instance.Driver.FindElement(By.Name("decBudget")).Clear();
-            BrowserDriver.Instance.Driver.FindElement(By.Name("decBudget")).SendKeys("60");
-            BrowserDriver.Instance.Driver.FindElement(By.Name("modifyEmployeeBudgetButton")).Click();
+            SwitchToContent();
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) { return true; }");
+            javascriptClick(By.XPath(Enterp.Default.DeleteB));
             Thread.Sleep(2000);
-            BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
-            BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
+            SwitchToContent();
+         //   Assert.IsFalse(IsElementVisible(By.XPath("//div[.='Michael']")), "Employee Delation failed");
+            Console.WriteLine("Employee Deletion Successful");
 
-            BrowserDriver.Instance.Driver.SwitchTo().Frame("CONTENT");
-            BrowserDriver.Instance.Driver.SwitchTo().Frame("BUDGET");
-            Assert.AreEqual("$ 390.00", BrowserDriver.Instance.Driver.FindElement(By.XPath(".//*[@id='amountTotal']")).Text);
-            Assert.IsTrue(IsElementVisible(By.XPath(".//*[@id='amountTotal']")), "Assigning Budget to Employee failed");
-            Console.WriteLine("Budget Added Successfully");
-
-            //Updating Employee Details 
-            BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
-            BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-            BrowserDriver.Instance.Driver.SwitchTo().Frame("CONTENT");
-            BrowserDriver.Instance.Driver.FindElement(By.XPath(".//*[@id='tabEmployee']")).Click();
-            Thread.Sleep(2000);
-            BrowserDriver.Instance.Driver.SwitchTo().Frame("EMPLOYEE");
-            BrowserDriver.Instance.Driver.FindElement(By.Name("firstName")).Clear();
-            BrowserDriver.Instance.Driver.FindElement(By.Name("firstName")).SendKeys("Sharathh");
-            BrowserDriver.Instance.Driver.FindElement(By.Name("save")).Click();
-            Thread.Sleep(2000);
-            BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
-            BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-            BrowserDriver.Instance.Driver.SwitchTo().Frame("CONTENT");
-            BrowserDriver.Instance.Driver.SwitchTo().Frame("EMPLOYEE");
-            Assert.AreEqual("Sharathh", BrowserDriver.Instance.Driver.FindElement(By.XPath("//div[.='Sharathh']")).Text);
-            Assert.IsTrue(IsElementVisible(By.XPath("//div[.='Sharathh']")), "Employee Name modification failed");
-            Console.WriteLine("Updated Employee Details Successfully");
-
-            ////Updating Inventory Details
-            //BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
-            //BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-            //BrowserDriver.Instance.Driver.SwitchTo().Frame("CONTENT");
-            //BrowserDriver.Instance.Driver.FindElement(By.XPath("tabInventory")).Click();
-            //Thread.Sleep(2000);
-            //BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY");
-            //BrowserDriver.Instance.Driver.FindElement(By.XPath(".//*[@id='JColResizer1']/tbody/tr[1]/td[2]/div/nobr/div")).Click();
-            //BrowserDriver.Instance.Driver.FindElement(By.Id("inventoryModifyButton")).Click();
-            //Thread.Sleep(2000);
-            //BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
-            //BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-            //BrowserDriver.Instance.Driver.SwitchTo().Frame("CMP_DIALOG_FRAME");
-            //BrowserDriver.Instance.Driver.FindElement(By.Id("unassignCurrentEmployee")).Click();
-            //BrowserDriver.Instance.Driver.FindElement(By.XPath(".//*[@id='JColResizer1']/tbody/tr[1]/td[2]/div/nobr/div")).SendKeys(Keys.Enter);
-            //Console.WriteLine("Updated Inventory Successfully");
-
-            ////UnAssisgning Inventory from Employee
-            //BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
-            //BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-            //BrowserDriver.Instance.Driver.FindElement(By.XPath("tabInventory")).Click();
-            //Thread.Sleep(2000);
-            //BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY");
-            //BrowserDriver.Instance.Driver.FindElement(By.XPath(".//*[@id='JColResizer1']/tbody/tr[1]/td[2]/div/nobr/div")).Click();
-            //BrowserDriver.Instance.Driver.FindElement(By.Id("inventoryModifyButton")).Click();
-            //Thread.Sleep(2000);
-            //BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
-            //BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-            //BrowserDriver.Instance.Driver.SwitchTo().Frame("CMP_DIALOG_FRAME");
-            //BrowserDriver.Instance.Driver.FindElement(By.Id("unassignCurrentEmployee")).Click();
-            //BrowserDriver.Instance.Driver.FindElement(By.XPath(".//*[@id='JColResizer1']/tbody/tr[1]/td[2]/div/nobr/div")).SendKeys(Keys.Enter);
-            //Thread.Sleep(2000);
-
-            ////Delete Inventory
-            //BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
-            //BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-            //BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY");
-            //BrowserDriver.Instance.Driver.FindElement(By.XPath(".//*[@id='JColResizer1']/tbody/tr[1]/td[2]/div/nobr/div")).Click();
-            //BrowserDriver.Instance.Driver.FindElement(By.Id("invDeleteButton")).Click();
-            //BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-            //BrowserDriver.Instance.Driver.FindElement(By.LinkText("OK")).SendKeys(Keys.Enter);
-            //Console.WriteLine("Deleted Budget Successfully");
-
-            //Updating Budget
-            BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
-            BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-            BrowserDriver.Instance.Driver.SwitchTo().Frame("CONTENT");
-            BrowserDriver.Instance.Driver.FindElement(By.XPath(".//*[@id='tabBudget']")).Click();
-            BrowserDriver.Instance.Driver.SwitchTo().Frame("BUDGET");
-            BrowserDriver.Instance.Driver.FindElement(By.Name("janBudget")).Clear();
-            BrowserDriver.Instance.Driver.FindElement(By.Name("janBudget")).SendKeys("10");
-            BrowserDriver.Instance.Driver.FindElement(By.Name("modifyEmployeeBudgetButton")).Click();
-            Thread.Sleep(2000);
-            BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
-            BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-            BrowserDriver.Instance.Driver.SwitchTo().Frame("CONTENT");
-            BrowserDriver.Instance.Driver.SwitchTo().Frame("BUDGET");
-            Assert.AreEqual("$ 395.00", BrowserDriver.Instance.Driver.FindElement(By.XPath(".//*[@id='amountTotal']")).Text);
-            Assert.IsTrue(IsElementVisible(By.XPath(".//*[@id='amountTotal']")), "Updating Budget to Employee failed");
-            Console.WriteLine("Updated Budget Successful");
         }
+
+
+        public void InventoryLookup()
+        {
+            SwitchToPopUps();
+            Thread.Sleep(2000);
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementById('queryTypeId').selectedIndex = 2;");
+            BrowserDriver.Instance.Driver.FindElement(By.XPath(Enterp.Default.QuerySubmitB));
+            Thread.Sleep(3000);
+        }
+        
     }
 }

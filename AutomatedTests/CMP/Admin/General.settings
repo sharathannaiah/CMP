@@ -1,0 +1,33 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="AutomatedTests.CMP.Admin" GeneratedClassName="General">
+  <Profiles />
+  <Settings>
+    <Setting Name="NewB" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//input[@value='New']</Value>
+    </Setting>
+    <Setting Name="SaveB" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//input[@value='Save']</Value>
+    </Setting>
+    <Setting Name="RemoveB" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//input[@value='Remove']</Value>
+    </Setting>
+    <Setting Name="SubmitB" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//input[@value='Submit']</Value>
+    </Setting>
+    <Setting Name="DeleteB" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//input[@value='Delete']</Value>
+    </Setting>
+    <Setting Name="CopyB" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//input[@value='Copy']</Value>
+    </Setting>
+    <Setting Name="CloseB" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//input[@value='Close']</Value>
+    </Setting>
+    <Setting Name="AddB" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//input[@value='Add']</Value>
+    </Setting>
+    <Setting Name="OKB" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//input[@value='OK']</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

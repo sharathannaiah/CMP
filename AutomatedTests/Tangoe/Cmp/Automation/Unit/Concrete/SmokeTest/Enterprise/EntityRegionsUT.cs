@@ -34,7 +34,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Enterpris
         {
             ExecuteTest(() =>
             {
-                entityRegions.EntityRegion();
+                entityRegions.EntityRegionFunctionality();
 
             }
             );

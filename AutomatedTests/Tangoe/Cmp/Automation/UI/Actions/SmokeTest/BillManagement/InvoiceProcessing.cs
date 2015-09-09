@@ -14,5 +14,16 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.BillManageme
     class InvoiceProcessing : BaseActions
     {
 
+        public void invoiceprocessing()
+        {
+            BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
+            GoToMain("Bill Management");
+            retryingFindClickk(".//*[@id='mnuBilling_Invoice_Processing']");
+            WaitForElementOnNextPage(By.Id("pageTitle"), "Navigation to Invoice Processing Failed");
+            SwitchToContent();
+            BrowserDriver.Instance.Driver.FindElement(By.Id("newButton")).Click();
+
+        }
+
     }
 }

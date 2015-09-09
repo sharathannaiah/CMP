@@ -7,57 +7,107 @@ using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Threading;
-
+using AutomatedTests.CMP.Contracts;
 namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Contracts
 {
     class ContractsExplorer :BaseActions
     {
-        public void Contract()
+        public void ContractSmokeFunctionality()
         {
-            BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-            BrowserDriver.Instance.Driver.FindElement(By.XPath(".//*[@id='menuMainContracts']")).Click();
-            retryingFindClickk(".//*[@id='mnuContracts_Explorer27']");
-            Thread.Sleep(4000);
-            BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-            BrowserDriver.Instance.Driver.SwitchTo().Frame("CONTENT");
-            BrowserDriver.Instance.Driver.FindElement(By.Id("new")).Click();
-            BrowserDriver.Instance.Driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(2));
-            BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
-            BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-            BrowserDriver.Instance.Driver.SwitchTo().Frame("CMP_DIALOG_FRAME");
-            new SelectElement(BrowserDriver.Instance.Driver.FindElement(By.Name("carrierId"))).SelectByText("AT&T");
-            BrowserDriver.Instance.Driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(2));
-            new SelectElement(BrowserDriver.Instance.Driver.FindElement(By.Name("contractTypeId"))).SelectByText("Addendum");
-            new SelectElement(BrowserDriver.Instance.Driver.FindElement(By.Name("parentContractId"))).SelectByText("LEC");
-            BrowserDriver.Instance.Driver.FindElement(By.Name("contractNumber")).SendKeys("123");
-            BrowserDriver.Instance.Driver.FindElement(By.ClassName("btnCMP")).SendKeys(Keys.Enter);
-            Thread.Sleep(3000);
-            BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
-            BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-            BrowserDriver.Instance.Driver.SwitchTo().Frame("CONTENT");
-            BrowserDriver.Instance.Driver.SwitchTo().Frame("contractForm");
-            Assert.AreEqual("123", BrowserDriver.Instance.Driver.FindElement(By.XPath("//div[.='123']")).Text);
-            Assert.IsTrue(IsElementVisible(By.XPath("//div[.='123']")), "Contract Creation failed");
+            GoToMain1("Contracts", "Explorer");
+         //   ContractSearch();
+         //   CreateContract();
+         //   CopyContract();
+            DeleteContract();
 
-            BrowserDriver.Instance.Driver.FindElement(By.LinkText("Contract List")).Click();
-            BrowserDriver.Instance.Driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(2));
-            BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
-            BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-            BrowserDriver.Instance.Driver.SwitchTo().Frame("CONTENT");
-            BrowserDriver.Instance.Driver.FindElement(By.Name("carrierContractNumber")).Clear();
-            BrowserDriver.Instance.Driver.FindElement(By.Name("carrierContractNumber")).SendKeys("123");
-            BrowserDriver.Instance.Driver.FindElement(By.Name("queryContractsbutton")).Click();
-            BrowserDriver.Instance.Driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(2));
-            BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
-            BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-            BrowserDriver.Instance.Driver.SwitchTo().Frame("CONTENT");
-            Assert.AreEqual("AT&T", BrowserDriver.Instance.Driver.FindElement(By.XPath("//div[.=AT&T]")).Text);
-            Console.WriteLine("Contract Added Successfully");
-            BrowserDriver.Instance.Driver.FindElement(By.Id("delete")).Click();
-            BrowserDriver.Instance.Driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(2));
-            IAlert alert = BrowserDriver.Instance.Driver.SwitchTo().Alert();
-            alert.Accept();
-            Console.WriteLine("Contract deleted successfully");
+        }
+
+
+        public void ContractSearch()
+        {
+            SwitchToContent();
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('carrierId')[0].value='AT&T'");
+            javascriptClick(By.XPath(Contra.Default.QuerySubmitB));
+            Thread.Sleep(4000);
+            SwitchToContent();
+            Assert.IsTrue(IsElementVisible(By.XPath("//div[.='AT&T']")), "Contract Search failed"); 
+            Console.WriteLine("Contract Search Successful");
+        }
+
+            public void CreateContract()
+            {
+                SwitchToContent();
+                BrowserDriver.Instance.Driver.FindElement(By.XPath(Contra.Default.CreateNewB)).Click();
+                Thread.Sleep(3000);
+                SwitchToPopUps();
+                ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('carrierId')[0].selectedIndex = 6;");
+                ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('contractTypeId')[0].selectedIndex = 2;");
+                ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('contractNumber')[0].value='12345'");
+                javascriptClick(By.XPath(Contra.Default.OKB));
+                Thread.Sleep(5000);
+                SwitchToContent();
+               // BrowserDriver.Instance.Driver.SwitchTo().Frame("CONTRACT_DETAIL");
+                
+         //       Assert.AreEqual("12345", BrowserDriver.Instance.Driver.FindElement(By.Name("contractNumber")).Text);
+                //Assert.IsTrue(IsElementVisible(By.Id("contractNumber']")), "Contract Creation failed");
+                BrowserDriver.Instance.Driver.FindElement(By.LinkText("< Contract List")).Click();
+                Thread.Sleep(2000);
+                
+                SwitchToContent();
+                ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('carrierContractNumber')[0].value='12345'");
+                javascriptClick(By.XPath(Contra.Default.QuerySubmitB));
+                SwitchToContent();
+                Assert.IsTrue(IsElementVisible(By.XPath("//div[.='12345']")), "Contract Search failed");
+                Console.WriteLine("Contract Created successfully"); 
+
+            }
+
+            public void CopyContract()
+            {
+                SwitchToContent();
+                javascriptClick(By.XPath("//div[.='12345']"));
+                Thread.Sleep(1000);
+                BrowserDriver.Instance.Driver.FindElement(By.XPath(Contra.Default.CopyB)).Click();
+                Thread.Sleep(2000);
+                SwitchToPopUps();
+                ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementById('nameField').value='NewContract'");
+                ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementById('contractNumber').value='567890'");
+                javascriptClick(By.Name("contractCopyAddendumsFlag"));
+                javascriptClick(By.XPath(Contra.Default.OKB));
+                Thread.Sleep(3000);
+                SwitchToContent();
+                BrowserDriver.Instance.Driver.FindElement(By.LinkText("< Contract List")).Click();
+                Thread.Sleep(2000);
+
+                SwitchToContent();
+                ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('carrierContractNumber')[0].value='567890'");
+                javascriptClick(By.XPath(Contra.Default.QuerySubmitB));
+                SwitchToContent();
+                Assert.IsTrue(IsElementVisible(By.XPath("//div[.='567890']")), "Copy Contract failed");
+                Console.WriteLine("Contract Copied successfully"); 
+
+            }
+
+
+        public void DeleteContract()
+        {
+            SwitchToContent();
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('carrierContractNumber')[0].value='567890'");
+            javascriptClick(By.XPath(Contra.Default.QuerySubmitB));
+            Thread.Sleep(2000);
+            SwitchToContent();
+
+            javascriptClick(By.XPath("//div[.='567890']"));
+           
+            Thread.Sleep(5000);
+            SwitchToContent();
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.prompt = function(msg) { return true; };");
+
+            javascriptClick(By.XPath(Contra.Default.DeleteB));
+
+            Assert.IsFalse(IsElementVisible(By.XPath("//div[.='567890']")), "Deletion of Contract failed");
+            Console.WriteLine("Contract Deleted successfully");
+
 
         }
     }

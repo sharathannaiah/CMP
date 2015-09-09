@@ -22,6 +22,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Provisioning
             //[selectFrame | CONTENT | ]]
             BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
             BrowserDriver.Instance.Driver.SwitchTo().Frame("CONTENT");
+           
             //      BrowserDriver.Instance.Driver.SwitchTo().Frame("menuFrame");
             BrowserDriver.Instance.Driver.SwitchTo().Frame("createFrame");
             BrowserDriver.Instance.Driver.FindElement(By.LinkText("Key System")).Click();

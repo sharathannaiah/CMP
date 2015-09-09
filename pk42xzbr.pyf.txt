@@ -1,0 +1,79 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#	modified:   AutomatedTests/AutomatedTests.config
+#	modified:   AutomatedTests/AutomatedTests.csproj
+#	modified:   AutomatedTests/AutomatedTests.v11.suo
+#	new file:   AutomatedTests/CMP/Admin/General.Designer.cs
+#	new file:   AutomatedTests/CMP/Admin/General.settings
+#	new file:   AutomatedTests/CMP/Company/com.Designer.cs
+#	new file:   AutomatedTests/CMP/Company/com.settings
+#	new file:   AutomatedTests/CMP/Contracts/Contra.Designer.cs
+#	new file:   AutomatedTests/CMP/Contracts/Contra.settings
+#	new file:   AutomatedTests/CMP/Enterprise/Enterp.Designer.cs
+#	new file:   AutomatedTests/CMP/Enterprise/Enterp.settings
+#	new file:   AutomatedTests/CMP/Inventory/Inven.Designer.cs
+#	new file:   AutomatedTests/CMP/Inventory/Inven.settings
+#	modified:   AutomatedTests/Tangoe/Cmp/Automation/UI/Abstract/BaseActions.cs
+#	new file:   AutomatedTests/Tangoe/Cmp/Automation/UI/Actions/SmokeTest/Admin/Contracts/ContractTerms.cs
+#	new file:   AutomatedTests/Tangoe/Cmp/Automation/UI/Actions/SmokeTest/Admin/Contracts/RateQualifiers.cs
+#	new file:   AutomatedTests/Tangoe/Cmp/Automation/UI/Actions/SmokeTest/Admin/Contracts/RateRegions.cs
+#	new file:   AutomatedTests/Tangoe/Cmp/Automation/UI/Actions/SmokeTest/Admin/Inventory/Catalog.cs
+#	new file:   AutomatedTests/Tangoe/Cmp/Automation/UI/Actions/SmokeTest/Admin/Inventory/Features.cs
+#	new file:   AutomatedTests/Tangoe/Cmp/Automation/UI/Actions/SmokeTest/Admin/Inventory/NetworkApplications.cs
+#	new file:   AutomatedTests/Tangoe/Cmp/Automation/UI/Actions/SmokeTest/Admin/Inventory/ProductSpeed.cs
+#	new file:   AutomatedTests/Tangoe/Cmp/Automation/UI/Actions/SmokeTest/Admin/Miscellaneous/Company.cs
+#	new file:   AutomatedTests/Tangoe/Cmp/Automation/UI/Actions/SmokeTest/Admin/Miscellaneous/Contacts.cs
+#	new file:   AutomatedTests/Tangoe/Cmp/Automation/UI/Actions/SmokeTest/BillManagement/CreditManagement.cs
+#	modified:   AutomatedTests/Tangoe/Cmp/Automation/UI/Actions/SmokeTest/BillManagement/InvoiceProcessing.cs
+#	modified:   AutomatedTests/Tangoe/Cmp/Automation/UI/Actions/SmokeTest/Contracts/ContractsExplorer.cs
+#	modified:   AutomatedTests/Tangoe/Cmp/Automation/UI/Actions/SmokeTest/Enterprise/Employee/EmployeeExplorer.cs
+#	new file:   AutomatedTests/Tangoe/Cmp/Automation/UI/Actions/SmokeTest/Enterprise/Employee/SupportTicket.cs
+#	modified:   AutomatedTests/Tangoe/Cmp/Automation/UI/Actions/SmokeTest/Enterprise/EnterpriseExplorer.cs
+#	modified:   AutomatedTests/Tangoe/Cmp/Automation/UI/Actions/SmokeTest/Enterprise/EntityRegions.cs
+#	modified:   AutomatedTests/Tangoe/Cmp/Automation/UI/Actions/SmokeTest/Enterprise/EntityTypes.cs
+#	modified:   AutomatedTests/Tangoe/Cmp/Automation/UI/Actions/SmokeTest/Inventory/InventoryDiscovery.cs
+#	modified:   AutomatedTests/Tangoe/Cmp/Automation/UI/Actions/SmokeTest/Inventory/InventoryExplorer.cs
+#	modified:   AutomatedTests/Tangoe/Cmp/Automation/UI/Actions/SmokeTest/Navigation/CompleteNavigation.cs
+#	modified:   AutomatedTests/Tangoe/Cmp/Automation/UI/Actions/SmokeTest/Provisioning/CreateRequest.cs
+#	modified:   AutomatedTests/Tangoe/Cmp/Automation/UI/Driver/Selenium/BrowserDriver.cs
+#	new file:   AutomatedTests/Tangoe/Cmp/Automation/Unit/Concrete/SmokeTest/Admin/Contracts/RateQualifiersUT.cs
+#	new file:   AutomatedTests/Tangoe/Cmp/Automation/Unit/Concrete/SmokeTest/Admin/Contracts/RateRegionsUT.cs
+#	new file:   AutomatedTests/Tangoe/Cmp/Automation/Unit/Concrete/SmokeTest/Admin/Inventory/CatalogUT.cs
+#	new file:   AutomatedTests/Tangoe/Cmp/Automation/Unit/Concrete/SmokeTest/Admin/Inventory/FeaturesUT.cs
+#	new file:   AutomatedTests/Tangoe/Cmp/Automation/Unit/Concrete/SmokeTest/Admin/Inventory/NetworkApplicationUT.cs
+#	new file:   AutomatedTests/Tangoe/Cmp/Automation/Unit/Concrete/SmokeTest/Admin/Inventory/ProductSpeedUT.cs
+#	new file:   AutomatedTests/Tangoe/Cmp/Automation/Unit/Concrete/SmokeTest/Admin/Miscellaneous/CompanyUT.cs
+#	new file:   AutomatedTests/Tangoe/Cmp/Automation/Unit/Concrete/SmokeTest/Admin/Miscellaneous/ContactsUT.cs
+#	new file:   AutomatedTests/Tangoe/Cmp/Automation/Unit/Concrete/SmokeTest/BillManagement/InvoiceProcessingUT.cs
+#	modified:   AutomatedTests/Tangoe/Cmp/Automation/Unit/Concrete/SmokeTest/Contracts/ContractExplorerUT.cs
+#	modified:   AutomatedTests/Tangoe/Cmp/Automation/Unit/Concrete/SmokeTest/Enterprise/Employee/EmployeeExplorerUT.cs
+#	new file:   AutomatedTests/Tangoe/Cmp/Automation/Unit/Concrete/SmokeTest/Enterprise/Employee/SupportTicketUT.cs
+#	modified:   AutomatedTests/Tangoe/Cmp/Automation/Unit/Concrete/SmokeTest/Enterprise/EnterpriseExplorerUT.cs
+#	modified:   AutomatedTests/Tangoe/Cmp/Automation/Unit/Concrete/SmokeTest/Enterprise/EntityRegionsUT.cs
+#	modified:   AutomatedTests/Tangoe/Cmp/Automation/Unit/Concrete/SmokeTest/Enterprise/EntityTypesUT.cs
+#	modified:   AutomatedTests/Tangoe/Cmp/Automation/Unit/Concrete/SmokeTest/Inventory/InventoryDiscoveryUT.cs
+#	modified:   AutomatedTests/Tangoe/Cmp/Automation/Unit/Concrete/SmokeTest/Inventory/InventoryExplorerUT.cs
+#	new file:   AutomatedTests/app.config
+#	modified:   AutomatedTests/bin/Debug/AutomatedTests.VisualState.xml
+#	modified:   AutomatedTests/bin/Debug/AutomatedTests.config
+#	modified:   AutomatedTests/bin/Debug/AutomatedTests.dll
+#	modified:   AutomatedTests/bin/Debug/AutomatedTests.dll.VisualState.xml
+#	new file:   AutomatedTests/bin/Debug/AutomatedTests.dll.config
+#	modified:   AutomatedTests/bin/Debug/AutomatedTests.nunit
+#	modified:   AutomatedTests/bin/Debug/AutomatedTests.pdb
+#	modified:   AutomatedTests/bin/Debug/TestResult.xml
+#	new file:   AutomatedTests/nunit.framework.VisualState.xml
+#	new file:   AutomatedTests/nunit.framework.dll.VisualState.xml
+#	new file:   AutomatedTests/nunit.framework.nunit
+#	modified:   AutomatedTests/obj/Debug/AutomatedTests.csproj.FileListAbsolute.txt
+#	modified:   AutomatedTests/obj/Debug/AutomatedTests.dll
+#	modified:   AutomatedTests/obj/Debug/AutomatedTests.pdb
+#	new file:   AutomatedTests/obj/Debug/DesignTimeResolveAssemblyReferences.cache
+#	modified:   AutomatedTests/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+#
+

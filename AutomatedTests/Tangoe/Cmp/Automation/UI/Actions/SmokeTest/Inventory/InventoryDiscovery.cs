@@ -8,63 +8,71 @@ using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Threading;
-
+using AutomatedTests.CMP.Inventory;
 
 namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Inventory
 {
     class InventoryDiscovery :BaseActions
     {
-       public void InventoryDiscoveryy()
+       public void InventoryDiscoveryFunctionality()
             {
-                GoToMain("Inventory");
-                retryingFindClickk(".//*[@id='mnuInventory_DiscoverInventory']");
-                Thread.Sleep(2000);
-                BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
-                BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-                BrowserDriver.Instance.Driver.SwitchTo().Frame("CONTENT");
-                // ERROR: Caught exception [ERROR: Unsupported command [selectFrame | CONTENT | ]]
-                new SelectElement(BrowserDriver.Instance.Driver.FindElement(By.Name("inventoryType"))).SelectByText("Phone Numbers");
-                Thread.Sleep(2000);
-                BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
-                BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-                BrowserDriver.Instance.Driver.SwitchTo().Frame("CONTENT");
-                BrowserDriver.Instance.Driver.SwitchTo().Frame("INV_QUERY_FRAME");
-                BrowserDriver.Instance.Driver.FindElement(By.Name("queryLinesbutton")).Click();
-                Thread.Sleep(3000);
 
-                
-                BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
-                BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-                BrowserDriver.Instance.Driver.SwitchTo().Frame("CONTENT");
-                BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER");
-                BrowserDriver.Instance.Driver.FindElement(By.CssSelector("input.multiSelectRow")).Click();
-                Thread.Sleep(2000);
-                BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
-                BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-                BrowserDriver.Instance.Driver.SwitchTo().Frame("CONTENT");
-                BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER");
-                BrowserDriver.Instance.Driver.FindElement(By.Id("acceptButton")).Click();
-                Thread.Sleep(3000);
+                GoToMain1("Inventory", "Inventory Discovery");
+       }
 
-                BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
-                BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-                BrowserDriver.Instance.Driver.SwitchTo().Frame("CMP_DIALOG_FRAME");
-                BrowserDriver.Instance.Driver.FindElement(By.Id("nextButton")).Click();
-                Thread.Sleep(2000);
-                new SelectElement(BrowserDriver.Instance.Driver.FindElement(By.Name("flexibleMappingSource"))).SelectByText("Account");
-                new SelectElement(BrowserDriver.Instance.Driver.FindElement(By.XPath("(//select[@name='flexibleMappingSource'])[2]"))).SelectByText("Account");
-                new SelectElement(BrowserDriver.Instance.Driver.FindElement(By.XPath("(//select[@name='flexibleMappingSource'])[3]"))).SelectByText("Account");
-                BrowserDriver.Instance.Driver.FindElement(By.Id("nextButton")).Click();
-                Thread.Sleep(2000);
-                BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
-                BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-                BrowserDriver.Instance.Driver.SwitchTo().Frame("CMP_DIALOG_FRAME");
-                Assert.AreEqual("Accepted LINE", BrowserDriver.Instance.Driver.FindElement(By.Id("dWnd1title")).Text);
-                Console.WriteLine("Inventory Accepted Successfully");
-                BrowserDriver.Instance.Driver.FindElement(By.Id("closeButton")).Click();
-                Thread.Sleep(2000);
-                Console.WriteLine("Inventory Discovery passed successfully");
+
+        public void AcceptInventory()
+        {
+            //[selectFrame | CONTENT | ]]
+            SwitchToContent();
+            SelectfromDropdown("inventoryType", "1");
+            Thread.Sleep(2000);
+            SwitchToContent();
+            BrowserDriver.Instance.Driver.SwitchTo().Frame("INV_QUERY_FRAME");
+            BrowserDriver.Instance.Driver.FindElement(By.XPath(Inven.Default.QSubmitB)).Click();
+            Thread.Sleep(5000);
+            SwitchToContent();
+            BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER");
+            javascriptClick(By.CssSelector("input.multiSelectRow"));
+            BrowserDriver.Instance.Driver.FindElement(By.XPath(Inven.Default.AcceptB)).Click();
+            Thread.Sleep(3000);
+            SwitchToPopUps();
+            javascriptClick(By.Id("nextButton"));
+            Thread.Sleep(2000);
+         //   SelectfromDropdown("flexibleMappingSource", "1");
+            //((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('flexibleMappingSource')[1].selectedIndex='1';");
+            //((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('flexibleMappingSource')[2].selectedIndex='1';");
+            //((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('flexibleMappingSource')[3].selectedIndex='1';");
+            javascriptClick(By.XPath(Inven.Default.DoneB));
+            Thread.Sleep(7000);
+            SwitchToPopUps();
+            Assert.AreEqual("Accepted LINE", BrowserDriver.Instance.Driver.FindElement(By.Id("dWnd1title")).Text);
+            BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER");
+            BrowserDriver.Instance.Driver.SwitchTo().Frame("LINE_GENERAL");
+           // BrowserDriver.Instance.Driver.FindElement(By.XPath("//input[@Name='phoneNumber']")).Clear();
+           // typeDataName("phoneNumber", "7777777777");
+            javascriptClick(By.XPath(Inven.Default.SaveB));
+            Thread.Sleep(2000);
+            javascriptClick(By.XPath(Inven.Default.CloseB));
+            Thread.Sleep(4000);
+        
+            
+            //   BrowserDriver.Instance.Driver.FindElement(By.Name("phoneNumber")).GetAttribute("ng-change");
+         
+            
+            //navigate to inventory explorer and search for the accepted inventory 
+
+
+            Console.WriteLine("Inventory Accepted Successfully");
+            Thread.Sleep(2000);
+            Console.WriteLine("Inventory Discovery passed successfully");
             }
 
+
+        public void IgnoreInventory()
+        {
+            SwitchToContent();
+
+        }
     }
 }

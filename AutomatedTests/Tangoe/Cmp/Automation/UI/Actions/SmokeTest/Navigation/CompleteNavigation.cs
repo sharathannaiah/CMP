@@ -14,69 +14,68 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Navigation
     {
         public void Navigation()
         {
-            // Call Base action class to navigate to enterprise menu
-            GoToMain("Enterprise");
-            // Navigate to Enterprise--> Explorer page
-            retryingFindClickk(".//*[@id='mnuEnterprise_Explorer2']");
-            Thread.Sleep(2000);
-            WaitForElementOnNextPage(By.Id("pageTitle"), "Navigation to Enterprise Explorer Failed");
-            BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-            BrowserDriver.Instance.Driver.SwitchTo().Frame("CONTENT");
-            Assert.AreEqual("Entity Query Criteria", BrowserDriver.Instance.Driver.FindElement(By.ClassName("bbHeaderText")).Text);
-            Assert.IsTrue(IsElementVisible(By.ClassName("bbHeaderText")), "Navigation to Enterprise--> Explorer page failed");
-            BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
+        //    // Call Base action class to navigate to enterprise menu
+        //    GoToMain("Enterprise");
+        //    // Navigate to Enterprise--> Explorer page
+        //    retryingFindClickk(".//*[@id='mnuEnterprise_Explorer2']");
+        //  //  Thread.Sleep(2000);
+        //    WaitForElementOnNextPage(By.Id("pageTitle"), "Navigation to Enterprise Explorer Failed");
+        //    BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
+        //    BrowserDriver.Instance.Driver.SwitchTo().Frame("CONTENT");
+        //    Assert.AreEqual("Entity Query Criteria", BrowserDriver.Instance.Driver.FindElement(By.ClassName("bbHeaderText")).Text);
+        //    Assert.IsTrue(IsElementVisible(By.ClassName("bbHeaderText")), "Navigation to Enterprise--> Explorer page failed");
+        //    BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
 
-            //Navigate to Employee --> Explorer
-            GoToMain("Enterprise");
-            BrowserDriver.Instance.Driver.FindElement(By.Id("menuMainEnterprise")).Click();
-            // Navigate to Employee
-            retryingFindClickk(".//*[@id='mnuEnterprise_Employees']");
-            //Navigate to Employee Explorer
-            retryingFindClickk(".//*[@id='mnuEmployees_Explorer']");
-            Thread.Sleep(1000);
-            WaitForElementOnNextPage(By.Id("pageTitle"), "Navigation to Enterprise Explorer Failed");
-            BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-            BrowserDriver.Instance.Driver.SwitchTo().Frame("CONTENT");
-            Assert.AreEqual("Employee Management", BrowserDriver.Instance.Driver.FindElement(By.ClassName("bbHeaderText")).Text);
-            Assert.IsTrue(IsElementVisible(By.ClassName("bbHeaderText")), "Navigation to Enterprise--> Employee --> Explorer page failed");
-            BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
-            Thread.Sleep(2000);
+        //    //Navigate to Employee --> Explorer
+        //    GoToMain("Enterprise");
+        //    BrowserDriver.Instance.Driver.FindElement(By.Id("menuMainEnterprise")).Click();
+        //    // Navigate to Employee
+        //    retryingFindClickk(".//*[@id='mnuEnterprise_Employees']");
+        //    //Navigate to Employee Explorer
+        //    retryingFindClickk(".//*[@id='mnuEmployees_Explorer']");       
+        //    WaitForElementOnNextPage(By.Id("pageTitle"), "Navigation to Employee Explorer Failed");
+        //    BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
+        //    BrowserDriver.Instance.Driver.SwitchTo().Frame("CONTENT");
+        //    Assert.AreEqual("Employee Management", BrowserDriver.Instance.Driver.FindElement(By.ClassName("bbHeaderText")).Text);
+        //    Assert.IsTrue(IsElementVisible(By.ClassName("bbHeaderText")), "Navigation to Enterprise--> Employee --> Explorer page failed");
+        //    BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
+        //    Thread.Sleep(2000);
 
-            //Navigate to employee --> Support Ticket
-            BrowserDriver.Instance.Driver.FindElement(By.Id("menuMainEnterprise")).Click();
-            retryingFindClickk(".//*[@id='mnuEnterprise_Employees']");
-            retryingFindClickk(".//*[@id='mnuEmployees_HelpDeskTickets']");
-            Thread.Sleep(1000);
-            WaitForElementOnNextPage(By.Id("pageTitle"), "Navigation to Enterprise Explorer Failed");
-            BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-            BrowserDriver.Instance.Driver.SwitchTo().Frame("CONTENT");
-            BrowserDriver.Instance.Driver.SwitchTo().Frame("HELPDESKTICKETS");
-            Assert.AreEqual("Help Desk Support Tickets", BrowserDriver.Instance.Driver.FindElement(By.ClassName("bbHeaderText")).Text);
-            Assert.IsTrue(IsElementVisible(By.ClassName("bbHeaderText")), "Navigation to Enterprise--> employee --> Support Ticket page failed");
-            BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
-            Thread.Sleep(2000);
+        //    //Navigate to employee --> Support Ticket
+        //    BrowserDriver.Instance.Driver.FindElement(By.Id("menuMainEnterprise")).Click();
+        //    retryingFindClickk(".//*[@id='mnuEnterprise_Employees']");
+        //    retryingFindClickk(".//*[@id='mnuEmployees_HelpDeskTickets']");
+        ////    Thread.Sleep(1000);
+        //    WaitForElementOnNextPage(By.Id("pageTitle"), "Navigation to Support ticket Failed");
+        //    BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
+        //    BrowserDriver.Instance.Driver.SwitchTo().Frame("CONTENT");
+        //    BrowserDriver.Instance.Driver.SwitchTo().Frame("HELPDESKTICKETS");
+        //    Assert.AreEqual("Help Desk Support Tickets", BrowserDriver.Instance.Driver.FindElement(By.ClassName("bbHeaderText")).Text);
+        //    Assert.IsTrue(IsElementVisible(By.ClassName("bbHeaderText")), "Navigation to Enterprise--> employee --> Support Ticket page failed");
+        //    BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
+          //  Thread.Sleep(2000);
+
 
             //Navigate to types Tab
             BrowserDriver.Instance.Driver.FindElement(By.Id("menuMainEnterprise")).Click();
             //Navigate to Types
             retryingFindClickk(".//*[@id='mnuEnterprise_Types']");
             Thread.Sleep(1000);
-            BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-            BrowserDriver.Instance.Driver.SwitchTo().Frame("CMP_DIALOG_FRAME");
+            SwitchToPopUps();
             BrowserDriver.Instance.Driver.SwitchTo().Frame("POPUP_CONTENT");
             Assert.AreEqual("Modify Entity Types", BrowserDriver.Instance.Driver.FindElement(By.CssSelector("legend")).Text);
             Assert.IsTrue(IsElementVisible(By.CssSelector("legend")), "Navigation to Enterprise-->Types Failed");
-            BrowserDriver.Instance.Driver.FindElement(By.XPath(".//*[@id='ModifyEntityTypeForm']/input[3]")).SendKeys(Keys.Enter);
+            BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
+            BrowserDriver.Instance.Driver.FindElement(By.XPath(".//*[@id='dWnd1']/table/tbody/tr[1]/td[4]/img")).Click();
+            // BrowserDriver.Instance.Driver.FindElement(By.XPath(".//*[@id='ModifyEntityTypeForm']/input[3]")).SendKeys(Keys.Enter);
             BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
             Thread.Sleep(2000);
-
+          
             //Navigate to Regions
-            BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-            BrowserDriver.Instance.Driver.FindElement(By.Id("menuMainEnterprise")).Click();
+            GoToMain("Enterprise");
             retryingFindClickk(".//*[@id='mnuEnterprise_Region']");
             Thread.Sleep(1000);
-            BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-            BrowserDriver.Instance.Driver.SwitchTo().Frame("CMP_DIALOG_FRAME");
+            SwitchToPopUps();
             Assert.AreEqual("Enterprise Region Parameters", BrowserDriver.Instance.Driver.FindElement(By.CssSelector("legend")).Text);
             BrowserDriver.Instance.Driver.FindElement(By.Id("closeButton")).SendKeys(Keys.Enter);
             // Assert.IsTrue(IsElementVisible(By.Id("dWnd1title")), "Navigation to Enterprise-->Regions Failed");
@@ -84,6 +83,8 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Navigation
             BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
             Console.Write("Navigation to Enterprise Module Successful\n");
             Thread.Sleep(1000);
+
+            
 
 
 

@@ -11,6 +11,7 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.Threading;
+using AutomatedTests.CMP.Inventory;
 
 namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Abstract
 {
@@ -453,6 +454,18 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Abstract
             IWebElement element = (IWebElement)((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript(menu + method + webpage + ", type: " + type + "})");
         }
 
+
+        public void SelectChildPopupRecordWithoutQuerying()
+        {
+            SwitchToPopUps();
+            javascriptClick(By.XPath(Inven.Default.QSubmitB));
+            Thread.Sleep(3000);
+            SwitchToPopUps();
+            javascriptClick(By.XPath(Inven.Default.OKB));
+            Thread.Sleep(3000);
+
+
+        }
         //////////////////////////////////////////////CMP General Main Menu Navigation//////////////////////////////////////////////
 
         #region IE11 navigation
@@ -488,6 +501,30 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Abstract
 
         }
 
+        public void GoToMain1(string mainmenu, string submenu1)
+        {
+            Thread.Sleep(1000);
+            BrowserDriver.Instance.Driver.FindElement(By.XPath("//a[normalize-space()='" + mainmenu + "']")).Click();
+            BrowserDriver.Instance.Driver.FindElement(By.XPath("//td[normalize-space()='" + submenu1 + "']")).Click();
+            Thread.Sleep(2000);
+        }
+
+        public void GoToMain2(string mainmenu, string submenu, string submenu1)
+        {
+            Thread.Sleep(1000);
+            //Actions builder = new Actions(BrowserDriver.Instance.Driver);
+            //IWebElement menuLink = BrowserDriver.Instance.Driver.FindElement(By.XPath("//a[normalize-space()='" + mainmenu + "']"));
+            BrowserDriver.Instance.Driver.FindElement(By.XPath("//a[normalize-space()='" + mainmenu + "']")).Click();
+            BrowserDriver.Instance.Driver.FindElement(By.XPath("//a[normalize-space()='" + submenu + "']")).Click();
+            BrowserDriver.Instance.Driver.FindElement(By.XPath("//a[normalize-space()='" + submenu1 + "']")).Click();
+
+            //  BrowserDriver.Instance.Driver.FindElement(By.XPath(".//*[@id='menuMainEnterprise']"));
+
+            //builder.MoveToElement(menuLink).Click().Build().Perform();
+
+
+        }
+
 
         public void SwitchToContent()
         {
@@ -503,6 +540,12 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Abstract
             BrowserDriver.Instance.Driver.SwitchTo().Frame("CMP_DIALOG_FRAME");
         }
         #endregion
+
+
+        public void SendText(String Type, String Path)
+        { 
+                    
+        }
         #endregion
 
         #region Common Authentication Methods
@@ -519,26 +562,91 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Abstract
             BrowserDriver.Instance.Driver.Navigate().GoToUrl("javascript:document.getElementById('overridelink').click()");
             //BrowserDriver.Instance.Driver.FindElement(By.Id("overridelink")).Click();
             WaitForElementToVisible(By.Id("tgx-main-header"));
-            BrowserDriver.Instance.Driver.Manage().Window.Maximize();
-         //   BrowserDriver.Instance.Driver.Manage().Window.Size = new Size(100, 100);
+        //    BrowserDriver.Instance.Driver.Manage().Window.Maximize();
+        //    BrowserDriver.Instance.Driver.Manage().Window.Size = new Size(100, 100);
+         //   BrowserDriver.Instance.Driver.Manage().Window.Maximize();
             BrowserDriver.Instance.Driver.SwitchTo().Frame("CMP_DIALOG_FRAME");
             BrowserDriver.Instance.Driver.FindElement(By.Id("userNameTextBox")).SendKeys(TestProperties.Instance.GetPropertyByName(TestProperty.user));
             BrowserDriver.Instance.Driver.FindElement(By.Id("passwordTextBox")).SendKeys(TestProperties.Instance.GetPropertyByName(TestProperty.password));
             BrowserDriver.Instance.Driver.FindElement(By.Name("Submit")).Click();
             WaitForElementToVisible(By.Id("menuMainHome"));
-            BrowserDriver.Instance.Driver.Manage().Window.Size = new Size(0, 0);
+       //     BrowserDriver.Instance.Driver.Manage().Window.Size = new Size(0, 0);
             Thread.Sleep(2000);
-            BrowserDriver.Instance.Driver.Manage().Window.Maximize();
+        //    BrowserDriver.Instance.Driver.Manage().Window.Maximize();
            
               
             
-            Thread.Sleep(2000);
+           
         }
        #endregion
 
-        
+        #region
+        public void javascriptClick(By by)
+        {
 
+            IWebElement element = BrowserDriver.Instance.Driver.FindElement(by);
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("arguments[0].click();", element);
+        }
+
+        public void javascriptdropdown(By by)
+        {
+            IWebElement element1 = BrowserDriver.Instance.Driver.FindElement(by);
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementById(by).selectedIndex = 1;", element1);
+          
+
+        }
+        #endregion
+
+        public int RandomNumbergeneratorL()
+        {
+
+            Random random = new Random();
+
+            int randomNumber = random.Next(0, 10000);
+
+            return randomNumber;
+
+
+
+
+        }
+
+        public void Delete()
+        {
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) { return true; }");
+            BrowserDriver.Instance.Driver.FindElement(By.XPath(Inven.Default.DeleteB)).Click();
+        }
+
+        public void CheckNavigation(String title)
+        {
+            BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
+            Assert.AreEqual(BrowserDriver.Instance.Driver.FindElement(By.LinkText( " + title + ")),"Navigation Unsuccessful");
+            Console.WriteLine("Navigation Successful"); ;
+        }
+
+        #region Javascript Executor
+       
+        //Enter text with ID
+        public void typeDataID(string field, string data)
+        {
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementById('"+field+"').value='"+data+"'");
+        }
+
+
+
+        //Enter text with Name
+        public void typeDataName(string field, string data)
+        {
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('" + field + "')[0].value='" + data + "'");
+        }
+
+        public void SelectfromDropdown(string field, string index)
+        {
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementById('" + field + "').selectedIndex='" + index + "'");
         
+        }
+        //((JavascriptExecutor) driver).executeScript("return document.getElementById('id').selectedIndex = '" + index + "';)
+        #endregion
 
         #region Clicking Submit Button
         public void ClickSubmit()

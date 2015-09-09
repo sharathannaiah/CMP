@@ -31,39 +31,75 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Driver.Selenium
         {
 
             String driverType = TestProperties.Instance.GetPropertyByName(TestProperty.seleniumDriver);
-
-           
+            //  String driverType = TestProperties.Instance.GetPropertyByName(TestProperty.seleniumDriver);
+            String driverAssembly = TestProperties.Instance.GetPropertyByName(TestProperty.seleniumDriverAssembly);
+            Assembly assembly = Assembly.Load(driverAssembly);
+            Type t = assembly.GetType(driverType);
 
 
             if (driverType == "OpenQA.Selenium.IE.InternetExplorerDriver")
             {
                 InternetExplorerOptions options = new InternetExplorerOptions();
+
+                options.EnableNativeEvents = false;
+                options.EnablePersistentHover = false;
                 options.IntroduceInstabilityByIgnoringProtectedModeSettings = true;
-                //Clean the session before launching the browser
+                options.RequireWindowFocus = true;
+              
+              //  options.EnablePersistentHover = true;
+                
                 options.EnsureCleanSession = true;
 
-                DesiredCapabilities capabilities = new DesiredCapabilities();
-                capabilities = DesiredCapabilities.InternetExplorer();
-                capabilities.SetCapability("enablePersistentHover", false);
-                capabilities.SetCapability("nativeEvents", false);
-                capabilities.SetCapability("INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS", true);
-                capabilities.SetCapability("ignoreProtectedModeSettings", "0");
-                capabilities.SetCapability(CapabilityType.BrowserName, "iexplore");
-                capabilities.SetCapability(CapabilityType.Platform, new Platform(PlatformType.Windows));
-                capabilities.SetCapability(CapabilityType.Version, "11.0");
-                capabilities.SetCapability(CapabilityType.HasNativeEvents, "false");
-           
-            
+                //options.UnexpectedAlertBehavior = "dismiss";
+                options.IgnoreZoomLevel = true;
+
+                //DesiredCapabilities capabilities = new DesiredCapabilities();
+                //capabilities = DesiredCapabilities.InternetExplorer();
+                //capabilities.SetCapability("INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS", true);
+
+                driver = (IWebDriver)Activator.CreateInstance(t, new object[] { options });
+            }
+            else
+            {
+                driver = (IWebDriver)Activator.CreateInstance(t);
             }
 
-           
-            String driverAssembly = TestProperties.Instance.GetPropertyByName(TestProperty.seleniumDriverAssembly);
-            Assembly assembly = Assembly.Load(driverAssembly);
-            Type t = assembly.GetType(driverType);
-            driver = (IWebDriver)Activator.CreateInstance(t);
+
+
+
+
+
+            //if (driverType == "OpenQA.Selenium.IE.InternetExplorerDriver")
+            //{
+            //    InternetExplorerOptions options = new InternetExplorerOptions();
+            //    options.EnableNativeEvents = false;
+            //    options.IntroduceInstabilityByIgnoringProtectedModeSettings = true;
+            //    //Clean the session before launching the browser
+            //    options.EnsureCleanSession = true;
+
+            //    DesiredCapabilities capabilities = new DesiredCapabilities();
+            //    capabilities = DesiredCapabilities.InternetExplorer();
+            //    capabilities.SetCapability("enablePersistentHover", false);
+            //    capabilities.SetCapability("nativeEvents", false);
+            //    capabilities.SetCapability("INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS", true);
+            //    capabilities.SetCapability("ignoreProtectedModeSettings", "0");
+            //    capabilities.SetCapability(CapabilityType.BrowserName, "iexplore");
+            //    capabilities.SetCapability(CapabilityType.Platform, new Platform(PlatformType.Windows));
+            //    capabilities.SetCapability(CapabilityType.Version, "11.0");
+            //    capabilities.SetCapability(CapabilityType.HasNativeEvents, "false");
+
+
+            //}
+
+
+            //    String driverAssembly = TestProperties.Instance.GetPropertyByName(TestProperty.seleniumDriverAssembly);
+            //    Assembly assembly = Assembly.Load(driverAssembly);
+            //    Type t = assembly.GetType(driverType);
+            //    driver = (IWebDriver)Activator.CreateInstance(t);
+
+            //}
 
         }
-
 
     }
 }

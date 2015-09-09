@@ -32,7 +32,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Enterpris
         {
             ExecuteTest(() =>
             {
-                employeeExplorer.EmployeeCreation();
+                employeeExplorer.EmployeeExplorerFunctions();
 
             }
             );

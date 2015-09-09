@@ -33,7 +33,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Enterpris
         {
             ExecuteTest(() =>
             {
-                enterpriseExplorer.EnterpriseExplorerr();
+                enterpriseExplorer.EnterpriseExplorerFunctionality();
 
             }
             );

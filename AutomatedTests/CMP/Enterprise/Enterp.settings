@@ -1,0 +1,39 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="AutomatedTests.CMP.Enterprise" GeneratedClassName="Enterp">
+  <Profiles />
+  <Settings>
+    <Setting Name="QuerySubmitB" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//input[@value='Submit']</Value>
+    </Setting>
+    <Setting Name="CreateNewB" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//input[@value='New']</Value>
+    </Setting>
+    <Setting Name="SaveB" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//input[@value='Save']</Value>
+    </Setting>
+    <Setting Name="AddB" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//input[@value='Add']</Value>
+    </Setting>
+    <Setting Name="OKB" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//input[@value='OK']</Value>
+    </Setting>
+    <Setting Name="DeleteB" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//input[@value='Delete']</Value>
+    </Setting>
+    <Setting Name="CreateB" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//input[@value='Create']</Value>
+    </Setting>
+    <Setting Name="ModifyB" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//input[@value='Modify']</Value>
+    </Setting>
+    <Setting Name="ResetB" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//input[@value='Reset']</Value>
+    </Setting>
+    <Setting Name="CheckB" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//input[@value='false']</Value>
+    </Setting>
+    <Setting Name="ExpireB" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//input[@value='Expire']</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
