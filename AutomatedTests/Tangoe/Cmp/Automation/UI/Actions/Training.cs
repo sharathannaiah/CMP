@@ -18,7 +18,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Concrete
         public void Navigation()
         {
             // Call Base action class to navigate to enterprise menu
-            GoToEnterprise("Enterprise");
+          //  GoToEnterprise("Enterprise");
             // Navigate to Enterprise--> Explorer page
             retryingFindClickk(".//*[@id='mnuEnterprise_Explorer2']");
             Thread.Sleep(2000);
@@ -80,7 +80,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Concrete
 
 
             //Navigate to Regions
-            GoToEnterprise("Enterprise");
+            //GoToEnterprise("Enterprise");
            // BrowserDriver.Instance.Driver.FindElement(By.Id("menuMainEnterprise")).Click();
           //  BrowserDriver.Instance.Driver.Navigate().GoToUrl("javascript:document.getElementById('menuMainEnterprise').click()");
             retryingFindClickk(".//*[@id='mnuEnterprise_Region']");

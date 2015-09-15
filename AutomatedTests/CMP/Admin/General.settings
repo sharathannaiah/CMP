@@ -29,5 +29,11 @@
     <Setting Name="OKB" Type="System.String" Scope="User">
       <Value Profile="(Default)">//input[@value='OK']</Value>
     </Setting>
+    <Setting Name="CreateB" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//input[@value='Create']</Value>
+    </Setting>
+    <Setting Name="ResetB" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//input[@value='Reset']</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

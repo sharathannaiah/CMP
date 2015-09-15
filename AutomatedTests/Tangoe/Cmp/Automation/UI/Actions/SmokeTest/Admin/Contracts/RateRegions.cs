@@ -92,7 +92,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Contra
             SearchRegion();
          //   ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function () { return true } ");
             javascriptClick(By.XPath(General.Default.DeleteB));
-            string script = "window.confirm = function() { return true; }";
+            string script = "window.confirm = function() { return true; };";
             IJavaScriptExecutor executor = (IJavaScriptExecutor)BrowserDriver.Instance.Driver;
             executor.ExecuteScript(script);
             

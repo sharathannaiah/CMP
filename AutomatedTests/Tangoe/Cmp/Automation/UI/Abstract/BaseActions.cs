@@ -12,6 +12,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Threading;
 using AutomatedTests.CMP.Inventory;
+using AutomatedTests.CMP.Admin;
 
 namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Abstract
 {
@@ -375,7 +376,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Abstract
 
         #endregion
 
-        #region IE flickering
+        #region IE flickering with any Element By Parameter
         public Boolean retryingFindClick(By by)
         {
             Boolean result = false;
@@ -397,7 +398,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Abstract
         }
 #endregion
 
-        #region IE flickering1
+        #region IE flickering1 with XPath as Parameter
         public Boolean retryingFindClickk(String ObjByXPath)
         {
             Boolean result = false;
@@ -469,36 +470,12 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Abstract
         //////////////////////////////////////////////CMP General Main Menu Navigation//////////////////////////////////////////////
 
         #region IE11 navigation
-        public void GoToEnterprise(string mainmenu)
-        {
-            Thread.Sleep(1000);
-            //Actions builder = new Actions(BrowserDriver.Instance.Driver);
-            //IWebElement menuLink = BrowserDriver.Instance.Driver.FindElement(By.XPath("//a[normalize-space()='" + mainmenu + "']"));
-            //builder.MoveToElement(menuLink).Click().Build().Perform();
-
-
-            //  BrowserDriver.Instance.Driver.FindElement(By.XPath("//td[normalize-space()='" + submenu + "']")).Click();
-            //  BrowserDriver.Instance.Driver.FindElement(By.Id("subNav1")).SendKeys(submenu);
-
-            // BrowserDriver.Instance.Driver.FindElement(By.XPath("//td[normalize-space()='" + submenu1 + "']")).Click();
-            //  WaitForElementToVisible(By.XPath("//*[@id='CONTENT']"));
-            //  IWebElement F = BrowserDriver.Instance.Driver.FindElement(By.XPath("//*[@id='CONTENT']"));
-            //  BrowserDriver.Instance.Driver.SwitchTo().Frame(F);
-            //  Thread.Sleep(5000);
-        }
-
+       
       
         public void GoToMain(string mainmenu)
         {
             Thread.Sleep(1000);
-            //Actions builder = new Actions(BrowserDriver.Instance.Driver);
-            //IWebElement menuLink = BrowserDriver.Instance.Driver.FindElement(By.XPath("//a[normalize-space()='" + mainmenu + "']"));
             BrowserDriver.Instance.Driver.FindElement(By.XPath("//a[normalize-space()='" + mainmenu + "']")).Click();
-          //  BrowserDriver.Instance.Driver.FindElement(By.XPath(".//*[@id='menuMainEnterprise']"));
-            
-            //builder.MoveToElement(menuLink).Click().Build().Perform();
-
-
         }
 
         public void GoToMain1(string mainmenu, string submenu1)
@@ -517,27 +494,47 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Abstract
             BrowserDriver.Instance.Driver.FindElement(By.XPath("//a[normalize-space()='" + mainmenu + "']")).Click();
             BrowserDriver.Instance.Driver.FindElement(By.XPath("//a[normalize-space()='" + submenu + "']")).Click();
             BrowserDriver.Instance.Driver.FindElement(By.XPath("//a[normalize-space()='" + submenu1 + "']")).Click();
-
             //  BrowserDriver.Instance.Driver.FindElement(By.XPath(".//*[@id='menuMainEnterprise']"));
-
             //builder.MoveToElement(menuLink).Click().Build().Perform();
-
-
         }
 
 
         public void SwitchToContent()
         {
-            BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
-            BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-            BrowserDriver.Instance.Driver.SwitchTo().Frame("CONTENT");
+            if (true)
+            {
+                BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
+                BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
+                BrowserDriver.Instance.Driver.SwitchTo().Frame("CONTENT");
+            }
+            else 
+            {
+                Console.WriteLine("Failed to Navigate to CONTENT Frame");
+            }
         }
 
         public void SwitchToPopUps()
         {
-            BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
-            BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-            BrowserDriver.Instance.Driver.SwitchTo().Frame("CMP_DIALOG_FRAME");
+            if (true)
+            {
+                BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
+                BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
+                BrowserDriver.Instance.Driver.SwitchTo().Frame("CMP_DIALOG_FRAME");
+            }
+            else
+            {
+                Console.WriteLine("Failed to Navigate to POPup Frame");
+            }
+        }
+
+
+        public void SearchQuery(String field, String data)
+        {
+            SwitchToPopUps();
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('" + field + "')[0].value='" + data + "'");
+            javascriptClick(By.XPath(General.Default.SubmitB));
+            Thread.Sleep(2000);
+            SwitchToPopUps();
         }
         #endregion
 
@@ -562,28 +559,20 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Abstract
             BrowserDriver.Instance.Driver.Navigate().GoToUrl("javascript:document.getElementById('overridelink').click()");
             //BrowserDriver.Instance.Driver.FindElement(By.Id("overridelink")).Click();
             WaitForElementToVisible(By.Id("tgx-main-header"));
-        //    BrowserDriver.Instance.Driver.Manage().Window.Maximize();
-        //    BrowserDriver.Instance.Driver.Manage().Window.Size = new Size(100, 100);
-         //   BrowserDriver.Instance.Driver.Manage().Window.Maximize();
+            BrowserDriver.Instance.Driver.Manage().Window.Maximize();
             BrowserDriver.Instance.Driver.SwitchTo().Frame("CMP_DIALOG_FRAME");
             BrowserDriver.Instance.Driver.FindElement(By.Id("userNameTextBox")).SendKeys(TestProperties.Instance.GetPropertyByName(TestProperty.user));
             BrowserDriver.Instance.Driver.FindElement(By.Id("passwordTextBox")).SendKeys(TestProperties.Instance.GetPropertyByName(TestProperty.password));
             BrowserDriver.Instance.Driver.FindElement(By.Name("Submit")).Click();
             WaitForElementToVisible(By.Id("menuMainHome"));
-       //     BrowserDriver.Instance.Driver.Manage().Window.Size = new Size(0, 0);
-            Thread.Sleep(2000);
-        //    BrowserDriver.Instance.Driver.Manage().Window.Maximize();
-           
-              
-            
-           
         }
        #endregion
+
+
 
         #region
         public void javascriptClick(By by)
         {
-
             IWebElement element = BrowserDriver.Instance.Driver.FindElement(by);
             ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("arguments[0].click();", element);
         }
@@ -620,8 +609,16 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Abstract
         public void CheckNavigation(String title)
         {
             BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-            Assert.AreEqual(BrowserDriver.Instance.Driver.FindElement(By.LinkText( " + title + ")),"Navigation Unsuccessful");
-            Console.WriteLine("Navigation Successful"); ;
+            if (true)
+            {
+                Assert.AreEqual(BrowserDriver.Instance.Driver.FindElement(By.LinkText(" + title + ")), "Navigation Unsuccessful");
+                Console.WriteLine("Navigation Successful");
+
+            }
+            else
+            {
+                Console.WriteLine("Navigation not Successful");
+            }
         }
 
         #region Javascript Executor
@@ -633,9 +630,8 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Abstract
         }
 
 
-
         //Enter text with Name
-        public void typeDataName(string field, string data)
+        public void typeDataName(string field, string data)//Include this for index ,int index)
         {
             ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('" + field + "')[0].value='" + data + "'");
         }
@@ -647,6 +643,8 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Abstract
         }
         //((JavascriptExecutor) driver).executeScript("return document.getElementById('id').selectedIndex = '" + index + "';)
         #endregion
+
+       
 
         #region Clicking Submit Button
         public void ClickSubmit()

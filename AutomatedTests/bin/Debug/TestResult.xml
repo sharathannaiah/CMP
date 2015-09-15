@@ -1,33 +1,48 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--This file represents the results of running a test suite-->
-<test-results name="D:\Code Library\AutomatedTests\bin\Debug\AutomatedTests.nunit" total="1" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2015-09-07" time="17:13:07">
+<test-results name="D:\Code Library\AutomatedTests\bin\Debug\AutomatedTests.nunit" total="1" errors="0" failures="1" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2015-09-15" time="14:56:22">
   <environment nunit-version="2.6.4.14350" clr-version="2.0.50727.5485" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="D:\Code Library\AutomatedTests\bin" machine-name="SANNAIAH6440" user="Sharath.Annaiah" user-domain="CORP" />
   <culture-info current-culture="en-US" current-uiculture="en-US" />
-  <test-suite type="Project" name="D:\Code Library\AutomatedTests\bin\Debug\AutomatedTests.nunit" executed="True" result="Success" success="True" time="47.245" asserts="0">
+  <test-suite type="Project" name="D:\Code Library\AutomatedTests\bin\Debug\AutomatedTests.nunit" executed="True" result="Failure" success="False" time="55.885" asserts="0">
     <results>
-      <test-suite type="SetUpFixture" name="D:\Code Library\AutomatedTests\bin\Debug\AutomatedTests.dll" executed="True" result="Success" success="True" time="47.202" asserts="0">
+      <test-suite type="SetUpFixture" name="D:\Code Library\AutomatedTests\bin\Debug\AutomatedTests.dll" executed="True" result="Failure" success="False" time="55.806" asserts="0">
         <results>
-          <test-suite type="Namespace" name="AutomatedTests" executed="True" result="Success" success="True" time="47.198" asserts="0">
+          <test-suite type="Namespace" name="AutomatedTests" executed="True" result="Failure" success="False" time="55.800" asserts="0">
             <results>
-              <test-suite type="Namespace" name="Tangoe" executed="True" result="Success" success="True" time="47.197" asserts="0">
+              <test-suite type="Namespace" name="Tangoe" executed="True" result="Failure" success="False" time="55.799" asserts="0">
                 <results>
-                  <test-suite type="Namespace" name="Cmp" executed="True" result="Success" success="True" time="47.197" asserts="0">
+                  <test-suite type="Namespace" name="Cmp" executed="True" result="Failure" success="False" time="55.799" asserts="0">
                     <results>
-                      <test-suite type="Namespace" name="Automation" executed="True" result="Success" success="True" time="47.196" asserts="0">
+                      <test-suite type="Namespace" name="Automation" executed="True" result="Failure" success="False" time="55.798" asserts="0">
                         <results>
-                          <test-suite type="Namespace" name="Unit" executed="True" result="Success" success="True" time="47.196" asserts="0">
+                          <test-suite type="Namespace" name="Unit" executed="True" result="Failure" success="False" time="55.797" asserts="0">
                             <results>
-                              <test-suite type="Namespace" name="Concrete" executed="True" result="Success" success="True" time="47.195" asserts="0">
+                              <test-suite type="Namespace" name="Concrete" executed="True" result="Failure" success="False" time="55.797" asserts="0">
                                 <results>
-                                  <test-suite type="Namespace" name="SmokeTest" executed="True" result="Success" success="True" time="47.195" asserts="0">
+                                  <test-suite type="Namespace" name="SmokeTest" executed="True" result="Failure" success="False" time="55.796" asserts="0">
                                     <results>
-                                      <test-suite type="Namespace" name="Admin" executed="True" result="Success" success="True" time="47.194" asserts="0">
+                                      <test-suite type="Namespace" name="Admin" executed="True" result="Failure" success="False" time="55.795" asserts="0">
                                         <results>
-                                          <test-suite type="Namespace" name="Contracts" executed="True" result="Success" success="True" time="47.193" asserts="0">
+                                          <test-suite type="Namespace" name="Localization" executed="True" result="Failure" success="False" time="55.794" asserts="0">
                                             <results>
-                                              <test-suite type="TestFixture" name="RateQualifiersUT" executed="True" result="Success" success="True" time="47.189" asserts="0">
+                                              <test-suite type="TestFixture" name="CurrenciesUT" executed="True" result="Failure" success="False" time="55.789" asserts="0">
                                                 <results>
-                                                  <test-case name="AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.Contracts.RateQualifiersUT.RateRegionFunction" executed="True" result="Success" success="True" time="47.151" asserts="2" />
+                                                  <test-case name="AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.Localization.CurrenciesUT.CurrenciesSmokeFunctionality" executed="True" result="Failure" success="False" time="55.737" asserts="1">
+                                                    <failure>
+                                                      <message><![CDATA[NUnit.Framework.AssertionException
+  Currency value not set
+  Expected: True
+  But was:  False
+   at NUnit.Framework.Assert.That(Object actual, IResolveConstraint expression, String message, Object[] args)
+   at NUnit.Framework.Assert.IsTrue(Boolean condition, String message)
+   at AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Localization.Currencies.CurrenciesSomkeTest() in d:\Code Library\AutomatedTests\Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Localization\Currencies.cs:line 42
+   at AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.Localization.CurrenciesUT.<CurrenciesSmokeFunctionality>b__0() in d:\Code Library\AutomatedTests\Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Localization\currenciesUT.cs:line 29
+   at AutomatedTests.Tangoe.Cmp.Automation.Unit.Abstract.BaseUnitTest.ExecuteTest(Action action) in d:\Code Library\AutomatedTests\Tangoe\Cmp\Automation\Unit\Abstract\BaseUnitTest.cs:line 178]]></message>
+                                                      <stack-trace><![CDATA[at AutomatedTests.Tangoe.Cmp.Automation.Unit.Abstract.BaseUnitTest.ExecuteTest(Action action) in d:\Code Library\AutomatedTests\Tangoe\Cmp\Automation\Unit\Abstract\BaseUnitTest.cs:line 182
+at AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.Localization.CurrenciesUT.CurrenciesSmokeFunctionality() in d:\Code Library\AutomatedTests\Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Localization\currenciesUT.cs:line 27
+]]></stack-trace>
+                                                    </failure>
+                                                  </test-case>
                                                 </results>
                                               </test-suite>
                                             </results>

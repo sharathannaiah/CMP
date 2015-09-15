@@ -108,11 +108,19 @@
     <Compile Include="Tangoe\Cmp\Automation\Common\TestProperties.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Abstract\BaseActions.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Abstract\IBaseAction.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Contracts\ContractTariff.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Contracts\ContractTerms.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Contracts\RateQualifiers.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Contracts\RateRegions.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Inventory\Catalog.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Inventory\Features.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Inventory\ProductSpeed.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Localization\CountryStatecs.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Localization\Currencies.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Localization\CurrencyConversion.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Localization\ExchangeRates.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Localization\UserDefinedTransctions.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Messaging\EmailNotification.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Miscellaneous\Company.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Miscellaneous\Contacts.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\BillManagement\Accounts\AccountDiscovery.cs" />
@@ -137,6 +145,8 @@
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\Training.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Driver\Selenium\BrowserDriver.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Abstract\BaseUnitTest.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Contracts\ContractTariffUT.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Contracts\ContractTermsUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Contracts\RateQualifiersUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Contracts\RateRegionsUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Inventory\CatalogUT.cs" />
@@ -144,6 +154,12 @@
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Inventory\NetworkApplications.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Inventory\NetworkApplicationUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Inventory\ProductSpeedUT.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Localization\CountryStatesUT.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Localization\currenciesUT.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Localization\CurrencyConversionUT.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Localization\ExchangeRatesImportLog.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Localization\ExchangeRatesUT.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Localization\UserDefinedTranscationsUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Miscellaneous\CompanyUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Miscellaneous\ContactsUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\BillManagement\Accounts\AccountDiscoveryUT.cs" />
@@ -227,6 +243,7 @@
   <ItemGroup>
     <Folder Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Assurance\" />
     <Folder Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Reporting\" />
+    <Folder Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Messaging\" />
     <Folder Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Assurance\" />
     <Folder Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Reporting\" />
   </ItemGroup>

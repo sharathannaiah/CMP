@@ -130,5 +130,29 @@ namespace AutomatedTests.CMP.Admin {
                 this["OKB"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("//input[@value=\'Create\']")]
+        public string CreateB {
+            get {
+                return ((string)(this["CreateB"]));
+            }
+            set {
+                this["CreateB"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("//input[@value=\'Reset\']")]
+        public string ResetB {
+            get {
+                return ((string)(this["ResetB"]));
+            }
+            set {
+                this["ResetB"] = value;
+            }
+        }
     }
 }
