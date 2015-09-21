@@ -93,15 +93,15 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Inventory
            BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER");
            BrowserDriver.Instance.Driver.SwitchTo().Frame("LINE_GENERAL");
     //       ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('phoneNumber').value = '77777'");
-           ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('phoneNumber')[0].value='" + phoneNumber + "'");
-           ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('carrierId')[0].selectedIndex= '5';");
-
+       ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('phoneNumber')[0].value='" + phoneNumber + "'");
+       ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('carrierId')[0].selectedIndex= '4';");
+       typeDataName("description", "Automation");
          //   typeDataName("phonenumber", "77777");
            javascriptClick(By.XPath(Inven.Default.SaveB));
            Thread.Sleep(3000);
            SwitchToContent();
            BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER");
-           Assert.IsTrue(IsElementVisible(By.XPath("//div[.='AT&T']")), " Inventory Creation Unsuccessful");
+           Assert.IsTrue(IsElementVisible(By.XPath("//div[.='Automation']")), " Inventory Creation Unsuccessful");
            Console.WriteLine("Inventory Created Successfully");
      //      SearchPhonenumber("77777");
        //    SwitchToContent();
@@ -121,6 +121,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Inventory
       //  ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('phoneNumber')[1].value='567890'");
         ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('phoneNumber')[0].value='" + phoneNumber + "'");
         ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('carrierId')[0].selectedIndex= '5';");
+        typeDataName("description", "Automation Updated");
 
 
      //   typeDataName("phonenumber", "567890");
@@ -130,7 +131,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Inventory
         SwitchToContent();
 
         BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER");
-        Assert.IsTrue(IsElementVisible(By.XPath("//div[.='AT&T']")), " Inventory Edition Unsuccessful");
+        Assert.IsTrue(IsElementVisible(By.XPath("//div[.='Automation Updated']")), " Inventory Edition Unsuccessful");
            Console.WriteLine("Inventory Edited Successfully");
 
         }

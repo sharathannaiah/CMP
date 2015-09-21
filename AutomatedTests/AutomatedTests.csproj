@@ -121,6 +121,7 @@
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Localization\ExchangeRates.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Localization\UserDefinedTransctions.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Messaging\EmailNotification.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Messaging\NotificationAdministration.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Miscellaneous\Company.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Miscellaneous\Contacts.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\BillManagement\Accounts\AccountDiscovery.cs" />
@@ -161,6 +162,7 @@
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Localization\ExchangeRatesImportLogUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Localization\ExchangeRatesUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Localization\UserDefinedTranscationsUT.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Messaging\EmailNotificationUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Miscellaneous\CompanyUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Miscellaneous\ContactsUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\BillManagement\Accounts\AccountDiscoveryUT.cs" />
@@ -244,7 +246,6 @@
   <ItemGroup>
     <Folder Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Assurance\" />
     <Folder Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Reporting\" />
-    <Folder Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Messaging\" />
     <Folder Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Assurance\" />
     <Folder Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Reporting\" />
   </ItemGroup>

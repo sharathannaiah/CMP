@@ -1,51 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--This file represents the results of running a test suite-->
-<test-results name="D:\Code Library\AutomatedTests\bin\Debug\AutomatedTests.nunit" total="1" errors="0" failures="1" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2015-09-18" time="16:47:18">
-  <environment nunit-version="2.6.4.14350" clr-version="2.0.50727.5485" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="D:\Code Library\AutomatedTests\bin" machine-name="SANNAIAH6440" user="Sharath.Annaiah" user-domain="CORP" />
+<test-results name="D:\Code Library\AutomatedTests\bin\Debug\AutomatedTests.nunit" total="1" errors="0" failures="1" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2015-09-21" time="21:49:04">
+  <environment nunit-version="2.6.4.14350" clr-version="2.0.50727.5485" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="D:\Code Library\AutomatedTests\bin" machine-name="SANNAIAH6440" user="sharath.annaiah" user-domain="CORP" />
   <culture-info current-culture="en-US" current-uiculture="en-US" />
-  <test-suite type="Project" name="D:\Code Library\AutomatedTests\bin\Debug\AutomatedTests.nunit" executed="True" result="Failure" success="False" time="54.070" asserts="0">
+  <test-suite type="Project" name="D:\Code Library\AutomatedTests\bin\Debug\AutomatedTests.nunit" executed="True" result="Failure" success="False" time="97.711" asserts="0">
     <results>
-      <test-suite type="SetUpFixture" name="D:\Code Library\AutomatedTests\bin\Debug\AutomatedTests.dll" executed="True" result="Failure" success="False" time="54.027" asserts="0">
+      <test-suite type="SetUpFixture" name="D:\Code Library\AutomatedTests\bin\Debug\AutomatedTests.dll" executed="True" result="Failure" success="False" time="97.638" asserts="0">
         <results>
-          <test-suite type="Namespace" name="AutomatedTests" executed="True" result="Failure" success="False" time="54.022" asserts="0">
+          <test-suite type="Namespace" name="AutomatedTests" executed="True" result="Failure" success="False" time="97.628" asserts="0">
             <results>
-              <test-suite type="Namespace" name="Tangoe" executed="True" result="Failure" success="False" time="54.022" asserts="0">
+              <test-suite type="Namespace" name="Tangoe" executed="True" result="Failure" success="False" time="97.627" asserts="0">
                 <results>
-                  <test-suite type="Namespace" name="Cmp" executed="True" result="Failure" success="False" time="54.021" asserts="0">
+                  <test-suite type="Namespace" name="Cmp" executed="True" result="Failure" success="False" time="97.626" asserts="0">
                     <results>
-                      <test-suite type="Namespace" name="Automation" executed="True" result="Failure" success="False" time="54.020" asserts="0">
+                      <test-suite type="Namespace" name="Automation" executed="True" result="Failure" success="False" time="97.625" asserts="0">
                         <results>
-                          <test-suite type="Namespace" name="Unit" executed="True" result="Failure" success="False" time="54.020" asserts="0">
+                          <test-suite type="Namespace" name="Unit" executed="True" result="Failure" success="False" time="97.624" asserts="0">
                             <results>
-                              <test-suite type="Namespace" name="Concrete" executed="True" result="Failure" success="False" time="54.019" asserts="0">
+                              <test-suite type="Namespace" name="Concrete" executed="True" result="Failure" success="False" time="97.623" asserts="0">
                                 <results>
-                                  <test-suite type="Namespace" name="SmokeTest" executed="True" result="Failure" success="False" time="54.019" asserts="0">
+                                  <test-suite type="Namespace" name="SmokeTest" executed="True" result="Failure" success="False" time="97.622" asserts="0">
                                     <results>
-                                      <test-suite type="Namespace" name="Enterprise" executed="True" result="Failure" success="False" time="54.018" asserts="0">
+                                      <test-suite type="Namespace" name="Inventory" executed="True" result="Failure" success="False" time="97.621" asserts="0">
                                         <results>
-                                          <test-suite type="Namespace" name="Employee" executed="True" result="Failure" success="False" time="54.017" asserts="0">
+                                          <test-suite type="TestFixture" name="InventoryExplorerUT" executed="True" result="Failure" success="False" time="97.615" asserts="0">
                                             <results>
-                                              <test-suite type="TestFixture" name="EmployeeExplorerUT" executed="True" result="Failure" success="False" time="54.013" asserts="0">
-                                                <results>
-                                                  <test-case name="AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Enterprise.Employee.EmployeeExplorerUT.EnterpriseFunctionality" executed="True" result="Failure" success="False" time="53.930" asserts="3">
-                                                    <failure>
-                                                      <message><![CDATA[NUnit.Framework.AssertionException
-  Employee Search failed
+                                              <test-case name="AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Inventory.InventoryExplorerUT.EnterpriseFunctionality" executed="True" result="Failure" success="False" time="97.567" asserts="6">
+                                                <failure>
+                                                  <message><![CDATA[NUnit.Framework.AssertionException
+  Editing SPID failed
   Expected: True
   But was:  False
    at NUnit.Framework.Assert.That(Object actual, IResolveConstraint expression, String message, Object[] args)
    at NUnit.Framework.Assert.IsTrue(Boolean condition, String message)
-   at AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise.Employee.EmployeeExplorer.EmployeeSearch() in d:\Code Library\AutomatedTests\Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Enterprise\Employee\EmployeeExplorer.cs:line 68
-   at AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise.Employee.EmployeeExplorer.EmployeeExplorerFunctions() in d:\Code Library\AutomatedTests\Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Enterprise\Employee\EmployeeExplorer.cs:line 38
-   at AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Enterprise.Employee.EmployeeExplorerUT.<EnterpriseFunctionality>b__0() in d:\Code Library\AutomatedTests\Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Enterprise\Employee\EmployeeExplorerUT.cs:line 35
+   at AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Inventory.InventoryExplorer.EditSpid() in d:\Code Library\AutomatedTests\Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Inventory\InventoryExplorer.cs:line 266
+   at AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Inventory.InventoryExplorer.InventorySmokeFunctionality() in d:\Code Library\AutomatedTests\Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Inventory\InventoryExplorer.cs:line 31
+   at AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Inventory.InventoryExplorerUT.<EnterpriseFunctionality>b__0() in d:\Code Library\AutomatedTests\Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Inventory\InventoryExplorerUT.cs:line 35
    at AutomatedTests.Tangoe.Cmp.Automation.Unit.Abstract.BaseUnitTest.ExecuteTest(Action action) in d:\Code Library\AutomatedTests\Tangoe\Cmp\Automation\Unit\Abstract\BaseUnitTest.cs:line 178]]></message>
-                                                      <stack-trace><![CDATA[at AutomatedTests.Tangoe.Cmp.Automation.Unit.Abstract.BaseUnitTest.ExecuteTest(Action action) in d:\Code Library\AutomatedTests\Tangoe\Cmp\Automation\Unit\Abstract\BaseUnitTest.cs:line 182
-at AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Enterprise.Employee.EmployeeExplorerUT.EnterpriseFunctionality() in d:\Code Library\AutomatedTests\Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Enterprise\Employee\EmployeeExplorerUT.cs:line 33
+                                                  <stack-trace><![CDATA[at AutomatedTests.Tangoe.Cmp.Automation.Unit.Abstract.BaseUnitTest.ExecuteTest(Action action) in d:\Code Library\AutomatedTests\Tangoe\Cmp\Automation\Unit\Abstract\BaseUnitTest.cs:line 182
+at AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Inventory.InventoryExplorerUT.EnterpriseFunctionality() in d:\Code Library\AutomatedTests\Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Inventory\InventoryExplorerUT.cs:line 33
 ]]></stack-trace>
-                                                    </failure>
-                                                  </test-case>
-                                                </results>
-                                              </test-suite>
+                                                </failure>
+                                              </test-case>
                                             </results>
                                           </test-suite>
                                         </results>

@@ -15,9 +15,9 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Contracts
         public void ContractSmokeFunctionality()
         {
             GoToMain1("Contracts", "Explorer");
-         //   ContractSearch();
-         //   CreateContract();
-         //   CopyContract();
+          ContractSearch();
+          CreateContract();
+            CopyContract();
             DeleteContract();
 
         }

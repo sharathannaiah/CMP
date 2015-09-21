@@ -13,35 +13,25 @@ using System.Text.RegularExpressions;
 
 namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Messaging
 {
-    class EmailNotification : BaseActions
+    class NotificationAdministration : BaseActions
     {
-        public void EmailNotificationFunctionality()
+        public void NotificationAdministrationFunctionality()
         {
             GoToMain("Admin");
             retryingFindClickk(".//*[@id='mnu_Messaging']");
-            retryingFindClickk(".//*[@id='mnuAdmin_Email_Notifications']");
+            retryingFindClickk("");
             if (true)
             {
                 BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-                WaitForElementToVisible(By.XPath("//div[text()='Email Notifications']"));
+                WaitForElementToVisible(By.XPath("//div[text()='Notification Administration']"));
                 Console.WriteLine("Navigation Successful");
             }
             else
             {
                 Console.WriteLine("Navigation Unsuccessful");
-            
+
             }
         }
-        //public void SaveEmailNotification()
-        //{
-        //    SwitchToPopUps();
-        //    SelectfromDropdown("ehNotificationEventId", "1");
-        //    javascriptClick(By.LinkText("test test"));
-        //    javascriptClick(By.XPath("//select[@value='1000072']"));
-        //    javascriptClick(By.XPath("//select[@value='100002']"));
-        //    javascriptClick(By.LinkText("cmp Adminstrator"));
 
-        //}
-        }
     }
-
+}
