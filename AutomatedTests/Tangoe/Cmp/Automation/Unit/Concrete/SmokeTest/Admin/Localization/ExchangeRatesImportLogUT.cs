@@ -3,41 +3,41 @@ using AutomatedTests.Tangoe.Cmp.Automation.UI.Concrete;
 using AutomatedTests.Tangoe.Cmp.Automation.Unit.Abstract;
 using NUnit.Framework;
 
+
 namespace AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.Localization
 {
-    class ExchangeRatesUT : BaseUnitTest
+    class ExchangeRatesImportLogUT : BaseUnitTest
     {
- 
+        ExchangeRatesImportLog exchangeRatesImport;
 
-       ExchangeRates exchangeRates;
-
-        //pre 
+          //pre 
         [TestFixtureSetUp]
         public void Init()
         {
-            exchangeRates = new ExchangeRates();
-            AddActionClassesToList(exchangeRates);
+            exchangeRatesImport = new ExchangeRatesImportLog();
+            AddActionClassesToList(exchangeRatesImport);
 
         }
 
         [SetUp]
         public void SetupBase()
         {
-            exchangeRates.Login();
+            exchangeRatesImport.Login();
         }
 
 
 
         [Test]
-        public void ExchangeRatesFunction()
+        public void ExchangeRatesImportLogFunction()
         {
             ExecuteTest(() =>
             {
-                exchangeRates.ExchangeRatesFunctionality();
+                exchangeRatesImport.ExchangeRatesImportLogFunctionality();
             }
             );
 
         }
 
+    
     }
 }

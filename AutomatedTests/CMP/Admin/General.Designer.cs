@@ -154,5 +154,17 @@ namespace AutomatedTests.CMP.Admin {
                 this["ResetB"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("//input[@value=\'Add Rate\']")]
+        public string AddRateB {
+            get {
+                return ((string)(this["AddRateB"]));
+            }
+            set {
+                this["AddRateB"] = value;
+            }
+        }
     }
 }

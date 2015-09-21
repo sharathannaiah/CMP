@@ -20,10 +20,22 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise.E
             GoToMain("Enterprise");
             retryingFindClickk(".//*[@id='mnuEnterprise_Employees']");
             retryingFindClickk(".//*[@id='mnuEmployees_Explorer']");
-            Thread.Sleep(2000);
-          EmployeeSearch();
-         EmployeeCreation();
+            if (true)
+            {
+                SwitchToContent();
+                WaitForElementToVisible(By.XPath("//div[text()='Employee Summary']"));
+                Console.WriteLine("Navigation Successful");
+            }
+            else
+            {
+                Console.WriteLine("Navigation not successful");
+            }
 
+
+            Thread.Sleep(2000);
+         
+         EmployeeCreation();
+         EmployeeSearch();
            EditEmployee();
 
         //    DeleteEmployee();
@@ -49,9 +61,9 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise.E
             SwitchToContent();
          //   ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.findElementsByName('firstName').value='Charles'");
             ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('firstName')[0].value='Charles'");
-
+            BrowserDriver.Instance.Driver.FindElement(By.Name("employeeIdentifier")).Clear();
             BrowserDriver.Instance.Driver.FindElement(By.XPath(Enterp.Default.QuerySubmitB)).Click();
-            Thread.Sleep(3000);
+            Thread.Sleep(5000);
             SwitchToContent();
             Assert.IsTrue(IsElementVisible(By.XPath("//div[.='CHARLES']")), "Employee Search failed");
             Console.WriteLine("Employee Search Successful");

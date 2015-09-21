@@ -35,5 +35,8 @@
     <Setting Name="ResetB" Type="System.String" Scope="User">
       <Value Profile="(Default)">//input[@value='Reset']</Value>
     </Setting>
+    <Setting Name="AddRateB" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//input[@value='Add Rate']</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
