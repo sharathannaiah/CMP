@@ -3,40 +3,32 @@ using AutomatedTests.Tangoe.Cmp.Automation.UI.Concrete;
 using AutomatedTests.Tangoe.Cmp.Automation.Unit.Abstract;
 using NUnit.Framework;
 
-
 namespace AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.Miscellaneous
 {
-    class ContactsUT : BaseUnitTest
+    class MergeCarrierUT : BaseUnitTest
     {
-        Contacts contacts;
+        MergeCarrier mergeCarrier;
 
-        //pre 
         [TestFixtureSetUp]
-        public void Init()
+        public void init()
         {
-            contacts = new Contacts();
-            AddActionClassesToList(contacts);
-
+            mergeCarrier = new MergeCarrier();
+            AddActionClassesToList(mergeCarrier);
         }
 
         [SetUp]
         public void SetupBase()
         {
-            contacts.Login();
+            mergeCarrier.Login();
         }
-
-
 
         [Test]
-        public void MicellaneousContact()
+        public void MergeCarrierFunctionality()
         {
             ExecuteTest(() =>
-            {
-                contacts.ContactsFunctionality();
-            }
-            );
-
+                {
+                    mergeCarrier.MergeCarrierFunctionality();
+                });
         }
-
     }
 }

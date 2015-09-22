@@ -6,37 +6,30 @@ using NUnit.Framework;
 
 namespace AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.Miscellaneous
 {
-    class ContactsUT : BaseUnitTest
+    class CarrierUT :BaseUnitTest
     {
-        Contacts contacts;
+        Carrier carrier;
 
-        //pre 
         [TestFixtureSetUp]
-        public void Init()
+        public void init()
         {
-            contacts = new Contacts();
-            AddActionClassesToList(contacts);
-
+            carrier = new Carrier();
+            AddActionClassesToList(carrier);
         }
 
         [SetUp]
         public void SetupBase()
         {
-            contacts.Login();
+            carrier.Login();
         }
-
-
 
         [Test]
-        public void MicellaneousContact()
+        public void CarrierSmokeTestFunctionality()
         {
             ExecuteTest(() =>
-            {
-                contacts.ContactsFunctionality();
-            }
-            );
-
+                {
+                    carrier.CarrierSmokeFunctionality();
+                });
         }
-
     }
 }

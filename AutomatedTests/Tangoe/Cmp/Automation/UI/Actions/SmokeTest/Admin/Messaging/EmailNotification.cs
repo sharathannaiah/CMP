@@ -23,7 +23,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Messag
             if (true)
             {
                 BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-                WaitForElementToVisible(By.XPath("//div[text()='Email Notifications']"));
+                Assert.IsTrue(IsElementVisible(By.XPath("//td[text()='Email Notifications']")), "Navigation failed");
                 Console.WriteLine("Navigation Successful");
             }
             else
@@ -31,6 +31,10 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Messag
                 Console.WriteLine("Navigation Unsuccessful");
             
             }
+            SwitchToPopUps();
+            javascriptClick(By.XPath(General.Default.CloseB));
+            Console.WriteLine("Email notification passed smoke test successfully");
+            
         }
         //public void SaveEmailNotification()
         //{

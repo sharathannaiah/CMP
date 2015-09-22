@@ -19,11 +19,11 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Messag
         {
             GoToMain("Admin");
             retryingFindClickk(".//*[@id='mnu_Messaging']");
-            retryingFindClickk("");
+            retryingFindClickk(".//*[@id='mnuAdmin_Notifications']");
             if (true)
             {
                 BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-                WaitForElementToVisible(By.XPath("//div[text()='Notification Administration']"));
+                WaitForElementToVisible(By.XPath("//td[text()='Notification Administration']"));
                 Console.WriteLine("Navigation Successful");
             }
             else
@@ -31,7 +31,64 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Messag
                 Console.WriteLine("Navigation Unsuccessful");
 
             }
+
+            if (true)
+            {
+                CreateNotification();
+                Console.WriteLine("Notification Created Successfully");
+            }
+            else 
+            {
+                Console.WriteLine(" Notification creation failed");
+            }
+
+            if (true)
+            {
+                DeleteNotification();
+                Console.WriteLine("Notification Deleted Successfully");
+            }
+            else
+            {
+                Console.WriteLine("Notification deletion failed");
+            }
+
+            SwitchToPopUps();
+            javascriptClick(By.XPath(General.Default.CloseB));
+            Console.WriteLine("Admin --> Messaging --> Notification Adminstration passed smoke test successfully");
         }
 
+        public void CreateNotification()
+        {
+            SwitchToPopUps();
+            javascriptClick(By.XPath(General.Default.NewB));
+            Thread.Sleep(2000);
+            typeDataName("ehModuleName", "ABEnterprise");
+            typeDataName("ehEventName", "Automation");
+            typeDataName("ehDescription", "Auto Description");
+            typeDataID("ehMessage", "Smoke Test");
+            if (true)
+            {
+                javascriptClick(By.XPath(General.Default.SaveB));
+                Thread.Sleep(2000);
+                SwitchToPopUps();
+                Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='ABEnterprise']")), "Notification not Created");
+            }
+            else
+            {
+                Console.WriteLine(" Notification creation failed");
+            }
+        }
+
+
+        public void DeleteNotification()
+        {
+            SwitchToPopUps();
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) { return true; }");
+            javascriptClick(By.XPath(General.Default.DeleteB));
+            Thread.Sleep(2000);
+            SwitchToPopUps();
+            Assert.IsFalse(IsElementVisible(By.XPath("//div[text()='ABEnterprise']")), "Notification not deleted");
+        }
+                
     }
 }
