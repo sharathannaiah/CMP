@@ -629,6 +629,11 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Abstract
             ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementById('"+field+"').value='"+data+"'");
         }
 
+        public void SelectfromDropdownByText(string field, string index)
+        {
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementById('" + field + "').selectedText='" + index + "'");
+
+        }
 
         //Enter text with Name
         public void typeDataName(string field, string data)//Include this for index ,int index)

@@ -12,17 +12,17 @@ using System.Text.RegularExpressions;
 
 namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Miscellaneous
 {
-    class ExtendedAttributes: BaseActions
+    class PhraseCode : BaseActions
     {
-        public void ExtendedAttribyesFunctionality()
+        public void PhraseCodesFunctionality()
         {
             GoToMain("Admin");
             retryingFindClickk(".//*[@id='mnu_Misc']");
-            retryingFindClickk(".//*[@id='mnuAdmin_EA_new']");
+            retryingFindClickk(".//*[@id='mnuPhraseCodeMaintenance']");
             if (true)
             {
                 BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-                WaitForElementToVisible(By.XPath("//td[text()='Extended Attribute Configuration']"));
+                WaitForElementToVisible(By.XPath("//div[text()='Phrase Code Maintenance']"));
                 Console.WriteLine("Navigation Successful");
             }
             else
@@ -30,7 +30,15 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Miscel
                 Console.WriteLine("Navigation Unsuccessful");
 
             }
-
         }
-    }
+
+        public void AddPhraseCode()
+        { 
+            SwitchToContent();
+            BrowserDriver.Instance.Driver.SwitchTo().Frame("ADMIN_PHRASECODELIST");
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('phraseCode').selectedText='AT&T'");
+           // typeDataID("phraseCode", "AB123");
+        
+        }
+}
 }

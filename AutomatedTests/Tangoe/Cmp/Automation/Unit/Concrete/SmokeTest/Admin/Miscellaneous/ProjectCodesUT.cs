@@ -1,33 +1,33 @@
-﻿using AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin;
+﻿using AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Miscellaneous;
 using AutomatedTests.Tangoe.Cmp.Automation.UI.Concrete;
 using AutomatedTests.Tangoe.Cmp.Automation.Unit.Abstract;
 using NUnit.Framework;
 
 namespace AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.Miscellaneous
 {
-    class RemitAddressMergeUT : BaseUnitTest
+    class ProjectCodesUT: BaseUnitTest
     {
-        RemitAddressMerge remitAddressMerge;
+        ProjectCodes projectCodes;
 
         [TestFixtureSetUp]
         public void init()
         {
-            remitAddressMerge = new RemitAddressMerge();
-            AddActionClassesToList(remitAddressMerge);
+            projectCodes = new ProjectCodes();
+            AddActionClassesToList(projectCodes);
         }
 
         [SetUp]
         public void SetupBase()
         {
-            remitAddressMerge.Login();
+            projectCodes.Login();
         }
 
         [Test]
-        public void RemitAddressSmokeTest()
+        public void ProjectCodesSmokeFunctionality()
         {
             ExecuteTest(() =>
                 {
-                    remitAddressMerge.RemitAddressMergeFunctionality();
+                    projectCodes.ProjectCodesSmokeFunctionality();
                 });
         }
     }

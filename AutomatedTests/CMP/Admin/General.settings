@@ -38,5 +38,8 @@
     <Setting Name="AddRateB" Type="System.String" Scope="User">
       <Value Profile="(Default)">//input[@value='Add Rate']</Value>
     </Setting>
+    <Setting Name="UpdateB" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//input[@value='Update']</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
