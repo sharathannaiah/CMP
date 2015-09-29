@@ -18,7 +18,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Messag
         {
             GoToMain("Admin");
             retryingFindClickk(".//*[@id='mnu_Messaging']");
-            retryingFindClickk(".//*[@id='mnuAdmin_Messages']");
+            retryingFindClickk(".//*[@id='mnuAdmin_Email_Audit']");
 
             if (true)
             {
@@ -54,7 +54,11 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Messag
                 SwitchToContent();
                 BrowserDriver.Instance.Driver.SwitchTo().Frame("EMAILAUDITMESSAGE");
                 BrowserDriver.Instance.Driver.SwitchTo().Frame("EMAILAUDITLIST");
-                Assert.IsTrue(IsElementVisible(By.XPath("//div[text()=.'Success']")), "Search Failed");
+                Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='Success']")), "Search Failed");
+                SwitchToContent();
+                BrowserDriver.Instance.Driver.SwitchTo().Frame("EMAILAUDITMESSAGE");
+                BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.ResetB)).Click();
+
             }
 
         }

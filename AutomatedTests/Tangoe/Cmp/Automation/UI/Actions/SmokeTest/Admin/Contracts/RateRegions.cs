@@ -23,9 +23,10 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Contra
             Console.WriteLine("Navigation Successful");
             Thread.Sleep(2000);
             AddRegions();
-      //      AddCountry();
+            Thread.Sleep(2000);
+       //    AddCountry();
        //     RemoveCountry();
-            RemoveRegion();
+         //   RemoveRegion();
 
         }
 
@@ -58,12 +59,15 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Contra
 
         public void AddCountry()
         {
+            
             SwitchToPopUps();
             javascriptClick(By.XPath("//div[text()='Bangalore']"));
             javascriptClick(By.XPath(General.Default.AddB));
             Thread.Sleep(2000);
+            String newtitle = BrowserDriver.Instance.Driver.Title;
+            SwitchWindow("newtitle");
             BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-            //SwitchToPopUps();
+            SwitchToPopUps();
             typeDataName("countryName", "United States");
             javascriptClick(By.XPath(General.Default.SubmitB));
             Thread.Sleep(4000);
@@ -91,16 +95,36 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Contra
             SwitchToPopUps();
             SearchRegion();
          //   ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function () { return true } ");
+            //string script = "window.confirm = function() { return true; }";
+            //IJavaScriptExecutor executor = (IJavaScriptExecutor)BrowserDriver.Instance.Driver;
+            //executor.ExecuteScript(script);
             javascriptClick(By.XPath(General.Default.DeleteB));
-            string script = "window.confirm = function() { return true; };";
-            IJavaScriptExecutor executor = (IJavaScriptExecutor)BrowserDriver.Instance.Driver;
-            executor.ExecuteScript(script);
-            
-            
+            IAlert alert = BrowserDriver.Instance.Driver.SwitchTo().Alert();
+            alert.Accept();
             SwitchToPopUps();
             Assert.IsFalse(IsElementVisible(By.XPath("//div[text()='Bangalore']")), "Deleting Region Failed");
         }
+        protected static Boolean SwitchWindow(string title)
+        {
+            var currentWindow = BrowserDriver.Instance.Driver.CurrentWindowHandle;
+            var availableWindows = new List<string>(BrowserDriver.Instance.Driver.WindowHandles);
 
+            foreach (string w in availableWindows)
+            {
+                if (w != currentWindow)
+                {
+                    BrowserDriver.Instance.Driver.SwitchTo().Window(w);
+                    if (BrowserDriver.Instance.Driver.Title == title)
+                        return true;
+                    else
+                    {
+                        BrowserDriver.Instance.Driver.SwitchTo().Window(currentWindow);
+                    }
+
+                }
+            }
+            return false;
+        }
 
     }
 }

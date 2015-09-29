@@ -20,10 +20,39 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Invent
             GoToMain("Admin");
             retryingFindClickk(".//*[@id='mnu_InventoryAdmin']");
             retryingFindClickk(".//*[@id='mnuAdmin_DeviceCatalog']");
+            BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
+            WaitForElementToVisible(By.XPath("//div[text()='Catalog']"));
+            if (true)
+            {
+                Console.WriteLine("Admin --> Inventory--> Catalog Navigation Succesfull ");
+            }
+            else
+            {
+                Console.WriteLine("Admin --> Inventory--> Catalog Navigation Unsuccessful");
+            }
+            if (true)
+            {
+                CreateCatalog();
+                Console.WriteLine("Catalog Created Successfully");
+            }
+            else
+            {
+                Console.WriteLine("Catalog Creation  failed");
+            }
+            if (true)
+            {
+                DeleteCatalog();
+                Console.WriteLine("Catalog Deleted Successfully");
+            }
+            else
+            {
+                Console.WriteLine("Catalog   Deletion  failed");
+            }
 
-            CreateCatalog();
-            DeleteCatalog();
-            
+            if (true)
+            {
+                Console.WriteLine("Inventory --> Catalog passed smoke test successfully");
+            }
         }
 
         public void CreateCatalog()
@@ -47,7 +76,6 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Invent
            SwitchToContent();
            BrowserDriver.Instance.Driver.SwitchTo().Frame("CAT_DEVICE_DETAILS");
            Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='ABCD12345']")), "Create Catalog Failed");
-           Console.WriteLine("Catalog Created Successfully");
         }
        
        
@@ -64,7 +92,6 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Invent
             BrowserDriver.Instance.Driver.SwitchTo().Frame("CAT_DEVICE_DETAILS");
             Thread.Sleep(2000);
             Assert.IsFalse(IsElementVisible(By.XPath("//div[text()='ABCD12345")), "Deletion of Catalog Failed");
-            Console.WriteLine("Catalog Deleted Successfully");
 
 
         }

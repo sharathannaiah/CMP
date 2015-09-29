@@ -57,6 +57,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Messag
             {
                 DeleteEmployeeNotification();
                 Console.WriteLine("Employee notification deletion successful");
+                Console.WriteLine("Admin --> Messaging --> Employee Notification passed smoke test successfully ");
             }
             else 
             {
@@ -77,7 +78,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Messag
             javascriptClick(By.XPath(General.Default.CreateB));
             Thread.Sleep(2000);
             SwitchFrame();
-            Assert.IsTrue(IsElementVisible(By.XPath("Automation Employee Message")), "Employee notification not created");
+            Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='Automation Employee Message']")), "Employee notification not created");
 
         }
 
@@ -96,15 +97,19 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Messag
         public void DeleteEmployeeNotification()
         {
             SwitchFrame();
-            javascriptClick(By.XPath("//div[text()='Automation Employee Message']"));
-            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) { return true; }");
+            javascriptClick(By.CssSelector("input.multiSelectRow"));
+         //   javascriptClick(By.XPath("//div[text()='Automation Employee Message']"));
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) { return true;};");
             javascriptClick(By.XPath(General.Default.DeleteB));
+            Thread.Sleep(2000);
+            SwitchFrame();
             Assert.False(IsElementVisible(By.XPath("//div[text()='Automation Employee Message']")), "Deletion not successful");
 
         }
 
         public void SwitchFrame()
         {
+            BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
             BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
             BrowserDriver.Instance.Driver.SwitchTo().Frame("CONTENT");
             BrowserDriver.Instance.Driver.SwitchTo().Frame("ADMINMESSAGE");

@@ -18,54 +18,86 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Inventory
             {
 
                 GoToMain1("Inventory", "Inventory Discovery");
+                if (true)
+                {
+                    BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
+                    WaitForElementToVisible(By.XPath("//div[text()='Inventory Discovery']"));
+                    Console.WriteLine("Navigation Successful");
+                }
+                else
+                {
+                    Console.WriteLine("Navigation Unsuccessful");
+
+                }
+
+                if (true)
+                {
+                    InventorySearch();
+                    SwitchToContent();
+                  //  BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER_SUMMARY");
+                    BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER");
+                    Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='Verizon']")), "Search failed");
+                    Console.WriteLine("Inventory Search Successfully");
+                    Thread.Sleep(2000);
+                }
+                else
+                {
+                    Console.WriteLine("Inventory Search failed");
+                }
+
+                if (true)
+                {
+                    AcceptInventory();
+                    Console.WriteLine("Inventory Accepted Successfully");
+                    Thread.Sleep(2000);
+                }
+                else
+                {
+                    Console.WriteLine("Inventory Accept failed");            
+                }
+
+
+                Console.WriteLine("Inventory Discovery passed successfully");
        }
 
+       public void InventorySearch()
+       {
+           SwitchToContent();
+           typeDataName("inventoryType", "1");
+           Thread.Sleep(4000);
+           SwitchToContent();
+           BrowserDriver.Instance.Driver.SwitchTo().Frame("INV_QUERY_FRAME");
+           typeDataName("carrierId", "4");
+           BrowserDriver.Instance.Driver.FindElement(By.XPath(Inven.Default.QSubmitB)).Click();
+           Thread.Sleep(5000);
+       }
 
         public void AcceptInventory()
         {
             //[selectFrame | CONTENT | ]]
             SwitchToContent();
-            SelectfromDropdown("inventoryType", "1");
-            Thread.Sleep(2000);
-            SwitchToContent();
-            BrowserDriver.Instance.Driver.SwitchTo().Frame("INV_QUERY_FRAME");
-            BrowserDriver.Instance.Driver.FindElement(By.XPath(Inven.Default.QSubmitB)).Click();
-            Thread.Sleep(5000);
-            SwitchToContent();
             BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER");
-            javascriptClick(By.CssSelector("input.multiSelectRow"));
-            BrowserDriver.Instance.Driver.FindElement(By.XPath(Inven.Default.AcceptB)).Click();
+            BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER");
+            javascriptClick(By.XPath(".//*[@id='acceptButton']"));
             Thread.Sleep(3000);
             SwitchToPopUps();
+            SelectElement se = new SelectElement(FindElement(By.Name("targetInventoryTypeId")));
+            se.SelectByText("OTHER");
             javascriptClick(By.Id("nextButton"));
-            Thread.Sleep(2000);
-         //   SelectfromDropdown("flexibleMappingSource", "1");
-            //((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('flexibleMappingSource')[1].selectedIndex='1';");
-            //((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('flexibleMappingSource')[2].selectedIndex='1';");
-            //((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('flexibleMappingSource')[3].selectedIndex='1';");
-            javascriptClick(By.XPath(Inven.Default.DoneB));
-            Thread.Sleep(7000);
-            SwitchToPopUps();
-            Assert.AreEqual("Accepted LINE", BrowserDriver.Instance.Driver.FindElement(By.Id("dWnd1title")).Text);
-            BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER");
-            BrowserDriver.Instance.Driver.SwitchTo().Frame("LINE_GENERAL");
-           // BrowserDriver.Instance.Driver.FindElement(By.XPath("//input[@Name='phoneNumber']")).Clear();
-           // typeDataName("phoneNumber", "7777777777");
-            javascriptClick(By.XPath(Inven.Default.SaveB));
-            Thread.Sleep(2000);
+            Thread.Sleep(3000);
+            BrowserDriver.Instance.Driver.FindElement(By.Id("nextButton")).Click();
+            Thread.Sleep(3000);
+            BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
+            String newwindowTitle = BrowserDriver.Instance.Driver.Title;
+            SwitchWindow("newwindowTitle");
+  //          BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
+      //      Assert.IsTrue(IsElementVisible(By.XPath("//td[text()='Accepted OTHER']")), "Accept failed");
+          //  BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER");
+          //  BrowserDriver.Instance.Driver.SwitchTo().Frame("OTHER_GENERAL");
+            BrowserDriver.Instance.Driver.SwitchTo().Frame("CMP_DIALOG_FRAME");
             javascriptClick(By.XPath(Inven.Default.CloseB));
             Thread.Sleep(4000);
-        
-            
-            //   BrowserDriver.Instance.Driver.FindElement(By.Name("phoneNumber")).GetAttribute("ng-change");
-         
-            
-            //navigate to inventory explorer and search for the accepted inventory 
-
-
-            Console.WriteLine("Inventory Accepted Successfully");
-            Thread.Sleep(2000);
-            Console.WriteLine("Inventory Discovery passed successfully");
+           
             }
 
 
@@ -73,6 +105,28 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Inventory
         {
             SwitchToContent();
 
+        }
+
+        protected static Boolean SwitchWindow(string title)
+        {
+            var currentWindow = BrowserDriver.Instance.Driver.CurrentWindowHandle;
+            var availableWindows = new List<string>(BrowserDriver.Instance.Driver.WindowHandles);
+
+            foreach (string w in availableWindows)
+            {
+                if (w != currentWindow)
+                {
+                    BrowserDriver.Instance.Driver.SwitchTo().Window(w);
+                    if (BrowserDriver.Instance.Driver.Title == title)
+                        return true;
+                    else
+                    {
+                        BrowserDriver.Instance.Driver.SwitchTo().Window(currentWindow);
+                    }
+
+                }
+            }
+            return false;
         }
     }
 }

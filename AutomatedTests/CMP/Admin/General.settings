@@ -41,5 +41,14 @@
     <Setting Name="UpdateB" Type="System.String" Scope="User">
       <Value Profile="(Default)">//input[@value='Update']</Value>
     </Setting>
+    <Setting Name="CancelB" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//input[@value='Cancel']</Value>
+    </Setting>
+    <Setting Name="RestoreB" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//input[@value='Restore']</Value>
+    </Setting>
+    <Setting Name="DetailsB" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//input[@value='Details']</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

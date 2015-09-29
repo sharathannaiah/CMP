@@ -29,7 +29,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Contracts
 
 
         [Test]
-        public void EnterpriseFunctionality()
+        public void ContractFunctionality()
         {
             ExecuteTest(() =>
             {

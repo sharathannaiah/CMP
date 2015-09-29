@@ -20,15 +20,28 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Invent
             retryingFindClickk(".//*[@id='mnu_InventoryAdmin']");
             retryingFindClickk(".//*[@id='mnuProductSpeeds']");
             BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-            WaitForElementToVisible(By.XPath("//td[text()='Speed Maintenance']"));
-            Console.WriteLine("Navigation Successful");
-            Thread.Sleep(2000);
-            AddProductSpeed();
-            Thread.Sleep(2000);
-            DeleteSpeed();
             if (true)
             {
-
+                WaitForElementToVisible(By.XPath("//td[text()='Speed Maintenance']"));
+                Console.WriteLine("Navigation Successful");
+            }
+            else 
+            {
+                Console.WriteLine("Navigation Unsuccessful");
+            }
+            if (true)
+            {
+                Thread.Sleep(2000);
+                AddProductSpeed();
+            }
+            //if (true)
+            //{
+            //    Thread.Sleep(2000);
+            //    DeleteSpeed();
+            //}
+            if (true)
+            {
+                javascriptClick(By.XPath(General.Default.CancelB));
                 Console.WriteLine("Admin --> Inventory --> Product Speed Passed Smoke Test Successfully");
             }
             else

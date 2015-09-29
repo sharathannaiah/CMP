@@ -72,11 +72,11 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise
                    ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('nameField')[1].value='AutoIndia'");
                    ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementById('description').value='Automation South Indian Region'");
                    javascriptClick(By.XPath("//input[@value='LOCAL']"));
-                   javascriptClick(By.XPath(Enterp.Default.SaveB));
+                   retryingFindClick(By.XPath(Enterp.Default.SaveB));
                    Thread.Sleep(2000);
                    SwitchToPopUps();
                    typeDataID("nameField", "AutoIndia");
-                   javascriptClick(By.XPath(Enterp.Default.QuerySubmitB));
+                  retryingFindClick(By.XPath(Enterp.Default.QuerySubmitB));
                    Thread.Sleep(2000);
                    SwitchToPopUps();
                    Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='AutoIndia']")), "Region not created");
@@ -97,45 +97,46 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise
             Console.WriteLine("Region Added Successfully");
            }
 
-           public Thread SimulateClickForConfirmation(string title)
-           {
+           //public Thread SimulateClickForConfirmation(string title)
+           //{
 
-               //Simulate autoclick on IE windows 
-               Thread th = new Thread(new ThreadStart(() =>
-               {
-                   Thread.Sleep(1000);
-                   Process script = new Process();
-                   script.StartInfo.FileName ="D:\\Code Library\vbstest.vbs";
-                   script.StartInfo.Arguments = title;
-                   script.Start();
-                   script.WaitForExit();
-                   script.Close();
-               }));
+           //    //Simulate autoclick on IE windows 
+           //    Thread th = new Thread(new ThreadStart(() =>
+           //    {
+           //        Thread.Sleep(1000);
+           //        Process script = new Process();
+           //        script.StartInfo.FileName ="D:\\Code Library\vbstest.vbs";
+           //        script.StartInfo.Arguments = title;
+           //        script.Start();
+           //        script.WaitForExit();
+           //        script.Close();
+           //    }));
 
-               th.Start();
+           //    th.Start();
 
-               return th;
-           }
+           //    return th;
+           //}
 
         public void DeleteRegions()
         {
-            
-            Thread.Sleep(2000);
-            SwitchToPopUps();
 
-            
+            BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
+            BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
+            BrowserDriver.Instance.Driver.SwitchTo().Frame("CMP_DIALOG_FRAME");
     //  Thread th1 = SimulateClickForConfirmation(BrowserDriver.Instance.Driver.Title.ToString());
-     ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) {return true;}; ");
-     BrowserDriver.Instance.Driver.FindElement(By.Id("deleteButton")).Click();
+  //   ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) { return true; }  ");
+   //  BrowserDriver.Instance.Driver.FindElement(By.Id("deleteButton")).Click();
     //  th1.Abort();
-       //   IAlert alert = BrowserDriver.Instance.Driver.SwitchTo().Alert();
-      //   alert.Accept();
+    // BrowserDriver.Instance.Driver.SwitchTo().Frame("LINE_SPID");
+     ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) { return true; }");
+     javascriptClick(By.XPath(Enterp.Default.DeleteB));
+     Thread.Sleep(2000);
          //   BrowserDriver.Instance.Driver.FindElement(By.XPath(Enterp.Default.DeleteB)).Click();
-            Thread.Sleep(2000);
             //     Assert.IsTrue(Regex.IsMatch(CloseAlertAndGetItsText(), "^Are you sure you want to delete this region[\\s\\S]$"));
         //    BrowserDriver.Instance.Driver.FindElement(By.Id("closeButton")).Click();
             Console.WriteLine("Deletion of Region Successful");
             Thread.Sleep(2000);
+            
                 
         }
 

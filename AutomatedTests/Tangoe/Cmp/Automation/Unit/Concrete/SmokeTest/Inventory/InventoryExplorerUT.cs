@@ -28,7 +28,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Inventory
 
 
         [Test]
-        public void EnterpriseFunctionality()
+        public void InventoryExplorerFunctionality()
         {
             ExecuteTest(() =>
             {

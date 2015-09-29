@@ -23,7 +23,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Contra
             WaitForElementToVisible(By.XPath("//td[text()='Terms']"));
             Console.WriteLine("Navigation Successful");
             CreateTerms();
-            DeleteTerms();
+          DeleteTerms();
             if(true)
             {
                 Console.WriteLine("Admin --> Contracts --> Contract Term passed smoke test Successfully");
@@ -47,35 +47,29 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Contra
             javascriptClick(By.XPath(General.Default.SubmitB));
             Thread.Sleep(2000);
             SwitchToPopUps();
-            Assert.IsTrue(IsElementVisible(By.XPath("//td[text()='True/False']")), "Term creation Failed");
+            Assert.IsTrue(IsElementVisible(By.XPath("//td[text()='AutomationTerms']")), "Term creation Failed");
             Console.WriteLine("Terms Created Succesfully");
         }
         public void DeleteTerms()
         {
-
             SwitchToPopUps();
           //  ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('nameField')[0].value='AutomationTerms'");
             javascriptClick(By.XPath(General.Default.SubmitB));
             Thread.Sleep(2000);
-            Assert.IsTrue(IsElementVisible(By.XPath("//td[text()='True/False']")), "Contract Term Search Failed");
+            Assert.IsTrue(IsElementVisible(By.XPath("//td[text()='AutomationTerms']")), "Contract Term Search Failed");
             Console.WriteLine("Contract Term Search Successful");
             javascriptClick(By.XPath("//td[text()='AutomationTerms']"));
             Thread.Sleep(2000);
             SwitchToPopUps();
+           // javascriptClick(By.XPath(General.Default.DeleteB));
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg){return true;};");
             javascriptClick(By.XPath(General.Default.DeleteB));
-      ((IJavaScriptExecutor) BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) { return true; }");
-            
-       //     ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.alert = function() { return true; };" );
+          // BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.DeleteB)).Click();
           //  Thread.Sleep(2000);
-            SwitchToPopUps();
-           Assert.IsFalse(IsElementVisible(By.XPath("//td[text()='Number']")), "Term Deletion Failed");
-            Console.WriteLine("Delete Successfull");
-
+            //SwitchToPopUps();
+          // Assert.IsFalse(IsElementVisible(By.XPath("//td[text()='Number']")), "Term Deletion Failed");
+            Console.WriteLine("Delete Successful"); 
         }
-
-        
-
-
         }
     
 }

@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Threading;
+using AutomatedTests.CMP.Enterprise;
 
 
 namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise.Employee
@@ -17,14 +18,23 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise.E
         //Create Ticket
         public void SupportTicketFunctionality()
         {
-            GoToMain("Enterprise");
-            retryingFindClickk(".//*[@id='mnuEnterprise_Employees']");
-            retryingFindClickk(".//*[@id='mnuEmployees_HelpDeskTickets']");
-            Thread.Sleep(2000);
-            AddSupportTicket();
-            Thread.Sleep(2000);
-            UpdateTicket();
-            Deletion();
+            if (true)
+            {
+                GoToMain("Enterprise");
+                retryingFindClickk(".//*[@id='mnuEnterprise_Employees']");
+                retryingFindClickk(".//*[@id='mnuEmployees_HelpDeskTickets']");
+                Thread.Sleep(2000);
+                AddSupportTicket();
+                Thread.Sleep(2000);
+                SearchTicket();
+                UpdateTicket();
+                Deletion();
+                Console.WriteLine("Support Ticket passed smoke test successfully");
+            }
+            else
+            {
+                Console.WriteLine("Support Ticket  failed smoke test");
+            }
         }
 
         //Edit the Created Ticket
@@ -56,7 +66,23 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise.E
            
         }
 
+        //Search Ticket
+        public void SearchTicket()
+        {
+            SwitchToContent();
+            BrowserDriver.Instance.Driver.SwitchTo().Frame("HELPDESKTICKETS");
+            typeDataID("supportTicketNumber", "Ticket1");
+            BrowserDriver.Instance.Driver.FindElement(By.XPath(Enterp.Default.ResetB)).Click();
+            typeDataID("supportTicketSubject", "Ticket1");
+            BrowserDriver.Instance.Driver.FindElement(By.XPath(Enterp.Default.QuerySubmitB)).Click();
+            Thread.Sleep(2000);
+            SwitchToContent();
+            BrowserDriver.Instance.Driver.SwitchTo().Frame("HELPDESKTICKETS");
+            BrowserDriver.Instance.Driver.SwitchTo().Frame("TICKETLIST");
+            Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='Ticket1']")), "Search not successful");
+            Console.WriteLine("Support Ticket Search Successfull");
 
+        }
         //Add Function
         public void AddSupportTicket()
         {
@@ -77,13 +103,11 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise.E
            SwitchToPopUps();
            IWebElement elemen = BrowserDriver.Instance.Driver.FindElement(By.XPath(".//*[@id='ticketsResponsesFormDV']/div/input[1]"));
             ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("arguments[0].click();", elemen);
-
             Thread.Sleep(2000);
             SwitchToPopUps();
             IWebElement eleme = BrowserDriver.Instance.Driver.FindElement(By.XPath(".//*[@id='ticketsResponsesFormDV']/div/input[2]"));
             ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("arguments[0].click();", eleme);
             Console.WriteLine("Support Ticket Created Successfully");
-
         }
 
         //Update method
@@ -103,7 +127,6 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise.E
             BrowserDriver.Instance.Driver.SwitchTo().Frame("HELPDESKTICKETS");
             BrowserDriver.Instance.Driver.SwitchTo().Frame("TICKETLIST");
             ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg){return true;};");
-
             BrowserDriver.Instance.Driver.FindElement(By.XPath("//input[@value='Delete']")).Click();
             Thread.Sleep(2000);
       //      BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();

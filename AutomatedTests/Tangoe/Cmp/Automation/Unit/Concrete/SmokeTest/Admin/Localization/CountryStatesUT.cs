@@ -22,7 +22,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.Loc
             countryStates.Login();
         }
         [Test]
-        public void LocalizationSmokeFunctionality()
+        public void CountryStateSmokeFunctionality()
         {
             ExecuteTest(() =>
             {

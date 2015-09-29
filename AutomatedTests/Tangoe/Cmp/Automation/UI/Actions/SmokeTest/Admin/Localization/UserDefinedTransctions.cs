@@ -17,13 +17,14 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Locali
         public void UserDefinedTranscationsFun()
         {
             GoToMain("Admin");
-            retryingFindClickk("");
+            retryingFindClickk(".//*[@id='mnu_Localization']");
             retryingFindClickk(".//*[@id='mnuBaseTextTransformation']");
             if (true)
             {
                     BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-                    WaitForElementToVisible(By.XPath("//div[text()='User Defined Translation']"));
+                    WaitForElementToVisible(By.XPath("//td[text()='User Defined Translation']"));
                     Console.WriteLine("Navigation Successful");
+                    javascriptClick(By.XPath(General.Default.CloseB));
                 }
             else
             {

@@ -22,7 +22,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.Loc
             if (true)
             {
                 BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-                WaitForElementToVisible(By.XPath("//div[text()='Exchange Rate Import Wizard']"));
+                WaitForElementToVisible(By.XPath("//td[text()='Exchange Rate Import Wizard']"));
                 Console.WriteLine("Navigation Successful");
             }
             else 
@@ -37,8 +37,15 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.Loc
                 Thread.Sleep(2000);
                 SwitchToPopUps();
                 Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='Tangoe Exchange Rate Template']")), "Unable to display details");
-                Console.WriteLine("Exchanging Import Rates passed smoke test successfully");
+                javascriptClick(By.XPath("//div[text()='0']"));
+                javascriptClick(By.XPath(General.Default.DetailsB));
+                Thread.Sleep(2000);
+                BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
+      //          BrowserDriver.Instance.Driver.SwitchTo().Window(BrowserDriver.Instance.Driver.WindowHandles.Last());
+                Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='Tangoe Exchange Rate Template']")), "Unable to display details");
+                Console.WriteLine("Navigation to details page successful");
                 javascriptClick(By.XPath(General.Default.CloseB));
+                Console.WriteLine("Exchanging Import Rates passed smoke test successfully");
             }
             else 
             {

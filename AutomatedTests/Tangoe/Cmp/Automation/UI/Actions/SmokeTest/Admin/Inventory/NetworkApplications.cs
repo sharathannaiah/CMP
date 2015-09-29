@@ -21,12 +21,37 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.Inv
             GoToMain("Admin");
             retryingFindClickk(".//*[@id='mnu_InventoryAdmin']");
             retryingFindClickk(".//*[@id='mnuAdmin_NetworkApplications']");
-            WaitForElementToVisible(By.XPath("//td[text()='Network Application']"));
-            Console.WriteLine("Navigation Successful");
+            BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
+            if (true)
+            {
+                WaitForElementToVisible(By.XPath("//td[text()='Network Application']"));
+                Console.WriteLine("Navigation Successful");
+            }
+            else 
+            {
+                Console.WriteLine("Naviagtion failed");
+            }
             Thread.Sleep(2000);
-
-            AddNetwork();
-            DeleteNetwork();
+            
+            if (true)
+            {
+                AddNetwork();
+                Console.WriteLine("Network added Successfully");
+            }
+            else
+            {
+                Console.WriteLine("Network not added successfully");
+            }
+            if (true)
+            {
+                DeleteNetwork();
+                Console.WriteLine("Network deleted Successfully");
+            }
+            else
+            {
+                Console.WriteLine("Network deletion  failed");
+            
+            }
             if (true)
             {
                 Console.WriteLine("Network Applictions passed smoke test successfully");
@@ -47,7 +72,6 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.Inv
         Thread.Sleep(2000);
         BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
         Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='AB10']")), "Add Network Failed");
-        Console.WriteLine("Network added Successfully");
         }
 
         public void DeleteNetwork() 
@@ -59,7 +83,6 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.Inv
             Thread.Sleep(2000);
             BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
             Assert.IsFalse(IsElementVisible(By.XPath("//div[text()='AB10']")), "Delete Network Failed");
-            Console.WriteLine("Network Deleted Successfully");
             javascriptClick(By.XPath(General.Default.CloseB));
   
         }

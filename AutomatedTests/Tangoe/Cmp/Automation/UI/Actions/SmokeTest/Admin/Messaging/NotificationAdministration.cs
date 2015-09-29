@@ -68,7 +68,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Messag
             typeDataID("ehMessage", "Smoke Test");
             if (true)
             {
-                javascriptClick(By.XPath(General.Default.SaveB));
+                BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.SaveB)).Click();
                 Thread.Sleep(2000);
                 SwitchToPopUps();
                 Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='ABEnterprise']")), "Notification not Created");
@@ -79,11 +79,15 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Messag
             }
         }
 
+        public void EditNotification()
+        { 
+        
+        }
 
         public void DeleteNotification()
         {
             SwitchToPopUps();
-            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) { return true; }");
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) {return true;};");
             javascriptClick(By.XPath(General.Default.DeleteB));
             Thread.Sleep(2000);
             SwitchToPopUps();

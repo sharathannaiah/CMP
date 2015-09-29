@@ -1,45 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--This file represents the results of running a test suite-->
-<test-results name="D:\Code Library\AutomatedTests\bin\Debug\AutomatedTests.nunit" total="1" errors="0" failures="1" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2015-09-24" time="08:39:31">
-  <environment nunit-version="2.6.4.14350" clr-version="2.0.50727.5485" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="D:\Code Library\AutomatedTests\bin" machine-name="SANNAIAH6440" user="sharath.annaiah" user-domain="CORP" />
+<test-results name="D:\Code Library\AutomatedTests\bin\Debug\AutomatedTests.nunit" total="1" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2015-09-28" time="15:50:19">
+  <environment nunit-version="2.6.4.14350" clr-version="2.0.50727.5485" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="D:\Code Library\AutomatedTests\bin" machine-name="SANNAIAH6440" user="Sharath.Annaiah" user-domain="CORP" />
   <culture-info current-culture="en-US" current-uiculture="en-US" />
-  <test-suite type="Project" name="D:\Code Library\AutomatedTests\bin\Debug\AutomatedTests.nunit" executed="True" result="Failure" success="False" time="248.610" asserts="0">
+  <test-suite type="Project" name="D:\Code Library\AutomatedTests\bin\Debug\AutomatedTests.nunit" executed="True" result="Success" success="True" time="46.797" asserts="0">
     <results>
-      <test-suite type="SetUpFixture" name="D:\Code Library\AutomatedTests\bin\Debug\AutomatedTests.dll" executed="True" result="Failure" success="False" time="248.536" asserts="0">
+      <test-suite type="SetUpFixture" name="D:\Code Library\AutomatedTests\bin\Debug\AutomatedTests.dll" executed="True" result="Success" success="True" time="46.754" asserts="0">
         <results>
-          <test-suite type="Namespace" name="AutomatedTests" executed="True" result="Failure" success="False" time="248.528" asserts="0">
+          <test-suite type="Namespace" name="AutomatedTests" executed="True" result="Success" success="True" time="46.749" asserts="0">
             <results>
-              <test-suite type="Namespace" name="Tangoe" executed="True" result="Failure" success="False" time="248.526" asserts="0">
+              <test-suite type="Namespace" name="Tangoe" executed="True" result="Success" success="True" time="46.749" asserts="0">
                 <results>
-                  <test-suite type="Namespace" name="Cmp" executed="True" result="Failure" success="False" time="248.525" asserts="0">
+                  <test-suite type="Namespace" name="Cmp" executed="True" result="Success" success="True" time="46.748" asserts="0">
                     <results>
-                      <test-suite type="Namespace" name="Automation" executed="True" result="Failure" success="False" time="248.525" asserts="0">
+                      <test-suite type="Namespace" name="Automation" executed="True" result="Success" success="True" time="46.746" asserts="0">
                         <results>
-                          <test-suite type="Namespace" name="Unit" executed="True" result="Failure" success="False" time="248.524" asserts="0">
+                          <test-suite type="Namespace" name="Unit" executed="True" result="Success" success="True" time="46.746" asserts="0">
                             <results>
-                              <test-suite type="Namespace" name="Concrete" executed="True" result="Failure" success="False" time="248.523" asserts="0">
+                              <test-suite type="Namespace" name="Concrete" executed="True" result="Success" success="True" time="46.745" asserts="0">
                                 <results>
-                                  <test-suite type="Namespace" name="SmokeTest" executed="True" result="Failure" success="False" time="248.522" asserts="0">
+                                  <test-suite type="Namespace" name="SmokeTest" executed="True" result="Success" success="True" time="46.744" asserts="0">
                                     <results>
-                                      <test-suite type="Namespace" name="Enterprise" executed="True" result="Failure" success="False" time="248.521" asserts="0">
+                                      <test-suite type="Namespace" name="Admin" executed="True" result="Success" success="True" time="46.744" asserts="0">
                                         <results>
-                                          <test-suite type="TestFixture" name="EntityRegionsUT" executed="True" result="Failure" success="False" time="248.483" asserts="0">
+                                          <test-suite type="Namespace" name="Messaging" executed="True" result="Success" success="True" time="46.743" asserts="0">
                                             <results>
-                                              <test-case name="AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Enterprise.EntityRegionsUT.EnterpriseFunctionality" executed="True" result="Failure" success="False" time="246.572" asserts="2">
-                                                <failure>
-                                                  <message><![CDATA[OpenQA.Selenium.WebDriverException
-The HTTP request to the remote WebDriver server for URL http://localhost:55693/session/66b3cfbb-9e1c-4aec-8d02-990c05fa80a3/element/b7f2aa5c-c2bf-4360-bf6f-bb93a035494c/click timed out after 60 seconds.   at OpenQA.Selenium.Remote.HttpCommandExecutor.CreateResponse(WebRequest request)
-   at OpenQA.Selenium.Remote.DriverServiceCommandExecutor.Execute(Command commandToExecute)
-   at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
-   at AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise.EntityRegions.DeleteRegions() in d:\Code Library\AutomatedTests\Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Enterprise\EntityRegions.cs:line 129
-   at AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise.EntityRegions.EntityRegionFunctionality() in d:\Code Library\AutomatedTests\Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Enterprise\EntityRegions.cs:line 46
-   at AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Enterprise.EntityRegionsUT.<EnterpriseFunctionality>b__0() in d:\Code Library\AutomatedTests\Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Enterprise\EntityRegionsUT.cs:line 37
-   at AutomatedTests.Tangoe.Cmp.Automation.Unit.Abstract.BaseUnitTest.ExecuteTest(Action action) in d:\Code Library\AutomatedTests\Tangoe\Cmp\Automation\Unit\Abstract\BaseUnitTest.cs:line 178]]></message>
-                                                  <stack-trace><![CDATA[at AutomatedTests.Tangoe.Cmp.Automation.Unit.Abstract.BaseUnitTest.ExecuteTest(Action action) in d:\Code Library\AutomatedTests\Tangoe\Cmp\Automation\Unit\Abstract\BaseUnitTest.cs:line 182
-at AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Enterprise.EntityRegionsUT.EnterpriseFunctionality() in d:\Code Library\AutomatedTests\Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Enterprise\EntityRegionsUT.cs:line 35
-]]></stack-trace>
-                                                </failure>
-                                              </test-case>
+                                              <test-suite type="TestFixture" name="EmployeeNotificationUT" executed="True" result="Success" success="True" time="46.740" asserts="0">
+                                                <results>
+                                                  <test-case name="AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.Messaging.EmployeeNotificationUT.EmployeeNotificationSmokeTest" executed="True" result="Success" success="True" time="46.710" asserts="3" />
+                                                </results>
+                                              </test-suite>
                                             </results>
                                           </test-suite>
                                         </results>

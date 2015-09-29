@@ -22,19 +22,36 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Invent
                 retryingFindClickk(".//*[@id='mnu_InventoryAdmin']");
                 retryingFindClickk(".//*[@id='mnuAdmin_Features']");
                 BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-                WaitForElementToVisible(By.XPath("//td[text()='Feature Maintenance']"));
-                Console.WriteLine("Navigation Successful");
+                if (true)
+                {
+                    WaitForElementToVisible(By.XPath("//td[text()='Feature Maintenance']"));
+                    Console.WriteLine("Navigation Successful");
+                }
+                else
+                {
+                    Console.WriteLine("Navigation Unsuccessful");
+                }
+
                 Thread.Sleep(2000);
-                CreateNewFeature();
-                CopyFeatures();
-                DeleteFeatures();
-                javascriptClick(By.XPath(General.Default.CloseB));
-                Console.WriteLine("Admin --> Inventory --> Features passed Smoke Test successfully");
-            }
-            
-            else
-            {
-                Console.WriteLine("Admin --> Inventory --> Features passed Smoke Test successfully");
+                if (true)
+                {
+                    CreateNewFeature();
+                }
+                if (true)
+                {
+                    CopyFeatures();
+                }
+                if (true)
+                {
+                    DeleteFeatures();
+                    javascriptClick(By.XPath(General.Default.CloseB));
+                    Console.WriteLine("Admin --> Inventory --> Features passed Smoke Test successfully");
+                }
+
+                else
+                {
+                    Console.WriteLine("Admin --> Inventory --> Features passed Smoke Test successfully");
+                }
             }
         }
         public void CreateNewFeature()
