@@ -37,6 +37,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Miscel
            
             if (true)
             {
+                SearchContact();
                 CreateReq();
                 Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='External']")), "Contact Request not created");
                 Console.WriteLine("Contact created successfully");
@@ -71,10 +72,13 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Miscel
                 DeleteEntity();
                 Thread.Sleep(2000);
                 SwitchIndideFrame();
-                BrowserDriver.Instance.Driver.SwitchTo().Frame("ENTITIES");
+                IWebElement ele = BrowserDriver.Instance.Driver.FindElement(By.Id("ENTITIES"));
+                BrowserDriver.Instance.Driver.SwitchTo().Frame(ele);
                 Assert.IsFalse(IsElementVisible(By.XPath("//div[text()='ACS']")), "Entity not deleted");
-                Console.WriteLine("Entity Added Successfully");
+                Console.WriteLine("Entity Deleted Successfully");
+                Console.WriteLine("Admin --> Miscellaneous --> Contacts passed smoke test Successfully");
             }
+
             else
             {
                 Console.WriteLine("Entity deletion failed");
@@ -95,6 +99,20 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Miscel
             SwitchIndideFrame();
         }
 
+        public void SearchContact()
+        {
+            BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
+            BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
+            BrowserDriver.Instance.Driver.SwitchTo().Frame("CONTENT");
+            BrowserDriver.Instance.Driver.SwitchTo().Frame("ADMINCONTACTS");
+            new SelectElement(BrowserDriver.Instance.Driver.FindElement(By.Name("contactTypeId"))).SelectByText("Employee Contact");
+            Thread.Sleep(2000);
+            BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.SubmitB)).Click();
+            Thread.Sleep(2000);
+            SwitchIndideFrame();
+            Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='Employee Contact']")), "Search  failed");
+            Console.WriteLine("Search Successful");
+        }
         public void EditList(string Name)
         {
 
@@ -137,6 +155,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Miscel
           typeDataName("firstName", "Firstname" +RandomNumbergeneratorL());
           typeDataName("lastName", "LastName" + RandomNumbergeneratorL());
           ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('contactTypeId')[0].selectedIndex='2'");
+
           javascriptClick(By.XPath(General.Default.SaveB));
             Thread.Sleep(5000);
 
@@ -148,8 +167,8 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Miscel
             BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
             SwitchIndideFrame();
             BrowserDriver.Instance.Driver.FindElement(By.Id("notifications")).Click();
+            Thread.Sleep(2000);
             SwitchIndideFrame();
-            BrowserDriver.Instance.Driver.SwitchTo().Frame("NOTIFICATIONS");
             //BrowserDriver.Instance.Driver.FindElement(By.Id("notifications")).Click();
         }
 
@@ -184,6 +203,9 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Miscel
             BrowserDriver.Instance.Driver.SwitchTo().Frame("CONTENT");
             BrowserDriver.Instance.Driver.SwitchTo().Frame("ADMINCONTACTS");//ADMIN_CONTACTLIST
             BrowserDriver.Instance.Driver.SwitchTo().Frame("ADMIN_CONTACTLIST");
+            IWebElement ele = BrowserDriver.Instance.Driver.FindElement(By.Id("NOTIFICATIONS"));
+            BrowserDriver.Instance.Driver.SwitchTo().Frame(ele);
+         //   BrowserDriver.Instance.Driver.SwitchTo().Frame("NOTIFICATIONS");
             Thread.Sleep(2000);
             javascriptClick(By.CssSelector("input.multiSelectRow"));
             javascriptClick(By.XPath(General.Default.SaveB));
@@ -195,24 +217,27 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Miscel
             javascriptClick(By.Id("entities"));
             Thread.Sleep(2000);
             SwitchIndideFrame();
-            BrowserDriver.Instance.Driver.SwitchTo().Frame("ENTITIES");
+            IWebElement ele = BrowserDriver.Instance.Driver.FindElement(By.Id("ENTITIES"));
+            BrowserDriver.Instance.Driver.SwitchTo().Frame(ele);
             javascriptClick(By.XPath(General.Default.AddB));
             Thread.Sleep(3000);
             SearchQuery("entityName","ACS");
-            javascriptClick(By.CssSelector("input:multiSelectRow"));
+            Thread.Sleep(2000);
+            javascriptClick(By.CssSelector("input.multiSelectRow"));
             javascriptClick(By.XPath(General.Default.OKB));
             Thread.Sleep(2000);
             SwitchIndideFrame();
-            BrowserDriver.Instance.Driver.SwitchTo().Frame("ENTITIES");
+            BrowserDriver.Instance.Driver.SwitchTo().Frame(ele);
 
         }
 
         public void DeleteEntity()
         {
             SwitchIndideFrame();
-            BrowserDriver.Instance.Driver.SwitchTo().Frame("ENTITIES");
+            IWebElement ele = BrowserDriver.Instance.Driver.FindElement(By.Id("ENTITIES"));
+            BrowserDriver.Instance.Driver.SwitchTo().Frame(ele);
             ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) { return true; }");
-            javascriptClick(By.XPath(General.Default.DeleteB));
+            javascriptClick(By.XPath(General.Default.RemoveB));
             
         }
 

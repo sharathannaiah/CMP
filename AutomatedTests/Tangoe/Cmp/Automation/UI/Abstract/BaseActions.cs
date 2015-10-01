@@ -228,7 +228,8 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Abstract
             wait.Until<IWebElement>((d) =>
             {
                 IWebElement element = BrowserDriver.Instance.Driver.FindElement(by);
-                if (element.Displayed && element.Enabled)
+                if (element.Displayed && element.Enabled) 
+                   
                 {
                     return element;
                 }

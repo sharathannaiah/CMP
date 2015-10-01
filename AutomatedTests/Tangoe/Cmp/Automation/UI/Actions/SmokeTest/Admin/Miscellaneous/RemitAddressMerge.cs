@@ -59,6 +59,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.Mis
             DisplayChecked();
                  Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='No']")), "Display not successful");
                 Console.WriteLine("Display Successful");
+                Console.WriteLine("Admin --> Miscellaneous --> Remit Address Added Successfully");
             }
            
             else
@@ -74,6 +75,8 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.Mis
                 typeDataID("carrierId", "1");
                 BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.SubmitB)).Click();
                 Thread.Sleep(2000);
+                SwitchToContent();
+                BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.ResetB)).Click();
                 SwitchToContent();
 
             }

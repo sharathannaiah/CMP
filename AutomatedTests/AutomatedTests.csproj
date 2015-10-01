@@ -132,6 +132,8 @@
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Miscellaneous\ExtendedAttributes.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Miscellaneous\MergeCarrier.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Miscellaneous\PhraseCode.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Portal\Configuration.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Portal\SupportTopics.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\BillManagement\Accounts\AccountDiscovery.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\BillManagement\Accounts\AccountMaintainance.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\BillManagement\Accounts\AccountMerge.cs" />
@@ -185,6 +187,8 @@
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Miscellaneous\PhraseCodeUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Miscellaneous\ProjectCodesUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Miscellaneous\RemitAddressMergeUT.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Portal\ConfigurationUT.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Portal\SupportTopicsUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\BillManagement\Accounts\AccountDiscoveryUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\BillManagement\Accounts\AccountMaintainanceUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\BillManagement\AllocationCodeManagement.cs" />

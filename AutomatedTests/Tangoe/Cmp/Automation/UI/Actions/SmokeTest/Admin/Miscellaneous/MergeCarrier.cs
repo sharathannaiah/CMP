@@ -38,14 +38,18 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Miscel
                 BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.SubmitB)).Click();
                 Thread.Sleep(2000);
                 SwitchToContent();
-                Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='carrier']")), "search not successful");
+                Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='Carrier']")), "search not successful");
                 Console.WriteLine("Search Successful");
             }
             else
             {
                 Console.WriteLine("Search  failed");
             }
-            javascriptClick(By.XPath(General.Default.CloseB));
+            if (true)
+            {
+                MergeeCarrier();
+                Console.WriteLine("Admin --> Miscellaneous --> MeCarrier Passed smoke test successfully");
+            }
         }
             
             public void MergeeCarrier()
@@ -53,6 +57,17 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Miscel
             SwitchToContent();
                 BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.NewB)).Click();
                 Thread.Sleep(3000);
+                SwitchToPopUps();
+              //  Assert.IsTrue(IsElementVisible(By.XPath("//div[.='Merge Carriers']")), "Navigation to new pop up failed");
+                javascriptClick(By.XPath(General.Default.CloseB));
+                Console.WriteLine("Navigation to New pop up successful");
+                Thread.Sleep(2000);
+                SwitchToContent();
+                javascriptClick(By.Id("bnHistory"));
+                Thread.Sleep(2000);
+                BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
+             //   Assert.IsTrue(IsElementVisible(By.XPath("//td[text()='Carrier Merge History']")), "Navigation to History failed");
+                Console.WriteLine("Navigation to History pop up successful");
                 SwitchToPopUps();
                 javascriptClick(By.XPath(General.Default.CloseB));
             }

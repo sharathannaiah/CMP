@@ -40,14 +40,26 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Miscel
             {
                 Console.WriteLine("Adding Company Failed");
             }
-           
+
             if (true)
             {
-                DeleteComp();
-                SwitchToPopUps();
-                 Assert.IsFalse(IsElementVisible(By.XPath("//div[text()='AutomationCity']")), "Deleting company failed");
+                EditComp();
+                Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='AutomationCityEdited']")), "Editing company failed");
+                Console.WriteLine("Editing Company Successful");
+            }
+            else 
+            {
+                Console.WriteLine("Editing Company  failed");
+            }
+
+
+            if (true)
+            {
+              //  DeleteComp();
+               // SwitchToPopUps();
+               // Assert.IsFalse(IsElementVisible(By.XPath("//div[text()='AutomationCityEdited']")), "Deleting company failed");
                  javascriptClick(By.XPath(General.Default.CloseB));
-                Console.WriteLine("Deleting Company Successful");
+              //  Console.WriteLine("Deleting Company Successful");
                 Console.WriteLine("Admin --> Miscelleaneous --> Company passed smoke test successfully");
             }
             else
@@ -78,12 +90,21 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Miscel
         {
             SwitchToPopUps();
             javascriptClick(By.XPath("//div[text()='AutomationCity']"));
-            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) { return true; };");
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) { return true;};");
             javascriptClick(By.XPath(General.Default.DeleteB));
             Thread.Sleep(2000);
         }
 
-
+        public void EditComp()
+        {
+            SwitchToPopUps();
+            javascriptClick(By.XPath("//div[text()='AutomationCity']"));
+            BrowserDriver.Instance.Driver.FindElement(By.Name("city")).Clear();
+            typeDataName("city", "AutomationCityEdited");
+            BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.SaveB)).Click();
+            Thread.Sleep(4000);
+            SwitchToPopUps();
+        }
      
 
         public void ClickSubmitButton_Contacts()

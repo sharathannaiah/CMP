@@ -54,12 +54,12 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Miscel
             }
             if (true)
             {
-                DeleteDropdown();
-                SwitchToPopUps();
-                Assert.IsFalse(IsElementVisible(By.XPath("//div[text()='ABAutomationEdited']")), "Deleting dropdown failed");
-                Console.WriteLine("Dropdown list deleted successfully");
+              //  DeleteDropdown();
+               // SwitchToPopUps();
+               // Assert.IsFalse(IsElementVisible(By.XPath("//div[text()='ABAutomationEdited']")), "Deleting dropdown failed");
+               // Console.WriteLine("Dropdown list deleted successfully");
                 javascriptClick(By.XPath(General.Default.CloseB));
-                Console.WriteLine("Dropdown List passed smoke test successfully");
+                Console.WriteLine("Admin --> Miscellaneous --> Dropdown List passed smoke test successfully");
 
             }
             else
@@ -78,7 +78,8 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Miscel
             se.SelectByIndex(1);
             Thread.Sleep(2000);
             SwitchToPopUps();
-            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementById('lookupListIdSelect').selectedIndex ='2'");
+            new SelectElement(BrowserDriver.Instance.Driver.FindElement(By.Id("lookupListIdSelect"))).SelectByText("Admin - Locale Supported Language Codes");
+        //    ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementById('lookupListIdSelect').selectedIndex ='2'");
             javascriptClick(By.XPath(General.Default.NewB));
             Thread.Sleep(2000);
             SwitchToPopUps();
@@ -100,7 +101,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Miscel
         {
             SwitchToPopUps();
             javascriptClick(By.XPath("//div[text()='ABAutomationEdited']"));
-            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) { return true; }");
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) {return true;};");
             javascriptClick(By.XPath(General.Default.DeleteB));
         }
     }
