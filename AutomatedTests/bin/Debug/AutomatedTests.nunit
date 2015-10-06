@@ -1,5 +1,5 @@
 ﻿<NUnitProject>
-  <Settings activeconfig="Default" processModel="Default" domainUsage="Default" />
+  <Settings activeconfig="Default" />
   <Config name="Default" binpathtype="Auto">
     <assembly path="AutomatedTests.dll" />
   </Config>

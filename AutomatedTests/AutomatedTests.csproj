@@ -12,10 +12,14 @@
     <AssemblyName>AutomatedTests</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <SccProjectName>SAK</SccProjectName>
-    <SccLocalPath>SAK</SccLocalPath>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccProvider>SAK</SccProvider>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -69,9 +73,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Lib\ThoughtWorks.Selenium.Core.dll</HintPath>
     </Reference>
-    <Reference Include="WebDriver, Version=2.47.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="WebDriver, Version=2.31.2.0, Culture=neutral, PublicKeyToken=1c2bd1631853048f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>packages\Selenium.WebDriver.2.47.0\lib\net40\WebDriver.dll</HintPath>
+      <HintPath>..\packages\Selenium.WebDriver.2.31.2\lib\net40\WebDriver.dll</HintPath>
     </Reference>
     <Reference Include="WebDriver.Support, Version=2.31.2.0, Culture=neutral, PublicKeyToken=1c2bd1631853048f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -79,31 +83,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CMP\Admin\General.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>General.settings</DependentUpon>
-    </Compile>
-    <Compile Include="CMP\Company\com.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>com.settings</DependentUpon>
-    </Compile>
-    <Compile Include="CMP\Contracts\Contra.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>Contra.settings</DependentUpon>
-    </Compile>
-    <Compile Include="CMP\Enterprise\Enterp.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>Enterp.settings</DependentUpon>
-    </Compile>
-    <Compile Include="CMP\Inventory\Inven.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>Inven.settings</DependentUpon>
-    </Compile>
+    <Compile Include="CMP\Admin\General.Designer.cs" />
+    <Compile Include="CMP\Company\com.Designer.cs" />
+    <Compile Include="CMP\Contracts\Contra.Designer.cs" />
+    <Compile Include="CMP\Enterprise\Enterp.Designer.cs" />
+    <Compile Include="CMP\Inventory\Inven.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Common\TestProperties.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Abstract\BaseActions.cs" />
@@ -114,11 +98,13 @@
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Contracts\RateRegions.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Inventory\Catalog.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Inventory\Features.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Inventory\NetworkApplications.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Inventory\ProductSpeed.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Localization\CountryStatecs.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Localization\Currencies.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Localization\CurrencyConversion.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Localization\ExchangeRates.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Localization\ExchangeRatesImportLog.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Localization\UserDefinedTransctions.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Messaging\EmailAudit.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Messaging\EmailInBoundAudit.cs" />
@@ -132,11 +118,19 @@
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Miscellaneous\ExtendedAttributes.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Miscellaneous\MergeCarrier.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Miscellaneous\PhraseCode.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Miscellaneous\ProjectCodes.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Miscellaneous\RemitAddressMerge.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Portal\Configuration.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Portal\SupportTopics.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\SystemAdmin\MonitorUsers.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\SystemAdmin\Passwords.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\SystemAdmin\Properties.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\SystemAdmin\SystemEvents.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\SystemAdmin\UsersandGroups.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\BillManagement\Accounts\AccountDiscovery.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\BillManagement\Accounts\AccountMaintainance.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\BillManagement\Accounts\AccountMerge.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\BillManagement\AllocationCodeManagement.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\BillManagement\Allocations\AllocationProcessing.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\BillManagement\Allocations\AllocationQuery.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\BillManagement\Allocations\AllocationQueryCostCenter.cs" />
@@ -153,7 +147,6 @@
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Inventory\InventoryExplorer.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Navigation\CompleteNavigation.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Provisioning\CreateRequest.cs" />
-    <Compile Include="Tangoe\Cmp\Automation\UI\Actions\Training.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Driver\Selenium\BrowserDriver.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Abstract\BaseUnitTest.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Contracts\ContractTariffUT.cs" />
@@ -162,13 +155,11 @@
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Contracts\RateRegionsUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Inventory\CatalogUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Inventory\FeaturesUT.cs" />
-    <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Inventory\NetworkApplications.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Inventory\NetworkApplicationUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Inventory\ProductSpeedUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Localization\CountryStatesUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Localization\currenciesUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Localization\CurrencyConversionUT.cs" />
-    <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Localization\ExchangeRatesImportLog.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Localization\ExchangeRatesImportLogUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Localization\ExchangeRatesUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Localization\UserDefinedTranscationsUT.cs" />
@@ -182,16 +173,22 @@
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Miscellaneous\ContactsUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Miscellaneous\DropdownListUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Miscellaneous\MergeCarrierUT.cs" />
-    <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Miscellaneous\RemitAddressMerge.cs" />
-    <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Miscellaneous\ProjectCodes.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Miscellaneous\PhraseCodeUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Miscellaneous\ProjectCodesUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Miscellaneous\RemitAddressMergeUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Portal\ConfigurationUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Portal\SupportTopicsUT.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\SystemAdmin\MonitorUsersUT.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\SystemAdmin\PasswordsUT.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\SystemAdmin\PropertiesUT.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\SystemAdmin\SystemEventsUT.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\SystemAdmin\UsersandGroupsUT.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Tools\DataLoad.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Tools\Hubs.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Tools\Scheduler.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Tools\HubsUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\BillManagement\Accounts\AccountDiscoveryUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\BillManagement\Accounts\AccountMaintainanceUT.cs" />
-    <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\BillManagement\AllocationCodeManagement.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\BillManagement\Accounts\AccountMergeUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\BillManagement\AllocationCodeManagementUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\BillManagement\Allocations\AllocationProcessingUT.cs" />
@@ -209,34 +206,17 @@
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Inventory\InventoryExplorerUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Navigation\CompleteNavigationUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Provisioning\CreateRequestUT.cs" />
-    <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\TrainingUnitTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="AutomatedTests.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
-    <None Include="app.config" />
-    <None Include="CMP\Admin\General.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>General.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="CMP\Company\com.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>com.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="CMP\Contracts\Contra.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Contra.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="CMP\Enterprise\Enterp.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Enterp.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="CMP\Inventory\Inven.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Inven.Designer.cs</LastGenOutput>
-    </None>
+    <None Include="CMP\Admin\General.settings" />
+    <None Include="CMP\Company\com.settings" />
+    <None Include="CMP\Contracts\Contra.settings" />
+    <None Include="CMP\Enterprise\Enterp.settings" />
+    <None Include="CMP\Inventory\Inven.settings" />
     <None Include="Lib\Certificates\Magnolia.ttf" />
     <None Include="Lib\Certificates\MDMDevAppleMDMAPNs8222015.pfx" />
     <None Include="Lib\JMeterScripts\Android-device-details14.2.csv" />
@@ -270,7 +250,6 @@
   <ItemGroup>
     <Folder Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Assurance\" />
     <Folder Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Reporting\" />
-    <Folder Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\SystemUsers\" />
     <Folder Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Assurance\" />
     <Folder Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Reporting\" />
   </ItemGroup>

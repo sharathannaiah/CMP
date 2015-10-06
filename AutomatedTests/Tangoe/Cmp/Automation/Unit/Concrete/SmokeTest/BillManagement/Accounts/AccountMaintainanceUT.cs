@@ -1,6 +1,5 @@
 ﻿using AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.BillManagement.Accounts;
 using AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Navigation;
-using AutomatedTests.Tangoe.Cmp.Automation.UI.Concrete;
 using AutomatedTests.Tangoe.Cmp.Automation.Unit.Abstract;
 using NUnit.Framework;
 

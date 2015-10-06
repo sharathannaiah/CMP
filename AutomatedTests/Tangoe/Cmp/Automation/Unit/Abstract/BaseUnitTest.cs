@@ -6,7 +6,6 @@ using System.Text;
 using System.Threading;
 using AutomatedTests.Tangoe.Cmp.Automation.Common;
 using AutomatedTests.Tangoe.Cmp.Automation.UI.Abstract;
-using AutomatedTests.Tangoe.Cmp.Automation.UI.Concrete;
 using NUnit.Framework;
 
 namespace AutomatedTests.Tangoe.Cmp.Automation.Unit.Abstract

@@ -1,5 +1,4 @@
 ﻿using AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Contracts;
-using AutomatedTests.Tangoe.Cmp.Automation.UI.Concrete;
 using AutomatedTests.Tangoe.Cmp.Automation.Unit.Abstract;
 using NUnit.Framework;
 

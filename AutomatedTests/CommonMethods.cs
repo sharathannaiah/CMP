@@ -238,7 +238,7 @@ namespace SeleniumTests
                 if (second >= 60) Assert.Fail("timeout");
                 try
                 {
-                    if (driver.PageSource.Contains("Security Role was successfully added.")) ;
+                    if (driver.PageSource.Contains("Security Role was successfully added."))  ;
 
                     {
                         break;

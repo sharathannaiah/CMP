@@ -40,6 +40,12 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise
             {
                 Console.WriteLine("Entity Creation Failed");
             }
+            if (true)
+            {
+                DeleteEntity();
+                Console.WriteLine("Entity Deleted Successfully");
+        
+            }
 
             //if (true)
             //{
@@ -55,41 +61,41 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise
             //}
 
             
-            if (true)
-            {
-                EditEntity();
-                Console.WriteLine("Created Entity Edited Successfully");
-            }
-            else
-            {
-                Console.WriteLine("Created Entity not edited");
-            }
-
-            CreateAddress();
-            ModifyAddress();
-            RemoveAddress();
-            AddDemarc();
-            ModifyDemarc();
-            DeleteDemarc();
-            AddContacts();
-            DeleteContact();
-            AddCarrier();
-            ModifyCarrier();
-            DeleteCarrier();
-            AddContract();
+            //if (true)
+            //{
+            //    EditEntity();
+            //    Console.WriteLine("Created Entity Edited Successfully");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Created Entity not edited");
+            //}
             
-            UpdateContract();
-            DeleteContract();
+            //CreateAddress();
+            //ModifyAddress();
+            //RemoveAddress();
+            //AddDemarc();
+            //ModifyDemarc();
+            //DeleteDemarc();
+            //AddContacts();
+            //DeleteContact();
+            //AddCarrier();
+            //ModifyCarrier();
+            //DeleteCarrier();
+            //AddContract();
+            
+            //UpdateContract();
+            //DeleteContract();
 
-            AssignAccount();
-            RemoveAccount();
-            AssignCostCenter();
-            UpdateFTE();
+            //AssignAccount();
+            //RemoveAccount();
+            //AssignCostCenter();
+            //UpdateFTE();
 
-            DeleteCostCenter();
+            //DeleteCostCenter();
 
-            ExtendedAttributes();
-            ClearExtendAttribute();
+            //ExtendedAttributes();
+            //ClearExtendAttribute();
 
 
             Console.WriteLine("Enterprise Explorer Passed Smoke Test Successfully");
@@ -134,7 +140,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise
             Thread.Sleep(3000);
             searchEntity();
             javascriptClick(By.XPath("//div[text()='IBM']"));
-           
+            Thread.Sleep(2000);
         }
 
         public void searchEntity()
@@ -174,10 +180,12 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise
 
         public void DeleteEntity()
         {
-            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) {return true;}; ");
             SwitchToContent();
-            BrowserDriver.Instance.Driver.FindElement(By.Id("deleteb")).Click();
-           
+            javascriptClick(By.XPath("//div[text()='IBM']"));
+            Thread.Sleep(2000);
+            SwitchToContent();
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) {return true;}; ");
+            javascriptClick(By.Id("deleteb"));
         }
 
         public void CreateAddress()

@@ -112,9 +112,14 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Contracts
 
             SwitchToContent();
             javascriptClick(By.CssSelector("div[id^='25']"));
-            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) { return true;};");
+            Thread.Sleep(2000);
+            SwitchToContent();
+          ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) {return true;};");
             javascriptClick(By.XPath(Contra.Default.DeleteB));
             Thread.Sleep(2000);
+          //  IAlert ele = BrowserDriver.Instance.Driver.SwitchTo().Alert();
+           // ele.Accept();
+            Thread.Sleep(4000);
             SwitchToContent();
             Assert.IsFalse(IsElementVisible(By.XPath("//div[.='567890']")), "Deletion of Contract failed");
             Console.WriteLine("Contract Deleted successfully");
