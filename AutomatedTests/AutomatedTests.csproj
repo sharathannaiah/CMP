@@ -92,6 +92,8 @@
     <Compile Include="Tangoe\Cmp\Automation\Common\TestProperties.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Abstract\BaseActions.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Abstract\IBaseAction.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Bill Management\AllocationBucket.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Bill Management\Allocations.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Contracts\ContractTariff.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Contracts\ContractTerms.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Contracts\RateQualifiers.cs" />
@@ -149,6 +151,7 @@
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Provisioning\CreateRequest.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Driver\Selenium\BrowserDriver.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Abstract\BaseUnitTest.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Bill Management\AllocationsUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Contracts\ContractTariffUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Contracts\ContractTermsUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Contracts\RateQualifiersUT.cs" />
@@ -186,7 +189,9 @@
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Tools\DataLoad.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Tools\Hubs.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Tools\Scheduler.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Tools\DataLoadUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Tools\HubsUT.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Tools\SchedulerUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\BillManagement\Accounts\AccountDiscoveryUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\BillManagement\Accounts\AccountMaintainanceUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\BillManagement\Accounts\AccountMergeUT.cs" />
@@ -212,8 +217,14 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
-    <None Include="CMP\Admin\General.settings" />
-    <None Include="CMP\Company\com.settings" />
+    <None Include="app.config" />
+    <None Include="CMP\Admin\General.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>General1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CMP\Company\com.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+    </None>
     <None Include="CMP\Contracts\Contra.settings" />
     <None Include="CMP\Enterprise\Enterp.settings" />
     <None Include="CMP\Inventory\Inven.settings" />

@@ -40,12 +40,12 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise
             {
                 Console.WriteLine("Entity Creation Failed");
             }
-            if (true)
-            {
-                DeleteEntity();
-                Console.WriteLine("Entity Deleted Successfully");
+            //if (true)
+            //{
+            //    DeleteEntity();
+            //    Console.WriteLine("Entity Deleted Successfully");
         
-            }
+            //}
 
             //if (true)
             //{
@@ -60,42 +60,42 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise
             //    Console.WriteLine("Entity deletion  failed");
             //}
 
-            
-            //if (true)
-            //{
-            //    EditEntity();
-            //    Console.WriteLine("Created Entity Edited Successfully");
-            //}
-            //else
-            //{
-            //    Console.WriteLine("Created Entity not edited");
-            //}
-            
-            //CreateAddress();
-            //ModifyAddress();
-            //RemoveAddress();
-            //AddDemarc();
-            //ModifyDemarc();
-            //DeleteDemarc();
-            //AddContacts();
-            //DeleteContact();
-            //AddCarrier();
-            //ModifyCarrier();
-            //DeleteCarrier();
-            //AddContract();
-            
-            //UpdateContract();
-            //DeleteContract();
 
-            //AssignAccount();
-            //RemoveAccount();
-            //AssignCostCenter();
-            //UpdateFTE();
+            if (true)
+            {
+                EditEntity();
+                Console.WriteLine("Created Entity Edited Successfully");
+            }
+            else
+            {
+                Console.WriteLine("Created Entity not edited");
+            }
 
-            //DeleteCostCenter();
+            CreateAddress();
+            ModifyAddress();
+            RemoveAddress();
+            AddDemarc();
+            ModifyDemarc();
+            DeleteDemarc();
+            AddContacts();
+            DeleteContact();
+            AddCarrier();
+            ModifyCarrier();
+            DeleteCarrier();
+            AddContract();
 
-            //ExtendedAttributes();
-            //ClearExtendAttribute();
+            UpdateContract();
+            DeleteContract();
+
+            AssignAccount();
+            RemoveAccount();
+            AssignCostCenter();
+            UpdateFTE();
+
+            DeleteCostCenter();
+
+            ExtendedAttributes();
+            ClearExtendAttribute();
 
 
             Console.WriteLine("Enterprise Explorer Passed Smoke Test Successfully");

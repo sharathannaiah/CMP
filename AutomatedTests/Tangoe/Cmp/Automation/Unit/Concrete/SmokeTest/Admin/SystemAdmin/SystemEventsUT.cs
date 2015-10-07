@@ -8,7 +8,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.Sys
     {
         SystemEvents systemUnits;
 
-           //pre 
+         //pre 
         [TestFixtureSetUp]
         public void Init()
         {
