@@ -94,6 +94,8 @@
     <Compile Include="Tangoe\Cmp\Automation\UI\Abstract\IBaseAction.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Bill Management\AllocationBucket.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Bill Management\Allocations.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Bill Management\BillImport.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Bill Management\FiscalCalendar.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Contracts\ContractTariff.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Contracts\ContractTerms.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Contracts\RateQualifiers.cs" />
@@ -151,7 +153,10 @@
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Provisioning\CreateRequest.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Driver\Selenium\BrowserDriver.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Abstract\BaseUnitTest.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Bill Management\AllocationBucketUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Bill Management\AllocationsUT.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Bill Management\BillImportUT.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Bill Management\FiscalPeriodUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Contracts\ContractTariffUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Contracts\ContractTermsUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Contracts\RateQualifiersUT.cs" />

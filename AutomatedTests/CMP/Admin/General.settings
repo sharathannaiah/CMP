@@ -53,5 +53,8 @@
     <Setting Name="ConfigureB" Type="System.String" Scope="User">
       <Value Profile="(Default)">//input[@value='Configure']</Value>
     </Setting>
+    <Setting Name="EditB" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//input[@value='Edit']</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
