@@ -39,15 +39,16 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_M
             if (EditAllocation())
             {
                 Console.WriteLine("Allocation edited successfully");
-            }
-
-            if (DeleteAllocation())
-            {
-                Assert.IsFalse(IsElementVisible(By.XPath("//span[text()='AB Allocations']")), "Allocation deletion failed");
-                Console.WriteLine("Allocation deletion successfully");
                 Console.WriteLine("Admin --> Bill Management --> Allocations passed smoke test successfully");
                 javascriptClick(By.XPath(General.Default.CloseB));
             }
+
+            //if (DeleteAllocation())
+            //{
+            //    Assert.IsFalse(IsElementVisible(By.XPath("//span[text()='AB Allocations']")), "Allocation deletion failed");
+            //    Console.WriteLine("Allocation deletion successfully");
+                
+            //}
         }
 
         public Boolean CreateAllocation()
@@ -83,9 +84,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_M
             Thread.Sleep(2000);
             SwitchToPopUps();
             ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) {return true;};");
-            BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.DeleteB)).Click();
-            Thread.Sleep(2000);
-            SwitchToPopUps();
+            javascriptClick(By.XPath(General.Default.DeleteB));
             return true;
         }
 

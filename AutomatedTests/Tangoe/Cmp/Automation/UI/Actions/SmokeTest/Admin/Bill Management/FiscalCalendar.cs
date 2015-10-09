@@ -28,11 +28,16 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_M
 
 
             if (AddNewYear())
-            { 
-                new SelectElement(BrowserDriver.Instance.Driver.FindElement(By.Name("fiscalYearSelect"))).SelectByText("Automate 2050");
+            {
+                Thread.Sleep(2000);
+                BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
+                IWebElement ele = BrowserDriver.Instance.Driver.FindElement(By.CssSelector("#dWnd1 iframe"));
+                BrowserDriver.Instance.Driver.SwitchTo().Frame(ele);
+                //new SelectElement(BrowserDriver.Instance.Driver.FindElement(By.Name("fiscalYearSelect"))).SelectByIndex(4);
+                //      ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('fiscalYearSelect')[0].selectedIndex='4'");
                 Thread.Sleep(2000);
                 SwitchToPopUps();
-                Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='Jan 2015']")), "Adding new year failed");
+                Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='Jan 2000']")), "Adding new year failed");
                 Console.WriteLine("New Year Added Successfully");
             }
 
@@ -48,11 +53,14 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_M
                 Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='Edited January 2051']")), "Editing period failed");
                 Console.WriteLine("Period Edited Successfully");
             }
-            if(DeletePeriod())
+
+            if (DeletePeriod())
             {
                 SwitchToPopUps();
-                Assert.IsFalse(IsElementVisible(By.XPath("//div[text()='Jan 2050']")), "Deleting period failed");
+                Assert.IsFalse(IsElementVisible(By.XPath("//div[text()='Edited January 2051']")), "Deleting period failed");
                 Console.WriteLine("Period Deletion Successfully");
+                javascriptClick(By.XPath(General.Default.CloseB));
+                Console.WriteLine("Admin --> Bill Management --> Fiscal Calendar passed smoke test successfully");
             }
         }
 
@@ -64,14 +72,14 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_M
             BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
             IWebElement ele = BrowserDriver.Instance.Driver.FindElement(By.CssSelector("#dWnd2 iframe"));
             BrowserDriver.Instance.Driver.SwitchTo().Frame(ele);
-            typeDataID("dtControlstartDate", "01/01/2050");
-            BrowserDriver.Instance.Driver.FindElement(By.Id("dtControlstartDate")).Click();
-            typeDataID("fiscalYear", "Automate 2050");
-            BrowserDriver.Instance.Driver.FindElement(By.Id("fiscalYear")).Click();
+            BrowserDriver.Instance.Driver.FindElement(By.Id("dtControlstartDate")).SendKeys("");
+            typeDataID("dtControlstartDate", "01/01/2000");
+            BrowserDriver.Instance.Driver.FindElement(By.Id("fiscalYear")).SendKeys("2000");
+            typeDataID("fiscalYear", "2000");
+            //  BrowserDriver.Instance.Driver.FindElement(By.Id("fiscalYear")).Click();
             Thread.Sleep(2000);
             javascriptClick(By.XPath(General.Default.OKB));
             Thread.Sleep(2000);
-            SwitchToPopUps();
             return true;
         }
 
@@ -80,14 +88,17 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_M
             SwitchToPopUps();
             BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.NewB)).Click();
             Thread.Sleep(2000);
-            SwitchToPopUps();
             BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
             IWebElement ele = BrowserDriver.Instance.Driver.FindElement(By.CssSelector("#dWnd2 iframe"));
             BrowserDriver.Instance.Driver.SwitchTo().Frame(ele);
-            typeDataID("nameField", "January 2051");
+            BrowserDriver.Instance.Driver.FindElement(By.Id("dtControlstartDate")).SendKeys("");
             typeDataID("dtControlstartDate", "01/01/2051");
-            typeDataID("dtControlendDate", "31/05/2051");
-            BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.OKB)).Click();
+            BrowserDriver.Instance.Driver.FindElement(By.Id("dtControlendDate")).SendKeys("");
+            typeDataID("dtControlendDate", "01/03/2051");
+            BrowserDriver.Instance.Driver.FindElement(By.Id("nameField")).SendKeys("January 2051");
+            typeDataID("nameField", "January 2051");
+            Thread.Sleep(2000);
+            javascriptClick(By.XPath(General.Default.OKB));
             Thread.Sleep(2000);
             SwitchToPopUps();
             return true;
@@ -110,17 +121,29 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_M
         }
 
         public Boolean DeletePeriod()
-        { 
+        {
             var count = 12;
             SwitchToPopUps();
-            for (int i = 0; i <= count; i++)
+            if (IsElementVisible(By.XPath("//div[text()='Dec 2000']")))
             {
-                BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.RemoveB)).Click();
-                Thread.Sleep(2000);
-                count++;
+                for (int i = 0; i <= count; i++)
+                {
+                    if (IsElementVisible(By.XPath("//div[text()='Dec 2000']")))
+                    {
+                        BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.RemoveB)).Click();
+                        Thread.Sleep(2000);
+                        count++;
+                    }
+
+
+
+                }
+
             }
             return true;
         }
-        }
     }
+}
+    
+    
 

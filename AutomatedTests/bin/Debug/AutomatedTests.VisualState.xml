@@ -15,6 +15,7 @@
     <Node UniqueName="[0-1127]AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest" Expanded="true" />
     <Node UniqueName="[0-1128]AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin" Expanded="true" />
     <Node UniqueName="[0-1129]AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.Bill_Management" Expanded="true" />
+    <Node UniqueName="[0-1002]AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.Bill_Management.AllocationBucketUT" Expanded="true" />
     <Node UniqueName="[0-1008]AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.Bill_Management.FiscalPeriodUT" Expanded="true" Checked="true" />
     <Node UniqueName="[0-1130]AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.Contracts" Expanded="true" />
     <Node UniqueName="[0-1131]AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.Inventory" Expanded="true" />
