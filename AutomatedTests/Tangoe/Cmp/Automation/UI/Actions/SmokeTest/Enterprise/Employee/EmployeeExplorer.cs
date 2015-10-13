@@ -72,15 +72,15 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise.E
 
                 //  EmployeeCreation();
 
-            //    CreateInventory();
+          //   CreateInventory();
 
-           //     ModifyInventory();
+          //    ModifyInventory();
 
-              //  DeleteInventory();
+          //     DeleteInventory();
 
-            //  CreateBudget();
+             CreateBudget();
 
-                DeleteEmployee();
+            //    DeleteEmployee();
 
 
                 Console.WriteLine("Employee Explorer passed smoke Test Successfully");
@@ -132,6 +132,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise.E
                BrowserDriver.Instance.Driver.SwitchTo().Frame("EMPLOYEE");
                typeDataName("employeeIdentifier", "567890"+RandomNumbergeneratorL());
                typeDataName("firstName", "Michael");
+               Thread.Sleep(2000);
                retryingFindClick(By.XPath(Enterp.Default.SaveB));
                Thread.Sleep(5000);
             SwitchToContent();
@@ -139,7 +140,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise.E
             ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('employeeIdentifier')[0].value='567890'");
             typeDataName("employeeIdentifier", "567890");
             typeDataName("firstName", "Michael");
-            javascriptClick(By.XPath(Enterp.Default.QuerySubmitB));
+           retryingFindClick(By.XPath(Enterp.Default.QuerySubmitB));
             Thread.Sleep(5000);
             SwitchToContent();
             Assert.IsTrue(IsElementVisible(By.XPath("//div[.='Minnow']")), "Employee Creation failed");
@@ -149,7 +150,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise.E
         public void DeleteEmployee()
         {
           //  EmployeeSearch("Michael","Minnow");
-            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) {return true;}");
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) {return true;};");
            javascriptClick(By.XPath(Enterp.Default.DeleteB));
             SwitchToContent();
             Assert.IsFalse(IsElementVisible(By.XPath("//div[.='Michael']")), "Employee Delation failed");
@@ -220,7 +221,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise.E
             SwitchToContent();
             BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY");
             javascriptClick(By.XPath("//div[text()='Conferencing']"));
-         ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) { return true; }");
+         ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) {return true;};");
             javascriptClick(By.XPath(Enterp.Default.DeleteB));
             Thread.Sleep(2000);
             Assert.IsFalse(IsElementVisible(By.XPath("//div[.='Conferencing']")), "Unable to Delete Inventory ");

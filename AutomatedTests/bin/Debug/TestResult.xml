@@ -1,31 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--This file represents the results of running a test suite-->
-<test-results name="D:\CMP Automation 6-10-2015\AutomatedTests\bin\Debug\AutomatedTests.nunit" total="1" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2015-10-09" time="16:06:01">
+<test-results name="D:\CMP Automation 6-10-2015\AutomatedTests\bin\Debug\AutomatedTests.nunit" total="1" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2015-10-12" time="16:10:40">
   <environment nunit-version="2.6.4.14350" clr-version="2.0.50727.5485" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="D:\Code Library\Plain framework\AutomatedTests\bin" machine-name="SANNAIAH6440" user="sharath.annaiah" user-domain="CORP" />
   <culture-info current-culture="en-US" current-uiculture="en-US" />
-  <test-suite type="Project" name="D:\CMP Automation 6-10-2015\AutomatedTests\bin\Debug\AutomatedTests.nunit" executed="True" result="Success" success="True" time="251.415" asserts="0">
+  <test-suite type="Project" name="D:\CMP Automation 6-10-2015\AutomatedTests\bin\Debug\AutomatedTests.nunit" executed="True" result="Success" success="True" time="53.277" asserts="0">
     <results>
-      <test-suite type="SetUpFixture" name="D:\CMP Automation 6-10-2015\AutomatedTests\bin\Debug\AutomatedTests.dll" executed="True" result="Success" success="True" time="251.362" asserts="0">
+      <test-suite type="SetUpFixture" name="D:\CMP Automation 6-10-2015\AutomatedTests\bin\Debug\AutomatedTests.dll" executed="True" result="Success" success="True" time="53.207" asserts="0">
         <results>
-          <test-suite type="Namespace" name="AutomatedTests" executed="True" result="Success" success="True" time="251.357" asserts="0">
+          <test-suite type="Namespace" name="AutomatedTests" executed="True" result="Success" success="True" time="53.200" asserts="0">
             <results>
-              <test-suite type="Namespace" name="Tangoe" executed="True" result="Success" success="True" time="251.356" asserts="0">
+              <test-suite type="Namespace" name="Tangoe" executed="True" result="Success" success="True" time="53.199" asserts="0">
                 <results>
-                  <test-suite type="Namespace" name="Cmp" executed="True" result="Success" success="True" time="251.355" asserts="0">
+                  <test-suite type="Namespace" name="Cmp" executed="True" result="Success" success="True" time="53.198" asserts="0">
                     <results>
-                      <test-suite type="Namespace" name="Automation" executed="True" result="Success" success="True" time="251.354" asserts="0">
+                      <test-suite type="Namespace" name="Automation" executed="True" result="Success" success="True" time="53.197" asserts="0">
                         <results>
-                          <test-suite type="Namespace" name="Unit" executed="True" result="Success" success="True" time="251.353" asserts="0">
+                          <test-suite type="Namespace" name="Unit" executed="True" result="Success" success="True" time="53.196" asserts="0">
                             <results>
-                              <test-suite type="Namespace" name="Concrete" executed="True" result="Success" success="True" time="251.353" asserts="0">
+                              <test-suite type="Namespace" name="Concrete" executed="True" result="Success" success="True" time="53.194" asserts="0">
                                 <results>
-                                  <test-suite type="Namespace" name="SmokeTest" executed="True" result="Success" success="True" time="251.352" asserts="0">
+                                  <test-suite type="Namespace" name="SmokeTest" executed="True" result="Success" success="True" time="53.193" asserts="0">
                                     <results>
-                                      <test-suite type="Namespace" name="Enterprise" executed="True" result="Success" success="True" time="251.351" asserts="0">
+                                      <test-suite type="Namespace" name="Enterprise" executed="True" result="Success" success="True" time="53.192" asserts="0">
                                         <results>
-                                          <test-suite type="TestFixture" name="EnterpriseExplorerUT" executed="True" result="Success" success="True" time="251.345" asserts="0">
+                                          <test-suite type="TestFixture" name="EntityTypesUT" executed="True" result="Success" success="True" time="53.176" asserts="0">
                                             <results>
-                                              <test-case name="AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Enterprise.EnterpriseExplorerUT.EnterpriseFunctionality" executed="True" result="Success" success="True" time="251.295" asserts="29" />
+                                              <test-case name="AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Enterprise.EntityTypesUT.EnterpriseTypesFunctionality" executed="True" result="Success" success="True" time="53.133" asserts="3" />
                                             </results>
                                           </test-suite>
                                         </results>

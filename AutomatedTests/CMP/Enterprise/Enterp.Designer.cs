@@ -154,5 +154,20 @@ namespace AutomatedTests.CMP.Enterprise {
                 this["ExpireB"] = value;
             }
         }
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("//input[@value=\'Update\']")]
+        public string UpdateB {
+            get {
+                return ((string)(this["UpdateB"]));
+            }
+            set
+            {
+                this["UpdateB"] = value;
+            }
+        }
+
+            }
+
     }
-}
+

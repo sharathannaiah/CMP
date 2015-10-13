@@ -18,8 +18,13 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise
 #region Create Enterprise
         public void EnterpriseExplorerFunctionality()
         {
-            GoToMain1("Enterprise", "Explorer");
-         
+           GoToMain1("Enterprise", "Explorer");
+
+           //GoToMain("Enterprise");
+           // BrowserDriver.Instance.Driver.FindElement(By.XPath(".//*[@id='menuMainEnterprise']")).Click();
+           // BrowserDriver.Instance.Driver.FindElement(By.XPath(".//*[@id='mnuEnterprise_Explorer2']")).Click();
+       //     retryingFindClickk(".//*[@id='mnuEnterprise_Explorer2']");
+            Thread.Sleep(2000);
             if (true)
             {
                 SwitchToContent();
@@ -30,16 +35,17 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise
             {
                 Console.WriteLine("Navigation Failed");
             }
-           
+
             if (true)
             {
                 CreateEntity();
                 Console.WriteLine("Entity Created Successfully");
+                DeleteEntity();
+                Console.WriteLine("Entity Deleted Successfully");
+              //CreateEntity();
             }
-            else 
-            {
-                Console.WriteLine("Entity Creation Failed");
-            }
+        
+          
             //if (true)
             //{
             //    DeleteEntity();
@@ -61,41 +67,41 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise
             //}
 
 
-            if (true)
-            {
-                EditEntity();
-                Console.WriteLine("Created Entity Edited Successfully");
-            }
-            else
-            {
-                Console.WriteLine("Created Entity not edited");
-            }
+            //if (true)
+            //{
+            //    EditEntity();
+            //    Console.WriteLine("Created Entity Edited Successfully");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Created Entity not edited");
+            //}
 
-            CreateAddress();
-            ModifyAddress();
-            RemoveAddress();
-            AddDemarc();
-            ModifyDemarc();
-            DeleteDemarc();
-            AddContacts();
-            DeleteContact();
-            AddCarrier();
-            ModifyCarrier();
-            DeleteCarrier();
-            AddContract();
+            //CreateAddress();
+            //ModifyAddress();
+            //RemoveAddress();
+            //AddDemarc();
+            //ModifyDemarc();
+            //DeleteDemarc();
+            //AddContacts();
+            //DeleteContact();
+            //AddCarrier();
+            //ModifyCarrier();
+            //DeleteCarrier();
+            //AddContract();
 
-            UpdateContract();
-            DeleteContract();
+            //UpdateContract();
+            //DeleteContract();
 
-            AssignAccount();
-            RemoveAccount();
-            AssignCostCenter();
-            UpdateFTE();
+            //AssignAccount();
+            //RemoveAccount();
+            //AssignCostCenter();
+            //UpdateFTE();
 
-            DeleteCostCenter();
+            //DeleteCostCenter();
 
-            ExtendedAttributes();
-            ClearExtendAttribute();
+            //ExtendedAttributes();
+            //ClearExtendAttribute();
 
 
             Console.WriteLine("Enterprise Explorer Passed Smoke Test Successfully");
@@ -119,7 +125,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise
             Thread.Sleep(2000);
             SwitchToContent();
             BrowserDriver.Instance.Driver.SwitchTo().Frame("GENERAL");
-            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('entityName')[0].value='IBM'");
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('entityName')[0].value='AB Automation'");
             System.Random rand = new System.Random((int)System.DateTime.Now.Ticks);
             int random = rand.Next(1, 100000000);
             BrowserDriver.Instance.Driver.FindElement(By.Name("siteId")).SendKeys("" + random);
@@ -139,20 +145,20 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise
             javascriptClick(By.XPath(Enterp.Default.SaveB));
             Thread.Sleep(3000);
             searchEntity();
-            javascriptClick(By.XPath("//div[text()='IBM']"));
+            javascriptClick(By.XPath("//div[text()='AB Automation']"));
             Thread.Sleep(2000);
         }
 
         public void searchEntity()
         {
             SwitchToContent();
-            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('entityName')[0].value='IBM'");
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('entityName')[0].value='AB Automation'");
             javascriptClick(By.Name("queryEnterpriseButton"));
             Thread.Sleep(2000);
             SwitchToContent();
             if (true)
             {
-                Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='IBM']")), "Search Unsuccessful");
+                Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='AB Automation']")), "Search Unsuccessful");
                 Console.WriteLine("Entity Search Successful");
             }
             else 
@@ -181,7 +187,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise
         public void DeleteEntity()
         {
             SwitchToContent();
-            javascriptClick(By.XPath("//div[text()='IBM']"));
+            javascriptClick(By.XPath("//div[text()='AB Automation']"));
             Thread.Sleep(2000);
             SwitchToContent();
             ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) {return true;}; ");
@@ -587,8 +593,9 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise
          Assert.AreEqual("GL Account", BrowserDriver.Instance.Driver.FindElement(By.XPath("//div[.='GL Account']")).Text);
          Thread.Sleep(2000);
             javascriptClick(By.XPath("//div[.='GL Account']"));
-            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementById('extAttributeText').value='1'");
-                        javascriptClick(By.XPath("//input[@value='Update']"));
+            typeDataID("extAttributeText","1");
+          //  ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementById('extAttributeText').value='1'");
+            javascriptClick(By.XPath(Enterp.Default.UpdateB));
             Thread.Sleep(2000);
             SwitchToContent();
             BrowserDriver.Instance.Driver.SwitchTo().Frame("EXTENDED_ATTRIBUTES");
