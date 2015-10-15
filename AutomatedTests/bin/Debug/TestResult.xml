@@ -1,33 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--This file represents the results of running a test suite-->
-<test-results name="D:\CMP Automation 6-10-2015\AutomatedTests\bin\Debug\AutomatedTests.nunit" total="1" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2015-10-14" time="15:48:31">
+<test-results name="D:\CMP Automation 6-10-2015\AutomatedTests\bin\Debug\AutomatedTests.nunit" total="1" errors="0" failures="1" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2015-10-15" time="15:55:28">
   <environment nunit-version="2.6.4.14350" clr-version="2.0.50727.5485" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="D:\Code Library\Plain framework\AutomatedTests\bin" machine-name="SANNAIAH6440" user="Sharath.Annaiah" user-domain="CORP" />
   <culture-info current-culture="en-US" current-uiculture="en-US" />
-  <test-suite type="Project" name="D:\CMP Automation 6-10-2015\AutomatedTests\bin\Debug\AutomatedTests.nunit" executed="True" result="Success" success="True" time="44.450" asserts="0">
+  <test-suite type="Project" name="D:\CMP Automation 6-10-2015\AutomatedTests\bin\Debug\AutomatedTests.nunit" executed="True" result="Failure" success="False" time="34.990" asserts="0">
     <results>
-      <test-suite type="SetUpFixture" name="D:\CMP Automation 6-10-2015\AutomatedTests\bin\Debug\AutomatedTests.dll" executed="True" result="Success" success="True" time="44.426" asserts="0">
+      <test-suite type="SetUpFixture" name="D:\CMP Automation 6-10-2015\AutomatedTests\bin\Debug\AutomatedTests.dll" executed="True" result="Failure" success="False" time="34.969" asserts="0">
         <results>
-          <test-suite type="Namespace" name="AutomatedTests" executed="True" result="Success" success="True" time="44.423" asserts="0">
+          <test-suite type="Namespace" name="AutomatedTests" executed="True" result="Failure" success="False" time="34.966" asserts="0">
             <results>
-              <test-suite type="Namespace" name="Tangoe" executed="True" result="Success" success="True" time="44.422" asserts="0">
+              <test-suite type="Namespace" name="Tangoe" executed="True" result="Failure" success="False" time="34.965" asserts="0">
                 <results>
-                  <test-suite type="Namespace" name="Cmp" executed="True" result="Success" success="True" time="44.421" asserts="0">
+                  <test-suite type="Namespace" name="Cmp" executed="True" result="Failure" success="False" time="34.964" asserts="0">
                     <results>
-                      <test-suite type="Namespace" name="Automation" executed="True" result="Success" success="True" time="44.420" asserts="0">
+                      <test-suite type="Namespace" name="Automation" executed="True" result="Failure" success="False" time="34.963" asserts="0">
                         <results>
-                          <test-suite type="Namespace" name="Unit" executed="True" result="Success" success="True" time="44.419" asserts="0">
+                          <test-suite type="Namespace" name="Unit" executed="True" result="Failure" success="False" time="34.963" asserts="0">
                             <results>
-                              <test-suite type="Namespace" name="Concrete" executed="True" result="Success" success="True" time="44.419" asserts="0">
+                              <test-suite type="Namespace" name="Concrete" executed="True" result="Failure" success="False" time="34.962" asserts="0">
                                 <results>
-                                  <test-suite type="Namespace" name="SmokeTest" executed="True" result="Success" success="True" time="44.418" asserts="0">
+                                  <test-suite type="Namespace" name="SmokeTest" executed="True" result="Failure" success="False" time="34.961" asserts="0">
                                     <results>
-                                      <test-suite type="Namespace" name="Admin" executed="True" result="Success" success="True" time="44.417" asserts="0">
+                                      <test-suite type="Namespace" name="Admin" executed="True" result="Failure" success="False" time="34.960" asserts="0">
                                         <results>
-                                          <test-suite type="Namespace" name="Bill_Management" executed="True" result="Success" success="True" time="44.416" asserts="0">
+                                          <test-suite type="Namespace" name="Bill_Management" executed="True" result="Failure" success="False" time="34.959" asserts="0">
                                             <results>
-                                              <test-suite type="TestFixture" name="InvoiceExportUT" executed="True" result="Success" success="True" time="44.412" asserts="0">
+                                              <test-suite type="TestFixture" name="VoiceProductUT" executed="True" result="Failure" success="False" time="34.957" asserts="0">
                                                 <results>
-                                                  <test-case name="AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.Bill_Management.InvoiceExportUT.InvoiceExportSmokeFunctionality" executed="True" result="Success" success="True" time="44.388" asserts="2" />
+                                                  <test-case name="AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.Bill_Management.VoiceProductUT.VoiceProductFunctionality" executed="True" result="Failure" success="False" time="34.939" asserts="1">
+                                                    <failure>
+                                                      <message><![CDATA[OpenQA.Selenium.NoAlertPresentException
+No alert is active   at OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.Remote.RemoteTargetLocator.Alert()
+   at AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_Management.VoiceProduct.CreateVoiceProduct() in d:\CMP Automation 6-10-2015\AutomatedTests\Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Bill Management\VoiceProduct.cs:line 68
+   at AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_Management.VoiceProduct.VoiceProductFunctionality() in d:\CMP Automation 6-10-2015\AutomatedTests\Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Bill Management\VoiceProduct.cs:line 31
+   at AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.Bill_Management.VoiceProductUT.<VoiceProductFunctionality>b__0() in d:\CMP Automation 6-10-2015\AutomatedTests\Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Bill Management\VoiceProductUT.cs:line 35
+   at AutomatedTests.Tangoe.Cmp.Automation.Unit.Abstract.BaseUnitTest.ExecuteTest(Action action) in d:\CMP Automation 6-10-2015\AutomatedTests\Tangoe\Cmp\Automation\Unit\Abstract\BaseUnitTest.cs:line 177]]></message>
+                                                      <stack-trace><![CDATA[at AutomatedTests.Tangoe.Cmp.Automation.Unit.Abstract.BaseUnitTest.ExecuteTest(Action action) in d:\CMP Automation 6-10-2015\AutomatedTests\Tangoe\Cmp\Automation\Unit\Abstract\BaseUnitTest.cs:line 181
+at AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.Bill_Management.VoiceProductUT.VoiceProductFunctionality() in d:\CMP Automation 6-10-2015\AutomatedTests\Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Bill Management\VoiceProductUT.cs:line 33
+]]></stack-trace>
+                                                    </failure>
+                                                  </test-case>
                                                 </results>
                                               </test-suite>
                                             </results>
