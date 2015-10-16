@@ -92,6 +92,7 @@
     <Compile Include="Tangoe\Cmp\Automation\Common\TestProperties.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Abstract\BaseActions.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Abstract\IBaseAction.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Bill Management\AccessProduct.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Bill Management\AllocationApprovalRules.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Bill Management\AllocationBucket.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Bill Management\Allocations.cs" />
@@ -105,6 +106,8 @@
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Bill Management\InvoiceValidation.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Bill Management\ManualInvoiceData.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Bill Management\Payment.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Bill Management\StandardBillImport.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Bill Management\USOCMaintainancee.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Bill Management\VoiceProduct.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Contracts\ContractTariff.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Contracts\ContractTerms.cs" />
@@ -163,6 +166,7 @@
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Provisioning\CreateRequest.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Driver\Selenium\BrowserDriver.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Abstract\BaseUnitTest.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Bill Management\AccessProductUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Bill Management\AllocationApprovalRulesUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Bill Management\AllocationBucketUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Bill Management\AllocationsUT.cs" />
@@ -178,6 +182,8 @@
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Bill Management\ManualInvoiceDataUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Bill Management\ManualInvoiceGeneralUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Bill Management\PaymentUT.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Bill Management\StandardBillImportUT.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Bill Management\USOCMaintainanceeUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Bill Management\VoiceProductUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Contracts\ContractTariffUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Contracts\ContractTermsUT.cs" />

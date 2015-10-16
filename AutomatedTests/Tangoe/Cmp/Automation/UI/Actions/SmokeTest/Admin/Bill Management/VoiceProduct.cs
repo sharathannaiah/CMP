@@ -32,8 +32,8 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_M
             {
                 Thread.Sleep(2000);
            //     SearchVoiceProduct("Conferencing", "Audio", "Data");
-                Assert.AreEqual("Conferencing", BrowserDriver.Instance.Driver.FindElement(By.XPath("//div[text()='Conferencing']")));
-                Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='Conferencing']")), "Voice Product creation failed");
+                Assert.AreEqual("Conferencing", BrowserDriver.Instance.Driver.FindElement(By.CssSelector("div[title='Conferencing']")));
+                Assert.IsTrue(IsElementVisible(By.CssSelector("div[title='Conferencing']")), "Voice Product creation failed");
                 Console.WriteLine("Voice Product Creation successful");
             }
 
@@ -57,10 +57,10 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_M
         {
             SwitchToPopUps();
             BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.NewB)).Click();
-            new SelectElement(BrowserDriver.Instance.Driver.FindElement(By.Name("productCategoryCode"))).SelectByText("Conferencing");
-            new SelectElement(BrowserDriver.Instance.Driver.FindElement(By.Name("productTypeCode"))).SelectByText("Audio");
-            new SelectElement(BrowserDriver.Instance.Driver.FindElement(By.Name("voiceProductServiceCode"))).SelectByText("Data");
-            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) {return true;};");
+            new SelectElement(BrowserDriver.Instance.Driver.FindElement(By.Name("productCategoryCode"))).SelectByIndex(1);
+            new SelectElement(BrowserDriver.Instance.Driver.FindElement(By.Name("productTypeCode"))).SelectByIndex(1);
+            new SelectElement(BrowserDriver.Instance.Driver.FindElement(By.Name("voiceProductServiceCode"))).SelectByIndex(1);
+        //    ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) {return true;};");
             javascriptClick(By.XPath(General.Default.SaveB));
             Thread.Sleep(5000);
             //SwitchToPopUps();
@@ -72,15 +72,14 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_M
             BrowserDriver.Instance.Driver.FindElement(By.Name("frm_AX")).Click();
             Thread.Sleep(2000);
             javascriptClick(By.XPath(General.Default.SaveB));
-            Thread.Sleep(3000);
+            Thread.Sleep(5000);
             SwitchToPopUps();
-        //    new SelectElement(BrowserDriver.Instance.Driver.FindElement(By.Id("queryVoiceCat"))).SelectByText("Conferencing");
-            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementById('queryVoiceCat').selectedText='Conferencing'");
-            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementById('queryVoiceType').selectedText='Audio'");
-            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementById('queryVoiceType').selectedText='Data'");
-            javascriptClick(By.XPath(General.Default.SubmitB));
-            Thread.Sleep(2000);
-            SwitchToPopUps();
+            //new SelectElement(BrowserDriver.Instance.Driver.FindElement(By.XPath(".//*[@id='queryVoiceCat']"))).SelectByIndex(1);
+            //new SelectElement(BrowserDriver.Instance.Driver.FindElement(By.XPath(".//*[@id='queryVoiceType']"))).SelectByIndex(1);
+            //new SelectElement(BrowserDriver.Instance.Driver.FindElement(By.XPath(".//*[@id='queryVoiceServ']"))).SelectByIndex(1);
+            //javascriptClick(By.XPath(General.Default.SubmitB));
+           // Thread.Sleep(4000);
+            //SwitchToPopUps();
             return true;
         }
 
@@ -88,6 +87,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_M
         {
             Thread.Sleep(2000);
             SwitchToPopUps();
+           
             ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementById('queryVoiceCat').selectedText='"+Productcat+"'");
             ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementById('queryVoiceType').selectedText='" + Productcat + "'");
             ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementById('queryVoiceServ').selectedText='" + Productcat + "'");
@@ -103,9 +103,9 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_M
             SwitchToPopUps();
             new SelectElement(BrowserDriver.Instance.Driver.FindElement(By.Name("productCategoryCode"))).SelectByText("International");
             javascriptClick(By.XPath(General.Default.SaveB));
-            Thread.Sleep(2000);
+            Thread.Sleep(5000);
             SwitchToPopUps();
-            SearchVoiceProduct("International", "Audio", "Data");
+         //   SearchVoiceProduct("International", "Audio", "Data");
             return true;
         }
 

@@ -579,11 +579,19 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Abstract
             ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("arguments[0].click();", element);
         }
 
-        public void javascriptdropdown(By by)
+        public void javascriptdropdownById(By by)
         {
             IWebElement element1 = BrowserDriver.Instance.Driver.FindElement(by);
             ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementById(by).selectedIndex = 1;", element1);
           
+
+        }
+
+        public void javascriptdropdownByName(By by)
+        {
+            IWebElement element1 = BrowserDriver.Instance.Driver.FindElement(by);
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName(by).selectedIndex = 1;", element1);
+
 
         }
         #endregion

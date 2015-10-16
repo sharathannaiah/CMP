@@ -249,8 +249,9 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Inventory
             SwitchToPopUps();
             BrowserDriver.Instance.Driver.FindElement(By.XPath("//input[@Name='spidText']")).Clear();
             ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('spidText')[0].value = '12345';");
+            Thread.Sleep(1000);
             javascriptClick(By.XPath(Inven.Default.OKB));
-            Thread.Sleep(2000);
+            Thread.Sleep(4000);
             SwitchToContent();
             BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER");
             BrowserDriver.Instance.Driver.SwitchTo().Frame("LINE_SPID");
@@ -333,15 +334,13 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Inventory
             ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('nonconDescription')[0].value = '500';");
             ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('nonconAmount')[0].value = '500';");
             ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('currencyCode')[0].selectedIndex = 8;");
-
-           
        //     new SelectElement (BrowserDriver.Instance.Driver.FindElement(By.Name("currencyCode"))).SelectByText("USD - United States of America, Dollars");
             javascriptClick(By.XPath(Inven.Default.OKB));
-            Thread.Sleep(3000);
+            Thread.Sleep(5000);
               SwitchToContent();
             BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER");
             BrowserDriver.Instance.Driver.SwitchTo().Frame("LINE_CHARGES");
-           Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='500.00']")), "Adding charges/Features failed");
+            Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='500.00']")), "Adding charges/Features failed");
             Console.WriteLine("Adding Charges Successful");
 
         }
@@ -357,7 +356,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Inventory
             BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER");
             BrowserDriver.Instance.Driver.SwitchTo().Frame("LINE_CHARGES");
             javascriptClick(By.XPath(Inven.Default.EditB));
-            Thread.Sleep(2000);
+            Thread.Sleep(5000);
             SwitchToPopUps();
             BrowserDriver.Instance.Driver.FindElement(By.XPath("//input[@Name='nonconDescription']")).Clear();
             ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('nonconDescription')[0].value = '900';");
