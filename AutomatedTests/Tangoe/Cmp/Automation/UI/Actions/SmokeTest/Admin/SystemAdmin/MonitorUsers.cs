@@ -55,5 +55,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.Sys
             BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.ResetB)).Click();
             return true;
         }
+
+
     }
 }
