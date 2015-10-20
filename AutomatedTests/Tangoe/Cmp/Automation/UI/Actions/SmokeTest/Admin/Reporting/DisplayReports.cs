@@ -25,16 +25,16 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Report
                 BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
                 WaitForElementToVisible(By.XPath("//td[text()='Display Reports']"));
                 Console.WriteLine("Navigation Successful");
-                
+
             }
 
-            if(SaveOperationalReports())
+            if (SaveOperationalReports())
             {
                 Assert.IsTrue(IsElementVisible(By.XPath("//option[.'Account Export']")), "Saving Operational Report failed");
                 Console.WriteLine("Saving Operational Report Successful");
             }
-          
-            if (SaveOperationalReports())
+
+            if (SaveDataWarehouseReports())
             {
                 Assert.IsTrue(IsElementVisible(By.XPath("//option[.'Account_Details_DW']")), "Saving Data Warehouse Report failed");
                 Console.WriteLine("Saving DataWarehouse Report Successful");
@@ -77,19 +77,15 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Report
 
         public void SelectUser()
         {
-            BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
-            IWebElement ele = BrowserDriver.Instance.Driver.FindElement(By.CssSelector("#dWnd2 iframe"));
-            BrowserDriver.Instance.Driver.SwitchTo().Frame(ele);
-            SwitchToPopUps();
+            SwitchToWindow("#dWnd2 iframe");
             BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.SubmitB)).Click();
             Thread.Sleep(4000);
-            SwitchToPopUps();
+            BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
+           BrowserDriver.Instance.Driver.SwitchTo().Frame("CMP_DIALOG_FRAME");
             javascriptClick(By.XPath("//div[text()='CME User']"));
             BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.OKB)).Click();
             Thread.Sleep(4000);
-            BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
-            IWebElement ele2 = BrowserDriver.Instance.Driver.FindElement(By.CssSelector("#dWnd1 iframe"));
-            BrowserDriver.Instance.Driver.SwitchTo().Frame(ele2);
+            SwitchToWindow("#dWnd1 iframe");
             BrowserDriver.Instance.Driver.FindElement(By.XPath("//option[.='Account Export']")).Click();
             BrowserDriver.Instance.Driver.FindElement(By.XPath("//img[@onclick='deAssignReport(false)']")).Click();
             BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.SaveB)).Click();
@@ -151,6 +147,12 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Report
             BrowserDriver.Instance.Driver.SwitchTo().Frame("ifrmCR");
             return true;
         }
+
+        public void SwitchToWindow(String window)
+        {
+            BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
+            IWebElement ele = BrowserDriver.Instance.Driver.FindElement(By.CssSelector(window));
+            BrowserDriver.Instance.Driver.SwitchTo().Frame(ele);
+        }
     }
-    
 }

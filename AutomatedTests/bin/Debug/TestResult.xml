@@ -1,33 +1,48 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--This file represents the results of running a test suite-->
-<test-results name="D:\CMP Automation 6-10-2015\AutomatedTests\bin\Debug\AutomatedTests.nunit" total="1" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2015-10-19" time="14:14:47">
-  <environment nunit-version="2.6.4.14350" clr-version="2.0.50727.5485" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="D:\Code Library\Plain framework\AutomatedTests\bin" machine-name="SANNAIAH6440" user="Sharath.Annaiah" user-domain="CORP" />
+<test-results name="D:\CMP Automation 6-10-2015\AutomatedTests\bin\Debug\AutomatedTests.nunit" total="1" errors="0" failures="1" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2015-10-20" time="15:20:10">
+  <environment nunit-version="2.6.4.14350" clr-version="2.0.50727.5485" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="D:\Code Library\Plain framework\AutomatedTests\bin" machine-name="SANNAIAH6440" user="sharath.annaiah" user-domain="CORP" />
   <culture-info current-culture="en-US" current-uiculture="en-US" />
-  <test-suite type="Project" name="D:\CMP Automation 6-10-2015\AutomatedTests\bin\Debug\AutomatedTests.nunit" executed="True" result="Success" success="True" time="29.133" asserts="0">
+  <test-suite type="Project" name="D:\CMP Automation 6-10-2015\AutomatedTests\bin\Debug\AutomatedTests.nunit" executed="True" result="Failure" success="False" time="36.140" asserts="0">
     <results>
-      <test-suite type="SetUpFixture" name="D:\CMP Automation 6-10-2015\AutomatedTests\bin\Debug\AutomatedTests.dll" executed="True" result="Success" success="True" time="29.118" asserts="0">
+      <test-suite type="SetUpFixture" name="D:\CMP Automation 6-10-2015\AutomatedTests\bin\Debug\AutomatedTests.dll" executed="True" result="Failure" success="False" time="36.122" asserts="0">
         <results>
-          <test-suite type="Namespace" name="AutomatedTests" executed="True" result="Success" success="True" time="29.116" asserts="0">
+          <test-suite type="Namespace" name="AutomatedTests" executed="True" result="Failure" success="False" time="36.120" asserts="0">
             <results>
-              <test-suite type="Namespace" name="Tangoe" executed="True" result="Success" success="True" time="29.116" asserts="0">
+              <test-suite type="Namespace" name="Tangoe" executed="True" result="Failure" success="False" time="36.119" asserts="0">
                 <results>
-                  <test-suite type="Namespace" name="Cmp" executed="True" result="Success" success="True" time="29.115" asserts="0">
+                  <test-suite type="Namespace" name="Cmp" executed="True" result="Failure" success="False" time="36.118" asserts="0">
                     <results>
-                      <test-suite type="Namespace" name="Automation" executed="True" result="Success" success="True" time="29.114" asserts="0">
+                      <test-suite type="Namespace" name="Automation" executed="True" result="Failure" success="False" time="36.117" asserts="0">
                         <results>
-                          <test-suite type="Namespace" name="Unit" executed="True" result="Success" success="True" time="29.114" asserts="0">
+                          <test-suite type="Namespace" name="Unit" executed="True" result="Failure" success="False" time="36.117" asserts="0">
                             <results>
-                              <test-suite type="Namespace" name="Concrete" executed="True" result="Success" success="True" time="29.113" asserts="0">
+                              <test-suite type="Namespace" name="Concrete" executed="True" result="Failure" success="False" time="36.116" asserts="0">
                                 <results>
-                                  <test-suite type="Namespace" name="SmokeTest" executed="True" result="Success" success="True" time="29.112" asserts="0">
+                                  <test-suite type="Namespace" name="SmokeTest" executed="True" result="Failure" success="False" time="36.115" asserts="0">
                                     <results>
-                                      <test-suite type="Namespace" name="Admin" executed="True" result="Success" success="True" time="29.111" asserts="0">
+                                      <test-suite type="Namespace" name="Admin" executed="True" result="Failure" success="False" time="36.114" asserts="0">
                                         <results>
-                                          <test-suite type="Namespace" name="Assurance" executed="True" result="Success" success="True" time="29.110" asserts="0">
+                                          <test-suite type="Namespace" name="Reporting" executed="True" result="Failure" success="False" time="36.113" asserts="0">
                                             <results>
-                                              <test-suite type="TestFixture" name="UninstallAssuranceUT" executed="True" result="Success" success="True" time="29.108" asserts="0">
+                                              <test-suite type="TestFixture" name="DisplayReportsUT" executed="True" result="Failure" success="False" time="36.112" asserts="0">
                                                 <results>
-                                                  <test-case name="AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.Assurance.UninstallAssuranceUT.UninstallAssuranceFunctionality" executed="True" result="Success" success="True" time="29.089" asserts="0" />
+                                                  <test-case name="AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.Reporting.DisplayReportsUT.DisplayReportsSmokeTestFunctionality" executed="True" result="Failure" success="False" time="36.089" asserts="0">
+                                                    <failure>
+                                                      <message><![CDATA[OpenQA.Selenium.NoSuchFrameException
+No frame found   at OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.Remote.RemoteTargetLocator.Frame(String frameName)
+   at AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Reporting.DisplayReports.SelectUser() in d:\CMP Automation 6-10-2015\AutomatedTests\Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Reporting\DisplayReports.cs:line 84
+   at AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Reporting.DisplayReports.SaveOperationalReports() in d:\CMP Automation 6-10-2015\AutomatedTests\Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Reporting\DisplayReports.cs:line 62
+   at AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Reporting.DisplayReports.DisplayReportsFunctionality() in d:\CMP Automation 6-10-2015\AutomatedTests\Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Reporting\DisplayReports.cs:line 31
+   at AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.Reporting.DisplayReportsUT.<DisplayReportsSmokeTestFunctionality>b__0() in d:\CMP Automation 6-10-2015\AutomatedTests\Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Reporting\DisplayReportsUT.cs:line 31
+   at AutomatedTests.Tangoe.Cmp.Automation.Unit.Abstract.BaseUnitTest.ExecuteTest(Action action) in d:\CMP Automation 6-10-2015\AutomatedTests\Tangoe\Cmp\Automation\Unit\Abstract\BaseUnitTest.cs:line 177]]></message>
+                                                      <stack-trace><![CDATA[at AutomatedTests.Tangoe.Cmp.Automation.Unit.Abstract.BaseUnitTest.ExecuteTest(Action action) in d:\CMP Automation 6-10-2015\AutomatedTests\Tangoe\Cmp\Automation\Unit\Abstract\BaseUnitTest.cs:line 181
+at AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.Reporting.DisplayReportsUT.DisplayReportsSmokeTestFunctionality() in d:\CMP Automation 6-10-2015\AutomatedTests\Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Reporting\DisplayReportsUT.cs:line 29
+]]></stack-trace>
+                                                    </failure>
+                                                  </test-case>
                                                 </results>
                                               </test-suite>
                                             </results>
