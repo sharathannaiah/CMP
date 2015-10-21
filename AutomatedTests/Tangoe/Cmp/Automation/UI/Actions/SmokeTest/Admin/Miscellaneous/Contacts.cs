@@ -18,7 +18,6 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Miscel
 
         public void ContactsFunctionality()
         {
-
             GoToMain("Admin");
             retryingFindClickk(".//*[@id='mnu_Misc']");
             //Navigate to Employee Explorerk

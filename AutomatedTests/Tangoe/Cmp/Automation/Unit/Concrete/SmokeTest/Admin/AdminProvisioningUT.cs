@@ -25,8 +25,6 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin
             adminProvisioning.Login();
         }
 
-
-
         [Test]
         public void AdminProvsioningFunctionality()
         {
