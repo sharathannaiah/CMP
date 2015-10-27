@@ -227,6 +227,19 @@ namespace AutomatedTests.CMP.Admin {
                 this["EditB"] = value;
             }
         }
-           
+    
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("//input[@value=\'Modify\']")]
+        public string ModifyB {
+            get
+            {
+                return ((string)(this["ModifyB"]));
+            }
+            set
+            {
+                this["ModifyB"] = value;
+            }
+        }
     }
 }
