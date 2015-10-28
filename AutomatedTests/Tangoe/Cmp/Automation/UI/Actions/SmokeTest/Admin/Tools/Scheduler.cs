@@ -30,7 +30,15 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.Too
             {
                 SearchScheduler("nameField", "AB Automation");
                 Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='ISI Directory Export']")), "Scheduler creation failed");
-                Console.WriteLine("Scheduler create and search successful"); 
+                Console.WriteLine("Scheduler create and search successful");
+                javascriptClick(By.XPath("//div[text()='Inactive']"));
+                Thread.Sleep(2000);
+                SwitchToContent();
+                javascriptClick(By.XPath(General.Default.RunNowB));
+                Thread.Sleep(5000);
+                SwitchToContent();
+                Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='Running']")), "Scheduler run failed");
+                Console.WriteLine("Scheduler running successfully");
             }
 
             //if (SearchScheduler("nameField","AB Automation"))

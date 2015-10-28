@@ -1,46 +1,56 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--This file represents the results of running a test suite-->
-<test-results name="D:\CMP Automation 6-10-2015\AutomatedTests\bin\Debug\AutomatedTests.nunit" total="1" errors="0" failures="1" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2015-10-27" time="16:03:25">
+<test-results name="D:\CMP Automation 6-10-2015\AutomatedTests\bin\Debug\AutomatedTests.nunit" total="1" errors="1" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2015-10-28" time="14:35:45">
   <environment nunit-version="2.6.4.14350" clr-version="2.0.50727.5485" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="D:\Code Library\Plain framework\AutomatedTests\bin" machine-name="SANNAIAH6440" user="Sharath.Annaiah" user-domain="CORP" />
   <culture-info current-culture="en-US" current-uiculture="en-US" />
-  <test-suite type="Project" name="D:\CMP Automation 6-10-2015\AutomatedTests\bin\Debug\AutomatedTests.nunit" executed="True" result="Failure" success="False" time="97.199" asserts="0">
+  <test-suite type="Project" name="D:\CMP Automation 6-10-2015\AutomatedTests\bin\Debug\AutomatedTests.nunit" executed="True" result="Failure" success="False" time="16.154" asserts="0">
     <results>
-      <test-suite type="SetUpFixture" name="D:\CMP Automation 6-10-2015\AutomatedTests\bin\Debug\AutomatedTests.dll" executed="True" result="Failure" success="False" time="97.194" asserts="0">
+      <test-suite type="SetUpFixture" name="D:\CMP Automation 6-10-2015\AutomatedTests\bin\Debug\AutomatedTests.dll" executed="True" result="Failure" success="False" time="16.147" asserts="0">
         <results>
-          <test-suite type="Namespace" name="AutomatedTests" executed="True" result="Failure" success="False" time="97.193" asserts="0">
+          <test-suite type="Namespace" name="AutomatedTests" executed="True" result="Failure" success="False" time="16.146" asserts="0">
             <results>
-              <test-suite type="Namespace" name="Tangoe" executed="True" result="Failure" success="False" time="97.193" asserts="0">
+              <test-suite type="Namespace" name="Tangoe" executed="True" result="Failure" success="False" time="16.146" asserts="0">
                 <results>
-                  <test-suite type="Namespace" name="Cmp" executed="True" result="Failure" success="False" time="97.193" asserts="0">
+                  <test-suite type="Namespace" name="Cmp" executed="True" result="Failure" success="False" time="16.146" asserts="0">
                     <results>
-                      <test-suite type="Namespace" name="Automation" executed="True" result="Failure" success="False" time="97.193" asserts="0">
+                      <test-suite type="Namespace" name="Automation" executed="True" result="Failure" success="False" time="16.145" asserts="0">
                         <results>
-                          <test-suite type="Namespace" name="Unit" executed="True" result="Failure" success="False" time="97.191" asserts="0">
+                          <test-suite type="Namespace" name="Unit" executed="True" result="Failure" success="False" time="16.145" asserts="0">
                             <results>
-                              <test-suite type="Namespace" name="Concrete" executed="True" result="Failure" success="False" time="97.191" asserts="0">
+                              <test-suite type="Namespace" name="Concrete" executed="True" result="Failure" success="False" time="16.145" asserts="0">
                                 <results>
-                                  <test-suite type="Namespace" name="SmokeTest" executed="True" result="Failure" success="False" time="97.191" asserts="0">
+                                  <test-suite type="Namespace" name="SmokeTest" executed="True" result="Failure" success="False" time="16.145" asserts="0">
                                     <results>
-                                      <test-suite type="Namespace" name="Admin" executed="True" result="Failure" success="False" time="97.191" asserts="0">
+                                      <test-suite type="Namespace" name="Admin" executed="True" result="Failure" success="False" time="16.145" asserts="0">
                                         <results>
-                                          <test-suite type="TestFixture" name="AdminProvisioningUT" executed="True" result="Failure" success="False" time="97.190" asserts="0">
+                                          <test-suite type="Namespace" name="Bill_Management" executed="True" result="Failure" success="False" time="16.144" asserts="0">
                                             <results>
-                                              <test-case name="AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.AdminProvisioningUT.AdminProvsioningFunctionality" executed="True" result="Failure" success="False" time="97.184" asserts="8">
-                                                <failure>
-                                                  <message><![CDATA[OpenQA.Selenium.NoSuchFrameException
-No frame found   at OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
-   at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
-   at OpenQA.Selenium.Remote.RemoteTargetLocator.Frame(String frameName)
-   at AutomatedTests.Tangoe.Cmp.Automation.UI.Abstract.BaseActions.SwitchToPopUps() in d:\CMP Automation 6-10-2015\AutomatedTests\Tangoe\Cmp\Automation\UI\Abstract\BaseActions.cs:line 523
-   at AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.AdminProvisioning.EmailandPrinting(String Tab) in d:\CMP Automation 6-10-2015\AutomatedTests\Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\AdminProvisioning.cs:line 457
-   at AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.AdminProvisioning.AdminProvisioningFunctionality() in d:\CMP Automation 6-10-2015\AutomatedTests\Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\AdminProvisioning.cs:line 181
-   at AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.AdminProvisioningUT.<AdminProvsioningFunctionality>b__0() in d:\CMP Automation 6-10-2015\AutomatedTests\Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\AdminProvisioningUT.cs:line 33
-   at AutomatedTests.Tangoe.Cmp.Automation.Unit.Abstract.BaseUnitTest.ExecuteTest(Action action) in d:\CMP Automation 6-10-2015\AutomatedTests\Tangoe\Cmp\Automation\Unit\Abstract\BaseUnitTest.cs:line 177]]></message>
-                                                  <stack-trace><![CDATA[at AutomatedTests.Tangoe.Cmp.Automation.Unit.Abstract.BaseUnitTest.ExecuteTest(Action action) in d:\CMP Automation 6-10-2015\AutomatedTests\Tangoe\Cmp\Automation\Unit\Abstract\BaseUnitTest.cs:line 181
-at AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.AdminProvisioningUT.AdminProvsioningFunctionality() in d:\CMP Automation 6-10-2015\AutomatedTests\Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\AdminProvisioningUT.cs:line 31
+                                              <test-suite type="TestFixture" name="AllocationBucketUT" executed="True" result="Failure" success="False" time="16.144" asserts="0">
+                                                <results>
+                                                  <test-case name="AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.Bill_Management.AllocationBucketUT.AllocationBucketSmokeFunctionality" executed="True" result="Error" success="False" time="16.139" asserts="0">
+                                                    <failure>
+                                                      <message><![CDATA[SetUp : OpenQA.Selenium.WebDriverTimeoutException : Timed out after 10 seconds
+  ----> OpenQA.Selenium.NoSuchElementException : Unable to find element with id == tgx-main-header]]></message>
+                                                      <stack-trace><![CDATA[at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)
+at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)
+at AutomatedTests.Tangoe.Cmp.Automation.UI.Abstract.BaseActions.WaitForElementToVisible(By by) in d:\CMP Automation 6-10-2015\AutomatedTests\Tangoe\Cmp\Automation\UI\Abstract\BaseActions.cs:line 178
+at AutomatedTests.Tangoe.Cmp.Automation.UI.Abstract.BaseActions.Login() in d:\CMP Automation 6-10-2015\AutomatedTests\Tangoe\Cmp\Automation\UI\Abstract\BaseActions.cs:line 563
+at AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.Bill_Management.AllocationBucketUT.SetUpBase() in d:\CMP Automation 6-10-2015\AutomatedTests\Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Bill Management\AllocationBucketUT.cs:line 23
+--NoSuchElementException
+at OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(String mechanism, String value)
+at OpenQA.Selenium.Remote.RemoteWebDriver.FindElementById(String id)
+at OpenQA.Selenium.By.<>c__DisplayClass2.<Id>b__0(ISearchContext context)
+at OpenQA.Selenium.By.FindElement(ISearchContext context)
+at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(By by)
+at OpenQA.Selenium.Support.UI.ExpectedConditions.<>c__DisplayClassa.<ElementIsVisible>b__9(IWebDriver driver)
+at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)
 ]]></stack-trace>
-                                                </failure>
-                                              </test-case>
+                                                    </failure>
+                                                  </test-case>
+                                                </results>
+                                              </test-suite>
                                             </results>
                                           </test-suite>
                                         </results>

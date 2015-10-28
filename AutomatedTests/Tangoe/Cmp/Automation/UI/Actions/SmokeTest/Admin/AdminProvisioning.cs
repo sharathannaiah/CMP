@@ -25,56 +25,56 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin
                 Console.WriteLine("Navigation Successful");
             }
 
-            // if (SaveHeaderView("//a[text()='New Configuration']"))
-            // {
-            //     Assert.IsTrue(IsElementVisible(By.XPath("//input[@type='checkbox']")), "Saving Header Link for new configuration failed");
-            //     Console.WriteLine("Saving Header Link for new configuration successful");
-            // }
+            if (SaveHeaderView("//a[text()='New Configuration']"))
+            {
+                Assert.IsTrue(IsElementVisible(By.XPath("//input[@type='checkbox']")), "Saving Header Link for new configuration failed");
+                Console.WriteLine("Saving Header Link for new configuration successful");
+            }
 
-            // if (SaveHeaderView("//a[text()='Change Configuration']"))
-            // {
+            if (SaveHeaderView("//a[text()='Change Configuration']"))
+            {
 
-            //     Assert.IsTrue(IsElementVisible(By.XPath("//input[@type='checkbox']")), "Saving change configuration failed");
-            //     Console.WriteLine("Saving Header Link for change configuration successful");
-            // }
+                Assert.IsTrue(IsElementVisible(By.XPath("//input[@type='checkbox']")), "Saving change configuration failed");
+                Console.WriteLine("Saving Header Link for change configuration successful");
+            }
 
-            // if (SaveHeaderView("//a[text()='Disconnect Configuration']"))
-            // {
+            if (SaveHeaderView("//a[text()='Disconnect Configuration']"))
+            {
 
-            //     Assert.IsTrue(IsElementVisible(By.XPath("//input[@type='checkbox']")), "Saving disc configuration failed");
-            //     Console.WriteLine("Saving Header Link for disconnect configuration successful");
-            // }
+                Assert.IsTrue(IsElementVisible(By.XPath("//input[@type='checkbox']")), "Saving disc configuration failed");
+                Console.WriteLine("Saving Header Link for disconnect configuration successful");
+            }
 
 
-            // if (CreateNewConfiguration())
-            //{
-            //   //  Assert.IsTrue(IsElementVisible(By.CssSelector("div[title^='Automation']")), "New configuration creation failed");
-            // SwitchToContentFrame();
-            // Assert.IsTrue(IsElementVisible(By.CssSelector("div[title='Automation Configuration']")), "New configuration creation failed");
-            // Console.WriteLine("Configuration created successfully");
-            //}
+            if (CreateNewConfiguration())
+            {
+                //  Assert.IsTrue(IsElementVisible(By.CssSelector("div[title^='Automation']")), "New configuration creation failed");
+                SwitchToContentFrame();
+                //Assert.IsTrue(IsElementVisible(By.CssSelector("div[title='Automation Configuration']")), "New configuration creation failed");
+                Console.WriteLine("Configuration created successfully");
+            }
 
-            //if (ChangeServiceConfiguration())
-            //{
-            //    Assert.IsTrue(IsElementVisible(By.Id("AccessDropDown")), "Saving Service Configuration failed");
-            //    Console.WriteLine("Saving Service configuration successful");
-            //    javascriptClick(By.XPath("//a[text()=' Access']"));
-            //    Thread.Sleep(2000);
-            //    ChangeConfig();
-            //    Boolean check = BrowserDriver.Instance.Driver.FindElement(By.Id("reqIndicator59")).Selected;
-            //    javascriptClick(By.Id("reqIndicator59"));
-            //    javascriptClick(By.XPath(General.Default.SaveB));
-            //    Thread.Sleep(2000);
-            //    SwitchToPopUps();
-            //    Console.WriteLine("Service configuration modified successfully");
-            //        //  Assert.AreEqual("Simple View", BrowserDriver.Instance.Driver.FindElement(By.Id("AccessDropDown")).GetAttribute("label").);
-            //}
+            if (ChangeServiceConfiguration())
+            {
+                Assert.IsTrue(IsElementVisible(By.Id("AccessDropDown")), "Saving Service Configuration failed");
+                Console.WriteLine("Saving Service configuration successful");
+                javascriptClick(By.XPath("//a[text()=' Access']"));
+                Thread.Sleep(2000);
+                ChangeConfig();
+                Boolean check = BrowserDriver.Instance.Driver.FindElement(By.Id("reqIndicator59")).Selected;
+                javascriptClick(By.Id("reqIndicator59"));
+                javascriptClick(By.XPath(General.Default.SaveB));
+                Thread.Sleep(2000);
+                SwitchToPopUps();
+                Console.WriteLine("Service configuration modified successfully");
+                //  Assert.AreEqual("Simple View", BrowserDriver.Instance.Driver.FindElement(By.Id("AccessDropDown")).GetAttribute("label").);
+            }
 
-            //if (VendorLeadTimeAdd())
-            //{
-            //    Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='Allstream']")), "Adding Vendor Lead Time Configuration failed");
-            //    Console.WriteLine("Vendor LeadTime Added Successfully");
-            //}
+            if (VendorLeadTimeAdd())
+            {
+                Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='Allstream']")), "Adding Vendor Lead Time Configuration failed");
+                Console.WriteLine("Vendor LeadTime Added Successfully");
+            }
 
 
             //if (RemoveVendorLeadTime())
@@ -85,13 +85,13 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin
             //    Console.WriteLine("Vendor LeadTime Removed Successfully");
             //}
 
-            //if (AddVendorDelivery())
-            //{
-            //    javascriptClick(By.CssSelector("span.clsCollapse"));
-            //    Thread.Sleep(2000);
-            //    Assert.IsTrue(IsElementVisible(By.XPath("//span[text()='Allstream']")), "Vendor Delivery Creation failed");
-            //    Console.WriteLine("Vendor Deliver creation successful");
-            //}
+            if (AddVendorDelivery())
+            {
+                javascriptClick(By.CssSelector("span.clsCollapse"));
+                Thread.Sleep(2000);
+                Assert.IsTrue(IsElementVisible(By.XPath("//span[text()='Allstream']")), "Vendor Delivery Creation failed");
+                Console.WriteLine("Vendor Deliver creation successful");
+            }
             //if (RemoveVendorDelivery())
             //{
             //    javascriptClick(By.CssSelector("span.clsCollapse"));
@@ -101,35 +101,34 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin
             //    javascriptClick(By.XPath(General.Default.CloseB));
             //}
 
-            //if (AddRequestTemplate())
-            //{
-            //    SwitchToContentFrame();
-            //    Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='Automation Temp']")), "Request Template creation failed");
-            //    Console.WriteLine("Request Template created successfully");
-            //    javascriptClick(By.XPath("//div[text()='Automation Temp']"));
-            //    javascriptClick(By.XPath(General.Default.ModifyB));
-            //    Thread.Sleep(3000);
-            //    SwitchToPopUps();
-            //    BrowserDriver.Instance.Driver.SwitchTo().Frame("RT_CONTENT");
-            //    typeDataName("pmRequestTemplateDescription", "Template Automation Edited and modified");
-            //    javascriptClick(By.XPath(General.Default.SaveB));
-            //    Thread.Sleep(2000);
-            //    VendorAddRemove();
-            //    javascriptClick(By.XPath(General.Default.CloseB));
-            //    Thread.Sleep(2000);
-            //    SwitchToContentFrame();
-            //    Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='Template Automation Edited and modified']")), "Request Template modification failed");
-            //    Console.WriteLine("Request Template modified successfully");
-            //    Thread.Sleep(2000);
-            //}
+            if (AddRequestTemplate())
+            {
+                SwitchToContentFrame();
+                Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='Automation Temp']")), "Request Template creation failed");
+                Console.WriteLine("Request Template created successfully");
+                javascriptClick(By.XPath("//div[text()='Automation Temp']"));
+                javascriptClick(By.XPath(General.Default.ModifyB));
+                Thread.Sleep(3000);
+                SwitchToPopUps();
+                BrowserDriver.Instance.Driver.SwitchTo().Frame("RT_CONTENT");
+                typeDataName("pmRequestTemplateDescription", "Template Automation Edited and modified");
+                javascriptClick(By.XPath(General.Default.SaveB));
+                Thread.Sleep(2000);
+                VendorAddRemove();
+                javascriptClick(By.XPath(General.Default.CloseB));
+                Thread.Sleep(2000);
+                SwitchToContentFrame();
+                Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='Template Automation Edited and modified']")), "Request Template modification failed");
+                Console.WriteLine("Request Template modified successfully");
+                Thread.Sleep(2000);
+            }
 
-            //if (CopyRequest())
-            //{
-            //    SwitchToContentFrame();
-            //    Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='Copy of Automation']")), "Request copy failed");
-            //    Console.WriteLine("Request copied successfully");
-
-            //}
+            if (CopyRequest())
+            {
+                SwitchToContentFrame();
+                Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='Copy of Automation']")), "Request copy failed");
+                Console.WriteLine("Request copied successfully");
+            }
 
             //if (DeleteRequestTemplate())
             //{
@@ -139,55 +138,56 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin
             //    Console.WriteLine("Request Template deleted successfully");
             //}
 
-            //if (AddConfiguration())
-            //{
-            //    SwitchToPopUps();
-            //    BrowserDriver.Instance.Driver.SwitchTo().Frame("ADMIN_CONTENT");
-            //    javascriptClick(By.CssSelector("span.clsCollapse"));
-            //    Thread.Sleep(2000);
-            //    Assert.IsTrue(IsElementVisible(By.XPath("//span[text()='Allstream']")), "Configuration Addition failed");
-            //    Console.WriteLine("Configuration Addition successful");
-            //    Thread.Sleep(2000);
-            //    javascriptClick(By.XPath("//span[text()='Allstream']"));
-            //    javascriptClick(By.XPath(General.Default.CopyB));
-            //    Thread.Sleep(5000);
-            //    BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
-            //    IWebElement ele = BrowserDriver.Instance.Driver.FindElement(By.CssSelector("#dWnd2 iframe"));
-            //    BrowserDriver.Instance.Driver.SwitchTo().Frame(ele);
-            //    javascriptClick(By.CssSelector("input.multiSelectRow"));
-            //    BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.OKB)).Click();
-            //    Thread.Sleep(2000);
-            //    BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
-            //    IWebElement ele1 = BrowserDriver.Instance.Driver.FindElement(By.CssSelector("#dWnd1 iframe"));
-            //    BrowserDriver.Instance.Driver.SwitchTo().Frame(ele1);
-            //    SwitchToPopUps();
-            //    BrowserDriver.Instance.Driver.SwitchTo().Frame("ADMIN_CONTENT");
-            //    javascriptClick(By.CssSelector("span.clsCollapse"));
-            //    Thread.Sleep(2000);
-            //    Assert.IsTrue(IsElementVisible(By.XPath("//span[text()='Allstream']")), "Configuration copy failed");
-            //    Console.WriteLine("Configuration copied successfully");
-            //}
+            if (AddConfiguration())
+            {
+                SwitchToPopUps();
+                BrowserDriver.Instance.Driver.SwitchTo().Frame("ADMIN_CONTENT");
+                javascriptClick(By.CssSelector("span.clsCollapse"));
+                Thread.Sleep(2000);
+                Assert.IsTrue(IsElementVisible(By.XPath("//span[text()='Allstream']")), "Configuration Addition failed");
+                Console.WriteLine("Configuration Addition successful");
+                Thread.Sleep(2000);
+                javascriptClick(By.XPath("//span[text()='Allstream']"));
+                javascriptClick(By.XPath(General.Default.CopyB));
+                Thread.Sleep(5000);
+                BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
+                IWebElement ele = BrowserDriver.Instance.Driver.FindElement(By.CssSelector("#dWnd2 iframe"));
+                BrowserDriver.Instance.Driver.SwitchTo().Frame(ele);
+                javascriptClick(By.CssSelector("input.multiSelectRow"));
+                BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.OKB)).Click();
+                Thread.Sleep(2000);
+                BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
+                IWebElement ele1 = BrowserDriver.Instance.Driver.FindElement(By.CssSelector("#dWnd1 iframe"));
+                BrowserDriver.Instance.Driver.SwitchTo().Frame(ele1);
+                SwitchToPopUps();
+                BrowserDriver.Instance.Driver.SwitchTo().Frame("ADMIN_CONTENT");
+                javascriptClick(By.CssSelector("span.clsCollapse"));
+                Thread.Sleep(2000);
+                Assert.IsTrue(IsElementVisible(By.XPath("//span[text()='Allstream']")), "Configuration copy failed");
+                Console.WriteLine("Configuration copied successfully");
+            }
 
-            //if (DeleteConfiguration())
-            //{
-            //    SwitchToPopUps();
-            //    BrowserDriver.Instance.Driver.SwitchTo().Frame("ADMIN_CONTENT");
-            //    Assert.IsFalse(IsElementVisible(By.XPath("//div[span[text()='Allstream']")), "Configuration deletion failed");
-            //    Console.WriteLine("Configuration Deletion successful");
-            //    javascriptClick(By.XPath(General.Default.CloseB));
-            //    Thread.Sleep(2000);
-            //}
+            if (DeleteConfiguration())
+            {
+                SwitchToPopUps();
+                BrowserDriver.Instance.Driver.SwitchTo().Frame("ADMIN_CONTENT");
+                Assert.IsFalse(IsElementVisible(By.XPath("//div[span[text()='Allstream']")), "Configuration deletion failed");
+                Console.WriteLine("Configuration Deletion successful");
+                javascriptClick(By.XPath(General.Default.CloseB));
+                Thread.Sleep(2000);
+            }
 
             if (EmailandPrinting("aemail"))
             {
-                Assert.IsTrue(IsElementVisible(By.XPath("")), "Modification of Email  failed");
+                Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='Alert Information']")), "Modification of Email  failed");
                 Console.WriteLine("Navigation and modification of Email successful");
             }
 
             if (EmailandPrinting("aprinting"))
             {
-                Assert.IsTrue(IsElementVisible(By.XPath("")), "Modification of Email  failed");
+                Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='Alert Information']")), "Modification of Email  failed");
                 Console.WriteLine("Navigation and modification of Email successful");
+                Console.WriteLine("Admin --> Provisioning passed smoke test successfully");
             }
 
         }

@@ -241,5 +241,35 @@ namespace AutomatedTests.CMP.Admin {
                 this["ModifyB"] = value;
             }
         }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("//input[@value=\'Uninstall\']")]
+        public string UninstallB
+        {
+            get
+            {
+                return ((string)(this["UninstallB"]));
+            }
+            set
+            {
+                this["UninstallB"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("//input[@value=\'Run Now\']")]
+        public string RunNowB
+        {
+            get
+            {
+                return ((string)(this["RunNowB"]));
+            }
+            set
+            {
+                this["RunNowB"] = value;
+            }
+        }
     }
 }

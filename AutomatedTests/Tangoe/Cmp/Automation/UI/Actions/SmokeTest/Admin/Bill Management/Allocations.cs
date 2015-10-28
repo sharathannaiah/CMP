@@ -33,7 +33,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_M
             if (CreateAllocation())
             {
 
-                Assert.IsTrue(IsElementVisible(By.XPath("//span[text()='AB Allocation']")), "Allocation creation failed");
+                Assert.IsTrue(IsElementVisible(By.XPath("//span[text()^='AB Allocation']")), "Allocation creation failed");
                 Console.WriteLine("Allocation created successfully");
             }
             if (EditAllocation())
@@ -43,23 +43,23 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_M
                 javascriptClick(By.XPath(General.Default.CloseB));
             }
 
-            //if (DeleteAllocation())
-            //{
-            //    Assert.IsFalse(IsElementVisible(By.XPath("//span[text()='AB Allocations']")), "Allocation deletion failed");
-            //    Console.WriteLine("Allocation deletion successfully");
-                
-            //}
+           //if (DeleteAllocation())
+           //{
+           //     Assert.IsFalse(IsElementVisible(By.XPath("//span[text()='AB Allocations']")), "Allocation deletion failed");
+           //     Console.WriteLine("Allocation deletion successfully");
+           // }
         }
 
         public Boolean CreateAllocation()
         {
+            var s = RandomNumbergeneratorL();
             SwitchToPopUps();
             BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.NewB)).Click();
             Thread.Sleep(2000);
             BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
             IWebElement ele = BrowserDriver.Instance.Driver.FindElement(By.CssSelector("#dWnd2 iframe"));
             BrowserDriver.Instance.Driver.SwitchTo().Frame(ele);
-            typeDataName("configurationName", "AB Allocation");
+            typeDataName("configurationName", "AB Allocation"+s);
             BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.OKB)).Click();
             Thread.Sleep(4000);
             SwitchToPopUps();
@@ -81,7 +81,6 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_M
         {
             SwitchToPopUps();
             javascriptClick(By.XPath("//span[text()='AB Allocation']"));
-            Thread.Sleep(2000);
             SwitchToPopUps();
             ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) {return true;};");
             javascriptClick(By.XPath(General.Default.DeleteB));

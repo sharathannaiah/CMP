@@ -56,14 +56,15 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_M
             {
                 Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='1']")), "Allocation Bucket Attribute Creation failed");
                 Console.WriteLine("Allocation Bucket Attribute Creation Successful");
-                BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.CloseB)).Click();
-                Console.WriteLine("Admin --> Bill Management --> allocation Bucket passed smoke test successfully");
             }
-            //if (DeleteAllocationBucketAttribute())
-            //{
-            //    Assert.IsFalse(IsElementVisible(By.XPath("//div[text()='1']")), "Allocation attribute Deletion failed");
-            //    Console.WriteLine("Allocation Bucket Attribute Deletion Successful");
-            //}
+            
+            if (DeleteAllocationBucketAttribute())
+            {
+                Assert.IsFalse(IsElementVisible(By.XPath("//div[text()='1']")), "Allocation attribute Deletion failed");
+                Console.WriteLine("Allocation Bucket Attribute Deletion Successful");
+                Console.WriteLine("Admin --> Bill Management --> allocation Bucket passed smoke test successfully");
+
+            }
         }
             public Boolean CreateAllocationBucket()
             {
@@ -117,19 +118,10 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_M
                 javascriptClick(By.Id("AllocDicMaintenanceTab"));
                 BrowserDriver.Instance.Driver.FindElement(By.Id("addDictionaryButton")).Click();
                 new SelectElement(BrowserDriver.Instance.Driver.FindElement(By.Id("selectBoxallocationBucketAttribute"))).SelectByText("Tax Type");
-              //  SelectfromDropdown("selectBoxallocationBucketAttribute", "2");
-                //BrowserDriver.Instance.Driver.FindElement(By.Id("addValueButton")).Click();
-                //BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
-                //IWebElement ele = BrowserDriver.Instance.Driver.FindElement(By.CssSelector("#dWnd2 iframe"));
-                //BrowserDriver.Instance.Driver.SwitchTo().Frame(ele);
-              //  typeDataID("newVal", "1");
-                Thread.Sleep(1000);
+                Thread.Sleep(3000);
                 SwitchToPopUps();
-                new SelectElement(BrowserDriver.Instance.Driver.FindElement(By.Id("selectBoxinputValue"))).SelectByIndex(1);
-            //    SelectfromDropdown("selectBoxinputValue", "2");
-            //    javascriptClick(By.XPath(General.Default.OKB));
-             //   SwitchToPopUps();
-              //  BrowserDriver.Instance.Driver.FindElement(By.Id("addNormValueButton")).Click();
+                new SelectElement(BrowserDriver.Instance.Driver.FindElement(By.Id("selectBoxinputValue"))).SelectByIndex(2);
+                SelectfromDropdown("selectBoxinputValue", "2");
                 Thread.Sleep(2000);
                 BrowserDriver.Instance.Driver.FindElement(By.Id("addNormValueButton")).Click();
                 Thread.Sleep(2000);
@@ -164,8 +156,10 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_M
        {
          //  SearchAllocationBucketAttribute();
          javascriptClick(By.XPath("//div[text()='1']"));
+         javascriptClick(By.XPath("//div[text()='Tax Type']"));
         //   javascriptClick(By.XPath(General.Default.SubmitB));
            Thread.Sleep(2000);
+           ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) {return true;};");
            javascriptClick(By.XPath(General.Default.DeleteB));
            Thread.Sleep(2000);
            SwitchToPopUps();

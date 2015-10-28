@@ -30,26 +30,27 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Assura
                 SwitchToPopUps();
                 BrowserDriver.Instance.Driver.SwitchTo().Frame("MAIN");
              //   InstallAssuranceFile();
-              BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.CancelB)).Click();
-                Console.WriteLine("Admin --> Assurance passed smoke test successfully");
+                javascriptClick(By.XPath(General.Default.CancelB));
+              Thread.Sleep(2000);
+                Console.WriteLine("Admin --> Assurance --> Install Test passed smoke test successfully");
             }
-
-
 
         }
 
-        public void InstallAssuranceFile()
-        {
-            SwitchToPopUps();
-            BrowserDriver.Instance.Driver.SwitchTo().Frame("MAIN");
+        }
+
+      //  public void InstallAssuranceFile()
+       // {
+        //    SwitchToPopUps();
+        //    BrowserDriver.Instance.Driver.SwitchTo().Frame("MAIN");
         //    BrowserDriver.Instance.Driver.FindElement(By.Name("uploadFile")).Click();
-            Thread.Sleep(2000);
+        //    Thread.Sleep(2000);
            // System.Windows.Forms.SendKeys.SendWait("D:\\CMP Automation 6-10-2015\\AutomatedTests\\External\\TangoeContractExpirationNotification");
           //  Process p = System.Diagnostics.Process.Start(txt_Browse.Text + "\\File Upload", DocFileName);
            // p.WaitForExit();
 
-            typeDataName("url", "Yoo");
-            typeDataName("uploadFile", "Yoo");
+         //   typeDataName("url", "Yoo");
+          //  typeDataName("uploadFile", "Yoo");
             //   Process p = System.Diagnostics.Process.Start("D:\\CMP Automation 6-10-2015\\AutomatedTests\\External\\Browser.exe");
 
 
@@ -60,8 +61,6 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Assura
             // Process proc = System.Runtime.getRuntime().exec("C:\\Documents and Settings\\nirkumar\\Desktop\\Browse.exe");
             // System.Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler " + "C:\\Documents and Settings\\new.exe"); 
 
-        }
-
-
-    }
+     //
 }
+
