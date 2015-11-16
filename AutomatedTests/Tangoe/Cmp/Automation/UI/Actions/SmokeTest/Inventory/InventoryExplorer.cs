@@ -19,30 +19,31 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Inventory
         {
            
             GoToMain1("Inventory","Explorer");
-          // InventorySearch();
-          //  CreateInventory("12345" + RandomNumbergeneratorL());
-          //  DeleteInventory();
-            
+        
             CreateInventory("56789" + RandomNumbergeneratorL());
             EditInventory("12345" + RandomNumbergeneratorL());
-       //     DeleteInventory();
-        //    CreateInventory("56789" + RandomNumbergeneratorL());
+    
             AddAlias();
-          RemoveAlias();
+            RemoveAlias();
             AddSpid();
-           EditSpid();
+            EditSpid();
          //  DeleteSpid();
             AddTollNumber();
             RemoveTollNumber();
             AddFeatures();
             EditFeatures();
             RemoveFeatures();
-            AddAllocation();
-            RemoveAllocation();
+            AddEmployee();
+            EditEmployee();
+            DeleteEmployee();
+
+            AddAllocation(".//*[@id='tabCostCenter']", "INVENTORY_EXPLORER_COST_CENTER", "imgLookupcostCenterId");
+            RemoveAllocation("INVENTORY_EXPLORER_COST_CENTER");
+
+            AddAllocation("//div[text()='Allocation Code']", "INVENTORY_EXPLORER_ALLOCATION_CODE", "imgLookupallocationCodeId");
+            RemoveAllocation("INVENTORY_EXPLORER_ALLOCATION_CODE");
             AddDirectoryInfo();
-        //    AddEmployee();
-        //    EditEmployee();
-        //    DeleteEmployee(); 
+        
 
 
             Console.WriteLine("Inventory Explorer Passed Succesfully");
@@ -264,9 +265,11 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Inventory
             SwitchToContent();
             BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER");
             BrowserDriver.Instance.Driver.SwitchTo().Frame("LINE_SPID");
-            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) { return true; }");
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) {return true;};");
             javascriptClick(By.XPath(Inven.Default.DeleteB));
             Thread.Sleep(2000);
+            IAlert alert = BrowserDriver.Instance.Driver.SwitchTo().Alert();
+            alert.Accept();
             SwitchToContent();
             BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER");
             BrowserDriver.Instance.Driver.SwitchTo().Frame("LINE_SPID");
@@ -338,15 +341,18 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Inventory
             javascriptClick(By.XPath(Inven.Default.OKB));
             Thread.Sleep(5000);
               SwitchToContent();
+              
             BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER");
             BrowserDriver.Instance.Driver.SwitchTo().Frame("LINE_CHARGES");
-            Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='500.00']")), "Adding charges/Features failed");
+            WaitForElement(By.Id("addNC"));
+            Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='Charge']")), "Adding charges/Features failed");
             Console.WriteLine("Adding Charges Successful");
 
         }
 
         
-            public void EditFeatures()
+        public void EditFeatures()
+       
         {
          SwitchToContent();
             BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER");
@@ -362,12 +368,15 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Inventory
             ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('nonconDescription')[0].value = '900';");
             BrowserDriver.Instance.Driver.FindElement(By.XPath("//input[@Name='nonconAmount']")).Clear();
             ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('nonconAmount')[0].value = '900';");
+            BrowserDriver.Instance.Driver.FindElement(By.XPath("//input[@Name='nonconQuantity']")).Clear();
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('nonconQuantity')[0].value = '2';");
             javascriptClick(By.XPath(Inven.Default.OKB));
             Thread.Sleep(4000);
               SwitchToContent();
             BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER");
             BrowserDriver.Instance.Driver.SwitchTo().Frame("LINE_CHARGES");
-           Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='900.00']")), "Editing charges/Features failed");
+            WaitForElement(By.Id("addNC"));
+           Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='2']")), "Editing charges/Features failed");
             Console.WriteLine("Editing Charges Successful");
 
         }
@@ -403,12 +412,18 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Inventory
             SwitchToPopUps();
             BrowserDriver.Instance.Driver.FindElement(By.Id("imgLookupemployeeId")).Click();
             Thread.Sleep(4000);
-            SwitchToPopUps();
+            BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
+            IWebElement ele1 = BrowserDriver.Instance.Driver.FindElement(By.CssSelector("#dWnd2 iframe"));
+            BrowserDriver.Instance.Driver.SwitchTo().Frame(ele1);
             javascriptClick(By.XPath(Inven.Default.QSubmitB));
             Thread.Sleep(4000);
-            SwitchToPopUps();
             javascriptClick(By.XPath(Inven.Default.OKB));
-            Thread.Sleep(2000);
+            Thread.Sleep(5000);
+            BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
+            IWebElement ele2 = BrowserDriver.Instance.Driver.FindElement(By.CssSelector("#dWnd1 iframe"));
+            BrowserDriver.Instance.Driver.SwitchTo().Frame(ele2);
+            javascriptClick(By.XPath(Inven.Default.OKB));
+            Thread.Sleep(3000);
             SwitchToContent();
             BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER");
             BrowserDriver.Instance.Driver.SwitchTo().Frame("LINE_EMPLOYEES");
@@ -423,15 +438,16 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Inventory
             BrowserDriver.Instance.Driver.SwitchTo().Frame("LINE_EMPLOYEES");
             javascriptClick(By.XPath(Inven.Default.ModifyB));
             Thread.Sleep(2000);
-               
             SwitchToPopUps();
-            BrowserDriver.Instance.Driver.FindElement(By.Id("dtControlexpirationDate")).SendKeys("10/10/2020");
-            javascriptClick(By.XPath(Inven.Default.OKB));
+            typeDataID("dtControlexpirationDate", "10/10/2020");
             Thread.Sleep(2000);
+            //BrowserDriver.Instance.Driver.FindElement(By.Id("dtControlexpirationDate")).SendKeys("10/10/2020");
+            javascriptClick(By.XPath(Inven.Default.OKB));
+            Thread.Sleep(4000);
             SwitchToContent();
             BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER");
             BrowserDriver.Instance.Driver.SwitchTo().Frame("LINE_EMPLOYEES");
-           Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='10/10/2020']")), "Editing Employee failed");
+           Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='Active']")), "Editing Employee failed");
            Console.WriteLine("Employee edited successfully");
             javascriptClick(By.XPath(Inven.Default.ExpireB));
              Thread.Sleep(2000);
@@ -451,7 +467,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Inventory
            SwitchToContent();
             BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER");
             BrowserDriver.Instance.Driver.SwitchTo().Frame("LINE_EMPLOYEES");
-                ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.prompt = function(msg) { return true; }");
+                ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) {return true;};");
             javascriptClick(By.XPath(Inven.Default.DeleteB));
             //    BrowserDriver.Instance.Driver.FindElement(By.XPath("//div[text()='Verizon']")).Click();
             SwitchToContent();
@@ -463,47 +479,53 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Inventory
 
        
 
-        public void AddAllocation()
+        public void AddAllocation(String Tab, String Frame, String Lookup)
         {
              SwitchToContent();
             BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER");
-                javascriptClick(By.XPath("//div[text()='Allocation']"));
+            javascriptClick(By.XPath("//div[text()='Allocation']"));
+            Thread.Sleep(2000);
+            SwitchToContent();
+            BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER");
+            BrowserDriver.Instance.Driver.SwitchTo().Frame("LINE_ALLOC");
+            javascriptClick(By.XPath(Tab));
             Thread.Sleep(4000);
             SwitchToContent();
             BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER");
             BrowserDriver.Instance.Driver.SwitchTo().Frame("LINE_ALLOC");
-            BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER_COST_CENTER");
+            BrowserDriver.Instance.Driver.SwitchTo().Frame(Frame);
             javascriptClick(By.XPath(Inven.Default.AddB));
             Thread.Sleep(3000);
-            javascriptClick(By.Id("imgLookupcostCenterId"));
+            javascriptClick(By.Id(Lookup));
             Thread.Sleep(2000);
             SelectChildPopupRecordWithoutQuerying();
             SwitchToContent();
             BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER");
             BrowserDriver.Instance.Driver.SwitchTo().Frame("LINE_ALLOC");
-            BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER_COST_CENTER");
+            BrowserDriver.Instance.Driver.SwitchTo().Frame(Frame);
             javascriptClick(By.XPath(Inven.Default.SaveB));
             Thread.Sleep(2000);
             SwitchToContent();
             BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER");
             BrowserDriver.Instance.Driver.SwitchTo().Frame("LINE_ALLOC");
-            BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER_COST_CENTER");
+            BrowserDriver.Instance.Driver.SwitchTo().Frame(Frame);
             Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='100%']")), "Adding cost center failed");
          Console.WriteLine("Allocation Added Successfully");
         }
 
-        public void RemoveAllocation()
+        public void RemoveAllocation(String Frame)
         {
             SwitchToContent();
             BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER");
             BrowserDriver.Instance.Driver.SwitchTo().Frame("LINE_ALLOC");
-            BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER_COST_CENTER");   
+            BrowserDriver.Instance.Driver.SwitchTo().Frame(Frame);
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) {return true;};");
             javascriptClick(By.XPath(Inven.Default.RemoveB));
              Thread.Sleep(4000);
             SwitchToContent();
             BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER");
             BrowserDriver.Instance.Driver.SwitchTo().Frame("LINE_ALLOC");
-            BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER_COST_CENTER");
+            BrowserDriver.Instance.Driver.SwitchTo().Frame(Frame);
             Assert.False(IsElementVisible(By.XPath("//div[text()='100%']")), "Deleting cost center failed");
          Console.WriteLine("Allocation Deleted Successfully");
             Thread.Sleep(2000);

@@ -40,8 +40,8 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise
             {
                 CreateEntity();
                 Console.WriteLine("Entity Created Successfully");
-                DeleteEntity();
-                Console.WriteLine("Entity Deleted Successfully");
+               // DeleteEntity();
+              //  Console.WriteLine("Entity Deleted Successfully");
               //CreateEntity();
             }
         
@@ -67,41 +67,41 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise
             //}
 
 
-            //if (true)
-            //{
-            //    EditEntity();
-            //    Console.WriteLine("Created Entity Edited Successfully");
-            //}
-            //else
-            //{
-            //    Console.WriteLine("Created Entity not edited");
-            //}
+            if (true)
+            {
+                EditEntity();
+                Console.WriteLine("Created Entity Edited Successfully");
+            }
+            else
+            {
+                Console.WriteLine("Created Entity not edited");
+            }
 
-            //CreateAddress();
-            //ModifyAddress();
-            //RemoveAddress();
-            //AddDemarc();
-            //ModifyDemarc();
-            //DeleteDemarc();
-            //AddContacts();
-            //DeleteContact();
-            //AddCarrier();
-            //ModifyCarrier();
-            //DeleteCarrier();
-            //AddContract();
+            CreateAddress();
+            ModifyAddress();
+            RemoveAddress();
+            AddDemarc();
+            ModifyDemarc();
+            DeleteDemarc();
+            AddContacts();
+            DeleteContact();
+            AddCarrier();
+            ModifyCarrier();
+            DeleteCarrier();
+            AddContract();
 
-            //UpdateContract();
-            //DeleteContract();
+            UpdateContract();
+            DeleteContract();
 
-            //AssignAccount();
-            //RemoveAccount();
-            //AssignCostCenter();
-            //UpdateFTE();
+            AssignAccount();
+            RemoveAccount();
+            AssignCostCenter();
+            UpdateFTE();
 
-            //DeleteCostCenter();
+            DeleteCostCenter();
 
-            //ExtendedAttributes();
-            //ClearExtendAttribute();
+            ExtendedAttributes();
+            ClearExtendAttribute();
 
 
             Console.WriteLine("Enterprise Explorer Passed Smoke Test Successfully");
@@ -190,7 +190,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise
             javascriptClick(By.XPath("//div[text()='AB Automation']"));
             Thread.Sleep(2000);
             SwitchToContent();
-            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) {return true;}; ");
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) {return true;};");
             javascriptClick(By.Id("deleteb"));
         }
 
@@ -360,7 +360,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise
          javascriptClick(By.XPath(Enterp.Default.QuerySubmitB));
          Thread.Sleep(4000);
          SwitchToPopUps();
-         BrowserDriver.Instance.Driver.FindElement(By.XPath("//div[.='CHARLES']")).Click();
+         javascriptClick(By.XPath("//div[.='CHARLES']"));
          Thread.Sleep(2000);
          javascriptClick(By.XPath(Enterp.Default.OKB));
              Thread.Sleep(2000);
@@ -376,6 +376,10 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise
 
          BrowserDriver.Instance.Driver.FindElement(By.XPath("//div[.='Yes']")).Click();
         // Assert.AreEqual("630-226-4880", BrowserDriver.Instance.Driver.FindElement(By.CssSelector("div[title=\"630-226-4880\"]")).Text);
+         BrowserDriver.Instance.Driver.FindElement(By.Id("removeEntityButton")).Click();
+         Thread.Sleep(2000);
+         SwitchToContent();
+         BrowserDriver.Instance.Driver.SwitchTo().Frame("CONTACTS");
          BrowserDriver.Instance.Driver.FindElement(By.Id("removeEntityButton")).Click();
          Console.WriteLine("Contact deleted successfully");
          Thread.Sleep(2000);

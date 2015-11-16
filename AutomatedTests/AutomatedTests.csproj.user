@@ -3,7 +3,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <StartAction>Program</StartAction>
     <StartProgram>C:\Program Files %28x86%29\NUnit 2.6.4\bin\nunit-x86.exe</StartProgram>
-    <StartWorkingDirectory>D:\Code Library\Plain framework\AutomatedTests\bin\</StartWorkingDirectory>
+    <StartWorkingDirectory>D:\CMP Automation 6-10-2015\AutomatedTests\bin\</StartWorkingDirectory>
   </PropertyGroup>
   <PropertyGroup>
     <ProjectView>ProjectFiles</ProjectView>

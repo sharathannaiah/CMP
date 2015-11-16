@@ -43,7 +43,9 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise
             if (true)
             {
                 CreateEntityRegion();
-                DeleteRegions();
+                EditRegions();
+               // DeleteRegions();
+                javascriptClick(By.XPath(Enterp.Default.CloseB));
                 Console.WriteLine("Regions Passed Smoke Test Sucessfully");
             }
             else
@@ -97,6 +99,20 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise
             Console.WriteLine("Region Added Successfully");
            }
 
+           public void EditRegions()
+           {
+               SwitchToPopUps();
+               ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('nameField')[1].value='EditedAutoIndia'");
+               retryingFindClick(By.XPath(Enterp.Default.SaveB));
+               Thread.Sleep(2000);
+               SwitchToPopUps();
+               typeDataID("nameField", "EditedAutoIndia");
+               retryingFindClick(By.XPath(Enterp.Default.QuerySubmitB));
+               Thread.Sleep(2000);
+               SwitchToPopUps();
+               Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='EditedAutoIndia']")), "Region not edited");
+               Console.WriteLine("Region Edited Successfully");
+           }
            //public Thread SimulateClickForConfirmation(string title)
            //{
 
@@ -120,20 +136,20 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise
         public void DeleteRegions()
         {
 
-            BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
-            BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-            BrowserDriver.Instance.Driver.SwitchTo().Frame("CMP_DIALOG_FRAME");
+            SwitchToPopUps();
     //  Thread th1 = SimulateClickForConfirmation(BrowserDriver.Instance.Driver.Title.ToString());
   //   ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) { return true; }  ");
    //  BrowserDriver.Instance.Driver.FindElement(By.Id("deleteButton")).Click();
     //  th1.Abort();
     // BrowserDriver.Instance.Driver.SwitchTo().Frame("LINE_SPID");
-     ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) { return true; }");
+     ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) {return true;};");
      javascriptClick(By.XPath(Enterp.Default.DeleteB));
-     Thread.Sleep(2000);
+     Thread.Sleep(5000);
+     SwitchToPopUps();
          //   BrowserDriver.Instance.Driver.FindElement(By.XPath(Enterp.Default.DeleteB)).Click();
             //     Assert.IsTrue(Regex.IsMatch(CloseAlertAndGetItsText(), "^Are you sure you want to delete this region[\\s\\S]$"));
         //    BrowserDriver.Instance.Driver.FindElement(By.Id("closeButton")).Click();
+     Assert.IsFalse(IsElementVisible(By.XPath("//div[text()='AutoIndia']")), "Deletion of Regions failed");
             Console.WriteLine("Deletion of Region Successful");
             Thread.Sleep(2000);
             

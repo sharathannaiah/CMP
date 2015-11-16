@@ -83,6 +83,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise
             Assert.IsFalse(IsElementVisible(By.XPath("//div[.='auto2']")), "Modification of Entity Type failed ");
 //            Assert.AreNotEqual("Auto2", BrowserDriver.Instance.Driver.FindElement(By.CssSelector("div[title=\"1-1\"]")).Text);
             Console.WriteLine("Entity deleted Successfully");
+            javascriptClick(By.XPath(Enterp.Default.CancelB));
 
 
         }

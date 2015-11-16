@@ -5,17 +5,26 @@
     <Setting Name="QuerySubmitB" Type="System.String" Scope="User">
       <Value Profile="(Default)">//input[@value='Submit']</Value>
     </Setting>
+    <Setting Name="NewCreateB" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//input[@value='Create']</Value>
+    </Setting>
+    <Setting Name="AddB" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//input[@value='Add']</Value>
+    </Setting>
+    <Setting Name="EditB" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//input[@value='EditB']</Value>
+    </Setting>
+    <Setting Name="ModifyB" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//input[@value='Modify']</Value>
+    </Setting>
+    <Setting Name="CloseB" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//input[@value='Close']</Value>
+    </Setting>
     <Setting Name="CreateNewB" Type="System.String" Scope="User">
       <Value Profile="(Default)">//input[@value='New']</Value>
     </Setting>
     <Setting Name="SaveB" Type="System.String" Scope="User">
       <Value Profile="(Default)">//input[@value='Save']</Value>
-    </Setting>
-    <Setting Name="AddB" Type="System.String" Scope="User">
-      <Value Profile="(Default)">//input[@value='Add']</Value>
-    </Setting>
-    <Setting Name="OKB" Type="System.String" Scope="User">
-      <Value Profile="(Default)">//input[@value='OK']</Value>
     </Setting>
     <Setting Name="DeleteB" Type="System.String" Scope="User">
       <Value Profile="(Default)">//input[@value='Delete']</Value>
@@ -23,17 +32,20 @@
     <Setting Name="CreateB" Type="System.String" Scope="User">
       <Value Profile="(Default)">//input[@value='Create']</Value>
     </Setting>
-    <Setting Name="ModifyB" Type="System.String" Scope="User">
-      <Value Profile="(Default)">//input[@value='Modify']</Value>
+    <Setting Name="OKB" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//input[@value='Ok']</Value>
     </Setting>
     <Setting Name="ResetB" Type="System.String" Scope="User">
       <Value Profile="(Default)">//input[@value='Reset']</Value>
     </Setting>
-    <Setting Name="CheckB" Type="System.String" Scope="User">
-      <Value Profile="(Default)">//input[@value='false']</Value>
+    <Setting Name="UpdateB" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//input[@value='Update']</Value>
     </Setting>
-    <Setting Name="ExpireB" Type="System.String" Scope="User">
-      <Value Profile="(Default)">//input[@value='Expire']</Value>
+    <Setting Name="CheckB" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//input[@value='Check']</Value>
+    </Setting>
+    <Setting Name="CancelB" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//input[@value='Cancel']</Value>
     </Setting>
   </Settings>
 </SettingsFile>

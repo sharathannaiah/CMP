@@ -20,7 +20,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Contracts
                 ContractSearch("carrierId", "AT&T");
                 CreateContract();
                 CopyContract();
-                DeleteContract();
+              //  DeleteContract();
                 Console.WriteLine("Contracts passed smoke test successfully");
             }
             else
@@ -117,8 +117,8 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Contracts
           ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) {return true;};");
             javascriptClick(By.XPath(Contra.Default.DeleteB));
             Thread.Sleep(2000);
-          //  IAlert ele = BrowserDriver.Instance.Driver.SwitchTo().Alert();
-           // ele.Accept();
+           IAlert ele = BrowserDriver.Instance.Driver.SwitchTo().Alert();
+           ele.Accept();
             Thread.Sleep(4000);
             SwitchToContent();
             Assert.IsFalse(IsElementVisible(By.XPath("//div[.='567890']")), "Deletion of Contract failed");

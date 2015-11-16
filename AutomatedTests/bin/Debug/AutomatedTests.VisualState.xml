@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <VisualState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ShowCheckBoxes="true">
-  <TopNode>[0-1163]AutomatedTests.Tangoe.Cmp.Automation.Unit</TopNode>
+  <TopNode>[0-1114]AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.Tools.DataLoadUT</TopNode>
   <SelectedNode>[0-1000]D:\CMP Automation 6-10-2015\AutomatedTests\bin\Debug\AutomatedTests.nunit</SelectedNode>
   <ExcludeCategories>false</ExcludeCategories>
   <Nodes>
@@ -19,7 +19,7 @@
     <Node UniqueName="[0-1002]AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.Assurance.InstallAssuranceUT" Expanded="true" />
     <Node UniqueName="[0-1004]AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.Assurance.UninstallAssuranceUT" Expanded="true" />
     <Node UniqueName="[0-1168]AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.Bill_Management" Expanded="true" />
-    <Node UniqueName="[0-1010]AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.Bill_Management.AllocationBucketUT" Expanded="true" Checked="true" />
+    <Node UniqueName="[0-1010]AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.Bill_Management.AllocationBucketUT" Expanded="true" />
     <Node UniqueName="[0-1012]AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.Bill_Management.AllocationsUT" Expanded="true" />
     <Node UniqueName="[0-1169]AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.Contracts" Expanded="true" />
     <Node UniqueName="[0-1170]AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.Inventory" Expanded="true" />
@@ -36,8 +36,14 @@
     <Node UniqueName="[0-1181]AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Contracts" Expanded="true" />
     <Node UniqueName="[0-1182]AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Enterprise" Expanded="true" />
     <Node UniqueName="[0-1183]AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Enterprise.Employee" Expanded="true" />
+    <Node UniqueName="[0-1138]AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Enterprise.Employee.EmployeeExplorerUT" Expanded="true" />
+    <Node UniqueName="[0-1140]AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Enterprise.Employee.SupportTicketUT" Expanded="true" />
+    <Node UniqueName="[0-1142]AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Enterprise.EnterpriseExplorerUT" Expanded="true" />
+    <Node UniqueName="[0-1144]AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Enterprise.EntityRegionsUT" Expanded="true" />
+    <Node UniqueName="[0-1146]AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Enterprise.EntityTypesUT" Expanded="true" />
     <Node UniqueName="[0-1184]AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Inventory" Expanded="true" />
     <Node UniqueName="[0-1148]AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Inventory.AccessRingsUT" Expanded="true" />
+    <Node UniqueName="[0-1152]AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Inventory.InventoryExplorerUT" Expanded="true" Checked="true" />
     <Node UniqueName="[0-1185]AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Navigation" Expanded="true" />
     <Node UniqueName="[0-1186]AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Provisioning" Expanded="true" />
   </Nodes>

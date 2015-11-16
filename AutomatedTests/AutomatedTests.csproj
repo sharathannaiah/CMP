@@ -86,8 +86,16 @@
     <Compile Include="CMP\Admin\General.Designer.cs" />
     <Compile Include="CMP\Company\com.Designer.cs" />
     <Compile Include="CMP\Contracts\Contra.Designer.cs" />
-    <Compile Include="CMP\Enterprise\Enterp.Designer.cs" />
-    <Compile Include="CMP\Inventory\Inven.Designer.cs" />
+    <Compile Include="CMP\Enterprise\Enterp.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Enterp.settings</DependentUpon>
+    </Compile>
+    <Compile Include="CMP\Inventory\Inven.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Inven.settings</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Common\TestProperties.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Abstract\BaseActions.cs" />
@@ -271,8 +279,14 @@
       <Generator>SettingsSingleFileGenerator</Generator>
     </None>
     <None Include="CMP\Contracts\Contra.settings" />
-    <None Include="CMP\Enterprise\Enterp.settings" />
-    <None Include="CMP\Inventory\Inven.settings" />
+    <None Include="CMP\Enterprise\Enterp.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Enterp.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CMP\Inventory\Inven.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Inven.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Lib\Certificates\Magnolia.ttf" />
     <None Include="Lib\Certificates\MDMDevAppleMDMAPNs8222015.pfx" />
     <None Include="Lib\JMeterScripts\Android-device-details14.2.csv" />

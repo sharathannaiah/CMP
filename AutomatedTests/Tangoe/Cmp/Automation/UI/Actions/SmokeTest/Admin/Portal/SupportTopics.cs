@@ -32,6 +32,8 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Portal
             if(true)
             {
             AddTopics();
+            Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='Automated']")), "Adding topic failed");
+            Console.WriteLine("Support Topic added successfully");
             }
         }
 
@@ -41,18 +43,26 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Portal
             javascriptClick(By.XPath(General.Default.NewB));
             Thread.Sleep(2000);
             BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
-            BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-            String newtitle = BrowserDriver.Instance.Driver.Title;
-            SwitchWindow("newtitle");
-          //  BrowserDriver.Instance.Driver.SwitchTo().Window(newtitle);
-            IWebElement ele = BrowserDriver.Instance.Driver.FindElement(By.Id("CMP_DIALOG_FRAME"));
+            IWebElement ele = BrowserDriver.Instance.Driver.FindElement(By.CssSelector("#dWnd2 iframe"));
             BrowserDriver.Instance.Driver.SwitchTo().Frame(ele);
             BrowserDriver.Instance.Driver.FindElement(By.Id("supportTopicDescription")).SendKeys("Automated");
-            //      typeDataID("supportTopicDescription","New Topic");
+            typeDataID("supportTopicDescription", "Automated");
             javascriptClick(By.XPath(General.Default.SaveB));
             Thread.Sleep(2000);
+            BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
+            IWebElement ele1 = BrowserDriver.Instance.Driver.FindElement(By.CssSelector("#dWnd1 iframe"));
+            BrowserDriver.Instance.Driver.SwitchTo().Frame(ele);
 
         }
+
+        public void EditTopic()
+        {
+            SwitchToPopUps();
+            javascriptClick(By.XPath("//div[text()='Automated']"));
+            Thread.Sleep(2000);
+            SwitchToPopUps();
+        }
+
 
             protected static Boolean SwitchWindow(string title)
             {

@@ -166,7 +166,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Locali
                 SwitchtoCountryListFrame();
                 Thread.Sleep(2000);
                 System.Random rand = new System.Random((int)System.DateTime.Now.Ticks);
-                int random = rand.Next(1, 100000000);
+                int random = rand.Next(1, 1000);
                 typeDataName("addStateButton", "Automationstate"+random);
                 javascriptClick(By.XPath(General.Default.CreateB));
                 Thread.Sleep(2000);
