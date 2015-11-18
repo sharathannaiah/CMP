@@ -51,7 +51,8 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.Sys
             javascriptClick(By.XPath("//div[text()='CmpAdmin']"));
             Thread.Sleep(2000);
             SwitchToContent();
-            Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='EnterpriseCMP']")), "Search users failed");
+            Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='CmpAdmin']")), "Search users failed");
+            javascriptClick(By.Id("tab2"));
             BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.ResetB)).Click();
             return true;
         }

@@ -80,22 +80,34 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Report
             SwitchToWindow("#dWnd2 iframe");
             BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.SubmitB)).Click();
             Thread.Sleep(4000);
-            BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
-           BrowserDriver.Instance.Driver.SwitchTo().Frame("CMP_DIALOG_FRAME");
-            javascriptClick(By.XPath("//div[text()='CME User']"));
-            BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.OKB)).Click();
+            SwitchToWindow("#dWnd2 iframe");
+            javascriptClick(By.XPath("//div[text()='CME Users']"));
+            javascriptClick(By.XPath(General.Default.OKB));
             Thread.Sleep(4000);
             SwitchToWindow("#dWnd1 iframe");
-            BrowserDriver.Instance.Driver.FindElement(By.XPath("//option[.='Account Export']")).Click();
-            BrowserDriver.Instance.Driver.FindElement(By.XPath("//img[@onclick='deAssignReport(false)']")).Click();
-            BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.SaveB)).Click();
+            BrowserDriver.Instance.Driver.SwitchTo().Frame("ifrmOP");
+            javascriptClick(By.XPath("//option[.='Account Export']"));
+            javascriptClick(By.XPath("//img[@onclick='deAssignReport(false)']"));
+            javascriptClick(By.XPath(General.Default.SaveB));
             Thread.Sleep(4000);
             SwitchToPopUps();
-            BrowserDriver.Instance.Driver.FindElement(By.XPath("//option[.='Account Export']")).Click();
-            BrowserDriver.Instance.Driver.FindElement(By.XPath("//img[@onclick='assignReport(false)']")).Click();
-            BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.SaveB)).Click();
+            BrowserDriver.Instance.Driver.SwitchTo().Frame("ifrmOP");
+            javascriptClick(By.XPath("//option[.='Account Export']"));
+            javascriptClick(By.XPath("//img[@onclick='assignReport(false)']"));
+            javascriptClick(By.XPath(General.Default.SaveB));
             Thread.Sleep(4000);
             SwitchToPopUps();
+
+            //BrowserDriver.Instance.Driver.FindElement(By.XPath("//option[.='Account Export']")).Click();
+            //BrowserDriver.Instance.Driver.FindElement(By.XPath("//img[@onclick='deAssignReport(false)']")).Click();
+            //BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.SaveB)).Click();
+            //Thread.Sleep(4000);
+            //SwitchToPopUps();
+            //BrowserDriver.Instance.Driver.FindElement(By.XPath("//option[.='Account Export']")).Click();
+            //BrowserDriver.Instance.Driver.FindElement(By.XPath("//img[@onclick='assignReport(false)']")).Click();
+            //BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.SaveB)).Click();
+            //Thread.Sleep(4000);
+            //SwitchToPopUps();
         }
 
         public Boolean SaveDataWarehouseReports()

@@ -24,9 +24,9 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Contra
             Thread.Sleep(2000);
             AddRegions();
             Thread.Sleep(2000);
-       //    AddCountry();
-       //     RemoveCountry();
-         //   RemoveRegion();
+       AddCountry();
+        RemoveCountry();
+        RemoveRegion();
 
         }
 
@@ -64,19 +64,25 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Contra
             javascriptClick(By.XPath("//div[text()='Bangalore']"));
             javascriptClick(By.XPath(General.Default.AddB));
             Thread.Sleep(2000);
-            String newtitle = BrowserDriver.Instance.Driver.Title;
-            SwitchWindow("newtitle");
-            BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-            SwitchToPopUps();
-            typeDataName("countryName", "United States");
-            javascriptClick(By.XPath(General.Default.SubmitB));
+            //String newtitle = BrowserDriver.Instance.Driver.Title;
+            //SwitchWindow("newtitle");
+            BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
+            IWebElement ele = BrowserDriver.Instance.Driver.FindElement(By.CssSelector("#dWnd2 iframe"));
+            BrowserDriver.Instance.Driver.SwitchTo().Frame(ele);
+            Thread.Sleep(2000);
+           IWebElement country =  BrowserDriver.Instance.Driver.FindElement(By.Name("countryName"));
+           country.SendKeys("United States");
+           typeDataName("countryName", "United States");
+              BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.SubmitB)).Click();
             Thread.Sleep(4000);
-            SwitchToPopUps();
             javascriptClick(By.CssSelector("input.multiSelectRow"));
             javascriptClick(By.XPath(General.Default.OKB));
             Thread.Sleep(2000);
+            BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
+            IWebElement ele1 = BrowserDriver.Instance.Driver.FindElement(By.CssSelector("#dWnd1 iframe"));
+            BrowserDriver.Instance.Driver.SwitchTo().Frame(ele1);
             SwitchToPopUps();
-            Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='United States']")), "Adding Country Failed");
+            Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='Albania']")), "Adding Country Failed");
             Console.WriteLine("Country Added to Region Successfully");
         }
 
@@ -85,6 +91,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Contra
             SwitchToPopUps();
             SearchRegion();
             javascriptClick(By.CssSelector("input.multiSelectRow"));
+            Thread.Sleep(2000);
             javascriptClick(By.XPath(General.Default.RemoveB));
             Assert.IsFalse(IsElementVisible(By.XPath("//div[text()='United States']")), "Removing Country Failed");
             Console.WriteLine("Country Deleted from Region Successfully"); 
@@ -94,15 +101,17 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Contra
         {
             SwitchToPopUps();
             SearchRegion();
-         //   ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function () { return true } ");
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) {return true;}; ");
             //string script = "window.confirm = function() { return true; }";
             //IJavaScriptExecutor executor = (IJavaScriptExecutor)BrowserDriver.Instance.Driver;
             //executor.ExecuteScript(script);
             javascriptClick(By.XPath(General.Default.DeleteB));
-            IAlert alert = BrowserDriver.Instance.Driver.SwitchTo().Alert();
-            alert.Accept();
+         //   IAlert alert = BrowserDriver.Instance.Driver.SwitchTo().Alert();
+          //  alert.Accept();
             SwitchToPopUps();
             Assert.IsFalse(IsElementVisible(By.XPath("//div[text()='Bangalore']")), "Deleting Region Failed");
+            Console.WriteLine("Regions Deleted Successfully");
+            Console.WriteLine("Admin --> Contract --> Regions passed smoke test successfully");
         }
         protected static Boolean SwitchWindow(string title)
         {

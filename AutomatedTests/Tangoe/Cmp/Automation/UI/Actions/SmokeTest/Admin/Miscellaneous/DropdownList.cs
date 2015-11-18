@@ -54,10 +54,10 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Miscel
             }
             if (true)
             {
-              //  DeleteDropdown();
-               // SwitchToPopUps();
-               // Assert.IsFalse(IsElementVisible(By.XPath("//div[text()='ABAutomationEdited']")), "Deleting dropdown failed");
-               // Console.WriteLine("Dropdown list deleted successfully");
+                //DeleteDropdown();
+                //SwitchToPopUps();
+                //Assert.IsFalse(IsElementVisible(By.XPath("//div[text()='ABAutomationEdited']")), "Deleting dropdown failed");
+                //Console.WriteLine("Dropdown list deleted successfully");
                 javascriptClick(By.XPath(General.Default.CloseB));
                 Console.WriteLine("Admin --> Miscellaneous --> Dropdown List passed smoke test successfully");
 
@@ -79,12 +79,14 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Miscel
             Thread.Sleep(2000);
             SwitchToPopUps();
             new SelectElement(BrowserDriver.Instance.Driver.FindElement(By.Id("lookupListIdSelect"))).SelectByText("Admin - Locale Supported Language Codes");
+            Thread.Sleep(2000);
         //    ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementById('lookupListIdSelect').selectedIndex ='2'");
             javascriptClick(By.XPath(General.Default.NewB));
-            Thread.Sleep(2000);
-            SwitchToPopUps();
             typeDataName("description", "ABAutomation");
-            BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.CreateB)).Click();
+            Thread.Sleep(2000);
+            javascriptClick(By.XPath(General.Default.CreateB));
+          //  IWebElement ele = BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.CreateB));
+           // ele.Click();
             Thread.Sleep(2000);
             SwitchToPopUps();
 

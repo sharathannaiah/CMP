@@ -50,7 +50,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.Mis
                // Assert.IsFalse(IsElementVisible(By.XPath("//div[text()='ABProject1']")), "Deleting new project failed");
                // Console.WriteLine("New Project edited successfully");
                 Thread.Sleep(2000);
-                BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.CloseB)).Click();
+                javascriptClick(By.XPath(General.Default.CloseB));
                 Console.WriteLine("Project Codes passed smoke test successfully");
             }
 

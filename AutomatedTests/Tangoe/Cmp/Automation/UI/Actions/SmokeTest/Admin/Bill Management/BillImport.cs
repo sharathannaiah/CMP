@@ -33,10 +33,11 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_M
 
             SwitchToContent();
             BrowserDriver.Instance.Driver.SwitchTo().Frame("ADMIN_CONTENT");
+            new SelectElement(BrowserDriver.Instance.Driver.FindElement(By.Name("biConcurrentCount"))).SelectByIndex(2);
             BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.SaveB)).Click();
             Thread.Sleep(2000);
             SwitchToPopUps();
-            Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='Change has been saved and activated. No restart is necessary.']")), "Bill Import settings save failed");
+            Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='Change has been saved but not activiated. Restart is required.']")), "Bill Import settings save failed");
             javascriptClick(By.XPath(General.Default.OKB));
             Console.WriteLine("Bill Import Settings Saved successfully");
             Console.WriteLine("Admin --> Bill Management settings passed smoke test successfully");

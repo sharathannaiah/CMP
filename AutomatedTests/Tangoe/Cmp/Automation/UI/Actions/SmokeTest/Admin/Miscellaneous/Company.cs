@@ -53,20 +53,17 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Miscel
             }
 
 
-            if (true)
-            {
-              //  DeleteComp();
-               // SwitchToPopUps();
-               // Assert.IsFalse(IsElementVisible(By.XPath("//div[text()='AutomationCityEdited']")), "Deleting company failed");
+            //if (true)
+            //{
+            //    DeleteComp();
+            //    SwitchToPopUps();
+            //    Assert.IsFalse(IsElementVisible(By.XPath("//div[text()='AutomationCityEdited']")), "Deleting company failed");
                  javascriptClick(By.XPath(General.Default.CloseB));
               //  Console.WriteLine("Deleting Company Successful");
                 Console.WriteLine("Admin --> Miscelleaneous --> Company passed smoke test successfully");
             }
-            else
-            {
-                Console.WriteLine("Deleting Company Failed");
-            }
-            }
+            
+            
     
 
         
@@ -89,8 +86,8 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Miscel
         public void DeleteComp()
         {
             SwitchToPopUps();
-            javascriptClick(By.XPath("//div[text()='AutomationCity']"));
-            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) { return true;};");
+            //javascriptClick(By.XPath("//div[text()='AutomationCity']"));
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) {return true;};");
             javascriptClick(By.XPath(General.Default.DeleteB));
             Thread.Sleep(2000);
         }

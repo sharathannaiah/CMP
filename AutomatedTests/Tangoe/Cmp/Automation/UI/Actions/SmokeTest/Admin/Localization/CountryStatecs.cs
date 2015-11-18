@@ -61,8 +61,8 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Locali
             //if (true)
             //{
             //    DeleteState();
-            //    WaitForElementPresentAndEnabled(By.XPath("//div[text()='Automationstate']"));
-            //   // Assert.IsFalse(IsElementVisible(By.XPath("//div[text()='Automationstate']")), "Adding State Unsuccessful");
+            //   // WaitForElementPresentAndEnabled(By.XPath("//div[text()='Automationstate']"));
+            //    Assert.IsFalse(IsElementVisible(By.XPath("//div[text()='Automationstate']")), "Adding State Unsuccessful");
             //    Console.WriteLine("Deleting State Successful");
             //}
             //else
@@ -157,7 +157,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Locali
             public void AddState()
             {
                 SwitchtoCountryListFrame();
-                javascriptClick(By.XPath("//div[text()='AutomationCountry']"));
+                //javascriptClick(By.XPath("//div[text()='AutomationCountry']"));
                 SwitchtoCountryListFrame();
                 javascriptClick(By.Id("stateProvince"));
                 Thread.Sleep(2000);

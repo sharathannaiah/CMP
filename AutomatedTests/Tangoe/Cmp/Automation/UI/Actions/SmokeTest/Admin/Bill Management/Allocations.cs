@@ -32,8 +32,8 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_M
             }
             if (CreateAllocation())
             {
-
-                Assert.IsTrue(IsElementVisible(By.XPath("//span[text()^='AB Allocation']")), "Allocation creation failed");
+                Thread.Sleep(2000);
+                Assert.IsTrue(IsElementVisible(By.XPath("//span[text()= 'AB Allocation']")), "Allocation creation failed");
                 Console.WriteLine("Allocation created successfully");
             }
             if (EditAllocation())
@@ -52,14 +52,14 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_M
 
         public Boolean CreateAllocation()
         {
-            var s = RandomNumbergeneratorL();
+            //String s = "Automated Allocation"+RandomNumbergeneratorL();
             SwitchToPopUps();
             BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.NewB)).Click();
             Thread.Sleep(2000);
             BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
             IWebElement ele = BrowserDriver.Instance.Driver.FindElement(By.CssSelector("#dWnd2 iframe"));
             BrowserDriver.Instance.Driver.SwitchTo().Frame(ele);
-            typeDataName("configurationName", "AB Allocation"+s);
+            typeDataName("configurationName", "AB Allocation");
             BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.OKB)).Click();
             Thread.Sleep(4000);
             SwitchToPopUps();

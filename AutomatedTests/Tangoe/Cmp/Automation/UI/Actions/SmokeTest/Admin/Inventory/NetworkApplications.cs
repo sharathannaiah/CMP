@@ -42,6 +42,13 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.Inv
             {
                 Console.WriteLine("Network not added successfully");
             }
+           
+            if (true)
+            {
+                EditNetwork();
+                Console.WriteLine("Network Edited Successfully");
+            }
+
             if (true)
             {
                 DeleteNetwork();
@@ -74,13 +81,26 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.Inv
         Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='AB10']")), "Add Network Failed");
         }
 
+
+        public void EditNetwork()
+        {
+            SwitchToPopUps();
+            typeDataName("applicationDescription", "Edited Automation Network");
+            javascriptClick(By.XPath(General.Default.SaveB));
+         //   WaitForElement(By.Id("dWnd1title"));
+            Thread.Sleep(7000);
+            BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
+            Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='Edited Automation Network']")), "Edit Network Failed");
+        }
+
+
         public void DeleteNetwork() 
         {
             SwitchToPopUps();
             javascriptClick(By.XPath("//div[text()= 'AB10' ]"));
             Thread.Sleep(1000);
             javascriptClick(By.XPath(General.Default.DeleteB));
-            Thread.Sleep(2000);
+            Thread.Sleep(4000);
             BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
             Assert.IsFalse(IsElementVisible(By.XPath("//div[text()='AB10']")), "Delete Network Failed");
             javascriptClick(By.XPath(General.Default.CloseB));

@@ -39,7 +39,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_M
             {
                 Assert.IsFalse(IsElementVisible(By.XPath("//span[text()='Allstream']")), "Payment Deletion failed");
                 Console.WriteLine("Payment deletion successfully");
-                BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.CloseB)).Click();
+                javascriptClick(By.XPath(General.Default.CloseB));
                 Console.WriteLine("Admin --> Bill Management --> Payment passed smoke test successfully"); 
             }
             

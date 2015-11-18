@@ -17,7 +17,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_M
     {
         public void GLNumberFunctionality()
         {
-               GoToMain("Admin");
+            GoToMain("Admin");
             retryingFindClickk(".//*[@id='mnuAdmin_BillMgmt']");
             retryingFindClickk(".//*[@id='mnuAcctng_glNumberConfigModal']");
             if (true)
@@ -39,19 +39,22 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_M
                 javascriptClick(By.XPath(General.Default.SaveB));
                 Thread.Sleep(2000);
                 SwitchToPopUps();
-                Assert.IsTrue(IsElementVisible(By.XPath("//span[text()='Edited ABGLName']")),"GLNumber edition failed");
+                Assert.IsTrue(IsElementVisible(By.XPath("//span[text()='Edited ABGLName']")), "GLNumber edition failed");
                 Console.WriteLine("GLNumber edition successful");
+                javascriptClick(By.XPath(General.Default.CloseB));
+                Console.WriteLine("Admin --> Bill Management --> GL number formatting deleted successfully");
             }
-               
+
 
             //if (DeleteGLNumber())
             //{
             //    Thread.Sleep(2000);
             //    SwitchToPopUps();
-            //    Assert.IsFalse(IsElementVisible(By.XPath("//span[text()='Edited GLNumber']")),"GL Number configuration deletion failed");
+            //    Assert.IsFalse(IsElementVisible(By.XPath("//span[text()='Edited GLNumber']")), "GL Number configuration deletion failed");
             //    Console.WriteLine("GLNumber configuration deletion successful");
-                Console.WriteLine("Admin --> Bill Management --> GL number formatting deleted successfully");
-            
+            //    Console.WriteLine("Admin --> Bill Management --> GL number formatting deleted successfully");
+
+            //}
         }
 
         public Boolean NewGLNumber()
@@ -76,8 +79,9 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_M
         public Boolean DeleteGLNumber()
         {
             SwitchToPopUps();
-            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) {return true;};");
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(deleteGLNumberConfiguration) {return true;};");
             javascriptClick(By.XPath(General.Default.DeleteB));
+            Thread.Sleep(2000);
             return true;
         }
 

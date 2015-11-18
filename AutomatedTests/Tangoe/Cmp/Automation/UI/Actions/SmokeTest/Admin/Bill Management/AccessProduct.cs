@@ -53,7 +53,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_M
             BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
             IWebElement ele = BrowserDriver.Instance.Driver.FindElement(By.CssSelector("#dWnd2 iframe"));
             BrowserDriver.Instance.Driver.SwitchTo().Frame(ele);
-            typeDataName("displayValue", "Automation");
+            typeDataName("displayValue", "Automation"+RandomNumbergeneratorL());
             javascriptClick(By.XPath(General.Default.OKB));
             Thread.Sleep(2000);
             BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
@@ -65,12 +65,17 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_M
             BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
             IWebElement ele3 = BrowserDriver.Instance.Driver.FindElement(By.CssSelector("#dWnd2 iframe"));
             BrowserDriver.Instance.Driver.SwitchTo().Frame(ele3);
-            typeDataName("displayValue", "Automationtype");
+            typeDataName("displayValue", "Automationtype"+RandomNumbergeneratorL());
             javascriptClick(By.XPath(General.Default.OKB));
             Thread.Sleep(2000);
             BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
             IWebElement ele4 = BrowserDriver.Instance.Driver.FindElement(By.CssSelector("#dWnd1 iframe"));
             BrowserDriver.Instance.Driver.SwitchTo().Frame(ele4);
+            //SelectfromDropdownByText("dataRateId", "4 K");
+       var ele5 = new SelectElement(BrowserDriver.Instance.Driver.FindElement(By.Name("dataRateId")));
+       ele5.SelectByText("4 K");
+     //  new SelectElement(BrowserDriver.Instance.Driver.FindElement(By.Name("dataRateId"))).SelectByText("4 K");
+
             javascriptClick(By.XPath(General.Default.SaveB));
             Thread.Sleep(3000);
             IAlert alert = BrowserDriver.Instance.Driver.SwitchTo().Alert();

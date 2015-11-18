@@ -108,6 +108,7 @@
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Bill Management\Allocations.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Bill Management\BillImport.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Bill Management\CDRArchive.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Bill Management\DataProduct.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Bill Management\FiscalCalendar.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Bill Management\GLNumber.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Admin\Bill Management\InventoryAccrual.cs" />
@@ -189,6 +190,7 @@
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Bill Management\AllocationsUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Bill Management\BillImportUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Bill Management\CDRArchiveUT.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Bill Management\DataProductUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Bill Management\FiscalPeriodUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Bill Management\GLNumberUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Bill Management\InventoryAccrualUT.cs" />
@@ -225,6 +227,7 @@
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Miscellaneous\CompanyUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Miscellaneous\ContactsUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Miscellaneous\DropdownListUT.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Miscellaneous\ExtendedAttributeUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Miscellaneous\MergeCarrierUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Miscellaneous\PhraseCodeUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Admin\Miscellaneous\ProjectCodesUT.cs" />

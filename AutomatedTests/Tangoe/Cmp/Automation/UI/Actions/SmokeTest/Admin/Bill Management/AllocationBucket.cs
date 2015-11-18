@@ -56,15 +56,16 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_M
             {
                 Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='1']")), "Allocation Bucket Attribute Creation failed");
                 Console.WriteLine("Allocation Bucket Attribute Creation Successful");
+                javascriptClick(By.XPath(General.Default.CloseB));
             }
-            
-            if (DeleteAllocationBucketAttribute())
-            {
-                Assert.IsFalse(IsElementVisible(By.XPath("//div[text()='1']")), "Allocation attribute Deletion failed");
-                Console.WriteLine("Allocation Bucket Attribute Deletion Successful");
-                Console.WriteLine("Admin --> Bill Management --> allocation Bucket passed smoke test successfully");
 
-            }
+            //if (DeleteAllocationBucketAttribute())
+            //{
+            //    Assert.IsFalse(IsElementVisible(By.XPath("//div[text()='1']")), "Allocation attribute Deletion failed");
+            //    Console.WriteLine("Allocation Bucket Attribute Deletion Successful");
+            //    Console.WriteLine("Admin --> Bill Management --> allocation Bucket passed smoke test successfully");
+
+            //}
         }
             public Boolean CreateAllocationBucket()
             {
@@ -129,13 +130,14 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_M
                 IWebElement ele1 = BrowserDriver.Instance.Driver.FindElement(By.CssSelector("#dWnd2 iframe"));
                 BrowserDriver.Instance.Driver.SwitchTo().Frame(ele1);
                 typeDataID("newVal", "1");
-                javascriptClick(By.XPath(General.Default.OKB));
+               javascriptClick(By.XPath(General.Default.OKB));
                 Thread.Sleep(2000);
                 SwitchToPopUps();
                 BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
                 IWebElement ele = BrowserDriver.Instance.Driver.FindElement(By.CssSelector("#dWnd1 iframe"));
                 BrowserDriver.Instance.Driver.SwitchTo().Frame(ele);
-                javascriptClick(By.XPath(".//*[@id='saveDictionaryButton']"));
+                Thread.Sleep(2000);
+                javascriptClick(By.Id("saveDictionaryButton"));
                 Thread.Sleep(3000);
                 SwitchToPopUps();
                 return true;
@@ -154,8 +156,9 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_M
 
        public Boolean DeleteAllocationBucketAttribute()
        {
-         //  SearchAllocationBucketAttribute();
-         javascriptClick(By.XPath("//div[text()='1']"));
+          SearchAllocationBucketAttribute();
+          javascriptClick(By.XPath("//div[text()='1']"));
+           SwitchToPopUps();
          javascriptClick(By.XPath("//div[text()='Tax Type']"));
         //   javascriptClick(By.XPath(General.Default.SubmitB));
            Thread.Sleep(2000);

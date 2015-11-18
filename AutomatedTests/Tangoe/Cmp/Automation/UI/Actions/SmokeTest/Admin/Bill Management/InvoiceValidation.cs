@@ -66,6 +66,15 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_M
                 BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
                 IWebElement ele1 = BrowserDriver.Instance.Driver.FindElement(By.CssSelector("#dWnd1 iframe"));
                 BrowserDriver.Instance.Driver.SwitchTo().Frame(ele1);
+                BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.CloseB)).Click();
+                Thread.Sleep(2000);
+                BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
+                BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
+                GoToMain("Admin");
+                retryingFindClickk(".//*[@id='mnuAdmin_BillMgmt']");
+                retryingFindClickk(".//*[@id='mnuInvoiceValidation']");
+                Thread.Sleep(3000);
+                SwitchToPopUps();
             }
 
 

@@ -43,15 +43,30 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Locali
                 SwitchToPopUps();
                 typeDataName("exchangeRate", "5");
                 BrowserDriver.Instance.Driver.FindElement(By.Id("dtControleffectiveDate")).SendKeys("10/10/2015");
-             typeDataID("dtControleffectiveDate", "10/10/2015");
-                BrowserDriver.Instance.Driver.FindElement(By.Id("dtControlexpirationDate")).SendKeys("10/10/2020");
+                typeDataID("dtControleffectiveDate", "10/10/2015");
+             BrowserDriver.Instance.Driver.FindElement(By.Id("dtControlexpirationDate")).SendKeys("10/10/2020");
               typeDataID("dtControlexpirationDate", "10/10/2020");
+                IWebElement ele = BrowserDriver.Instance.Driver.FindElement(By.Name("comments"));
+                ele.Click();
+                javascriptClick(By.Name("comments"));
               Thread.Sleep(2000);
-                javascriptClick(By.XPath(General.Default.SaveB));
+              BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.SaveB)).Click();
+             //   javascriptClick(By.XPath(General.Default.SaveB));
+                Thread.Sleep(4000);
+
+                //BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
+                //IWebElement ele2 = BrowserDriver.Instance.Driver.FindElement(By.CssSelector("#dWnd2 iframe"));
+                //BrowserDriver.Instance.Driver.SwitchTo().Frame(ele2);
+                //javascriptClick(By.XPath(General.Default.OKB));
+                //Thread.Sleep(2000);
+               
+                //BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
+                //IWebElement ele1 = BrowserDriver.Instance.Driver.FindElement(By.CssSelector("#dWnd1 iframe"));
+                //BrowserDriver.Instance.Driver.SwitchTo().Frame(ele1);
+                
+                //javascriptClick(By.XPath(General.Default.SaveB));
                 Thread.Sleep(2000);
-                BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-                javascriptClick(By.XPath(General.Default.OKB));
-                Thread.Sleep(2000);
+
                 SwitchToContent();
                 BrowserDriver.Instance.Driver.SwitchTo().Frame("ADMIN_EXPLORER");
                 Assert.IsTrue(IsElementVisible(By.XPath("//td[text()='5']")), "Unable to Add Rates");

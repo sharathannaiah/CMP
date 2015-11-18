@@ -30,7 +30,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.Bil
             if (SaveGeneralInvoice() == true)
             {
                 Console.WriteLine("Saving General Manual Invoice successful");
-                BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.CloseB)).Click();
+                javascriptClick(By.XPath(General.Default.CloseB));
                 Console.WriteLine("Admin --> Bill Management --> General Manual Invoice passed smoke test successfully");
             
             }

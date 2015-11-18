@@ -53,18 +53,20 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Invent
         public void AddProductSpeed()
         {
             SwitchToPopUps();
-            javascriptClick(By.XPath(General.Default.NewB));
-            WaitForElementToVisible(By.Name("speedDisplay"));
-            typeDataName("speedDisplay", "100K");
-            typeDataName("speedKbps", "100");
-            javascriptClick(By.XPath(General.Default.SaveB));
+            BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.NewB)).Click();
+            Thread.Sleep(2000);
+         //   WaitForElementToVisible(By.Name("speedDisplay"));
+            SwitchToPopUps();
+            typeDataName("speedDisplay", "1");
+            typeDataName("speedKbps", "1");
+            retryingFindClick(By.XPath(General.Default.SaveB));
             Thread.Sleep(5000);
             SwitchToPopUps();
       //      WaitForElementToVisible(By.XPath("//div[text()='100K']"));
-          javascriptClick(By.XPath("//div[text()='100K']"));
+        //  javascriptClick(By.XPath("//div[text()='100K']"));
             if(true)
             {
-                WaitForElementToVisible(By.XPath("//div[text()='100K']"));
+                Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='1']")), "Adding  Product speed failed");
                 Console.WriteLine("Product Speed Added Successful");
             }
             else
@@ -81,7 +83,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Invent
             ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) {return true;};");
             javascriptClick(By.XPath(General.Default.DeleteB));
             BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-            Assert.IsFalse(IsElementVisible(By.XPath("//div[.='100K")), "Deletion of Product Speed failed");
+            Assert.IsFalse(IsElementVisible(By.XPath("//div[.='1")), "Deletion of Product Speed failed");
             Console.WriteLine("Product Speed Deleted Successfully");
 
         }

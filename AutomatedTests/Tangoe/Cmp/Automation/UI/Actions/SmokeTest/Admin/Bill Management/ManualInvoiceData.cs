@@ -31,7 +31,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_M
 
             if(CreateNew() ==true)
             {
-            BrowserDriver.Instance.Driver.FindElement(By.CssSelector("span.clsCollapse")).Click();
+                javascriptClick(By.CssSelector("span.clsCollapse"));
                 Thread.Sleep(1000);
                 Assert.IsTrue(IsElementVisible(By.XPath("//span[text()='Allstream']")),"Creation of new invoice data failed");
                 Console.WriteLine("Creation of new Invoice data successful");
@@ -64,7 +64,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_M
                 Thread.Sleep(1000);
                 BrowserDriver.Instance.Driver.FindElement(By.Name("allowNewAccount")).Click();
                 BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.SaveB)).Click();
-                Thread.Sleep(2000);
+                Thread.Sleep(3000);
                 SwitchToPopUps();
                 return true;
             }

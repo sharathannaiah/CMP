@@ -51,8 +51,10 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Contra
 
             if (true)
             {
-              //  DeleteTariff();
-           //     Assert.IsFalse(IsElementVisible(By.XPath("'//div[text()='AB Contract']")), "Contract Tariff Search Failed");
+               DeleteTariff();
+               SwitchToPopUps();
+               Assert.IsFalse(IsElementVisible(By.XPath("'//div[text()='AB Contract']")), "Contract Tariff Search Failed");
+               Console.WriteLine("Tariff Deleted Successfully");
                Console.WriteLine("Contract Tariff passed smoke test successfully");
 
             }
@@ -105,7 +107,10 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Contra
             javascriptClick(By.XPath(General.Default.SaveB));
             Thread.Sleep(4000);
             SwitchToPopUps();
-            BrowserDriver.Instance.Driver.FindElement(By.Id("nameField")).SendKeys("AB Contract");
+           IWebElement ele = BrowserDriver.Instance.Driver.FindElement(By.Id("nameField"));
+            ele.SendKeys("AB Contract");
+            typeDataID("nameField", "AB Contract");
+            Thread.Sleep(2000);
             javascriptClick(By.XPath(General.Default.SubmitB));
             Thread.Sleep(3000);
             SwitchToPopUps();
@@ -117,9 +122,9 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Contra
             SwitchToPopUps();
             //SearchTariff("nameField", "AB Contract");
             javascriptClick(By.XPath("//div[text()='AB Contract']"));
-            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) {return true} ;");
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) {return true;};");
             javascriptClick(By.XPath(General.Default.DeleteB));
-            Thread.Sleep(1000);
+            Thread.Sleep(2000);
         }
             public void Send(String longstring)
             {

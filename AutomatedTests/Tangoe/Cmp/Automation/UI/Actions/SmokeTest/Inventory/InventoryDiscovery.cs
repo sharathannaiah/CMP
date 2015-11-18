@@ -88,13 +88,11 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Inventory
             BrowserDriver.Instance.Driver.FindElement(By.Id("nextButton")).Click();
             Thread.Sleep(3000);
             BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
-            String newwindowTitle = BrowserDriver.Instance.Driver.Title;
-            SwitchWindow("newwindowTitle");
-  //          BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-      //      Assert.IsTrue(IsElementVisible(By.XPath("//td[text()='Accepted OTHER']")), "Accept failed");
-          //  BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER");
-          //  BrowserDriver.Instance.Driver.SwitchTo().Frame("OTHER_GENERAL");
-            BrowserDriver.Instance.Driver.SwitchTo().Frame("CMP_DIALOG_FRAME");
+           IWebElement ele= BrowserDriver.Instance.Driver.FindElement(By.CssSelector("#dWnd1 iframe"));
+           BrowserDriver.Instance.Driver.SwitchTo().Frame(ele);
+      //   Assert.IsTrue(IsElementVisible(By.XPath("//td[text()='Accepted OTHER']")), "Accept failed");
+         // BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER");
+      //    BrowserDriver.Instance.Driver.SwitchTo().Frame("OTHER_GENERAL");
             javascriptClick(By.XPath(Inven.Default.CloseB));
             Thread.Sleep(4000);
            

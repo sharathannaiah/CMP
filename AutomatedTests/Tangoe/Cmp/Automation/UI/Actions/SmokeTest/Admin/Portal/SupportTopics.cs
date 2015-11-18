@@ -35,6 +35,23 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Portal
             Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='Automated']")), "Adding topic failed");
             Console.WriteLine("Support Topic added successfully");
             }
+
+            if (true)
+            {
+                EditTopic();
+                Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='EditAutomated']")), "Editing topic failed");
+                Console.WriteLine("Support Topic Edited successfully");
+            }
+
+
+            if (true)
+            {
+                DeleteTopic();
+                Assert.IsFalse(IsElementVisible(By.XPath("//div[text()='EditAutomated']")), "Delete topic failed");
+                Console.WriteLine("Support Topic Deleted successfully");
+                javascriptClick(By.XPath(General.Default.CloseB));
+                Console.WriteLine("Admin--> Portal --> Support Topic passed Smoke Test Successfully");
+            }
         }
 
         public void AddTopics()
@@ -48,10 +65,11 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Portal
             BrowserDriver.Instance.Driver.FindElement(By.Id("supportTopicDescription")).SendKeys("Automated");
             typeDataID("supportTopicDescription", "Automated");
             javascriptClick(By.XPath(General.Default.SaveB));
-            Thread.Sleep(2000);
+            Thread.Sleep(4000);
             BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
-            IWebElement ele1 = BrowserDriver.Instance.Driver.FindElement(By.CssSelector("#dWnd1 iframe"));
-            BrowserDriver.Instance.Driver.SwitchTo().Frame(ele);
+            SwitchToPopUps();
+            //IWebElement ele1 = BrowserDriver.Instance.Driver.FindElement(By.CssSelector("#dWnd1 iframe"));
+            //BrowserDriver.Instance.Driver.SwitchTo().Frame(ele);
 
         }
 
@@ -61,9 +79,32 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Portal
             javascriptClick(By.XPath("//div[text()='Automated']"));
             Thread.Sleep(2000);
             SwitchToPopUps();
+            javascriptClick(By.XPath(General.Default.EditB));
+            Thread.Sleep(2000);
+            BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
+            IWebElement ele = BrowserDriver.Instance.Driver.FindElement(By.CssSelector("#dWnd2 iframe"));
+            BrowserDriver.Instance.Driver.SwitchTo().Frame(ele);
+            BrowserDriver.Instance.Driver.FindElement(By.Id("supportTopicDescription")).SendKeys("EditAutomated");
+            typeDataID("supportTopicDescription", "EditAutomated");
+            javascriptClick(By.XPath(General.Default.SaveB));
+            Thread.Sleep(4000);
+            BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
+            SwitchToPopUps();
         }
 
 
+        public void DeleteTopic()
+        {
+
+            SwitchToPopUps();
+            javascriptClick(By.XPath("//div[text()='EditAutomated']"));
+            Thread.Sleep(2000);
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm= function(msg) {return true;};");
+            javascriptClick(By.XPath(General.Default.DeleteB));
+            Thread.Sleep(2000);
+            SwitchToPopUps();
+        }
+    
             protected static Boolean SwitchWindow(string title)
             {
                 var currentWindow = BrowserDriver.Instance.Driver.CurrentWindowHandle;

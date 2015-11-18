@@ -16,7 +16,6 @@ D:\Code Library\Plain framework\AutomatedTests\bin\Debug\AutomatedTests.pdb
 D:\Code Library\Plain framework\AutomatedTests\bin\Debug\WebDriver.dll
 D:\Code Library\Plain framework\AutomatedTests\bin\Debug\WebDriver.Support.dll
 D:\Code Library\Plain framework\AutomatedTests\obj\Debug\AutomatedTests.csprojResolveAssemblyReference.cache
-D:\CMP Automation 6-10-2015\AutomatedTests\obj\Debug\AutomatedTests.csprojResolveAssemblyReference.cache
 D:\CMP Automation 6-10-2015\AutomatedTests\bin\Debug\AutomatedTests.config
 D:\CMP Automation 6-10-2015\AutomatedTests\bin\Debug\Lib\IEDriverServer.exe
 D:\CMP Automation 6-10-2015\AutomatedTests\bin\Debug\Lib\nunit.framework.dll
@@ -34,3 +33,4 @@ D:\CMP Automation 6-10-2015\AutomatedTests\bin\Debug\WebDriver.dll
 D:\CMP Automation 6-10-2015\AutomatedTests\bin\Debug\WebDriver.Support.dll
 D:\CMP Automation 6-10-2015\AutomatedTests\obj\Debug\AutomatedTests.dll
 D:\CMP Automation 6-10-2015\AutomatedTests\obj\Debug\AutomatedTests.pdb
+D:\CMP Automation 6-10-2015\AutomatedTests\obj\Debug\AutomatedTests.csprojResolveAssemblyReference.cache

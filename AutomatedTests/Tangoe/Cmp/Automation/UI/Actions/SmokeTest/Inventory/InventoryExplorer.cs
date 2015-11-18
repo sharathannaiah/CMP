@@ -23,25 +23,25 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Inventory
             CreateInventory("56789" + RandomNumbergeneratorL());
             EditInventory("12345" + RandomNumbergeneratorL());
     
-            AddAlias();
-            RemoveAlias();
-            AddSpid();
-            EditSpid();
-         //  DeleteSpid();
-            AddTollNumber();
-            RemoveTollNumber();
-            AddFeatures();
-            EditFeatures();
-            RemoveFeatures();
-            AddEmployee();
+           AddAlias();
+           RemoveAlias();
+           AddSpid();
+           EditSpid();
+          // DeleteSpid();
+           AddTollNumber();
+           RemoveTollNumber();
+           AddFeatures();
+           EditFeatures();
+           RemoveFeatures();
+           AddEmployee();
             EditEmployee();
-            DeleteEmployee();
+           DeleteEmployee();
 
             AddAllocation(".//*[@id='tabCostCenter']", "INVENTORY_EXPLORER_COST_CENTER", "imgLookupcostCenterId");
             RemoveAllocation("INVENTORY_EXPLORER_COST_CENTER");
 
-            AddAllocation("//div[text()='Allocation Code']", "INVENTORY_EXPLORER_ALLOCATION_CODE", "imgLookupallocationCodeId");
-            RemoveAllocation("INVENTORY_EXPLORER_ALLOCATION_CODE");
+        //    AddAllocation("//div[text()='Allocation Code']", "INVENTORY_EXPLORER_ALLOCATION_CODE", "imgLookupallocationCodeId");
+         //   RemoveAllocation("INVENTORY_EXPLORER_ALLOCATION_CODE");
             AddDirectoryInfo();
         
 
@@ -503,6 +503,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Inventory
             BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER");
             BrowserDriver.Instance.Driver.SwitchTo().Frame("LINE_ALLOC");
             BrowserDriver.Instance.Driver.SwitchTo().Frame(Frame);
+            Thread.Sleep(2000);
             javascriptClick(By.XPath(Inven.Default.SaveB));
             Thread.Sleep(2000);
             SwitchToContent();

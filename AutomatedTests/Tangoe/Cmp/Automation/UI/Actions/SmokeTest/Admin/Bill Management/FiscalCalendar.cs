@@ -76,8 +76,8 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_M
             typeDataID("dtControlstartDate", "01/01/2000");
             BrowserDriver.Instance.Driver.FindElement(By.Id("fiscalYear")).SendKeys("2000");
             typeDataID("fiscalYear", "2000");
-            //  BrowserDriver.Instance.Driver.FindElement(By.Id("fiscalYear")).Click();
             Thread.Sleep(2000);
+            BrowserDriver.Instance.Driver.FindElement(By.Id("fiscalYear")).Click();
             javascriptClick(By.XPath(General.Default.OKB));
             Thread.Sleep(2000);
             return true;

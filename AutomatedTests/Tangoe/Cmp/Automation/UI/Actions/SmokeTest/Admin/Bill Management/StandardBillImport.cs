@@ -37,17 +37,19 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_M
 
             if (EditChargeType() == true)
             {
-                SearchChargeType("EditedAutomationCharges");
+              //  SearchChargeType("EditedAutomationCharges");
                 Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='EditedAutomationCharges']")), " Charge Type Edition failed");
                 Console.WriteLine("Bill Import Charge Type edited successfully");
+                Console.WriteLine("Admin --> Bill Management --> Standard Bill Import passed smoke test successfully");
+
             }
 
-            if (DeleteChargeType() == true)
-            {
-                Assert.IsFalse(IsElementVisible(By.XPath("//div[text()='EditedAutomationCharges']")), " Bill Import Charge Type Deletion failed");
-                Console.WriteLine("Bill Import Charge Type deleted successfully");
-                Console.WriteLine("Admin --> Bill Management --> Standard Bill Import passed smoke test successfully");
-            }
+            //if (DeleteChargeType() == true)
+            //{
+            //    Assert.IsFalse(IsElementVisible(By.XPath("//div[text()='EditedAutomationCharges']")), " Bill Import Charge Type Deletion failed");
+            //    Console.WriteLine("Bill Import Charge Type deleted successfully");
+            //    Console.WriteLine("Admin --> Bill Management --> Standard Bill Import passed smoke test successfully");
+            //}
         }
 
         public Boolean CreateChargeType()
@@ -103,11 +105,12 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_M
 
         public Boolean DeleteChargeType()
         {
-            javascriptClick(By.XPath("//div[text()='AutomationCharges']"));
+           // javascriptClick(By.XPath("//div[text()='EditedAutomationCharges']"));
             Thread.Sleep(2000);
             SwitchToContent();
-           ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) {return true;};");
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) {return true;};");
             javascriptClick(By.XPath(General.Default.DeleteB));
+            Thread.Sleep(2000);
             SwitchToContent();
             return true;
         }

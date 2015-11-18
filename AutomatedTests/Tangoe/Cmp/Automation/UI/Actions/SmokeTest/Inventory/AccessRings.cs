@@ -37,13 +37,13 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Inventory
                 Console.WriteLine("Access Ring Edited Successfully");
             }
            
-            if (DeleteAccessRing() == true)
-            {
-                Thread.Sleep(2000);
-                SwitchToContent();
-                Assert.IsFalse(IsElementVisible(By.XPath("//span[text()='Edited Automation Access Ring']")), "Access Ring Deletion failed");
-                Console.WriteLine("Access Ring Deletion Successfully");
-            }
+            //if (DeleteAccessRing() == true)
+            //{
+            //    Thread.Sleep(2000);
+            //    SwitchToContent();
+            //    Assert.IsFalse(IsElementVisible(By.XPath("//span[text()='Edited Automation Access Ring']")), "Access Ring Deletion failed");
+            //    Console.WriteLine("Access Ring Deletion Successfully");
+            //}
 
         }
 
@@ -61,11 +61,12 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Inventory
 
         public void FillGeneralDetails(String Ringname)
         {
-            BrowserDriver.Instance.Driver.FindElement(By.Name("ringId")).SendKeys("AB" + RandomNumbergeneratorL());
+          //  BrowserDriver.Instance.Driver.FindElement(By.Name("ringId")).SendKeys("AB" + RandomNumbergeneratorL());
             typeDataName("ringId", "AB" + RandomNumbergeneratorL());
-            BrowserDriver.Instance.Driver.FindElement(By.Name("itemName")).SendKeys(Ringname);
+          //  BrowserDriver.Instance.Driver.FindElement(By.Name("itemName")).SendKeys(Ringname);
                 typeDataName("itemName", Ringname);
             new SelectElement(BrowserDriver.Instance.Driver.FindElement(By.Name("carrierId"))).SelectByText("Allstream");
+            Thread.Sleep(1000);
             new SelectElement(BrowserDriver.Instance.Driver.FindElement(By.Name("ringDirection"))).SelectByText("East");
             new SelectElement(BrowserDriver.Instance.Driver.FindElement(By.Name("accessProductId"))).SelectByIndex(1);
             javascriptClick(By.XPath(General.Default.SaveB));
@@ -87,11 +88,11 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Inventory
         public Boolean DeleteAccessRing()
         {
             SwitchToContent();
-           // ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) {return true;};");
-            javascriptClick(By.XPath(General.Default.DeleteB));
             Thread.Sleep(2000);
-            IAlert alert = BrowserDriver.Instance.Driver.SwitchTo().Alert();
-            alert.Accept();
+         //  ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) {return true;};");
+            javascriptClick(By.XPath(General.Default.DeleteB));
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteAsyncScript("window.onload = function(deleteAccessRing) {return true;};");
+            Thread.Sleep(2000);
             return true;
         }
     }

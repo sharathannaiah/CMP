@@ -4,32 +4,32 @@ using NUnit.Framework;
 
 namespace AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.Bill_Management
 {
-    class AllocationApprovalRulesUT : BaseUnitTest
+    class DataProductUT : BaseUnitTest
     {
+        DataProduct dataProduct;
 
-        AllocationApprovalRules allocationApprovalRules;
         //pre
         [TestFixtureSetUp]
         public void init()
         {
-            allocationApprovalRules = new AllocationApprovalRules();
-            AddActionClassesToList(allocationApprovalRules);
+            dataProduct = new DataProduct();
+            AddActionClassesToList(dataProduct);
         }
 
         [SetUp]
         public void SetUpBase()
         {
-            allocationApprovalRules.Login();
+            dataProduct.Login();
         }
         [Test]
-        public void AllocationBucketSmokeFunctionality()
+        public void DataProductSmokeFunctionality()
         {
             ExecuteTest(() =>
             {
-                allocationApprovalRules.AllocationApprovalRulesFunctionality();
+                dataProduct.DataProductFunctionality();
             });
 
         }
+
     }
 }
-

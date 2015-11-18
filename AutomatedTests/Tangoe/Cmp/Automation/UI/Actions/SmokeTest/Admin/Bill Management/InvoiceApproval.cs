@@ -71,7 +71,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_M
             {
                 Thread.Sleep(2000);
                 Assert.IsFalse(IsElementVisible(By.XPath("//span[text()='None']")), "Deleting Invoice rules failed");
-                Console.WriteLine("Invoice Rules removed successfully");
+                Console.WriteLine("Invoice removed successfully");
                 BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.CloseB)).Click();
                 Console.WriteLine("Admin --> Bill Management --> Invoice Approval Rules passed smoke test successfully");
             }
@@ -90,7 +90,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_M
             new SelectElement(BrowserDriver.Instance.Driver.FindElement(By.Id("currencyCodeSelect"))).SelectByText("AUD"); 
             typeDataID("requiredApprovalCount", "1");
             typeDataID("sequenceNumber", "1");
-            BrowserDriver.Instance.Driver.FindElement(By.XPath("//option[.='z1 z1']")).Click();
+            BrowserDriver.Instance.Driver.FindElement(By.XPath("//option[.='Abby Wilm']")).Click();
             BrowserDriver.Instance.Driver.FindElement(By.XPath("//img[@onclick='assignRecipient(1)']")).Click();
             Thread.Sleep(2000);
        //     BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.SaveB)).Click();

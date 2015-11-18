@@ -24,7 +24,11 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Locali
                     BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
                     WaitForElementToVisible(By.XPath("//td[text()='User Defined Translation']"));
                     Console.WriteLine("Navigation Successful");
+                    Thread.Sleep(2000);
+                    SwitchToPopUps();
+                    BrowserDriver.Instance.Driver.SwitchTo().Frame("DETAILS_FRAME");
                     javascriptClick(By.XPath(General.Default.CloseB));
+                    Console.WriteLine("User Defined Transcations passed smoked Test Successfully");
                 }
             else
             {

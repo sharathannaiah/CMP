@@ -59,6 +59,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Miscel
                 Thread.Sleep(3000);
                 SwitchToPopUps();
               //  Assert.IsTrue(IsElementVisible(By.XPath("//div[.='Merge Carriers']")), "Navigation to new pop up failed");
+                
                 javascriptClick(By.XPath(General.Default.CloseB));
                 Console.WriteLine("Navigation to New pop up successful");
                 Thread.Sleep(2000);

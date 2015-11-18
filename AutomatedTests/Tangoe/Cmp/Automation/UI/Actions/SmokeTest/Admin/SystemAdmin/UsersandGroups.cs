@@ -44,6 +44,9 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.System
             if (true)
             {
                 DeleteUser();
+                Assert.IsFalse(IsElementVisible(By.XPath("//div[text()='777']")), "Searching user  failed");
+                Console.WriteLine("User Deleted Successfully");
+                Console.WriteLine("User and Groups passed smoke test successfully");
             }
             
         }

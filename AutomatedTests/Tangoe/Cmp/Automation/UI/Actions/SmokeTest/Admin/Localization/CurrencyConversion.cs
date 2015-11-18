@@ -31,6 +31,10 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Locali
             }
 
         SwitchToPopUps();
+      //  javascriptClick(By.XPath("//input[@id='policyOption'])[2]"));
+       // javascriptClick(By.XPath(General.Default.SaveB));
+      //  Thread.Sleep(2000);
+      //  SwitchToPopUps();
         javascriptClick(By.Id("policyOption"));
         javascriptClick(By.XPath(General.Default.SaveB));
         Thread.Sleep(2000);

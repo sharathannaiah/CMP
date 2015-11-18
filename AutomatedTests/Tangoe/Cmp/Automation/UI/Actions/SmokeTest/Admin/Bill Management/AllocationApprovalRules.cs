@@ -92,7 +92,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_M
             new SelectElement(BrowserDriver.Instance.Driver.FindElement(By.Id("currencyCodeSelect"))).SelectByText("AUD"); 
             typeDataID("requiredApprovalCount", "1");
             typeDataID("sequenceNumber", "1");
-            BrowserDriver.Instance.Driver.FindElement(By.XPath("//option[.='z1 z1']")).Click();
+            BrowserDriver.Instance.Driver.FindElement(By.XPath("//option[.='Abby Wilm']")).Click();
             BrowserDriver.Instance.Driver.FindElement(By.XPath("//img[@onclick='assignRecipient(1)']")).Click();
             BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.SaveB)).Click();
             Thread.Sleep(4000);
@@ -123,7 +123,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_M
         {
             SwitchToPopUps();
             BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.RemoveB)).Click();
-            Thread.Sleep(2000);
+            Thread.Sleep(4000);
             SwitchToPopUps();
             return true;
         }
@@ -131,7 +131,8 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_M
             public Boolean DeleteAllocation()
             {
             SwitchToPopUps();
-            javascriptClick(By.XPath(".//*[@id='jstreeruleTree']/span/div[2]/span/span"));
+            javascriptClick(By.CssSelector("span.clsCollapse"));
+          //  javascriptClick(By.XPath(".//*[@id='jstreeruleTree']/span/div[2]/span/span"));
             Thread.Sleep(1000);
             javascriptClick(By.XPath("//span[text()='Allstream']"));
             Thread.Sleep(2000);

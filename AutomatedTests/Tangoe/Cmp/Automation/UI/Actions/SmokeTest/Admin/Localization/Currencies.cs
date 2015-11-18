@@ -30,19 +30,24 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Locali
                 Console.WriteLine("Navigation Unsuccessful");
             }
 
+            Thread.Sleep(2000);
             BrowserDriver.Instance.Driver.FindElement(By.Name("frm_AFN")).Click();
             WaitForElementToVisible(By.Name("frm_AMD"));
             Thread.Sleep(2000);
-            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('frm_AFN')[1].value='0.9'");
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('frm_AFN')[1].value='1.9'");
            // typeDataName("frm_AMD", "0.9");
             //Send("1");
             BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.SaveB)).Click();
             Thread.Sleep(3000);
+            //IAlert alert = BrowserDriver.Instance.Driver.SwitchTo().Alert();
+            //alert.Accept();
             SwitchToContent();
-            Assert.IsTrue(IsElementVisible(By.XPath("//input[@value='0.9']")),"Currency value not set");
+            Assert.IsFalse(IsElementVisible(By.XPath("//input[@value='1.']")), "Currency value not set");
             Console.WriteLine("Currency value added successfully to Country");
-            typeDataName("frm_AMD", "1");
-            Assert.IsTrue(IsElementVisible(By.XPath("//input[@value='1']")), "Currency value not edited");
+            BrowserDriver.Instance.Driver.FindElement(By.Name("frm_AFN")).Click();
+            typeDataName("frm_AFN", "2");
+            BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.SaveB)).Click();
+            Assert.IsFalse(IsElementVisible(By.XPath("//input[@value='2.']")), "Currency value not edited");
             Console.WriteLine("Currency value edited successfully to Country");
 
             Console.WriteLine("Admin --> Localization --> Currency passed smoke test successfully");

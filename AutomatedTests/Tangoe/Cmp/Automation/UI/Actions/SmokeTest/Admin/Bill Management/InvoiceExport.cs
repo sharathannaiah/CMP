@@ -42,7 +42,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_M
                 SwitchToPopUps();
                 Assert.IsFalse(IsElementVisible(By.XPath("//span[text()='Allstream']")), "Invoice Export Deletion failed");
                 Console.WriteLine("Invoice Export Deletion Successful");
-                BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.CloseB)).Click();
+                javascriptClick(By.XPath(General.Default.CloseB));
                 Console.WriteLine("Admin --> Bill Management --> Invoice Export passed smoke test successfully");
             }
         

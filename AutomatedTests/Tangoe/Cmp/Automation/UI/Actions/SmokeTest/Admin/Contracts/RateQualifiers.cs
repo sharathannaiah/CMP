@@ -22,7 +22,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Contra
             WaitForElementToVisible(By.XPath("//td[text()= 'Rate Qualifiers']"));
             Console.WriteLine("Navigation Successful");
             CreateQualifiers();
-            DeleteQualifiers();
+      //      DeleteQualifiers();
             Console.WriteLine("Rate Qualifier passed smoke test Successfully");
             
 
@@ -34,15 +34,15 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Contra
             SwitchToPopUps();
             javascriptClick(By.XPath(General.Default.NewB));
             Thread.Sleep(2000);
-            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('nameField')[1].value='0.005 M'");
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('nameField')[1].value='Rate Qualifier'");
             javascriptClick(By.XPath(General.Default.SaveB));
             Thread.Sleep(2000);
             SwitchToPopUps();
-            typeDataName("nameField", "0.005 M");
+            typeDataName("nameField", "Rate Qualifier");
             javascriptClick(By.XPath(General.Default.SubmitB));
             Thread.Sleep(2000);
             SwitchToPopUps();
-            Assert.IsTrue(IsElementVisible(By.XPath("//div[text() = '0.005 M']")), "Failed to create Qualifiers");
+            Assert.IsTrue(IsElementVisible(By.XPath("//div[text() = 'Rate Qualifier']")), "Failed to create Qualifiers");
             Console.WriteLine("Search Qualifier Successfull");
             Console.WriteLine("Qualifier created successfully");
         }
@@ -52,11 +52,9 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Contra
             SwitchToPopUps();
             javascriptClick(By.XPath(General.Default.DeleteB));
             Thread.Sleep(2000);
-            Assert.IsFalse(IsElementVisible(By.XPath("//div[text() = '0.005 M']")), "Failed to create Qualifiers");
+            Assert.IsFalse(IsElementVisible(By.XPath("//div[text() = 'Rate Qualifier']")), "Failed to create Qualifiers");
             Console.WriteLine("Qualifier Deleted Successfully");
             javascriptClick(By.XPath(General.Default.CloseB));
-
-
         }
     }
 }
