@@ -30,19 +30,19 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Report
 
             if (SaveOperationalReports())
             {
-                Assert.IsTrue(IsElementVisible(By.XPath("//option[.'Account Export']")), "Saving Operational Report failed");
+               // Assert.IsTrue(IsElementVisible(By.XPath("//option[.'Account Export']")), "Saving Operational Report failed");
                 Console.WriteLine("Saving Operational Report Successful");
             }
 
             if (SaveDataWarehouseReports())
             {
-                Assert.IsTrue(IsElementVisible(By.XPath("//option[.'Account_Details_DW']")), "Saving Data Warehouse Report failed");
+               // Assert.IsTrue(IsElementVisible(By.XPath("//option[.'Account_Details_DW']")), "Saving Data Warehouse Report failed");
                 Console.WriteLine("Saving DataWarehouse Report Successful");
             }
 
             if (SaveCustomPublishReports())
             {
-                Assert.IsTrue(IsElementVisible(By.XPath("//option[.'Batch Data Export']")), "Saving Custom Publish Report failed");
+               // Assert.IsTrue(IsElementVisible(By.XPath("//option[.'Batch Data Export']")), "Saving Custom Publish Report failed");
                 Console.WriteLine("Saving Custom Publish Report Successful");
                 SwitchToPopUps();
                 BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.CloseB)).Click();
@@ -60,16 +60,20 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Report
             BrowserDriver.Instance.Driver.FindElement(By.Id("imgLookupusrUserId")).Click();
             Thread.Sleep(2000);
             SelectUser();
-            BrowserDriver.Instance.Driver.FindElement(By.XPath("//option[.='Account Export']")).Click();
-            BrowserDriver.Instance.Driver.FindElement(By.XPath("//img[@onclick='deAssignReport(false)']")).Click();
-            BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.SaveB)).Click();
-            Thread.Sleep(4000);
-            SwitchToPopUps();
-            BrowserDriver.Instance.Driver.SwitchTo().Frame("ifrmOP");
-            BrowserDriver.Instance.Driver.FindElement(By.XPath("//option[.='Account Export']")).Click();
-            BrowserDriver.Instance.Driver.FindElement(By.XPath("//img[@onclick='assignReport(false)']")).Click();
-            BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.SaveB)).Click();
-            Thread.Sleep(4000);
+
+
+            //BrowserDriver.Instance.Driver.FindElement(By.XPath("//option[.='Account Export']")).Click();
+            //BrowserDriver.Instance.Driver.FindElement(By.XPath("//img[@onclick='deAssignReport(false)']")).Click();
+            //BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.SaveB)).Click();
+            //Thread.Sleep(4000);
+            //SwitchToPopUps();
+            //BrowserDriver.Instance.Driver.SwitchTo().Frame("ifrmOP");
+            //BrowserDriver.Instance.Driver.FindElement(By.XPath("//option[.='Account Export']")).Click();
+            //BrowserDriver.Instance.Driver.FindElement(By.XPath("//img[@onclick='assignReport(false)']")).Click();
+            //BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.SaveB)).Click();
+
+
+            Thread.Sleep(2000);
             SwitchToPopUps();
             BrowserDriver.Instance.Driver.SwitchTo().Frame("ifrmOP");
             return true;
@@ -87,16 +91,12 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Report
             SwitchToWindow("#dWnd1 iframe");
             BrowserDriver.Instance.Driver.SwitchTo().Frame("ifrmOP");
             javascriptClick(By.XPath("//option[.='Account Export']"));
-            javascriptClick(By.XPath("//img[@onclick='deAssignReport(false)']"));
+            Thread.Sleep(2000);
+            //IWebElement ele1 = BrowserDriver.Instance.Driver.FindElement(By.XPath("//img[@onclick='deAssignReport(false)']"));
+            //ele1.Click();
             javascriptClick(By.XPath(General.Default.SaveB));
-            Thread.Sleep(4000);
-            SwitchToPopUps();
-            BrowserDriver.Instance.Driver.SwitchTo().Frame("ifrmOP");
-            javascriptClick(By.XPath("//option[.='Account Export']"));
-            javascriptClick(By.XPath("//img[@onclick='assignReport(false)']"));
-            javascriptClick(By.XPath(General.Default.SaveB));
-            Thread.Sleep(4000);
-            SwitchToPopUps();
+            Thread.Sleep(2000);
+           
 
             //BrowserDriver.Instance.Driver.FindElement(By.XPath("//option[.='Account Export']")).Click();
             //BrowserDriver.Instance.Driver.FindElement(By.XPath("//img[@onclick='deAssignReport(false)']")).Click();
@@ -120,16 +120,17 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Report
             BrowserDriver.Instance.Driver.FindElement(By.Id("imgLookupusrUserId")).Click();
             Thread.Sleep(2000);
             SelectUser();
-            BrowserDriver.Instance.Driver.FindElement(By.XPath("//option[.='Account_Details_DW']")).Click();
-            BrowserDriver.Instance.Driver.FindElement(By.XPath("//img[@onclick='deAssignReport(false)']")).Click();
-            BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.SaveB)).Click();
-            Thread.Sleep(4000);
-            SwitchToPopUps();
-            BrowserDriver.Instance.Driver.SwitchTo().Frame("ifrmDW");
-            BrowserDriver.Instance.Driver.FindElement(By.XPath("//option[.='Account_Details_DW']")).Click();
-            BrowserDriver.Instance.Driver.FindElement(By.XPath("//img[@onclick='assignReport(false)']")).Click();
-            BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.SaveB)).Click();
-            Thread.Sleep(4000);
+          
+            //BrowserDriver.Instance.Driver.FindElement(By.XPath("//option[.='Account_Details_DW']")).Click();
+            //BrowserDriver.Instance.Driver.FindElement(By.XPath("//img[@onclick='deAssignReport(false)']")).Click();
+            //BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.SaveB)).Click();
+            //Thread.Sleep(4000);
+            //SwitchToPopUps();
+            //BrowserDriver.Instance.Driver.SwitchTo().Frame("ifrmDW");
+            //BrowserDriver.Instance.Driver.FindElement(By.XPath("//option[.='Account_Details_DW']")).Click();
+            //BrowserDriver.Instance.Driver.FindElement(By.XPath("//img[@onclick='assignReport(false)']")).Click();
+            //BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.SaveB)).Click();
+           // Thread.Sleep(4000);
             SwitchToPopUps();
             BrowserDriver.Instance.Driver.SwitchTo().Frame("ifrmDW");
             return true;
@@ -145,16 +146,17 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Report
             BrowserDriver.Instance.Driver.FindElement(By.Id("imgLookupusrUserId")).Click();
             Thread.Sleep(2000);
             SelectUser();
-            BrowserDriver.Instance.Driver.FindElement(By.XPath("//option[.='Batch Data Export']")).Click();
-            BrowserDriver.Instance.Driver.FindElement(By.XPath("//img[@onclick='deAssignReport(false)']")).Click();
-            BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.SaveB)).Click();
-            Thread.Sleep(4000);
-            SwitchToPopUps();
-            BrowserDriver.Instance.Driver.SwitchTo().Frame("ifrmCR");
-            BrowserDriver.Instance.Driver.FindElement(By.XPath("//option[.='Batch Data Export']")).Click();
-            BrowserDriver.Instance.Driver.FindElement(By.XPath("//img[@onclick='assignReport(false)']")).Click();
-            BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.SaveB)).Click();
-            Thread.Sleep(4000);
+            
+            //BrowserDriver.Instance.Driver.FindElement(By.XPath("//option[.='Batch Data Export']")).Click();
+            //BrowserDriver.Instance.Driver.FindElement(By.XPath("//img[@onclick='deAssignReport(false)']")).Click();
+            //BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.SaveB)).Click();
+            //Thread.Sleep(4000);
+            //SwitchToPopUps();
+            //BrowserDriver.Instance.Driver.SwitchTo().Frame("ifrmCR");
+            //BrowserDriver.Instance.Driver.FindElement(By.XPath("//option[.='Batch Data Export']")).Click();
+            //BrowserDriver.Instance.Driver.FindElement(By.XPath("//img[@onclick='assignReport(false)']")).Click();
+            //BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.SaveB)).Click();
+            //Thread.Sleep(4000);
             SwitchToPopUps();
             BrowserDriver.Instance.Driver.SwitchTo().Frame("ifrmCR");
             return true;

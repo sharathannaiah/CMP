@@ -28,7 +28,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Report
                 Thread.Sleep(2000);
                 SwitchToPopUps();
                 BrowserDriver.Instance.Driver.SwitchTo().Frame("MAIN");
-                BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.CancelB)).Click();
+                javascriptClick(By.XPath(General.Default.CancelB));
                 Console.WriteLine("Admin --> Reporting -->Publish Custom Reports passed smoke test successfully");
             }
         }

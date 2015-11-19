@@ -79,6 +79,10 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise.E
 
           DeleteInventory();
 
+          NavigatetoCostCenter();
+
+          NavigatetoExtendedAttribute();
+
              CreateBudget();
 
            //   DeleteEmployee();
@@ -190,8 +194,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise.E
             BrowserDriver.Instance.Driver.SwitchTo().Frame(ele1);
             Thread.Sleep(2000);
            // SwitchToPopUps();
-            javascriptClick(By.XPath(Enterp.Default.CheckB));
-
+            javascriptClick(By.Id("unassignCurrentEmployee"));
             javascriptClick(By.XPath(Enterp.Default.SaveB));
             Thread.Sleep(3000);
             SwitchToContent();
@@ -234,6 +237,29 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise.E
             Console.WriteLine("Inventory Deleted successfully");
     }
 
+        public void NavigatetoCostCenter()
+        {
+            SwitchToContent();
+            retryingFindClick(By.Id("tabCostCenter"));
+            Thread.Sleep(2000);
+            SwitchToContent();
+            BrowserDriver.Instance.Driver.SwitchTo().Frame("COSTCENTER");
+            Console.WriteLine("Naviagtion to Cost Center Successful");
+
+
+        }
+
+        public void NavigatetoExtendedAttribute()
+        {
+            SwitchToContent();
+            retryingFindClick(By.Id("tabExtendedAttributes"));
+            Thread.Sleep(2000);
+            SwitchToContent();
+            BrowserDriver.Instance.Driver.SwitchTo().Frame("EXTENDEDATTRIBUTES");
+            Console.WriteLine("Naviagtion to Extended Attribute Successful"); 
+
+        }
+
             //Assigning Budget
 
         public void CreateBudget()
@@ -274,6 +300,9 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise.E
             Assert.AreEqual("$ 390.00", BrowserDriver.Instance.Driver.FindElement(By.XPath(".//*[@id='amountTotal']")).Text);
     //        Assert.IsTrue(IsElementVisible(By.XPath(".//*[@id='amountTotal']")), "Assigning Budget to Employee failed");
             Console.WriteLine("Budget Added Successfully");
+            SwitchToContent();
+            javascriptClick(By.XPath(Enterp.Default.ResetB));
+            Console.WriteLine("Reset Query Successful");
 
         }
 
@@ -311,13 +340,13 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise.E
             IWebElement ele1 = BrowserDriver.Instance.Driver.FindElement(By.CssSelector("#dWnd2 iframe"));//CMP_DIALOG_FRAME
             BrowserDriver.Instance.Driver.SwitchTo().Frame(ele1);
             Thread.Sleep(2000);
-            new SelectElement(BrowserDriver.Instance.Driver.FindElement(By.Id("queryTypeId"))).SelectByValue("15");
-            Thread.Sleep(2000);
+            new SelectElement(BrowserDriver.Instance.Driver.FindElement(By.Id("queryTypeId"))).SelectByText("Conferencing");
+            Thread.Sleep(4000);
             new SelectElement(BrowserDriver.Instance.Driver.FindElement(By.Name("conferencingTypeList"))).SelectByValue("Audio");
       //  ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementById('queryTypeId').selectedIndex = 1;");
             Thread.Sleep(2000);
             javascriptClick(By.XPath(Enterp.Default.QuerySubmitB));
-            Thread.Sleep(3000);
+            Thread.Sleep(5000);
      //       BrowserDriver.Instance.Driver.SwitchTo().Frame(ele1);
          //   javascriptClick(By.XPath("//div[.='LINE']"));
             javascriptClick(By.Name("returnButtonIds"));

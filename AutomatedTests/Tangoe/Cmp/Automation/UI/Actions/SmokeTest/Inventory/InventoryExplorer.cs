@@ -296,7 +296,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Inventory
             SwitchToPopUps();
             retryingFindClick(By.XPath("//div[text()='IR/Trane']"));
             Thread.Sleep(2000);
-            javascriptClick(By.XPath(Inven.Default.OKB));
+            retryingFindClick(By.XPath(Inven.Default.OKB));
             Thread.Sleep(3000);
             SwitchToContent();
             BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER");

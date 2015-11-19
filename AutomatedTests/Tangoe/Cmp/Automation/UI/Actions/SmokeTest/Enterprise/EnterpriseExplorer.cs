@@ -212,6 +212,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise
                 typeDataID("street3", "xyz");
                 typeDataID("city", "Miami1");
                 typeDataID("postalCode", "77777");
+                Thread.Sleep(2000);
                 javascriptClick(By.XPath(Enterp.Default.OKB));
                 Thread.Sleep(3000);
                 SwitchToContent();
@@ -302,6 +303,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise
             typeDataID("suite", "333");
             typeDataID("room", "999");
             typeDataID("department", "000");
+            Thread.Sleep(2000);
             BrowserDriver.Instance.Driver.FindElement(By.Id("primaryDemarcIndicator")).Click();
             retryingFindClick(By.XPath(Enterp.Default.OKB));
             Thread.Sleep(2000);
@@ -322,6 +324,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise
             typeDataID("floor", "555");
             typeDataID("suite", "777");
             typeDataID("room", "000");
+            Thread.Sleep(2000);
             retryingFindClick(By.XPath(Enterp.Default.OKB));
             Thread.Sleep(2000);
             SwitchToContent();

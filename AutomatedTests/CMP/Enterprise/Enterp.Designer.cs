@@ -145,7 +145,7 @@ namespace AutomatedTests.CMP.Enterprise {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("//input[@value=\'Ok\']")]
+        [global::System.Configuration.DefaultSettingValueAttribute("//input[@value=\'OK\']")]
         public string OKB {
             get {
                 return ((string)(this["OKB"]));
