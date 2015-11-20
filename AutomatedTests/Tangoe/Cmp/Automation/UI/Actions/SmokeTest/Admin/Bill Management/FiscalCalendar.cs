@@ -78,7 +78,8 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_M
             typeDataID("fiscalYear", "2000");
             Thread.Sleep(2000);
             BrowserDriver.Instance.Driver.FindElement(By.Id("fiscalYear")).Click();
-            javascriptClick(By.XPath(General.Default.OKB));
+            Thread.Sleep(2000);
+            retryingFindClick(By.XPath(General.Default.OKB));
             Thread.Sleep(2000);
             return true;
         }
@@ -96,9 +97,11 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_M
             BrowserDriver.Instance.Driver.FindElement(By.Id("dtControlendDate")).SendKeys("");
             typeDataID("dtControlendDate", "01/03/2051");
             BrowserDriver.Instance.Driver.FindElement(By.Id("nameField")).SendKeys("January 2051");
-            typeDataID("nameField", "January 2051");
+            typeDataID("nameField", "January 2051"); 
             Thread.Sleep(2000);
-            javascriptClick(By.XPath(General.Default.OKB));
+            BrowserDriver.Instance.Driver.FindElement(By.Id("nameField")).Click();
+            Thread.Sleep(2000);
+            retryingFindClick(By.XPath(General.Default.OKB));
             Thread.Sleep(2000);
             SwitchToPopUps();
             return true;

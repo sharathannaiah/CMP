@@ -42,7 +42,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_M
                 Assert.IsTrue(IsElementVisible(By.XPath("//span[text()='Edited ABGLName']")), "GLNumber edition failed");
                 Console.WriteLine("GLNumber edition successful");
                 javascriptClick(By.XPath(General.Default.CloseB));
-                Console.WriteLine("Admin --> Bill Management --> GL number formatting deleted successfully");
+                Console.WriteLine("Admin --> Bill Management --> GL number  passed Smoke Test successfully");
             }
 
 

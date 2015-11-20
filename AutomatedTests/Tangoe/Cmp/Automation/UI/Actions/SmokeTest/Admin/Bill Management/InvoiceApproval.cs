@@ -54,9 +54,21 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_M
                 BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.CloseB)).Click();
                 Thread.Sleep(2000);
                 Console.WriteLine("Navigation to history page successful");
+
                 BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
                 IWebElement ele1 = BrowserDriver.Instance.Driver.FindElement(By.CssSelector("#dWnd1 iframe"));
                 BrowserDriver.Instance.Driver.SwitchTo().Frame(ele1);
+                BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.CloseB)).Click();
+                Thread.Sleep(2000);
+               
+
+                BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
+                BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
+                GoToMain("Admin");
+                retryingFindClickk(".//*[@id='mnuAdmin_BillMgmt']");
+                retryingFindClickk(".//*[@id='mnuInvoiceApprovalRules']"); 
+                Thread.Sleep(3000);
+                SwitchToPopUps();
             }
 
             if (RemoveRule())
@@ -110,6 +122,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_M
             BrowserDriver.Instance.Driver.SwitchTo().Frame(ele);
             new SelectElement(BrowserDriver.Instance.Driver.FindElement(By.Id("invoiceType"))).SelectByText("DO NOT PROCESS");
             new SelectElement(BrowserDriver.Instance.Driver.FindElement(By.Name("carrierId"))).SelectByIndex(1);
+            Thread.Sleep(2000);
             javascriptClick(By.XPath(General.Default.CopyB));
             Thread.Sleep(2000);
             SwitchToPopUps();

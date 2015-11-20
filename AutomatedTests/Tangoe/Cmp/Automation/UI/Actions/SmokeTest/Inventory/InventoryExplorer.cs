@@ -168,6 +168,12 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Inventory
             //Inventory Alias Tab
             //  SearchPhonenumber("");
             SwitchToContent();
+
+            BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER");
+            BrowserDriver.Instance.Driver.FindElement(By.XPath(".//*[@id='tab12']")).Click();
+            Thread.Sleep(3000);
+            Console.WriteLine("Navigation to Accounts tab successful");
+            SwitchToContent();
             BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER");
             BrowserDriver.Instance.Driver.FindElement(By.XPath(".//*[@id='tab11']")).Click();
             Thread.Sleep(2000);
@@ -251,8 +257,8 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Inventory
             BrowserDriver.Instance.Driver.FindElement(By.XPath("//input[@Name='spidText']")).Clear();
             ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('spidText')[0].value = '12345';");
             Thread.Sleep(1000);
-            javascriptClick(By.XPath(Inven.Default.OKB));
-            Thread.Sleep(4000);
+            retryingFindClick(By.XPath(Inven.Default.OKB));
+            Thread.Sleep(5000);
             SwitchToContent();
             BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER");
             BrowserDriver.Instance.Driver.SwitchTo().Frame("LINE_SPID");
@@ -297,7 +303,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Inventory
             retryingFindClick(By.XPath("//div[text()='IR/Trane']"));
             Thread.Sleep(2000);
             retryingFindClick(By.XPath(Inven.Default.OKB));
-            Thread.Sleep(3000);
+            Thread.Sleep(5000);
             SwitchToContent();
             BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER");
             BrowserDriver.Instance.Driver.SwitchTo().Frame("LINE_TFN");
@@ -338,7 +344,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Inventory
             ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('nonconAmount')[0].value = '500';");
             ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('currencyCode')[0].selectedIndex = 8;");
        //     new SelectElement (BrowserDriver.Instance.Driver.FindElement(By.Name("currencyCode"))).SelectByText("USD - United States of America, Dollars");
-            javascriptClick(By.XPath(Inven.Default.OKB));
+            retryingFindClick(By.XPath(Inven.Default.OKB));
             Thread.Sleep(5000);
               SwitchToContent();
               
@@ -370,7 +376,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Inventory
             ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('nonconAmount')[0].value = '900';");
             BrowserDriver.Instance.Driver.FindElement(By.XPath("//input[@Name='nonconQuantity']")).Clear();
             ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('nonconQuantity')[0].value = '2';");
-            javascriptClick(By.XPath(Inven.Default.OKB));
+           retryingFindClick(By.XPath(Inven.Default.OKB));
             Thread.Sleep(4000);
               SwitchToContent();
             BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER");
@@ -559,6 +565,12 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Inventory
             javascriptClick(By.XPath(Inven.Default.ResetB));
             Assert.IsFalse(IsElementVisible(By.XPath("//input[text()='77777']")), "Deleting Directory info Failed");
             Console.WriteLine("Directory Info reset successfully");
+            SwitchToContent();
+            BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER");
+            javascriptClick(By.Id("tab13"));
+            Console.WriteLine("Navigation to Dispute Tab Successful");
+            Thread.Sleep(2000);
+            
         }
 
 

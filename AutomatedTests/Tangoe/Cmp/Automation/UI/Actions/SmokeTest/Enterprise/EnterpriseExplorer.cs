@@ -460,7 +460,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise
          javascriptClick(By.Name("returnButtonIds"));
        
         //    BrowserDriver.Instance.Driver.FindElement(By.Name("returnButtonIds")).SendKeys(Keys.Enter);
-         Thread.Sleep(3000);
+         Thread.Sleep(5000);
          // ERROR: Caught exception [ERROR: Unsupported command [selectWindow | name=CONTRACTS | ]]
          SwitchToContent();
          BrowserDriver.Instance.Driver.SwitchTo().Frame("CONTRACTS");

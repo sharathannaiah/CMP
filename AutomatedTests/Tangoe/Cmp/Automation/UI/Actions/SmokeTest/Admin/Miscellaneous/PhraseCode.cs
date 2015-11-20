@@ -47,7 +47,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Miscel
             {
                 SearchPhrasecode();
                 BrowserDriver.Instance.Driver.SwitchTo().Frame("ADMIN_PHRASECODELIST");
-                Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='AT&T']")), "Adding phrase code failed");
+                Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='Change']")), "Adding phrase code failed");
                 Console.WriteLine("Phrase code Search successful");
             }
             else
@@ -94,19 +94,21 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Miscel
               ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('categoryId')[0].selectedIndex='2'");
           //    new SelectElement(BrowserDriver.Instance.Driver.FindElement(By.Name("categoryId"))).SelectByText("Change");
               typeDataName("description", "Phrase code added");
-              BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.SaveB)).Click();
+              retryingFindClick(By.XPath(General.Default.SaveB));
               Thread.Sleep(2000);
         }
 
         public void SearchPhrasecode()
         {
             SwitchToContent();
-            new SelectElement(BrowserDriver.Instance.Driver.FindElement(By.Name("carrierId"))).SelectByText("AT&T");
-            new SelectElement(BrowserDriver.Instance.Driver.FindElement(By.Name("CategoryLUIId"))).SelectByText("Change");
+            //new SelectElement(BrowserDriver.Instance.Driver.FindElement(By.Name("carrierId"))).SelectByText("AT&T");
+            //new SelectElement(BrowserDriver.Instance.Driver.FindElement(By.Name("CategoryLUIId"))).SelectByText("Change");
+            typeDataName("phraseCode", "AB");
+            Thread.Sleep(2000);
             BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.SubmitB)).Click();
             Thread.Sleep(2000);
             SwitchToContent();
-            BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.ResetB)).Click();
+        //    BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.ResetB)).Click();
             Thread.Sleep(2000);
             SwitchToContent();
         }

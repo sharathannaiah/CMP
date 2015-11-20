@@ -658,7 +658,11 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Abstract
         }
         //((JavascriptExecutor) driver).executeScript("return document.getElementById('id').selectedIndex = '" + index + "';)
         #endregion
+        public void SelectfromDropdownByName(string field, string index)
+        {
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('" + field + "').selectedIndex='" + index + "'");
 
+        }
        
 
         #region Clicking Submit Button

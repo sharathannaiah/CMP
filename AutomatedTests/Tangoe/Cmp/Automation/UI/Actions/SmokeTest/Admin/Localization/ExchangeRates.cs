@@ -50,8 +50,8 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Locali
                 ele.Click();
                 javascriptClick(By.Name("comments"));
               Thread.Sleep(2000);
-              BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.SaveB)).Click();
-             //   javascriptClick(By.XPath(General.Default.SaveB));
+             // BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.SaveB)).Click();
+             retryingFindClick(By.XPath(General.Default.SaveB));
                 Thread.Sleep(4000);
 
                 //BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();

@@ -47,34 +47,19 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_M
                 Console.WriteLine("Invoice rules copied successfully");
                 javascriptClick(By.XPath("//span[text()='None']"));
                 Thread.Sleep(2000);
-                SwitchToPopUps();
-                BrowserDriver.Instance.Driver.FindElement(By.XPath("//input[@value='History']")).Click();
-                Thread.Sleep(2000);
-                BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
-                IWebElement ele = BrowserDriver.Instance.Driver.FindElement(By.CssSelector("#dWnd2 iframe"));
-                BrowserDriver.Instance.Driver.SwitchTo().Frame(ele);
-          //      BrowserDriver.Instance.Driver.SwitchTo().Frame("queryPane");
-          //      BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.SubmitB)).Click();
-           //     Thread.Sleep(4000);
-               // Assert.IsTrue(IsElementVisible(By.XPath("//td[text()='Invoice Validation Rules / Approval Configuration History']")), "Navigation to History Pop up failed");
-             //   BrowserDriver.Instance.Driver.SwitchTo().Frame("CMP_DIALOG_FRAME");
-                BrowserDriver.Instance.Driver.SwitchTo().Frame("detailsPane");
-                BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.CloseB)).Click();
-
-                Thread.Sleep(2000);
-                Console.WriteLine("Navigation to history page successful");
-                BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
-                IWebElement ele1 = BrowserDriver.Instance.Driver.FindElement(By.CssSelector("#dWnd1 iframe"));
-                BrowserDriver.Instance.Driver.SwitchTo().Frame(ele1);
-                BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.CloseB)).Click();
-                Thread.Sleep(2000);
-                BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
-                BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
-                GoToMain("Admin");
-                retryingFindClickk(".//*[@id='mnuAdmin_BillMgmt']");
-                retryingFindClickk(".//*[@id='mnuInvoiceValidation']");
-                Thread.Sleep(3000);
-                SwitchToPopUps();
+                //SwitchToPopUps();
+                //BrowserDriver.Instance.Driver.FindElement(By.XPath("//input[@value='History']")).Click();
+                //Thread.Sleep(4000);
+                //BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
+                //IWebElement ele = BrowserDriver.Instance.Driver.FindElement(By.CssSelector("#dWnd2 iframe"));
+                //BrowserDriver.Instance.Driver.SwitchTo().Frame("detailsPane");
+                //BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.CloseB)).Click();
+                //Console.WriteLine("Navigation to history page successful");
+                //Thread.Sleep(5000);
+                //IWebElement ele1 = BrowserDriver.Instance.Driver.FindElement(By.CssSelector("#dWnd1 iframe"));
+                //BrowserDriver.Instance.Driver.SwitchTo().Frame(ele1);
+          //      BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.CloseB)).Click();
+                
             }
 
 
@@ -84,7 +69,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_M
                 SwitchToPopUps();
                 Assert.IsFalse(IsElementVisible(By.XPath("//span[text()='None']")), "Deletion failed");
                 Console.WriteLine("Deletion Successful");
-                BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.CloseB)).Click();
+                javascriptClick(By.XPath(General.Default.CloseB));
                 Console.WriteLine("Admin --> Bill Management --> Invoice Approval Rules passed smoke test successfully");
             }
         }

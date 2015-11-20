@@ -31,7 +31,6 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_M
             {
                
             Console.WriteLine("Inventory Accrual saved successfully");
-            Thread.Sleep(2000);
           //  BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.CloseB)).Click();
             Console.WriteLine("Admin --> Bill Management --> Inventory Accrual passed smoke test successfully");
             }
@@ -45,7 +44,9 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_M
             Thread.Sleep(2000);
             SelectfromDropdown("invAccrualConfig", a);
             Thread.Sleep(2000);
-            BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.OKB)).Click();
+            javascriptClick(By.Id("invAccrualConfig"));
+            Thread.Sleep(2000);
+            javascriptClick(By.XPath(General.Default.OKB));
             Thread.Sleep(2000);
             return true;
 

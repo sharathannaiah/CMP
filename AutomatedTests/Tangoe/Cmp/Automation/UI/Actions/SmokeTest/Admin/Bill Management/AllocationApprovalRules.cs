@@ -122,6 +122,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Bill_M
         public Boolean RemoveRule()
         {
             SwitchToPopUps();
+            Thread.Sleep(2000);
             BrowserDriver.Instance.Driver.FindElement(By.XPath(General.Default.RemoveB)).Click();
             Thread.Sleep(4000);
             SwitchToPopUps();
