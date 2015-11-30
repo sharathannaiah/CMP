@@ -20,6 +20,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.Common
         password,
         SQLServer,
         DBUser,
+        employeeURL, 
 
 
         //Entity Creation

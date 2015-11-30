@@ -26,7 +26,8 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Assura
                 WaitForElementToVisible(By.XPath("//td[text()='CMP Assurance Test Uninstallation']"));
                 Console.WriteLine("Navigation Successful");
                 SwitchToPopUps();
-               IWebElement ele =  BrowserDriver.Instance.Driver.FindElement(By.XPath("//div[text()='Contract Expiration Notification Test']"));
+                Thread.Sleep(2000);
+                IWebElement ele = BrowserDriver.Instance.Driver.FindElement(By.XPath("//div[text()='Contract Expiration Notification Test']"));
                if (!ele.Selected)
                {
                    BrowserDriver.Instance.Driver.FindElement(By.CssSelector("input.multiSelectRow")).Click();

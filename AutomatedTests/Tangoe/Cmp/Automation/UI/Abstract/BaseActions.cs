@@ -568,6 +568,23 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Abstract
             BrowserDriver.Instance.Driver.FindElement(By.Name("Submit")).Click();
             WaitForElementToVisible(By.Id("menuMainHome"));
         }
+
+        public void Login1()
+        {
+            BrowserDriver.Instance.Driver.Navigate().GoToUrl(TestProperties.Instance.GetPropertyByName(TestProperty.employeeURL));
+            BrowserDriver.Instance.Driver.Manage().Window.Maximize();
+            BrowserDriver.Instance.Driver.Navigate().GoToUrl("javascript:document.getElementById('overridelink').click()");
+            //BrowserDriver.Instance.Driver.FindElement(By.Id("overridelink")).Click();
+            WaitForElementToVisible(By.Id("tgx-main-header"));
+            //  BrowserDriver.Instance.Driver.Manage().Window.Maximize();
+            BrowserDriver.Instance.Driver.SwitchTo().Frame("CMP_DIALOG_FRAME");
+            BrowserDriver.Instance.Driver.FindElement(By.Id("userNameTextBox")).SendKeys(TestProperties.Instance.GetPropertyByName(TestProperty.user));
+            BrowserDriver.Instance.Driver.FindElement(By.Id("passwordTextBox")).SendKeys(TestProperties.Instance.GetPropertyByName(TestProperty.password));
+            BrowserDriver.Instance.Driver.FindElement(By.Name("Submit")).Click();
+            WaitForElementToVisible(By.Id("menuMainHome"));
+        }
+
+
        #endregion
 
 

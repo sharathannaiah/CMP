@@ -239,6 +239,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise
                 BrowserDriver.Instance.Driver.FindElement(By.CssSelector("input.multiSelectRow")).Click();
                 javascriptClick(By.XPath(Enterp.Default.OKB));
                 Thread.Sleep(2000);
+                //SwitchToPopUps();
                 SwitchToContent();
                 BrowserDriver.Instance.Driver.SwitchTo().Frame("ADDRESS");
                 Assert.IsTrue(IsElementVisible(By.XPath("//div[.='77777']")), "Adding Address to entity failed");
@@ -457,7 +458,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise
        //  BrowserDriver.Instance.Driver.FindElement(By.Name("queryNegotiatedContractsButton")).Click();
          Thread.Sleep(4000);
       //   BrowserDriver.Instance.Driver.FindElement(By.XPath("//div[.='AT&T']")).Click();
-         javascriptClick(By.Name("returnButtonIds"));
+         retryingFindClick(By.Name("returnButtonIds"));
        
         //    BrowserDriver.Instance.Driver.FindElement(By.Name("returnButtonIds")).SendKeys(Keys.Enter);
          Thread.Sleep(5000);
@@ -474,8 +475,8 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise
         {
          
             ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('notes')[0].value='Contract notes Updated'");
-            javascriptClick(By.Name("modifyEntityContractButton"));
-            Thread.Sleep(2000);
+            retryingFindClick(By.Name("modifyEntityContractButton"));
+            Thread.Sleep(4000);
          Assert.AreEqual("Contract notes Updated", BrowserDriver.Instance.Driver.FindElement(By.XPath("//div[.='Contract notes Updated']")).Text);
          Console.WriteLine("Contract Notes Updated successfully");
 
@@ -503,13 +504,13 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise
          Thread.Sleep(2000);
             javascriptClick(By.XPath("//input[@value='Add']"));
       //   BrowserDriver.Instance.Driver.FindElement(By.Id("assignEntityAccountButton")).Click();
-         Thread.Sleep(2000);
+         Thread.Sleep(4000);
          SwitchToPopUps();
          Assert.AreEqual("Account Parameters", BrowserDriver.Instance.Driver.FindElement(By.CssSelector("legend")).Text);
          ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementById('carrierId').value ='Verizon' ;");
          Thread.Sleep(2000);
             javascriptClick(By.XPath("//input[@value='Submit']"));
-            Thread.Sleep(3000);
+            Thread.Sleep(5000);
             SwitchToPopUps();
         javascriptClick(By.CssSelector("input.multiSelectRow"));
             Thread.Sleep(1000);
@@ -601,9 +602,11 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise
          Thread.Sleep(2000);
             javascriptClick(By.XPath("//div[.='GL Account']"));
             typeDataID("extAttributeText","1");
-          //  ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementById('extAttributeText').value='1'");
-            javascriptClick(By.XPath(Enterp.Default.UpdateB));
             Thread.Sleep(2000);
+
+          //  ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementById('extAttributeText').value='1'");
+           retryingFindClick(By.XPath(Enterp.Default.UpdateB));
+            Thread.Sleep(4000);
             SwitchToContent();
             BrowserDriver.Instance.Driver.SwitchTo().Frame("EXTENDED_ATTRIBUTES");
      //    Assert.AreEqual("1", BrowserDriver.Instance.Driver.FindElement(By.XPath("//div[.='1']")));

@@ -269,6 +269,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise.E
             Thread.Sleep(2000);
             SwitchToContent();
             BrowserDriver.Instance.Driver.SwitchTo().Frame("BUDGET");
+            Thread.Sleep(2000);
             BrowserDriver.Instance.Driver.FindElement(By.Name("janBudget")).Clear();
             typeDataName("janBudget", "5");
             BrowserDriver.Instance.Driver.FindElement(By.Name("febBudget")).Clear();
@@ -300,6 +301,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise.E
             Assert.AreEqual("$ 390.00", BrowserDriver.Instance.Driver.FindElement(By.XPath(".//*[@id='amountTotal']")).Text);
     //        Assert.IsTrue(IsElementVisible(By.XPath(".//*[@id='amountTotal']")), "Assigning Budget to Employee failed");
             Console.WriteLine("Budget Added Successfully");
+            Thread.Sleep(3000);
             SwitchToContent();
             javascriptClick(By.XPath(Enterp.Default.ResetB));
             Console.WriteLine("Reset Query Successful");

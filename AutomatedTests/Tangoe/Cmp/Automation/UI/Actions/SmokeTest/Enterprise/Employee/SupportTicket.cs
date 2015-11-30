@@ -134,6 +134,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise.E
           //  IAlert alert = BrowserDriver.Instance.Driver.SwitchTo().Alert();
          //   alert.Dismiss();
             Console.WriteLine("Support Ticket Deleted Successfully");
+            
         }
 
         public void ClickSubmitButton_SupportTicket()

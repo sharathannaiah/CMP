@@ -147,7 +147,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Inventory
             SearchPhonenumber("12345");
             SwitchToContent();
         BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER");
-            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) { return true; }");
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) {return true;};");
             BrowserDriver.Instance.Driver.FindElement(By.XPath(Inven.Default.DeleteB)).Click();
         Assert.IsFalse(IsElementVisible(By.XPath("//div[.='567890']")), " Inventory Deletion Unsuccessful");
            Console.WriteLine("Inventory Deleted Successfully");
@@ -251,8 +251,8 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Inventory
           SwitchToContent();
             BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER");
             BrowserDriver.Instance.Driver.SwitchTo().Frame("LINE_SPID");
-            javascriptClick(By.XPath(Inven.Default.EditB));
-            Thread.Sleep(2000);
+            retryingFindClick(By.XPath(Inven.Default.EditB));
+            Thread.Sleep(4000);
             SwitchToPopUps();
             BrowserDriver.Instance.Driver.FindElement(By.XPath("//input[@Name='spidText']")).Clear();
             ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('spidText')[0].value = '12345';");
@@ -293,7 +293,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Inventory
             SwitchToContent();
             BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER");
             BrowserDriver.Instance.Driver.SwitchTo().Frame("LINE_TFN");
-            javascriptClick(By.XPath(Inven.Default.AddB));
+            retryingFindClick(By.XPath(Inven.Default.AddB));
             Thread.Sleep(2000);
             SwitchToPopUps();
             ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('itemName')[0].value = 'a';");
@@ -337,7 +337,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Inventory
             SwitchToContent();
             BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER");
             BrowserDriver.Instance.Driver.SwitchTo().Frame("LINE_CHARGES");
-            javascriptClick(By.XPath(Inven.Default.AddContractB));
+            retryingFindClick(By.XPath(Inven.Default.AddContractB));
             Thread.Sleep(4000);
             SwitchToPopUps();
             ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('nonconDescription')[0].value = '500';");
@@ -367,7 +367,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Inventory
             SwitchToContent();
             BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER");
             BrowserDriver.Instance.Driver.SwitchTo().Frame("LINE_CHARGES");
-            javascriptClick(By.XPath(Inven.Default.EditB));
+            retryingFindClick(By.XPath(Inven.Default.EditB));
             Thread.Sleep(5000);
             SwitchToPopUps();
             BrowserDriver.Instance.Driver.FindElement(By.XPath("//input[@Name='nonconDescription']")).Clear();
@@ -377,10 +377,11 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Inventory
             BrowserDriver.Instance.Driver.FindElement(By.XPath("//input[@Name='nonconQuantity']")).Clear();
             ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('nonconQuantity')[0].value = '2';");
            retryingFindClick(By.XPath(Inven.Default.OKB));
-            Thread.Sleep(4000);
+            Thread.Sleep(5000);
               SwitchToContent();
             BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER");
             BrowserDriver.Instance.Driver.SwitchTo().Frame("LINE_CHARGES");
+            Thread.Sleep(2000);
             WaitForElement(By.Id("addNC"));
            Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='2']")), "Editing charges/Features failed");
             Console.WriteLine("Editing Charges Successful");
@@ -412,8 +413,8 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Inventory
             SwitchToContent();
             BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER");
             BrowserDriver.Instance.Driver.SwitchTo().Frame("LINE_EMPLOYEES");
-            javascriptClick(By.XPath(Inven.Default.AddB));
-            Thread.Sleep(2000);
+            retryingFindClick(By.XPath(Inven.Default.AddB));
+            Thread.Sleep(4000);
                
             SwitchToPopUps();
             BrowserDriver.Instance.Driver.FindElement(By.Id("imgLookupemployeeId")).Click();
@@ -442,7 +443,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Inventory
             SwitchToContent();
             BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER");
             BrowserDriver.Instance.Driver.SwitchTo().Frame("LINE_EMPLOYEES");
-            javascriptClick(By.XPath(Inven.Default.ModifyB));
+            retryingFindClick(By.XPath(Inven.Default.ModifyB));
             Thread.Sleep(2000);
             SwitchToPopUps();
             typeDataID("dtControlexpirationDate", "10/10/2020");
@@ -566,10 +567,10 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Inventory
             Assert.IsFalse(IsElementVisible(By.XPath("//input[text()='77777']")), "Deleting Directory info Failed");
             Console.WriteLine("Directory Info reset successfully");
             SwitchToContent();
-            BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER");
-            javascriptClick(By.Id("tab13"));
-            Console.WriteLine("Navigation to Dispute Tab Successful");
-            Thread.Sleep(2000);
+            //BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER");
+            //javascriptClick(By.Id("tab13"));
+            //Console.WriteLine("Navigation to Dispute Tab Successful");
+            //Thread.Sleep(2000);
             
         }
 

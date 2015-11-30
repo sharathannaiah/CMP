@@ -170,6 +170,7 @@
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\BillManagement\CreditManagement.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\BillManagement\InvoiceProcessing.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Contracts\ContractsExplorer.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\EmployeePortal\EmployeeLogin.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Enterprise\Employee\EmployeeExplorer.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Enterprise\Employee\SupportTicket.cs" />
     <Compile Include="Tangoe\Cmp\Automation\UI\Actions\SmokeTest\Enterprise\EnterpriseExplorer.cs" />
@@ -259,6 +260,7 @@
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\BillManagement\CostCenterManagementUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\BillManagement\InvoiceProcessingUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Contracts\ContractExplorerUT.cs" />
+    <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\EmployeePortal\EmployeeLoginUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Enterprise\Employee\EmployeeExplorerUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Enterprise\Employee\SupportTicketUT.cs" />
     <Compile Include="Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\Enterprise\EnterpriseExplorerUT.cs" />

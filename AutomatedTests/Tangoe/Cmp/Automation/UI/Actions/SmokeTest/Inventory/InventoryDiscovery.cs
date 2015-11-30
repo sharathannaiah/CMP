@@ -78,7 +78,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Inventory
             SwitchToContent();
             BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER");
             BrowserDriver.Instance.Driver.SwitchTo().Frame("INVENTORY_EXPLORER");
-            javascriptClick(By.XPath(".//*[@id='acceptButton']"));
+            BrowserDriver.Instance.Driver.FindElement(By.XPath(".//*[@id='acceptButton']")).Click();
             Thread.Sleep(5000);
             SwitchToPopUps();
             SelectElement se = new SelectElement(FindElement(By.Name("targetInventoryTypeId")));
