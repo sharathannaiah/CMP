@@ -533,8 +533,8 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Abstract
         {
             SwitchToPopUps();
             ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('" + field + "')[0].value='" + data + "'");
-            javascriptClick(By.XPath(General.Default.SubmitB));
-            Thread.Sleep(2000);
+            retryingFindClick(By.XPath(General.Default.SubmitB));
+            Thread.Sleep(4000);
             SwitchToPopUps();
         }
         #endregion
@@ -571,20 +571,23 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Abstract
 
         public void Login1()
         {
-            BrowserDriver.Instance.Driver.Navigate().GoToUrl(TestProperties.Instance.GetPropertyByName(TestProperty.employeeURL));
-            BrowserDriver.Instance.Driver.Manage().Window.Maximize();
-            BrowserDriver.Instance.Driver.Navigate().GoToUrl("javascript:document.getElementById('overridelink').click()");
-            //BrowserDriver.Instance.Driver.FindElement(By.Id("overridelink")).Click();
-            WaitForElementToVisible(By.Id("tgx-main-header"));
-            //  BrowserDriver.Instance.Driver.Manage().Window.Maximize();
+            Thread.Sleep(2000);
+            BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
             BrowserDriver.Instance.Driver.SwitchTo().Frame("CMP_DIALOG_FRAME");
-            BrowserDriver.Instance.Driver.FindElement(By.Id("userNameTextBox")).SendKeys(TestProperties.Instance.GetPropertyByName(TestProperty.user));
-            BrowserDriver.Instance.Driver.FindElement(By.Id("passwordTextBox")).SendKeys(TestProperties.Instance.GetPropertyByName(TestProperty.password));
+            BrowserDriver.Instance.Driver.FindElement(By.Id("userNameTextBox")).SendKeys(TestProperties.Instance.GetPropertyByName(TestProperty.employeeuser));
+            BrowserDriver.Instance.Driver.FindElement(By.Id("passwordTextBox")).SendKeys(TestProperties.Instance.GetPropertyByName(TestProperty.employeepassword));
             BrowserDriver.Instance.Driver.FindElement(By.Name("Submit")).Click();
             WaitForElementToVisible(By.Id("menuMainHome"));
         }
 
-
+        public void LoginEmployeePortal()
+        {
+            BrowserDriver.Instance.Driver.Navigate().GoToUrl(TestProperties.Instance.GetPropertyByName(TestProperty.employeeURL));
+            BrowserDriver.Instance.Driver.FindElement(By.Id("j_username")).SendKeys(TestProperties.Instance.GetPropertyByName(TestProperty.employeeuser));
+            BrowserDriver.Instance.Driver.FindElement(By.Id("j_password")).SendKeys(TestProperties.Instance.GetPropertyByName(TestProperty.employeepassword));
+            BrowserDriver.Instance.Driver.FindElement(By.Name("Submit")).Click();
+            Thread.Sleep(4000);
+        }
        #endregion
 
 

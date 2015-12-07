@@ -1,53 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--This file represents the results of running a test suite-->
-<test-results name="D:\CMP Automation 6-10-2015\AutomatedTests\bin\Debug\AutomatedTests.nunit" total="1" errors="0" failures="1" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2015-11-30" time="16:15:58">
-  <environment nunit-version="2.6.4.14350" clr-version="2.0.50727.5485" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="D:\CMP Automation 6-10-2015\AutomatedTests\bin" machine-name="SANNAIAH6440" user="Sharath.Annaiah" user-domain="CORP" />
+<test-results name="D:\CMP Automation 6-10-2015\AutomatedTests\bin\Debug\AutomatedTests.nunit" total="1" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2015-12-07" time="15:51:07">
+  <environment nunit-version="2.6.4.14350" clr-version="2.0.50727.5485" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="D:\CMP Automation 6-10-2015\AutomatedTests\bin" machine-name="SANNAIAH6440" user="sharath.annaiah" user-domain="CORP" />
   <culture-info current-culture="en-US" current-uiculture="en-US" />
-  <test-suite type="Project" name="D:\CMP Automation 6-10-2015\AutomatedTests\bin\Debug\AutomatedTests.nunit" executed="True" result="Failure" success="False" time="177.332" asserts="0">
+  <test-suite type="Project" name="D:\CMP Automation 6-10-2015\AutomatedTests\bin\Debug\AutomatedTests.nunit" executed="True" result="Success" success="True" time="34.704" asserts="0">
     <results>
-      <test-suite type="SetUpFixture" name="D:\CMP Automation 6-10-2015\AutomatedTests\bin\Debug\AutomatedTests.dll" executed="True" result="Failure" success="False" time="177.316" asserts="0">
+      <test-suite type="SetUpFixture" name="D:\CMP Automation 6-10-2015\AutomatedTests\bin\Debug\AutomatedTests.dll" executed="True" result="Success" success="True" time="34.688" asserts="0">
         <results>
-          <test-suite type="Namespace" name="AutomatedTests" executed="True" result="Failure" success="False" time="177.314" asserts="0">
+          <test-suite type="Namespace" name="AutomatedTests" executed="True" result="Success" success="True" time="34.686" asserts="0">
             <results>
-              <test-suite type="Namespace" name="Tangoe" executed="True" result="Failure" success="False" time="177.313" asserts="0">
+              <test-suite type="Namespace" name="Tangoe" executed="True" result="Success" success="True" time="34.685" asserts="0">
                 <results>
-                  <test-suite type="Namespace" name="Cmp" executed="True" result="Failure" success="False" time="177.312" asserts="0">
+                  <test-suite type="Namespace" name="Cmp" executed="True" result="Success" success="True" time="34.685" asserts="0">
                     <results>
-                      <test-suite type="Namespace" name="Automation" executed="True" result="Failure" success="False" time="177.311" asserts="0">
+                      <test-suite type="Namespace" name="Automation" executed="True" result="Success" success="True" time="34.684" asserts="0">
                         <results>
-                          <test-suite type="Namespace" name="Unit" executed="True" result="Failure" success="False" time="177.311" asserts="0">
+                          <test-suite type="Namespace" name="Unit" executed="True" result="Success" success="True" time="34.684" asserts="0">
                             <results>
-                              <test-suite type="Namespace" name="Concrete" executed="True" result="Failure" success="False" time="177.310" asserts="0">
+                              <test-suite type="Namespace" name="Concrete" executed="True" result="Success" success="True" time="34.683" asserts="0">
                                 <results>
-                                  <test-suite type="Namespace" name="SmokeTest" executed="True" result="Failure" success="False" time="177.309" asserts="0">
+                                  <test-suite type="Namespace" name="SmokeTest" executed="True" result="Success" success="True" time="34.682" asserts="0">
                                     <results>
-                                      <test-suite type="Namespace" name="EmployeePortal" executed="True" result="Failure" success="False" time="177.306" asserts="0">
+                                      <test-suite type="Namespace" name="EmployeePortal" executed="True" result="Success" success="True" time="34.681" asserts="0">
                                         <results>
-                                          <test-suite type="TestFixture" name="EmployeeLoginUT" executed="True" result="Failure" success="False" time="177.304" asserts="0">
+                                          <test-suite type="TestFixture" name="EmployeeLoginUT" executed="True" result="Success" success="True" time="34.680" asserts="0">
                                             <results>
-                                              <test-case name="AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.EmployeePortal.EmployeeLoginUT.EmployeeLoginFunction" executed="True" result="Failure" success="False" time="177.283" asserts="1">
-                                                <failure>
-                                                  <message><![CDATA[OpenQA.Selenium.WebDriverException
-The HTTP request to the remote WebDriver server for URL http://localhost:57959/session/68cdcc6d-fd84-4f68-89c9-d8edd89a3018/element timed out after 60 seconds.   at OpenQA.Selenium.Remote.HttpCommandExecutor.CreateResponse(WebRequest request)
-   at OpenQA.Selenium.Remote.HttpCommandExecutor.Execute(Command commandToExecute)
-   at OpenQA.Selenium.Remote.DriverServiceCommandExecutor.Execute(Command commandToExecute)
-   at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
-   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(String mechanism, String value)
-   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElementById(String id)
-   at OpenQA.Selenium.By.<>c__DisplayClass2.<Id>b__0(ISearchContext context)
-   at OpenQA.Selenium.By.FindElement(ISearchContext context)
-   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(By by)
-   at OpenQA.Selenium.Support.UI.ExpectedConditions.<>c__DisplayClassa.<ElementIsVisible>b__9(IWebDriver driver)
-   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)
-   at AutomatedTests.Tangoe.Cmp.Automation.UI.Abstract.BaseActions.WaitForElementToVisible(By by) in d:\CMP Automation 6-10-2015\AutomatedTests\Tangoe\Cmp\Automation\UI\Abstract\BaseActions.cs:line 178
-   at AutomatedTests.Tangoe.Cmp.Automation.UI.Abstract.BaseActions.Login1() in d:\CMP Automation 6-10-2015\AutomatedTests\Tangoe\Cmp\Automation\UI\Abstract\BaseActions.cs:line 578
-   at AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.EmployeePortal.EmployeeLoginUT.<EmployeeLoginFunction>b__0() in d:\CMP Automation 6-10-2015\AutomatedTests\Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\EmployeePortal\EmployeeLoginUT.cs:line 35
-   at AutomatedTests.Tangoe.Cmp.Automation.Unit.Abstract.BaseUnitTest.ExecuteTest(Action action) in d:\CMP Automation 6-10-2015\AutomatedTests\Tangoe\Cmp\Automation\Unit\Abstract\BaseUnitTest.cs:line 177]]></message>
-                                                  <stack-trace><![CDATA[at AutomatedTests.Tangoe.Cmp.Automation.Unit.Abstract.BaseUnitTest.ExecuteTest(Action action) in d:\CMP Automation 6-10-2015\AutomatedTests\Tangoe\Cmp\Automation\Unit\Abstract\BaseUnitTest.cs:line 181
-at AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.EmployeePortal.EmployeeLoginUT.EmployeeLoginFunction() in d:\CMP Automation 6-10-2015\AutomatedTests\Tangoe\Cmp\Automation\Unit\Concrete\SmokeTest\EmployeePortal\EmployeeLoginUT.cs:line 32
-]]></stack-trace>
-                                                </failure>
-                                              </test-case>
+                                              <test-case name="AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.EmployeePortal.EmployeeLoginUT.EmployeeLoginFunction" executed="True" result="Success" success="True" time="34.665" asserts="1" />
                                             </results>
                                           </test-suite>
                                         </results>

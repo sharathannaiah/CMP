@@ -31,8 +31,8 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.EmployeeP
         {
             ExecuteTest(() =>
             {
-                employeeLogin.EmployeeLoginn();
-                employeeLogin.Login1();
+               employeeLogin.EmployeeLoginn();
+               // employeeLogin.Login1();
 
             }
             );

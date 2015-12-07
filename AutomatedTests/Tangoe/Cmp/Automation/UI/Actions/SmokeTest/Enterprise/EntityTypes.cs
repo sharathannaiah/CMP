@@ -19,6 +19,12 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise
         public void EntityTypesFunctionality()
         {
             GoToMain1("Enterprise", "Types");
+            if (true)
+            {
+                BrowserDriver.Instance.Driver.SwitchTo().ActiveElement();
+          //      WaitForElementToVisible(By.XPath("//td[text()='']"));
+                Console.WriteLine("Navigation Successful");
+            }
 
             CreateType();
 

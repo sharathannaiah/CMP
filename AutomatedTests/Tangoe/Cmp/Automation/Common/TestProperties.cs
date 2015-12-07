@@ -55,7 +55,9 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.Common
         typeDescription,
 
 
-        
+        //Employee Portal
+        employeeuser,
+        employeepassword,
         
         
 

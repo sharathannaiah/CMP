@@ -20,10 +20,6 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise
         {
            GoToMain1("Enterprise", "Explorer");
 
-           //GoToMain("Enterprise");
-           // BrowserDriver.Instance.Driver.FindElement(By.XPath(".//*[@id='menuMainEnterprise']")).Click();
-           // BrowserDriver.Instance.Driver.FindElement(By.XPath(".//*[@id='mnuEnterprise_Explorer2']")).Click();
-       //     retryingFindClickk(".//*[@id='mnuEnterprise_Explorer2']");
             Thread.Sleep(2000);
             if (true)
             {
@@ -134,8 +130,13 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise
             SelectfromDropdown("type", "1");
             typeDataID("siteStatus", "0");
             typeDataID("siteStatus", "0");
+        
+            typeDataName("description", "Automation Description");
+            typeDataName("siteSource", "AB Source");
+
             typeDataName("npanxx", "55555");
             typeDataName("businessHours", "7");
+            typeDataID("dtControlopenedDate", "01/01/2010");
             typeDataID("notes", "Entity creation");
             typeDataName("ldn", "7777777");
             typeDataName("phone2", "999999");
