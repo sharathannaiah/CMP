@@ -18,20 +18,20 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.EmployeePort
         public void EmployeeLoginn()
         {
 
-      //    Navigation("Enterprise", ".//*[@id='mnuEnterprise_Employees']", ".//*[@id='mnuEmployees_Explorer']", "//div[text()='Employee Management']");
+            Navigation("Enterprise", ".//*[@id='mnuEnterprise_Employees']", ".//*[@id='mnuEmployees_Explorer']", "//div[text()='Employee Management']");
             Console.WriteLine("Employee --> Explorer Navigation successful");
             BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
-            javascriptClick(By.XPath(".//*[@id='utilLogOff']"));
+         javascriptClick(By.XPath(".//*[@id='utilLogOff']"));
             Thread.Sleep(2000);
 
 
-            //    if (CreateEmployee() == true)
-            //    {
-            //        SwitchToContent();
-            //        EmployeeSearch("AB", "Automation");
-            //        Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='AB']")), "Employee Creation Failed");
-            //        Console.WriteLine("Employee Created Successfully");
-            //    }
+            ////if (CreateEmployee() == true)
+            ////{
+            ////    SwitchToContent();
+            ////    EmployeeSearch("AB1", "Automation");
+            ////    Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='AB1']")), "Employee Creation Failed");
+            ////    Console.WriteLine("Employee Created Successfully");
+            ////}
 
             //if (CreateEmployeeLogin("Employee123") == true)
             //{
@@ -55,22 +55,22 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.EmployeePort
             //}
 
 
-            //if (EmployeeAdminLogin() == true)
-            //{
+            if (EmployeeAdminLogin() == true)
+            {
 
-            //    Console.WriteLine("Employee Admin Login Successful");
-            //    AcceptInventory();
-            //    //Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='Active']")), "Accepting Inventory failed");
-            //    Console.WriteLine("Accepting Inventory Successful");
-               
-            //}
+                Console.WriteLine("Employee Admin Login Successful");
+                AcceptInventory();
+                //Assert.IsTrue(IsElementVisible(By.XPath("//div[text()='Active']")), "Accepting Inventory failed");
+                Console.WriteLine("Accepting Inventory Successful");
 
-            //if (AssignEmployee() == true)
-            //{
-            //    BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
-            //    javascriptClick(By.XPath(".//*[@id='utilLogOff']"));
-            //    Console.WriteLine("Assigned new inventory to Employee AB1 Successfully");
-            //}
+            }
+
+            if (AssignEmployee() == true)
+            {
+                BrowserDriver.Instance.Driver.SwitchTo().DefaultContent();
+                javascriptClick(By.XPath(".//*[@id='utilLogOff']"));
+                Console.WriteLine("Assigned new inventory to Employee AB1 Successfully");
+            }
 
             if (EmployeePortalLogin() == true)
             {
@@ -91,7 +91,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.EmployeePort
                 System.Random rand = new System.Random((int)System.DateTime.Now.Ticks);
                 int random = rand.Next(1, 100000000);
                 typeDataName("employeeIdentifier", "12345" + RandomNumbergeneratorL());
-                typeDataName("firstName", "AB");
+                typeDataName("firstName", "AB1");
                 typeDataName("lastName", "Automation");
                 ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("document.getElementsByName('contactTypeId')[0].selectedIndex = 1;");
                 BrowserDriver.Instance.Driver.FindElement(By.XPath(Enterp.Default.SaveB)).Click();
@@ -346,6 +346,8 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.EmployeePort
                   BrowserDriver.Instance.Driver.FindElement(By.Id("billingnav")).Click();
                   return true;
               }
+
+
 
           }
     }

@@ -33,10 +33,72 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Assura
                 javascriptClick(By.XPath(General.Default.CancelB));
               Thread.Sleep(2000);
                 Console.WriteLine("Admin --> Assurance --> Install Test passed smoke test successfully");
+           //     ModalTest();
             }
 
         }
 
+        public void ModalTest()
+        {
+           // IWebDriver driver = new InternetExplorerDriver();
+            BrowserDriver.Instance.Driver.Url = "https://developer.mozilla.org/samples/domref/showModalDialog.html";
+
+            // Get current window handle for switching back after closing the dialog
+            string originalHandle = BrowserDriver.Instance.Driver.CurrentWindowHandle;
+            IWebElement element = BrowserDriver.Instance.Driver.FindElement(By.TagName("input"));
+            element.Click();
+
+            // Wait for the number of window handles to be greater than 1, or a timeout.
+            // In Java, this would be something like the following:
+            //
+            //   long timeoutEnd = System.currentTimeMillis() + 5000;
+            //   while (driver.getWindowHandles().size() == 1 && System.currentTimeMillis() < timeoutEnd) {
+            //     Thread.sleep(100);
+            //   }
+            DateTime timeoutEnd = DateTime.Now.Add(TimeSpan.FromSeconds(5));
+            while (BrowserDriver.Instance.Driver.WindowHandles.Count == 1 && DateTime.Now < timeoutEnd)
+            {
+                System.Threading.Thread.Sleep(100);
+            }
+
+            // Loop through all window handles, finding the first one that isn't
+            // the original window handle, and switching to it. Note that in Java,
+            // this would be something like:
+            // 
+            //   for (string handle : driver.getWindowHandles()) {
+            //     if (!handle.equals(originalHandle)) {
+            //       driver.switchTo().window(handle);
+            //       break;
+            //     }
+            //   }
+            foreach (string handle in BrowserDriver.Instance.Driver.WindowHandles)
+            {
+                if (handle != originalHandle)
+                {
+                    BrowserDriver.Instance.Driver.SwitchTo().Window(handle);
+                    break;
+                }
+            }
+
+            // If we've gotten to this point without switching windows, this will
+            // throw an exception.
+            string textBoxValue = BrowserDriver.Instance.Driver.FindElement(By.Id("foo")).GetAttribute("value");
+
+            // This is an NUnit test case, so we'll Assert here. Java would be similar
+            // using either JUnit or TestNG.
+            Assert.AreEqual("Dialog value...", textBoxValue);
+
+            // Close the popup, and switch back to the original window.
+            BrowserDriver.Instance.Driver.Close();
+            BrowserDriver.Instance.Driver.SwitchTo().Window(originalHandle);
+
+            // This page throws a JavaScript alert() when the dialog is closed,
+            // so handle that dialog.
+            BrowserDriver.Instance.Driver.SwitchTo().Alert().Accept();
+
+            // Quit the driver
+        //    BrowserDriver.Instance.Driver.Quit();
+        }
         }
 
       //  public void InstallAssuranceFile()
@@ -62,5 +124,8 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Admin.Assura
             // System.Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler " + "C:\\Documents and Settings\\new.exe"); 
 
      //
+
+
+   
 }
 

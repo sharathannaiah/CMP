@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <VisualState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ShowCheckBoxes="false">
-  <TopNode>[0-1124]AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.Tools.HubsUT</TopNode>
+  <TopNode>[0-1121]AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Admin.SystemAdmin.UsersandGroupsUT.UsersandGroupsSmokeTestFunctionality</TopNode>
   <SelectedNode>[0-1147]AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.EmployeePortal.EmployeeLoginUT.EmployeeLoginFunction</SelectedNode>
   <ExcludeCategories>false</ExcludeCategories>
   <Nodes>
@@ -88,6 +88,7 @@
     <Node UniqueName="[0-1194]AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Enterprise.Employee" Expanded="true" />
     <Node UniqueName="[0-1148]AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Enterprise.Employee.EmployeeExplorerUT" Expanded="true" />
     <Node UniqueName="[0-1150]AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Enterprise.Employee.SupportTicketUT" Expanded="true" />
+    <Node UniqueName="[0-1152]AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Enterprise.EnterpriseExplorerUT" Expanded="true" />
     <Node UniqueName="[0-1156]AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Enterprise.EntityTypesUT" Expanded="true" />
     <Node UniqueName="[0-1195]AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Inventory" Expanded="true" />
     <Node UniqueName="[0-1196]AutomatedTests.Tangoe.Cmp.Automation.Unit.Concrete.SmokeTest.Navigation" Expanded="true" />

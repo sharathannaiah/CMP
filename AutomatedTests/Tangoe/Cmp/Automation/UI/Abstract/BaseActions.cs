@@ -583,6 +583,7 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Abstract
         public void LoginEmployeePortal()
         {
             BrowserDriver.Instance.Driver.Navigate().GoToUrl(TestProperties.Instance.GetPropertyByName(TestProperty.employeeURL));
+            Thread.Sleep(2000);
             BrowserDriver.Instance.Driver.FindElement(By.Id("j_username")).SendKeys(TestProperties.Instance.GetPropertyByName(TestProperty.employeeuser));
             BrowserDriver.Instance.Driver.FindElement(By.Id("j_password")).SendKeys(TestProperties.Instance.GetPropertyByName(TestProperty.employeepassword));
             BrowserDriver.Instance.Driver.FindElement(By.Name("Submit")).Click();

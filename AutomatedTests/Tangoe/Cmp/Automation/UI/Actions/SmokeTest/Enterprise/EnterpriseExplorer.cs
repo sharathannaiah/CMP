@@ -36,8 +36,9 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise
             {
                 CreateEntity();
                 Console.WriteLine("Entity Created Successfully");
-               // DeleteEntity();
-              //  Console.WriteLine("Entity Deleted Successfully");
+              
+            //    DeleteEntity();
+                Console.WriteLine("Entity Deleted Successfully");
               //CreateEntity();
             }
         
@@ -191,8 +192,33 @@ namespace AutomatedTests.Tangoe.Cmp.Automation.UI.Actions.SmokeTest.Enterprise
             javascriptClick(By.XPath("//div[text()='AB Automation']"));
             Thread.Sleep(2000);
             SwitchToContent();
-            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) {return true;};");
-            javascriptClick(By.Id("deleteb"));
+            ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.open = function(msg) {return true;};");
+          //  string originalHandle = BrowserDriver.Instance.Driver.CurrentWindowHandle;
+           javascriptClick(By.Id("deleteb"));
+         //   element.Click();
+            Thread.Sleep(4000);
+            BrowserDriver.Instance.Driver.SwitchTo().Alert().Accept();
+            Thread.Sleep(4000);
+
+            //DateTime timeoutEnd = DateTime.Now.Add(TimeSpan.FromSeconds(5));
+            //while (BrowserDriver.Instance.Driver.WindowHandles.Count == 1 && DateTime.Now < timeoutEnd)
+            //{
+            //    System.Threading.Thread.Sleep(100);
+            //}
+
+            //foreach (string handle in BrowserDriver.Instance.Driver.WindowHandles)
+            //{
+            //    if (handle != originalHandle)
+            //    {
+            //        BrowserDriver.Instance.Driver.SwitchTo().Window(handle);
+            //        break;
+            //    }
+            //}
+
+            //BrowserDriver.Instance.Driver.SwitchTo().Alert().Accept();
+            Thread.Sleep(2000);
+          //  ((IJavaScriptExecutor)BrowserDriver.Instance.Driver).ExecuteScript("window.confirm = function(msg) {return true;};");
+           // javascriptClick(By.Id("deleteb"));
         }
 
         public void CreateAddress()
